@@ -9,7 +9,7 @@ footer: can have maybe 3 seprate containers/boxes that lists out liek the locati
 contact us page: name input, email input (optional), phone input, message input, send/submit button
 
 
-
+on line 22 in pacakge-lock.json i added this to the devDependencies because npm run client compilied an error: "@babel/plugin-proposal-private-property-in-object"
 
 
 
