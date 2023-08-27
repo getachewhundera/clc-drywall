@@ -1,3 +1,21 @@
+Top header: buttons-home, services, reviews, feedback, contact us.
+
+Compnay motto, information about the company.
+
+list of areas served
+
+footer: can have maybe 3 seprate containers/boxes that lists out liek the location, buisness hours, and contact us today/social media informaion
+
+contact us page: name input, email input (optional), phone input, message input, send/submit button
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
