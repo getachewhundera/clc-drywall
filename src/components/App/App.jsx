@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css'
 import Header from '../Header/Header';
+import Footer from '../../Footer/Footer';
 
 //React Imports
 import React from 'react';
@@ -29,6 +30,11 @@ function App() {
         <body id="bodySection">
           this is the body portion
         </body>
+
+
+        <footer> 
+          <Footer />
+        </footer>
 
 
       </div> 
