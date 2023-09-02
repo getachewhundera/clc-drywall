@@ -7,9 +7,12 @@ const PORT = process.env.PORT || 5007;
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for axios requests
 app.use(express.static('build'));
+app.use(express.static('server/public'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 // app.use('/drywall', drywallRouter);
+const cors = require('cors');
+app.use(cors());
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {

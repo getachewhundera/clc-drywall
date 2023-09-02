@@ -13,6 +13,9 @@ on line 22 in pacakge-lock.json i added this to the devDependencies because npm 
 
 
 
+line 45 in package.json i added "babel-jest":"@babel/plugin-proposal-private-property-in-object" after npm run client displated error message saying there is a bug in babel that won't be fixed. 
+
+
 
 
 
@@ -86,3 +89,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
