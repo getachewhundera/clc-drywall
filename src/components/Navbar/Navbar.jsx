@@ -1,10 +1,16 @@
+import Contact from '../Contact/Contact';
+import Feedback from '../Feedback/Feedback';
+import Services from '../Services/Services';
 import './Navbar.css';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 
 function Navbar(){
 
     return (
+        <Router>
         <nav className='nav'>
            {/* <img src="./logo.jpg" alt="CLC DRYWALL"/> */}
             {/* <a href='/' className='headerImage' > 
@@ -17,35 +23,64 @@ function Navbar(){
 
             <ul>
                 <li className='active'>
-                    <a href='/'> Home</a>
+                    <Link to="/"> Home </Link>
                 </li>
 
                 <li className='active'>
-                    <a href='/Services'> Services </a>
+                <Link to="/Services"> Services </Link>
                 </li>
 
                 <li className='active'>
-                    <a href='/AboutUs'> About Us </a>
+                    <Link to="/AboutUs"> About Us </Link>
                 </li> 
 
                 <li className='active'>
-                    <a href='/Projects'> Projects </a>
+                    <Link to="/Projects"> Projects </Link>
                 </li> 
 
                 <li className='active'>
-                    <a href='/Contact'> Contact </a>
+                    <Link to="/Contact"> Contact </Link>
                 </li> 
 
 
                 <li className='active'>
-                    <a href='/Feedback'> Feedback </a>
+                    <Link to="/Feedback"> Feedback </Link>
                 </li>
 
             </ul>
-            
-        </nav>
+              </nav>
+    
+              <li>
+            <Link to="/animals"> Animals </Link>
+          </li>
 
 
+    <Route path="/" exact>
+        <Home />
+    </Route>
+
+    <Route path="/Services">
+        <Services />
+    </Route>
+
+    <Route path="/AboutUs">
+        <AboutUs />
+    </Route>
+
+    <Route path="/Projects">
+        <Projects/>
+    </Route>
+
+    <Route path="/Contact">
+        <Contact />
+    </Route>
+
+    <Route path="/Feedback">
+        <Feedback />
+    </Route>
+
+  
+ </Router>
     );
 };
 
