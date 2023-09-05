@@ -1,10 +1,13 @@
-import Contact from '../Contact/Contact';
-import Feedback from '../Feedback/Feedback';
-import Services from '../Services/Services';
 import './Navbar.css';
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+// import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Home from '../Home/Home';
+import Services from '../Services/Services';
+import AboutUs from '../AboutUs/AboutUs';
+import Projects from '../Projects/Projects';
+import Contact from '../Contact/Contact';
+import Feedback from '../Feedback/Feedback';
 
 
 function Navbar(){
@@ -49,10 +52,6 @@ function Navbar(){
 
             </ul>
               </nav>
-    
-              <li>
-            <Link to="/animals"> Animals </Link>
-          </li>
 
 
     <Route path="/" exact>
