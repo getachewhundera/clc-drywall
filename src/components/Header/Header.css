@@ -1,0 +1,58 @@
+.split-screen {
+    display: flex;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .left-pane, .right-pane {
+    flex: 1;
+    background-size: cover;
+    transition: transform 0.5s;
+  }
+  
+  .left-pane {
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main1.jpg');
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.jpeg');
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.2.jpeg');
+  }
+  
+  .right-pane {
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main.jpg');
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.1.jpeg');
+    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.21.jpeg');
+  }
+  
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+/* CSS keyframes rotation effect for header images  */
+  @keyframes rotateUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes rotateDown {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  .left-pane {
+    animation: rotateUp 3s infinite alternate;
+  }
+  
+  .right-pane {
+    animation: rotateDown 3s infinite alternate;
+  }
