@@ -1,39 +1,31 @@
-// import logo from './logo.svg';
 import './App.css'
+import Navbar from '../Navbar/Navbar.jsx';
 import Home from '../Home/Home';
-import Navbar from '../Navbar/Navbar';
-// import Services from '../Services/Services';
-// import AboutUs from '../AboutUs/AboutUs';
-// import Projects from '../Projects/Projects';
-// import Contact from '../Contact/Contact';
-// import Feedback from '../Feedback/Feedback';
-
-//HashRouter
-// import { HashRouter as Router, Route, Link } from "react-router-dom";
-
-//React Imports
+import AboutUs from '../AboutUs/AboutUs';
+import Projects from '../Projects/Projects';
+import Contact from '../Contact/Contact';
+import Feedback from '../Feedback/Feedback';
+import Services from '../Services/Services';
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
-// import {useEffect, useState} from 'react';
-//Import Axios 
-// import axios from 'axios';
-// Components imports
-
-
-
 
 
 function App() {
+  return (
+      <Router>
+          <div>
+              <Navbar />
 
-  return(
-    <div >
-      {/* <Home />
-      {Navbar} */}
-
-      <Navbar />
-
-
-    </div>
-
+              <Switch>      
+                <Route path="/Services" component={Services} />
+                <Route path="/AboutUs" component={AboutUs} />
+                <Route path="/Projects" component={Projects} />
+                <Route path="/Contact" component={Contact} />
+                <Route path="/Feedback" component={Feedback} />
+                <Route path="/" component={Home} />
+              </Switch>       
+          </div>
+      </Router>
   );
 }
 
