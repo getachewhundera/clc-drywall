@@ -4,55 +4,103 @@
     position: relative;
   }
   
-  .left-pane, .right-pane {
+  .pane {
     flex: 1;
+    overflow: hidden; /* Hides the images that are out of view */
+    position: relative;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
-    transition: transform 0.5s;
+    animation-duration: 9s; /* 3 images * 3s each */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
   
-  .left-pane {
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main1.jpg');
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.jpeg');
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.2.jpeg');
+  /* Animation for left pane images */
+  .left-pane .img-0 { animation-name: rotateLeft0; }
+  .left-pane .img-1 { animation-name: rotateLeft1; }
+  .left-pane .img-2 { animation-name: rotateLeft2; }
+  
+  /* Animation for right pane images */
+  .right-pane .img-0 { animation-name: rotateRight0; }
+  .right-pane .img-1 { animation-name: rotateRight1; }
+  .right-pane .img-2 { animation-name: rotateRight2; }
+  
+  /* Keyframes for left pane */
+  @keyframes rotateLeft0 {
+    0%, 33% { transform: translateY(0); }
+    66%, 100% { transform: translateY(-100%); }
   }
   
-  .right-pane {
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main.jpg');
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.1.jpeg');
-    background-image: url('/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.21.jpeg');
+  @keyframes rotateLeft1 {
+    0%, 33% { transform: translateY(100%); }
+    34%, 66% { transform: translateY(0); }
+    67%, 100% { transform: translateY(-100%); }
   }
   
+  @keyframes rotateLeft2 {
+    0%, 66% { transform: translateY(100%); }
+    67%, 100% { transform: translateY(0); }
+  }
+  
+  /* Keyframes for right pane */
+  @keyframes rotateRight0 {
+    0%, 33% { transform: translateY(0); }
+    66%, 100% { transform: translateY(100%); }
+  }
+  
+  @keyframes rotateRight1 {
+    0%, 33% { transform: translateY(-100%); }
+    34%, 66% { transform: translateY(0); }
+    67%, 100% { transform: translateY(100%); }
+  }
+  
+  @keyframes rotateRight2 {
+    0%, 66% { transform: translateY(-100%); }
+    67%, 100% { transform: translateY(0); }
+  }
+  
+
+
+
   .center-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-  }
-
-/* CSS keyframes rotation effect for header images  */
-  @keyframes rotateUp {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100%);
-    }
+    text-align: center; /* Center the text elements */
   }
   
-  @keyframes rotateDown {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(100%);
-    }
+  .center-text h1, .center-text h2 {
+    margin: 0; /* Remove default margins */
   }
   
-  .left-pane {
-    animation: rotateUp 3s infinite alternate;
+  .headerContactUsButton {
+    position: absolute;
+    top: 60%; /* Adjust as needed to position below the text */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
   }
   
-  .right-pane {
-    animation: rotateDown 3s infinite alternate;
+  #mainPageContactUsButton {
+    padding: 10px 20px;
+    background-color: #333; /* Or any color you prefer */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    /* Add hover effect for the button */
+    &:hover {
+      background-color: #555;
+    }
   }

@@ -1,4 +1,5 @@
 import './Header.css';
+import React from 'react';
 
 
 
@@ -7,23 +8,36 @@ function Header() {
 
   console.log(window.location);
 
+  const imagesLeft = [
+    'main1.jpg',
+    'nhimg1.jpeg', 
+    'nhimg1.2.jpeg'
+  ];
+
+  const imagesRight = [
+    'main.jpg',
+    'nhimg1.1.jpeg',
+    'nhimg1.21.jpeg' 
+
+  ];
+
   return (
 
     <>
-
-      <div className='split-screen'>
-        <div className='left-pane'>
-          <img src='/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main1.jpg' alt="ClC Drywall" />
-          <img src='/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.jpeg' alt='CLC DRYWALL'/>
-          <img src='/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.2.jpeg' alt='CLC DRYWALL'/>
-
+        <div className='split-screen'>
+        <div className='pane left-pane'>
+          {imagesLeft.map((img, index) => (
+            <div key={index} className={ `image img-${index}`} style={{ backgroundImage: `url(${img})` }}> </div> 
+          ))}
         </div>
 
-        <div className='right-pane'>
-        <img src= "/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/main.jpg" alt="ClC Drywall" />
-        <img src='/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.1.jpeg' alt='CLC DRYWALL'/>
-        <img src='/Users/getachewhundera/Documents/personal projects/clc-drywall-llc/src/components/Header/nhimg1.21.jpeg' alt='CLC DRYWALL'/>
+        <div className='pane right-pane'>
+        {imagesRight.map((img, index) => (
+            <div key={index} className={`image img-${index}`} style={{ backgroundImage: `url(${img})` }}> </div> 
+          ))}
 
+        </div>
+        
         </div>
 
         <div className='center-text'>
@@ -34,7 +48,7 @@ function Header() {
           {/* call to action button, sits in the middle of main webpage, easily identifiable*/}
           <button type="button" id='mainPageContactUsButton' >  Contact Us </button>
         </div>
-      </div>
+      
 
     </>
 
