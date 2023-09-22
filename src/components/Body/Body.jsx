@@ -1,4 +1,6 @@
 import './Body.css'
+import { Link } from 'react-router-dom';
+
 
 
 function Body() {
@@ -6,13 +8,13 @@ function Body() {
 
   return (
     <>
-      <section>
+      <section id='mainPageBodyItems'>
         <div id='mainPageServicesImage' alt="CLC Services ">
           <img src='./truck1.jpg' alt="CLC Services" />
         </div>
-        <div>
+        <div id='servicesList'>
           <h1> Our Services </h1>
-          <h2>
+         
             <ul>
               <li> Drywall Hanging </li>
               <li> Drywall Finising </li>
@@ -21,11 +23,9 @@ function Body() {
               <li> Interior Painting </li>
               <li> and More </li>
             </ul>
-          </h2>
-
-          <a href="Services">
-            <button type="button" id="mainPageServicesButton"> Our Services </button>
-          </a>
+          
+            <Link type="button" id="mainPageServicesButton"> Our Services </Link>
+      
         </div>
 
       </section>
