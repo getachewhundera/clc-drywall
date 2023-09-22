@@ -1,5 +1,6 @@
 
 /* color_11: 38,38,38; */
+/* services css  */
 #mainPageBodyItems{
     display: flex;
     flex-direction: row;
@@ -11,21 +12,30 @@
 }
 
 #mainPageServicesImage img {
-
-    width: 450px; 
-    height: 450px;
+    margin-left: 130px; 
+    width: 750px; 
+    height: 750px;
     border: solid 1px rgb(154, 138, 120) ;
 
 }
 
+#servicesList {
+    flex-basis: auto;
+    margin-left: 20%;
+    margin-top: 10%; 
+    font-size: large; 
+
+}
+
 #servicesList h1{
-    text-emphasis-color: white;
-    font: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    color: white;
+    font: 16px/1.4em sans-serif;
+    font-size: 50px; 
 
 }
 
 #servicesList ul{
-    text-emphasis-color: white;
+    color: white; 
     font: normal normal normal 16px/1.4em raleway,sans-serif;
     margin: center; 
 
@@ -33,8 +43,10 @@
 
 }
 
-/* #mainPageServicesButton{
+#mainPageServicesButton{
+    color: white; 
+    margin: center; 
 
-} */
+}
 
 
