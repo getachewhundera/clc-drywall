@@ -17,7 +17,7 @@
     right: 0;
     bottom: 0;
     background-size: cover;
-    animation-duration: 9s; /* 3 images * 3s each */
+    animation-duration: 15s; /* 3 images * 3s each */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
