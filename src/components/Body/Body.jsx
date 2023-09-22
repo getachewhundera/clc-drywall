@@ -1,5 +1,6 @@
 import './Body.css'
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 
 
@@ -23,8 +24,12 @@ function Body() {
               <li> Interior Painting </li>
               <li> and More </li>
             </ul>
+
+            <Link to="/Services">
+              <Button variant="contained" color="primary" id="mainPageServicesButton"> Our Services </Button>
+            </Link>
           
-            <Link type="button" id="mainPageServicesButton"> Our Services </Link>
+    
       
         </div>
 
