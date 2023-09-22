@@ -26,7 +26,9 @@ function Body() {
             </ul>
 
             <Link to="/Services">
-              <Button variant="contained" color="primary" id="mainPageServicesButton"> Our Services </Button>
+              <Button variant="contained" color="primary" id="mainPageServicesButton" size='large'  
+              style={{ fontSize: '20px', padding: '12px 24px', font: 'Helvetica', fontFamily: 'sans-serif'
+              }}> Our Services </Button>
             </Link>
           
     
