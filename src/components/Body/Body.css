@@ -146,25 +146,49 @@
 
 
 
-#AboutUsStatementContainer h2{
-    color: white; 
-    font: normal normal normal 16px/1.4em raleway,sans-serif;
-    margin: center; 
-    color: white;
-    width: 50%; 
-    
-
-}
 
 
 /* About us section  */ 
 #AboutUsContainers {
     display: flex; /* has child contianers sitting side by side */
     border: 1px solid rgb(154, 138, 120); /* Border around the main container */
+    margin-left: 70px; 
+    margin-right: 70px; 
+    gap: 0px; 
 }
 
 .container1, .container2 {
     flex: 1; 
     padding: 10px;
     border: 1px solid rgb(154, 138, 120);
+}
+
+#AboutUsImgContainer img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+#AboutUsStatementContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+#AboutUsStatementContainer h1, 
+#AboutUsStatementContainer h2, 
+#AboutUsStatementContainer a {
+    margin: 0; 
+    padding: 0 0 10% 0; 
+}
+
+#AboutUsStatementContainer h2{
+    color: white; 
+    font: normal normal normal 16px/1.4em raleway,sans-serif;
+    color: white;
+    width: 60%; 
+    
+
 }
