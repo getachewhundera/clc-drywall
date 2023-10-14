@@ -7,7 +7,7 @@ function BodyAboutUs() {
 
 
     return (
-        <div id='AboutUsContaniers'>
+        <div id='AboutUsContainers'>
             <div className='container1'  id='AboutUsImgContainer'>
                 <img src='./logo.jpg' alt="CLC About Us" />
             </div>

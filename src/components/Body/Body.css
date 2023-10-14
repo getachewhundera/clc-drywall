@@ -157,7 +157,14 @@
 }
 
 
-/* About us section  */
-#AboutUsStatementContainer {
-    
+/* About us section  */ 
+#AboutUsContainers {
+    display: flex; /* has child contianers sitting side by side */
+    border: 1px solid rgb(154, 138, 120); /* Border around the main container */
+}
+
+.container1, .container2 {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid rgb(154, 138, 120);
 }
