@@ -30,40 +30,39 @@ function Services() {
             <div className='servicesdescription'>
                 <div className='servicesdescriptioncontainers'>
                     <div className="items">
-                        <div className='item1container'>
-                            <div className="item1">Drywall Installation</div>
-                            <div className='item1description'> </div>
-                            <div className='item1img'> <img src='./drywallinstallation.jpg' alt='Drywall Installation Image'/> </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Drywall Installation</div>
+                            <div className='itemDescription'>Description for Drywall Installation</div>
+                            <div className='itemImg'> <img src='./drywallinstallation.jpg' alt='Drywall Installation'/> </div>
                         </div>
-                        <div className='item2container'>
-                            <div className="item2">Drywall Finishing</div>
-                            <div className='item2description'> </div>
-                            <div className='item2img'> <img src='./drywallmudding.jpg' alt='Drywall Mudding Image'/> </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Drywall Finishing</div>
+                            <div className='itemDescription'>Description for Drywall Finishing</div>
+                            <div className='itemImg'> <img src='./drywallfinishing.jpg' alt='Drywall Finishing'/> </div>
                         </div>
-                        <div className='item3container'>
-                            <div className="item3">Popcorn Removal</div>
-                            <div className='item3description'> </div>
-                            <div className='item3img'> <img src='./project1.1bc.jpg' alt='Popcorn Removal'/> </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Popcorn Removal</div>
+                            <div className='itemDescription'>Description for Popcorn Removal</div>
+                            <div className='itemImg'> <img src='./popcornremoval.jpg' alt='Popcorn Removal'/> </div>
                         </div>
-                        <div className='item4container'>
-                            <div className="item4">Drywall Repair</div>
-                            <div className='item4description'> </div>
-                            <div className='item4img'> <img src='./repairproject1.1ac.jpg' alt='Drywall Repair Image'/> </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Drywall Repair</div>
+                            <div className='itemDescription'>Description for Drywall Repair</div>
+                            <div className='itemImg'> <img src='./drywallrepair.jpg' alt='Drywall Repair'/> </div>
                         </div>
-                        <div className='item5container'>
-                            <div className="item5">Texture Knockdown</div>
-                            <div className='item5description'> </div>
-                            <div className='item5img'>  <img src='./knockdown-texture-paint-zoomed-768x512.jpg' alt='Texture knockdown Image'/> </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Texture Knockdown</div>
+                            <div className='itemDescription'>Description for Texture Knockdown</div>
+                            <div className='itemImg'> <img src='./textureknockdown.jpg' alt='Texture Knockdown'/> </div>
                         </div>
-                        <div className='item6container'>
-                            <div className="item6">Interior Painting</div>
-                            <div className='item6description'> </div>
-                            <div className='item6img'> <img src='./interiorpaintingjpg.jpg' alt='Interior Painting Image'/>  </div>
+                        <div className='itemContainer'>
+                            <div className="itemTitle">Interior Painting</div>
+                            <div className='itemDescription'>Description for Interior Painting</div>
+                            <div className='itemImg'> <img src='./interiorpainting.jpg' alt='Interior Painting'/> </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 
         </>
 
