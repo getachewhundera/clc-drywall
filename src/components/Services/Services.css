@@ -1,0 +1,6 @@
+
+.horizontal-scrolling-items {
+    display: flex;
+    font-size: 40px;
+    white-space: nowrap;
+}
