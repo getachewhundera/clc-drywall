@@ -1,6 +1,32 @@
 
+
+
+/* Horizontal scrolling Bar on top services page  */
+
+.item {
+    display: inline-block; 
+    margin-right: 20px;
+}
+
+@keyframes infiniteScroll {
+  from {transform: translateX(0)}
+  to {transform: translateX(-50%)}
+}
+.scrollingItemsContainer {
+  width: 100%;
+  overflow-x: hidden;
+  background-color:slategray;
+}
+
+.horizontalScrollingItems {
+  display: flex;
+  font-size: 40px;
+  width: 2600px;
+  animation-name: infiniteScroll;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .horizontal-scrolling-items {
-    display: flex;
-    font-size: 40px;
-    white-space: nowrap;
+  white-space: nowrap;
 }

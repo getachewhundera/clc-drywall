@@ -1,30 +1,28 @@
-// import './Services.css'; 
+import './Services.css';
 import React from "react";
 
 
 function Services() {
     return (
         <>
-            <div class="scrollingItemsContainer">
-                <div class="horizontalScrollingItems">
-                    <div class="horizontal-scrolling-items">
-                        <> Drywall Installation </>
-                        <> Drywall Finishing </>
-                        <> Popcorn Removal </>
-                        <> Drywall Repair </>
-                        <> Texture Knockdown </>
-                        <> Interior Painting </>
-
+            <div className="scrollingItemsContainer">
+                <div className="horizontalScrollingItems">
+                    <div className="horizontal-scrolling-items">
+                        <div className="item">Drywall Installation</div>
+                        <div className="item">Drywall Finishing</div>
+                        <div className="item">Popcorn Removal</div>
+                        <div className="item">Drywall Repair</div>
+                        <div className="item">Texture Knockdown</div>
+                        <div className="item">Interior Painting</div>
                     </div>
 
-                    <div class="horizontal-scrolling-items">
-                        <> Drywall Installation </>
-                        <> Drywall Finishing </>
-                        <> Popcorn Removal </>
-                        <> Drywall Repair </>
-                        <> Texture Knockdown </>
-                        <> Interior Painting </>
-
+                    <div className="horizontal-scrolling-items">
+                        <div className="item">Drywall Installation</div>
+                        <div className="item">Drywall Finishing</div>
+                        <div className="item">Popcorn Removal</div>
+                        <div className="item">Drywall Repair</div>
+                        <div className="item">Texture Knockdown</div>
+                        <div className="item">Interior Painting</div>
                     </div>
                 </div>
             </div>
