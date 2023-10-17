@@ -1,0 +1,78 @@
+/* Horizontal scrolling Bar on top services page  */
+
+.item {
+    display: inline-block; 
+    margin-right: 20px;
+}
+
+@keyframes infiniteScroll {
+  from {transform: translateX(0)}
+  to {transform: translateX(-50%)}
+}
+.scrollingItemsContainer {
+  width: 100%;
+  overflow-x: hidden;
+  background-color:slategray;
+}
+
+.horizontalScrollingItems {
+  display: flex;
+  font-size: 40px;
+  width: 2600px;
+  animation-name: infiniteScroll;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.horizontal-scrolling-items {
+  white-space: nowrap;
+}
+
+
+
+
+
+/* Services description items */
+.servicesdescription {
+    padding: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /*fill vertical space*/
+}
+
+.servicesdescriptioncontainers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch; /* containers stretch to the full height */
+    width: 100%; 
+}
+
+.items {
+    display: flex; 
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap; 
+    align-items: stretch; 
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: column; /* Stacks title, description, and img */
+    align-items: center; 
+    width: calc(100% / 6 - 20px); /* Give equal width to each container */
+    margin: 10px; /* spacing between continers- decide on later */
+    box-sizing: border-box; 
+    border: 2px solid black; 
+    flex-grow: 1; 
+}
+
+.itemContainer img {
+    width: 100%; 
+    object-fit: cover; 
+    height: 200px;
+}
+
+.itemTitle, .itemDescription {
+    margin: 10px 0;
+}
