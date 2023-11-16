@@ -1,9 +1,15 @@
 import './Body.css'
 
-
+    $(document).ready(function(){
+        $('.your-class').slick({
+          setting-name: setting-value
+        });
+      });
 
 
 function BodyRecentProjects() {
+
+
 
 
     return (
@@ -12,6 +18,12 @@ function BodyRecentProjects() {
       When View All button is clicked it will direct it to a Recent projects page.  */}
             <section>
                 <h1> Recent Projects </h1>
+                <div class="your-class">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
+
                 <div>
                     few images will go here of one full project.
                 </div>
