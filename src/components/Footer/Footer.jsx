@@ -78,8 +78,8 @@ function Footer() {
                     <div id='socialLinks'>
                         <h2>Social</h2>
                         <ul>
-                            <li><a href="">Facebook</a></li>                    
-                            <li><a href="">Instagram</a></li>
+                            {/* <li><a href="">Facebook</a></li>                    
+                            <li><a href="">Instagram</a></li> */}
                         </ul>
                     </div>
 
