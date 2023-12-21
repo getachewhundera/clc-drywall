@@ -9,15 +9,15 @@ function Header() {
   console.log(window.location);
 
   const imagesLeft = [
-    'main1.jpg',
-    'nhimg1.jpeg', 
-    'nhimg1.2.jpeg'
+    './LandingPageHeaderImages/main1.jpg',
+    './LandingPageHeaderImages/nhimg1.jpeg', 
+    './LandingPageHeaderImages/nhimg1.2.jpeg'
   ];
 
   const imagesRight = [
-    'main.jpg',
-    'nhimg1.1.jpeg',
-    'nhimg1.21.jpeg' 
+    './LandingPageHeaderImages/main.jpg',
+    './LandingPageHeaderImages/nhimg1.1.jpeg',
+    './LandingPageHeaderImages/nhimg1.21.jpeg' 
 
   ];
 

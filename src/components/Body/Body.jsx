@@ -13,7 +13,7 @@ function Body() {
     <>
       <section id='mainPageBodyItems'>
         <div id='mainPageServicesImage' alt="CLC Services ">
-          <img src='./truck1.jpg' alt="CLC Services" />
+          <img src='./LandingPageServicesImages/truck1.jpg' alt="CLC Services" />
         </div>
         <div id='servicesList'>
           <h1> Our Services </h1>
@@ -40,25 +40,25 @@ function Body() {
       <section id='mpContainers'> 
 
       <div id='mpContainerOne'>
-        <img src='./veicon.png' alt='' />
+        <img src='./LandingPageServicesIcons/veicon.png' alt='' />
         <h2> Vast Experience </h2>
 
       </div>
 
       <div id='mpContainerTwo'>
-      <img src='./pwicon.png' alt='' />
+      <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
         <h2> Professional Team </h2>
 
       </div>
 
       <div id='mpContainerThree'>
-      <img src='./nshandshake.png' alt='' />
+      <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
         <h2> Reliable Service </h2>
 
       </div>
 
       <div id='mpContainerFour'>
-      <img src='./dqwicon.png' alt='' />
+      <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
         <h2> Quality Work </h2>
 
       </div>

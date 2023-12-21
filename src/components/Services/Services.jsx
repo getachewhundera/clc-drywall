@@ -33,12 +33,13 @@ function Services() {
                         <div className='itemContainer'>
                             <div className="itemTitle">Drywall Installation</div>
                             <div className='itemDescription'>Description for Drywall Installation</div>
-                            <div className='itemImg'> <img src='./drywallinstallation.jpg' alt='Drywall Installation'/> </div>
+                            <div className='itemImg'> <img src='./servicesPageImages/drywallinstallation.jpg' alt='Drywall Installation'/> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Drywall Finishing</div>
                             <div className='itemDescription'>Description for Drywall Finishing</div>
-                            <div className='itemImg'> <img src='./drywallmudding.jpg' alt='Drywall Finishing'/> </div>
+                            <div className='itemImg'> <img src='./servicesPageImages/drywallmudding.jpg' alt='Drywall Finishing'/> </div>
+      
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Popcorn Removal</div>
@@ -53,7 +54,8 @@ function Services() {
                         <div className='itemContainer'>
                             <div className="itemTitle">Texture Knockdown</div>
                             <div className='itemDescription'>Description for Texture Knockdown</div>
-                            <div className='itemImg'> <img src='./knockdown-texture-paint-zoomed-768x512.jpg' alt='Texture Knockdown'/> </div>
+                            <div className='itemImg'> <img src='./servicesPageImages/knockdown-texture.jpg' alt='Texture Knockdown'/> </div>
+      
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Interior Painting</div>
