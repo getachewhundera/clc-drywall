@@ -9,7 +9,7 @@ function BodyAboutUs() {
     return (
         <div id='AboutUsContainers'>
             <div className='container1'  id='AboutUsImgContainer'>
-                <img src='./logo.jpg' alt="CLC About Us" />
+                <img src='./LandingPageAboutUsImages/logo.jpg' alt="CLC About Us" />
             </div>
 
             <div className='container2' id='AboutUsStatementContainer'>
