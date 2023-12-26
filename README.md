@@ -5,6 +5,10 @@ This web application acts as a dynamic digital presence for CLC DRYWALL, a Roche
 
 ## Project Duration: Ongoing
 
+## Design
+Figma- Application Flowcharting and wireframes
+Google Docs - Scope documentation 
+
 
 ## Features:
 - Service Information 
@@ -13,8 +17,20 @@ This web application acts as a dynamic digital presence for CLC DRYWALL, a Roche
 - Easy contact options: With Primary and secondary call to action. 
 - Customer Testimonials and Reviews 
 
+## Design Wireframes
+
+<p align-items="center">
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_FULL_LANDINGPAGE.png" width="850" alt="Design wireframe of CLC'S full landing page view.">
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_HEADER.png" width="850" alt="Design wireframe of CLC'S landing page header.">
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_OURSERVICES.png" width="850" alt="Design wireframe of CLC'S Our Services section on the landing page."> 
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_ABOUTUS.png" width="850" alt="Design wireframe of CLC'S About Us section on the landing page.">
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_RECENTPROJECTS.png" width="850" alt="Design wireframe of CLC'S Recent Projects section on the landing page.">
+  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_FOOTER.png" width="850" alt="Design wireframe of CLC'S Footer on the landing page.">
+</p>
+
 
 ## Technologies Used: 
+JavaScript 
 React
 Material UI 
 CSS
@@ -32,3 +48,11 @@ CSS
 - open the project 
 - run `npm install` 
 - run `npm run server`, on seprate terminal page run `npm run client`
+
+
+## Acknowledgement
+- CLC DRYWALL CLIENT
+
+## Website Wireframes
+
+- COMING SOON! 
