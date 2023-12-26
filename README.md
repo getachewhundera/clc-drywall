@@ -20,22 +20,22 @@ This web application acts as a dynamic digital presence for CLC DRYWALL, a Roche
 ## Design Wireframes
 
 <p align-items="center">
-<> Full view of Landing Page </>
+Full view of Landing Page
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_FULL_LANDINGPAGE.png" width="850" alt="Design wireframe of CLC'S full landing page view.">
 
-<> Landing Page Header </> 
+Landing Page Header 
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_HEADER.png" width="850" alt="Design wireframe of CLC'S landing page header.">
 
-<> Landing Page Our Services Section </>
+Landing Page Our Services Section
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_OURSERVICES.png" width="850" alt="Design wireframe of CLC'S Our Services section on the landing page.">
 
-<> Landing Page About Us Section </>
+Landing Page About Us Section
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_ABOUTUS.png" width="850" alt="Design wireframe of CLC'S About Us section on the landing page.">
 
-<> Landing Page Recent Projects Section </>
+Landing Page Recent Projects Section
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_RECENTPROJECTS.png" width="850" alt="Design wireframe of CLC'S Recent Projects section on the landing page.">
 
-<> Landing Page Foooter </>
+Landing Page Foooter 
 <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_FOOTER.png" width="850" alt="Design wireframe of CLC'S Footer on the landing page.">
 
 </p>
