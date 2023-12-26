@@ -6,8 +6,8 @@ This web application acts as a dynamic digital presence for CLC DRYWALL, a Roche
 ## Project Duration: Ongoing
 
 ## Design
-Figma- Application Flowcharting and wireframes
-Google Docs - Scope documentation 
+- Figma- Application Flowcharting and wireframes
+- Google Docs - Scope documentation 
 
 
 ## Features:
@@ -20,20 +20,32 @@ Google Docs - Scope documentation
 ## Design Wireframes
 
 <p align-items="center">
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_FULL_LANDINGPAGE.png" width="850" alt="Design wireframe of CLC'S full landing page view.">
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_HEADER.png" width="850" alt="Design wireframe of CLC'S landing page header.">
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_OURSERVICES.png" width="850" alt="Design wireframe of CLC'S Our Services section on the landing page."> 
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_ABOUTUS.png" width="850" alt="Design wireframe of CLC'S About Us section on the landing page.">
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_RECENTPROJECTS.png" width="850" alt="Design wireframe of CLC'S Recent Projects section on the landing page.">
-  <img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_FOOTER.png" width="850" alt="Design wireframe of CLC'S Footer on the landing page.">
+<> Full view of Landing Page </>
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_FULL_LANDINGPAGE.png" width="850" alt="Design wireframe of CLC'S full landing page view.">
+
+<> Landing Page Header </> 
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_HEADER.png" width="850" alt="Design wireframe of CLC'S landing page header.">
+
+<> Landing Page Our Services Section </>
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_OURSERVICES.png" width="850" alt="Design wireframe of CLC'S Our Services section on the landing page.">
+
+<> Landing Page About Us Section </>
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_ABOUTUS.png" width="850" alt="Design wireframe of CLC'S About Us section on the landing page.">
+
+<> Landing Page Recent Projects Section </>
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_RECENTPROJECTS.png" width="850" alt="Design wireframe of CLC'S Recent Projects section on the landing page.">
+
+<> Landing Page Foooter </>
+<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_FOOTER.png" width="850" alt="Design wireframe of CLC'S Footer on the landing page.">
+
 </p>
 
 
 ## Technologies Used: 
-JavaScript 
-React
-Material UI 
-CSS
+- JavaScript 
+- React
+- Material UI 
+- CSS
 
 ## Dependencies installed: 
 - npm install 
