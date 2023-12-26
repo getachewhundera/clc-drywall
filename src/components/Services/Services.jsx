@@ -33,39 +33,52 @@ function Services() {
                         <div className='itemContainer'>
                             <div className="itemTitle">Drywall Installation</div>
                             <div className='itemDescription'>Description for Drywall Installation</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/drywallinstallation.jpg' alt='Drywall Installation'/> </div>
+                            <div className='itemImg'> <img src='./servicesPageImages/drywallinstallation.jpg' alt='Drywall Installation' /> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Drywall Finishing</div>
                             <div className='itemDescription'>Description for Drywall Finishing</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/drywallmudding.jpg' alt='Drywall Finishing'/> </div>
-      
+                            <div className='itemImg'> <img src='./servicesPageImages/drywallmudding.jpg' alt='Drywall Finishing' /> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Popcorn Removal</div>
                             <div className='itemDescription'>Description for Popcorn Removal</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/ceiling_popcorn_removal.png' alt='Popcorn Removal'/> </div>
+                            <div className='itemImg'> <img src='./popcornremoval.jpg' alt='Popcorn Removal' /> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Drywall Repair</div>
                             <div className='itemDescription'>Description for Drywall Repair</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/repairproject1.1ac.jpg' alt='Drywall Repair'/> </div>
+                            <div className='itemImg'> <img src='./drywallrepair.jpg' alt='Drywall Repair' /> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Texture Knockdown</div>
                             <div className='itemDescription'>Description for Texture Knockdown</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/knockdown-texture.jpg' alt='Texture Knockdown'/> </div>
-      
+                            <div className='itemImg'> <img src='./servicesPageImages/knockdown-texture.jpg' alt='Texture Knockdown' /> </div>
                         </div>
                         <div className='itemContainer'>
                             <div className="itemTitle">Interior Painting</div>
                             <div className='itemDescription'>Description for Interior Painting</div>
-                            <div className='itemImg'> <img src='./ServicesPageImages/interiorpainting.jpg' alt='Interior Painting'/> </div>
+                            <div className='itemImg'> <img src='./interiorpainting.jpg' alt='Interior Painting' /> </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div classname="servicestitle">
+                <p id='servicesMaintitle'> Our services 
+                    </p>
+                     </div>
+
+            <div className='servicesStatement'>
+                <p>
+                    We count on 20 years of experience in the field,
+                    and our goal is to serve our clients with responsibility
+                    and high-quality work. Because our client's satisfaction is our priority.
+                </p>
+            </div>
+
+
+<div> servics </div> 
         </>
 
 
@@ -73,5 +86,5 @@ function Services() {
     )
 };
 
-export default Services; 
+export default Services;
 //services 
