@@ -76,3 +76,9 @@
 .itemTitle, .itemDescription {
     margin: 10px 0;
 }
+
+.servicestitle, #servicesMaintitle {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+}
