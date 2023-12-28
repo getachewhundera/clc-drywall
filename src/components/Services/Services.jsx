@@ -77,6 +77,10 @@ function Services() {
                 </p>
             </div>
 
+            <div> <img src="" alt="" /> </div> 
+
+            <div> </div> 
+
 
 <div> servics </div> 
         </>
