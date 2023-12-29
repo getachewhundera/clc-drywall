@@ -2,6 +2,11 @@ import './Body.css'
 import React from 'react';
 import { Button } from '@mui/material';
 import { useHistory } from "react-router-dom";
+//ThemeProvider passes down our created theme. 
+import { ThemeProvider } from '@mui/material/styles';
+//Whatever Theme wraps in down below has access to the values in the Theme that is defined in the file. 
+//importing in our theme aka "lprpButtonTheme" (renamed. exported component) from the RecentProjectsButtonTheme file
+import lprpButtonTheme from './RecentProjectsButtonTheme';
 
 
 
@@ -15,7 +20,7 @@ function BodyRecentProjects() {
     //Switches to Recent projects page 
     function handleClick() {
         history.push('/Projects');
-    }; 
+    };
 
 
 
@@ -27,24 +32,27 @@ function BodyRecentProjects() {
             <section>
                 <h1> Recent Projects </h1>
                 <div className='recentprojectimages'>
-                    <div id='lprpimg1'> <img src="" alt="" /> </div>
-                    <div id='lprpimg1'> <img src="" alt="" /> </div>
-                    <div id='lprpimg1'> <img src="" alt="" /> </div>
-                    <div id='lprpimg1'> <img src="" alt="" /> </div>
-                    <div id='lprpimg1'> <img src="" alt="" /> </div>
+                    <div id='lprpimg1'> img 1 <img src="" alt="" /> </div>
+                    <div id='lprpimg2'> img 2 <img src="" alt="" /> </div>
+                    <div id='lprpimg3'> img 3 <img src="" alt="" /> </div>
+                    <div id='lprpimg4'> img 4 <img src="" alt="" /> </div>
+                    <div id='lprpimg5'> img 5 <img src="" alt="" /> </div>
                 </div>
 
                 <br></br>
 
                 <div className='recentprojectsButton'>
-                    <Button
-                        type="button"
-                        id="lprpButton"
-                        onClick={handleClick}
-                        variant="contained"
-                    >
-                        View All
-                    </Button>
+                    <ThemeProvider theme={lprpButtonTheme}>
+                        <Button
+                            type="button"
+                            id="lprpButton"
+                            onClick={handleClick}
+                            variant="contained"
+                            color="primary"
+                        >
+                            View All
+                        </Button>
+                    </ThemeProvider>
                 </div>
 
             </section>

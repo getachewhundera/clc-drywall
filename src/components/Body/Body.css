@@ -192,3 +192,18 @@
     
 
 }
+
+
+/* CSS FOR RECENT PROJECTS */
+
+.recentprojectsButton {
+    display: flex;  
+    flex-direction: column; 
+    width: 100px; 
+    margin: 0 auto;  
+}
+
+ .recentprojectsButton #lprpButton  {
+    color:#9A8A78; 
+
+}
