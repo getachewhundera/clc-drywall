@@ -209,43 +209,47 @@
 }
 
 
-.recentprojectimages #lprpimg1{
+.recentprojectimages #lprpimg1 img{
     display: flex;
-    flex-direction: column; 
-    flex: flex-start; 
+    direction: ltr; 
     border: solid white;  
     width: 350px; 
     height: 200px;
+    object-fit: cover; 
 
 
 }
 
 
-.recentprojectimages #lprpimg2{ 
+.recentprojectimages #lprpimg2 img{ 
     border: solid white;
     width: 300px; 
-    height: 300px;  
+    height: 300px; 
+    object-fit: cover;  
     
 }
 
-.recentprojectimages #lprpimg3{ 
+.recentprojectimages #lprpimg3 img{ 
     border: solid white; 
     width: 300px; 
     height: 225px; 
+    object-fit: cover; 
     
 }
 
 
-.recentprojectimages #lprpimg4{ 
+.recentprojectimages #lprpimg4 img{ 
     border: solid white; 
     width: 200px; 
     height: 225px;
+    object-fit: cover; 
     
 }
 
-.recentprojectimages #lprpimg5{ 
+.recentprojectimages #lprpimg5 img{ 
     border: solid white;
     width: 600px; 
     height: 450px; 
+    object-fit: cover; 
     
 }

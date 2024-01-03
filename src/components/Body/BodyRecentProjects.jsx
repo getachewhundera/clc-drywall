@@ -32,11 +32,11 @@ function BodyRecentProjects() {
             <section>
                 <h1> Recent Projects </h1>
                 <div className='recentprojectimages'>
-                    <div id='lprpimg1'> img 1 <img src="" alt="" /> </div>
-                    <div id='lprpimg2'> img 2 <img src="" alt="" /> </div>
-                    <div id='lprpimg3'> img 3 <img src="" alt="" /> </div>
-                    <div id='lprpimg4'> img 4 <img src="" alt="" /> </div>
-                    <div id='lprpimg5'> img 5 <img src="" alt="" /> </div>
+                    <div id='lprpimg1'> img 1 <img src="../bathroom_project/bathroomproject1.jpg" alt="" /> </div>
+                    <div id='lprpimg2'> img 2 <img src="../bathroom_project/bathroomproject1.2.jpg" alt="" /> </div>
+                    <div id='lprpimg3'> img 3 <img src="../bathroom_project/bathroomproject1.3.jpg" alt="" /> </div>
+                    <div id='lprpimg4'> img 4 <img src="../bathroom_project/bathroomproject1.4.jpg" alt="" /> </div>
+                    <div id='lprpimg5'> img 5 <img src="../bathroom_project/bathroomproject1.5.jpg" alt="" /> </div>
                 </div>
 
                 <br></br>
