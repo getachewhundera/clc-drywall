@@ -1,5 +1,8 @@
 
 /* color_11: 38,38,38; */
+
+
+
 /* services css  */
 #mainPageBodyItems{
     display: flex;
@@ -196,17 +199,45 @@
 
 /* CSS FOR RECENT PROJECTS */
 
-.recentprojectsButton {
+/* Entire container for images*/ 
+
+.recentprojectimagescolumns{
+    column-count: 3; 
+    height: 650px; 
+    border: 1px solid white; 
+    column-rule: 2px dashed #666; 
+    margin-left: 0%;
+    margin-right: 0%;
+    
+}
+
+
+/* .recentprojectimages .column1{ 
+    column-width: 30%;
+} */
+
+/* .recentprojectimages .column2{ 
+    column-width: 20%;
+} */
+
+/* .recentprojectimages .column3{ 
+    column-width: 50%;
+}
+ */
+
+
+
+/* .recentprojectsButton {
     display: flex;  
     flex-direction: column; 
     width: 100px; 
     margin: 0 auto;  
-}
+} */
 
- .recentprojectsButton #lprpButton  {
+ /* .recentprojectsButton #lprpButton  {
     color:#9A8A78; 
 
-}
+}  */
 
 
 .recentprojectimages #lprpimg1 img{
@@ -251,5 +282,6 @@
     width: 600px; 
     height: 450px; 
     object-fit: cover; 
+    column-width: 50%; 
     
 }
