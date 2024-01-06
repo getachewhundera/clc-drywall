@@ -31,20 +31,20 @@ function BodyRecentProjects() {
       When View All button is clicked it will direct it to a Recent projects page.  */}
             <section>
                 <h1> Recent Projects </h1>
-                <div className='recentprojectimages'> 
-                <div className='recentprojectimagescolumns'>
-                    <div className='column1'>
-                        <div id='lprpimg1'> img 1 <img src="../bathroom_project/bathroomproject1.jpg" alt="" /> </div>
-                        <div id='lprpimg2'> img 2 <img src="../bathroom_project/bathroomproject1.2.jpg" alt="" /> </div>
+                <div className='recentprojectimages'>
+                    <div className='recentprojectimagescolumns'>
+                        <div className='column1'>
+                            <div id='lprpimg1'> <img src="../bathroom_project/bathroomproject1.jpg" alt="" /> </div>
+                            <div id='lprpimg2'> img 2 <img src="../bathroom_project/bathroomproject1.2.jpg" alt="" /> </div>
+                        </div>
+                        <div className="column2">
+                            <div id='lprpimg3'> <img src="../bathroom_project/bathroomproject1.3.jpg" alt="" /> </div>
+                            <div id='lprpimg4'> img 4 <img src="../bathroom_project/bathroomproject1.4.jpg" alt="" /> </div>
+                        </div>
+                        <div className='column3'>
+                            <div id='lprpimg5'>  <img src="../bathroom_project/bathroomproject1.5.jpg" alt="" /> </div>
+                        </div>
                     </div>
-                    <div className="column2">
-                        <div id='lprpimg3'> img 3 <img src="../bathroom_project/bathroomproject1.3.jpg" alt="" /> </div>
-                        <div id='lprpimg4'> img 4 <img src="../bathroom_project/bathroomproject1.4.jpg" alt="" /> </div>
-                    </div>
-                    <div className='column3'>
-                        <div id='lprpimg5'> img 5 <img src="../bathroom_project/bathroomproject1.5.jpg" alt="" /> </div>
-                    </div>
-                    </div> 
 
 
 
