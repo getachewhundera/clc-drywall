@@ -133,13 +133,28 @@
 
 
 
+/* ._3dcarouselcontainer {
+  max-width: 1280px; 
+  max-height: 750px; 
+    width: 80%;
+  height: 40%; 
+ background-color: rgb(2, 3, 29);
+    display: flex; 
+  justify-content: center; 
+   overflow: hidden; 
+    transform-style: preserve-3d;
+
+}
+  */
+
+
 ._3dcarouselgallery {
 
 
   max-width: 1280px; 
-  max-height: 750px; 
+  max-height: 950px; 
   width: 80%;
-  height: 40%; 
+  height: 50%; 
   margin: 20px auto; /* Center the carousel */
   background-color: rgb(2, 3, 29);
   perspective: 1000px; /* Perspective for 3D effect */
@@ -147,9 +162,15 @@
   justify-content: center; 
   /* overflow: hidden;  */
   transform-style: preserve-3d;
-  transform: rotate3d(-.5,1,0, 0deg) perspective(2000px); 
+  transform: rotate3d(0,1,0, 20deg) perspective(2000px); 
+  animation: circular-rotate 18s linear infinite
 }
 
+@keyframes circular-rotate {
+  to {
+      transform: rotate3d(0,1,0, 360deg) perspective(2000px); 
+  }
+}
 
 /* */
 
@@ -164,10 +185,11 @@
   perspective: 1000px; /* Perspective for 3D effect */
   display: flex; 
   justify-content: center; 
-  /* overflow: hidden;  */
-  transform-style: preserve-3d;
-  transform: rotate3d(-.5,1,0, 0deg) perspective(1500px); 
+  background-color: green;
+  border-radius: 1rem; 
 
+  /* overflow: hidden;  */
+  transform: rotate3d(0,1,0,calc(var(--img_no) * 60deg) translateZ(25rem));
 }
 
 
