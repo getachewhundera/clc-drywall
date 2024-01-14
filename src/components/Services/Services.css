@@ -1,3 +1,12 @@
+/*added during 3-d carousel*/
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+
+
 /* Horizontal scrolling Bar on top services page  */
 
 .item {
@@ -82,3 +91,38 @@
   flex-direction: row; 
   justify-content: center; 
 }
+
+
+
+
+/* CSS for 3-D Carousel*/
+
+
+.container { 
+  min-height: 45vh; 
+  max-height: 55vh;
+  background-color: rgb(2,3,29);
+
+  display: flex; 
+  justify-content: center; 
+  overflow: hidden; 
+
+
+}
+.gallery { 
+  position: relative;
+  top: 6.5rem; 
+  width: 15rem; 
+
+}
+
+/* */
+
+.gallery img{ 
+  position: absolute; 
+  width: 100%; 
+  transform: rotate3d(0,1,0,calc(var(--img_no) * 60deg)); /* */
+
+}
+
+
