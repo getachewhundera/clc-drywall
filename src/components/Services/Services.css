@@ -100,6 +100,7 @@
 /* custom parameters*/ 
 :root{ 
   --item-width: 200px; 
+  --apothem: 100px; 
 }
 
 
@@ -121,4 +122,9 @@
       }
     }
   }
+}
+
+.threeDCarouselContainer figure {
+  transform-origin: 50% 50% calc(-1 * var(--apothem)); /* centered verticaly and horizontally on the x and y axis 50%. Sits back(negative. Some determined px amount ) on the the Z-axis*/
+  transform: rotateY(/* some amount here */rad);
 }
