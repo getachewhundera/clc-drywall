@@ -4,7 +4,7 @@ import React from "react";
 
 function Services() {
     return (
-        <>
+        <div>
             <div className="scrollingItemsContainer">
                 <div className="horizontalScrollingItems">
                     <div className="horizontal-scrolling-items">
@@ -78,21 +78,21 @@ function Services() {
             </div>
 
 
-            <div className="_3dcarouselcontianer">
-                <div className="_3dcarouselgallery">
-                    <img src='../ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
-                    <img src='../ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-                    <img src='../ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
-                    <img src='../ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
-                    <img src='../ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
-                    <img src='../ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-                </div>
+            <div className="_3dcarouselcontainer" data-gap="80">
+                <figure>
+                    <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
+                    <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+                    <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
+                    <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
+                    <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
+                    <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+                </figure>
             </div>
 
 
 
 
-        </>
+        </div>
 
 
 
@@ -100,4 +100,3 @@ function Services() {
 };
 
 export default Services;
-//services 

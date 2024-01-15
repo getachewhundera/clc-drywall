@@ -97,74 +97,82 @@
 
 /* CSS for 3-D Carousel*/
 
+/* config parameters*/ 
+section {
+--item-width: 40%; 
+--item-sepration: 0px; /* defined in figure element*/ 
+--viewer-distance: 500px; 
+}
 
-/* ._3dcarouselcontainer {
-  max-height: 400px; 
-  width: 80%;
+
+
+
+
+
+
+._3dcarouselcontainer {
+  position: relative; 
+  /* max-width: 1380px; 
+  max-height: 850px; 
+  width: 100%;
+  height: 850px;  */
+  padding: 20px; 
+  perspective: var(--viewer-distance);
+ overflow: hidden;
   margin: 20px auto; 
-  background-color: rgb(2, 3, 29);
-  perspective: 1000px;
-  display: flex; 
-  justify-content: center; 
+
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  > * {
+		flex: 0 0 auto;
+	}
+	
+	figure {
+    margin: 0;
+    position: relative; 
+    width: 100%;
+    height: 70%;
+    overflow: hidden; 
+    transform-style: preserve-3d;
+    transform: rotate3d( 0, 1, 0, 0deg) perspective(2000px); 
+    animation: circular-rotate 18s linear infinite; 
+		width: var(--item-width);
+
+    img {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 var(--item-sepration) / 2;
+
+      object-fit: cover; 
+      background-color: green;
+      border-radius: 1rem; 
+      opacity: 0.9; 
+      transform: rotate3d( 0, 1, 0, calc(var(--img_6) * 60deg) translateZ(25rem));
+
+			&:not(:first-of-type) {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+
+}
+
+
+ 
+
+/* ._3dcarouselgallery {
+  position: relative; 
+  width: 80%;
+  height: 70%;
   overflow: hidden; 
   transform-style: preserve-3d;
-  transform: rotate3d(-.5,1,0, 20deg) perspective(1500px); 
-
-
-}
- */
-
-
-
-  /* top: 6.5rem;  */
-  /* width: 15rem;  */
-/* ._3dcarouselgallery { 
-
-  box-sizing: border-box;
-  border-color: black;
-  border: 2px solid black; 
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotate3d(-.5,1,0, 20deg) perspective(1500px); 
-
+  transform: rotate3d( 0, 1, 0, 0deg) perspective(2000px); 
+  animation: circular-rotate 18s linear infinite; 
 } */
-
-
-
-/* ._3dcarouselcontainer {
-  max-width: 1280px; 
-  max-height: 750px; 
-    width: 80%;
-  height: 40%; 
- background-color: rgb(2, 3, 29);
-    display: flex; 
-  justify-content: center; 
-   overflow: hidden; 
-    transform-style: preserve-3d;
-
-}
-  */
-
-
-._3dcarouselgallery {
-
-
-  max-width: 1280px; 
-  max-height: 950px; 
-  width: 80%;
-  height: 50%; 
-  margin: 20px auto; /* Center the carousel */
-  background-color: rgb(2, 3, 29);
-  perspective: 1000px; /* Perspective for 3D effect */
-  display: flex; 
-  justify-content: center; 
-  /* overflow: hidden;  */
-  transform-style: preserve-3d;
-  transform: rotate3d(0,1,0, 20deg) perspective(2000px); 
-  animation: circular-rotate 18s linear infinite
-}
 
 @keyframes circular-rotate {
   to {
@@ -172,25 +180,17 @@
   }
 }
 
-/* */
-
-._3dcarouselgallery img{ 
-  max-height: 600px; 
-  max-width: 750px; 
-  width: 60%;
-  height: 50%; 
-  object-fit: contain; 
-  margin: 20px auto; /* Center the carousel */
-  background-color: rgb(2, 3, 29);
-  perspective: 1000px; /* Perspective for 3D effect */
-  display: flex; 
-  justify-content: center; 
+/* ._3dcarouselgallery img{ 
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
   background-color: green;
   border-radius: 1rem; 
+  opacity: 0.9; 
+  transform: rotate3d( 0, 1, 0, calc(var(--img_6) * 60deg) translateZ(25rem));
+} */
 
-  /* overflow: hidden;  */
-  transform: rotate3d(0,1,0,calc(var(--img_no) * 60deg) translateZ(25rem));
-}
 
 
 ._3dcarouselgallery img:nth-child(1){
