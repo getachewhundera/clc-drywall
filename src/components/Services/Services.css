@@ -97,7 +97,7 @@
 
 /* CSS for 3-D Carousel*/
 
-/* custom parameters*/ 
+/* custom global parameters*/ 
 :root{ 
   --item-width: 200px; 
   --apothem: 100px; 
@@ -125,6 +125,13 @@
 }
 
 .threeDCarouselContainer figure {
-  transform-origin: 50% 50% calc(-1 * var(--apothem)); /* centered verticaly and horizontally on the x and y axis 50%. Sits back(negative. Some determined px amount ) on the the Z-axis*/
+  transform-origin: 50% 50% calc(-1 * var(--apothem)); /* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
   transform: rotateY(/* some amount here */rad);
+}
+
+
+.threeDCarouselContainer figure img:not(:first-of-type) {
+  position: absolute; /* positioned relative to the nearest positioned ancestor.*/
+  left: 0;
+  top: 0;
 }
