@@ -97,117 +97,28 @@
 
 /* CSS for 3-D Carousel*/
 
-/* config parameters*/ 
-section {
---item-width: 40%; 
---item-sepration: 0px; /* defined in figure element*/ 
---viewer-distance: 500px; 
+/* custom parameters*/ 
+:root{ 
+  --item-width: 200px; 
 }
 
 
-
-
-
-
-
-._3dcarouselcontainer {
-  position: relative; 
-  /* max-width: 1380px; 
-  max-height: 850px; 
-  width: 100%;
-  height: 850px;  */
-  padding: 20px; 
-  perspective: var(--viewer-distance);
- overflow: hidden;
-  margin: 20px auto; 
-
-
+.threeDCarouselContainer{
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  > * {
-		flex: 0 0 auto;
-	}
-	
-	figure {
-    margin: 0;
-    position: relative; 
-    width: 100%;
-    height: 70%;
-    overflow: hidden; 
-    transform-style: preserve-3d;
-    transform: rotate3d( 0, 1, 0, 0deg) perspective(2000px); 
-    animation: circular-rotate 18s linear infinite; 
-		width: var(--item-width);
-
-    img {
-			width: 100%;
-			box-sizing: border-box;
-			padding: 0 var(--item-sepration) / 2;
-
-      object-fit: cover; 
-      background-color: green;
-      border-radius: 1rem; 
-      opacity: 0.9; 
-      transform: rotate3d( 0, 1, 0, calc(var(--img_6) * 60deg) translateZ(25rem));
-
-			&:not(:first-of-type) {
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-		}
-	}
-
-}
-
-
- 
-
-/* ._3dcarouselgallery {
-  position: relative; 
-  width: 80%;
-  height: 70%;
-  overflow: hidden; 
-  transform-style: preserve-3d;
-  transform: rotate3d( 0, 1, 0, 0deg) perspective(2000px); 
-  animation: circular-rotate 18s linear infinite; 
-} */
-
-@keyframes circular-rotate {
-  to {
-      transform: rotate3d(0,1,0, 360deg) perspective(2000px); 
+   > * {
+     flex: 0 0 auto;
   }
-}
 
-/* ._3dcarouselgallery img{ 
-  position: absolute;
-  width: 100%; 
-  height: 100%;
-  object-fit: cover; 
-  background-color: green;
-  border-radius: 1rem; 
-  opacity: 0.9; 
-  transform: rotate3d( 0, 1, 0, calc(var(--img_6) * 60deg) translateZ(25rem));
-} */
-
-
-
-._3dcarouselgallery img:nth-child(1){
-  --img_no: 1; 
-}
-._3dcarouselgallery img:nth-child(2){
-  --img_no: 2; 
-}
-._3dcarouselgallery img:nth-child(3){
-  --img_no: 3; 
-}
-._3dcarouselgallery img:nth-child(4){
-  --img_no: 4; 
-}
-._3dcarouselgallery img:nth-child(5){
-  --img_no: 5; 
-}
-._3dcarouselgallery img:nth-child(6){
-  --img_no: 6; 
+  .figure {
+    width: var(--item-width); 
+    transform-style: preserve-3d;
+    img {
+      width: 100%;
+      &:not(:first-of-type) {
+        display: none /* Just for now */
+      }
+    }
+  }
 }
