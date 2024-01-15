@@ -1,10 +1,11 @@
 import './Services.css';
 import React from "react";
+import { Button } from "@mui/material"
 
 
 function Services() {
     return (
-        <>
+        <div>
             <div className="scrollingItemsContainer">
                 <div className="horizontalScrollingItems">
                     <div className="horizontal-scrolling-items">
@@ -58,16 +59,16 @@ function Services() {
                         <div className='itemContainer'>
                             <div className="itemTitle">Interior Painting</div>
                             <div className='itemDescription'>Description for Interior Painting</div>
-                            <div className='itemImg'> <img src='../ServicesPageImages/interiorpainting.jpg' alt="Interior Painting"/> </div>
+                            <div className='itemImg'> <img src='../ServicesPageImages/interiorpainting.jpg' alt="Interior Painting" /> </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div classname="servicestitle">
-                <p id='servicesMaintitle'> Our services 
-                    </p>
-                     </div>
+            <div className="servicestitle">
+                <p id='servicesMaintitle'> Our services
+                </p>
+            </div>
 
             <div className='servicesStatement'>
                 <p>
@@ -77,13 +78,28 @@ function Services() {
                 </p>
             </div>
 
-            <div> <img src="" alt="" /> </div> 
 
-            <div> </div> 
+            <div className="threeDCarouselContainer" data-gap="80">
+                <figure>
+                    <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
+                    <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+                    <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
+                    <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
+                    <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
+                    <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+                </figure>
+            </div>
+
+            <Button className="carouselPrevButton"
+            > Prev </Button>
+
+            <Button className="carouselNextButton"
+            > Next </Button>
 
 
-<div> servics </div> 
-        </>
+
+
+        </div>
 
 
 
@@ -91,4 +107,3 @@ function Services() {
 };
 
 export default Services;
-//services 
