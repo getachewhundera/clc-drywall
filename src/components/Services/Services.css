@@ -124,14 +124,19 @@
   }
 }
 
+/*whole carousel turns */
 .threeDCarouselContainer figure {
   transform-origin: 50% 50% calc(-1 * var(--apothem)); /* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
   transform: rotateY(/* some amount here */rad);
 }
 
-
+/*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */
 .threeDCarouselContainer figure img:not(:first-of-type) {
   position: absolute; /* positioned relative to the nearest positioned ancestor.*/
   left: 0;
   top: 0;
+}
+
+.img:not(:first-of-type) {
+  transform-origin: 50% 50% calc(-1 * var(--apothem));
 }
