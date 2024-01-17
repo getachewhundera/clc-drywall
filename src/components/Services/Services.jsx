@@ -4,6 +4,20 @@ import { Button } from "@mui/material"
 
 
 function Services() {
+
+    const n = 6; //six images 
+    const theta = 2 ; // rotation of angle in radians 
+
+    //for loop to go through images and rotate it on the y-axis.  
+    for ( let i = 2; i <= n; i++) {
+        const angle = (i - 1) * theta; 
+        const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`); 
+        if (imageElement) { 
+            imageElement.style.transform = `rotateY(${angle}rad)`; 
+        }
+
+    }
+     
     return (
         <div>
             <div className="scrollingItemsContainer">
