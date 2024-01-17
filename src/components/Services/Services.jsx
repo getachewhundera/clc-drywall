@@ -6,18 +6,18 @@ import { Button } from "@mui/material"
 function Services() {
 
     const n = 6; //six images 
-    const theta = 2 ; // rotation of angle in radians 
+    const theta = 2; // rotation of angle in radians 
 
-    //for loop to go through images and rotate it on the y-axis.  
-    for ( let i = 2; i <= n; i++) {
-        const angle = (i - 1) * theta; 
-        const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`); 
-        if (imageElement) { 
-            imageElement.style.transform = `rotateY(${angle}rad)`; 
+    // for loop to go through images and rotate it on the y-axis.  
+        for (let i = 2; i <= n; i++) {
+        const angle = (i - 1) * theta;
+        const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`);
+        if (imageElement) {
+            imageElement.style.transform = `rotateY(${angle}rad)`;
         }
+    };
 
-    }
-     
+
     return (
         <div>
             <div className="scrollingItemsContainer">
@@ -93,15 +93,17 @@ function Services() {
             </div>
 
 
-            <div className="threeDCarouselContainer" data-gap="80">
-                <figure>
-                    <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
-                    <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-                    <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
-                    <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
-                    <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
-                    <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-                </figure>
+            <div className="carouselSection">
+                <div className="threeDCarouselContainer" data-gap="80">
+                    <figure>
+                        <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
+                        <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+                        <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
+                        <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
+                        <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
+                        <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+                    </figure>
+                </div>
             </div>
 
             <Button className="carouselPrevButton"
@@ -110,13 +112,7 @@ function Services() {
             <Button className="carouselNextButton"
             > Next </Button>
 
-
-
-
         </div>
-
-
-
     )
 };
 
