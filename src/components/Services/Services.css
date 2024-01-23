@@ -97,15 +97,16 @@
 
 /* CSS for 3-D Carousel*/
 
-/* custom global parameters*/ 
+/* CSS Custom Properties- global use*/ 
 :root{ 
-  --item-width: 200px; 
-  --item-sepration: 0px; 
+  --item-width: 400px; 
+  --item-sepration: 80px; /* space between images will decrease the effective item width*/
   --viewer-distance: 500px; 
-  --apothem: 100px; 
+  --apothem: 482.842712474619px; 
 }
 
 .carouselSection{
+  padding: 40px; 
   margin-top: 20px;
   margin-bottom: 10px;
   font-family: 'Roboto';
@@ -128,17 +129,15 @@
   flex: 0 0 auto;
 }
 
-
-.threeDCarouselContainer figure {
+figure {
   width: var(--item-width); 
   transform-style: preserve-3d;
   transition: transform 0.5s; 
-  transform-origin: 50% 50% var(--apothem); /* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
-  transform: rotateY(some amount hererad);
+  transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
 }
 
 
-.threeDCarouselContainer figure img {
+img {
   width: 100%;
   box-sizing: border-box;
   padding: 0 var(--item-sepration/2); 
@@ -146,17 +145,16 @@
 }
 
 /*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */  
-.threeDCarouselContainer figure .img:not(:first-of-type) {
+.carouselSection .threeDCarouselContainer figure img :not(:first-of-type) {
   transform-origin: 50% 50% calc(-1 * var(--apothem));
 } 
 
-.threeDCarouselContainer figure img &:not(:first-of-type) {
+.threeDCarouselContainer figure img :not(:first-of-type) {
   position: absolute;/* positioned relative to the nearest positioned ancestor. */
   left: 0;
   top: 0;
-  transform-origin: 50% 50% var(--apothem);
+  transform-origin: 50% 50% calc(-1 * var(--apothem));
 }
-
 
 
 

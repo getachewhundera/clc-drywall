@@ -1,5 +1,5 @@
 import './Services.css';
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@mui/material"
 
 
@@ -9,8 +9,8 @@ function Services() {
     const theta = 2; // rotation of angle in radians 
 
     // for loop to go through images and rotate it on the y-axis.  
-        for (let i = 2; i <= n; i++) {
-        const angle = (i - 1) * theta;
+        for (let i = 1; i <= n; i++) {
+        const angle = (i - 0) * theta;
         const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`);
         if (imageElement) {
             imageElement.style.transform = `rotateY(${angle}rad)`;
@@ -105,6 +105,11 @@ function Services() {
                     </figure>
                 </div>
             </div>
+
+            
+
+
+
 
             <Button className="carouselPrevButton"
             > Prev </Button>
