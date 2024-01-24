@@ -80,7 +80,7 @@ function Services() {
             </div>
 
             <div className="servicestitle">
-                <p id='servicesMaintitle'> Our services
+                <p id='servicesMaintitle'> Services
                 </p>
             </div>
 
