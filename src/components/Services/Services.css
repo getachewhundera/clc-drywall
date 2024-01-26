@@ -101,11 +101,12 @@
 
 /* CSS Custom Properties- global use*/ 
 :root{ 
+  --n: 6; /* number of images*/
   --item-width: 400px; 
   --item-sepration:60px; /* space between images will decrease the effective item width*/
   --viewer-distance: 500px; 
-  --apothem: 482.842712474619px; 
-  --theta: calc(360deg / 6); /* 6 images. calculates angle rotation.  */
+  --apothem: 482.842712474619px;
+  --theta: calc(360deg / var(--n)); /* 6 images. calculates angle rotation for each image.  */
 }
 
 .carouselSection{
@@ -148,12 +149,14 @@ img {
 
 /*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */ 
 .threeDCarouselContainer figure img:not(:first-of-type) {
-  position: absolute;/* positioned relative to the nearest positioned ancestor. */
+  position: absolute; /* positioned relative to the nearest positioned ancestor. */
   left: 0;
   top: 0;
   transform-origin: 50% 50% calc(-1 * var(--apothem));
 }
 
+
+/* rotating each image*/
 .threeDCarouselContainer figure img:nth-child(2) { transform: rotateY(calc(1 * var(--theta))); }
 .threeDCarouselContainer figure img:nth-child(3) { transform: rotateY(calc(2 * var(--theta))); }
 .threeDCarouselContainer figure img:nth-child(4) { transform: rotateY(calc(3 * var(--theta))); }
@@ -161,6 +164,20 @@ img {
 .threeDCarouselContainer figure img:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
 
 
+
+/* Next and Prev Button css to rotate carousel */
+
+/* .carouselNav { 
+
+} */
+
+/* .carouselPrevButton{ 
+
+}
+
+.carouselNextButton { 
+
+} */
 
 
 

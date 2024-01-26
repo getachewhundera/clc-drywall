@@ -5,11 +5,17 @@ import { Button } from "@mui/material"
 
 function Services() {
 
+    let threeDCarouselContainer = document.querySelector('.threeDCarouselContainer');
+
+    let figure = document.querySelector('.figure');
+
+    let nav
+
     const n = 6; //six images 
     const theta = 2; // rotation of angle in radians 
 
     // for loop to go through images and rotate it on the y-axis.  
-        for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i++) {
         const angle = (i - 0) * theta;
         const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`);
         if (imageElement) {
@@ -104,18 +110,24 @@ function Services() {
                         <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
                     </figure>
                 </div>
+                
+                <div className='carouselNav'>
+                    <Button className="carouselPrevButton"
+                    > Prev </Button>
+
+                    <Button className="carouselNextButton"
+                    > Next </Button>
+                </div>
+
+
             </div>
 
-            
 
 
 
 
-            <Button className="carouselPrevButton"
-            > Prev </Button>
 
-            <Button className="carouselNextButton"
-            > Next </Button>
+
 
         </div>
     )
