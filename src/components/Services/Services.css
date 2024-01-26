@@ -122,6 +122,7 @@
 
 /*whole carousel turns */
 .threeDCarouselContainer{
+  margin-top: 5%; 
   padding: 20px; 
   perspective: var(--viewer-distance); 
   overflow: hidden; 
@@ -167,17 +168,26 @@ img {
 
 /* Next and Prev Button css to rotate carousel */
 
-/* .carouselNav { 
-
-} */
-
-/* .carouselPrevButton{ 
+.carouselNav { 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%; 
+  margin-bottom: 5%; 
 
 }
 
-.carouselNextButton { 
 
-} */
+
+.carouselPrevButton,
+.carouselNextButton {
+  flex: 0 0 auto;
+  margin: 0 5px;  
+  cursor: pointer; 
+
+  color: #333; 
+  
+
+} 
 
 
 

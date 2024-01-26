@@ -9,7 +9,25 @@ function Services() {
 
     let figure = document.querySelector('.figure');
 
-    let nav
+    let nav = document.querySelector('.carouselNav');
+
+    const numImages = figure.childElement; 
+    const theta = (2 * Math.PI) / numImages; 
+    const currImage = 0; 
+
+    //addEventListener will listen for clicks of the Prev and Next Buttons. If clicked it will run onClick Function. 
+    carouselNextButton.addEventListener('click', onClick, true); 
+    carouselPrevButton.addEventListener('click', onClick, true); 
+
+    function onClick(e) {
+        e.stopPropagation(); 
+
+        let t = e.target; 
+        if 
+
+    }
+    
+
 
     const n = 6; //six images 
     const theta = 2; // rotation of angle in radians 
@@ -85,6 +103,7 @@ function Services() {
                 </div>
             </div>
 
+{/*Services heading title and Statement */}
             <div className="servicestitle">
                 <p id='servicesMaintitle'> Services
                 </p>
@@ -98,7 +117,7 @@ function Services() {
                 </p>
             </div>
 
-
+{/* 3-d carousel */}
             <div className="carouselSection">
                 <div className="threeDCarouselContainer" data-gap="80">
                     <figure>
@@ -110,15 +129,19 @@ function Services() {
                         <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
                     </figure>
                 </div>
-                
+
                 <div className='carouselNav'>
                     <Button className="carouselPrevButton"
+                    variant='outlined'
+                    onClick={handleFunction}
                     > Prev </Button>
 
                     <Button className="carouselNextButton"
+                    variant='outlined'
+                    onClick={handleFunction}
+
                     > Next </Button>
                 </div>
-
 
             </div>
 
