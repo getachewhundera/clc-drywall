@@ -105,6 +105,7 @@
   --item-sepration: 80px; /* space between images will decrease the effective item width*/
   --viewer-distance: 500px; 
   --apothem: 482.842712474619px; 
+  --theta: calc(360 / 6); /* 6 images. calculates angle rotation.  */
 }
 
 .carouselSection{
@@ -142,15 +143,11 @@ figure {
 img {
   width: 100%;
   box-sizing: border-box;
-  padding: 0 var(--item-sepration/2); 
+  padding: 0 calc(var(--item-sepration/2)); 
   opacity: 0.9;
 }
 
-/*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */  
-.carouselSection .threeDCarouselContainer figure img :not(:first-of-type) {
-  transform-origin: 50% 50% calc(-1 * var(--apothem));
-} 
-
+/*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */ 
 .threeDCarouselContainer figure img :not(:first-of-type) {
   position: absolute;/* positioned relative to the nearest positioned ancestor. */
   left: 0;
