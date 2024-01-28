@@ -64,7 +64,3 @@ Landing Page Foooter
 
 ## Acknowledgement
 - CLC DRYWALL CLIENT
-
-## Website Wireframes
-
-- COMING SOON! 
