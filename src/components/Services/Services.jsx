@@ -1,46 +1,27 @@
+import React, { useState, useEffect, useRef } from "react";
 import './Services.css';
-import React, { useEffect } from "react";
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 
 
 function Services() {
 
-    let threeDCarouselContainer = document.querySelector('.threeDCarouselContainer');
-
-    let figure = document.querySelector('.figure');
-
-    let nav = document.querySelector('.carouselNav');
-
-    const numImages = figure.childElement; 
-    const theta = (2 * Math.PI) / numImages; 
-    const currImage = 0; 
-
-    //addEventListener will listen for clicks of the Prev and Next Buttons. If clicked it will run onClick Function. 
-    carouselNextButton.addEventListener('click', onClick, true); 
-    carouselPrevButton.addEventListener('click', onClick, true); 
-
-    function onClick(e) {
-        e.stopPropagation(); 
-
-        let t = e.target; 
-        if 
-
-    }
-    
+    const figureRef = useRef(null);
+    const [currImage, setCurrImage] = useState(0);
 
 
-    const n = 6; //six images 
-    const theta = 2; // rotation of angle in radians 
+    useEffect(() => {
+        const numImages = figureRef.current ? figureRef.current.children.length : 0;
+        const theta = 2 * Math.PI / numImages;
+        figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
+    }, [currImage]);
 
-    // for loop to go through images and rotate it on the y-axis.  
-    for (let i = 1; i <= n; i++) {
-        const angle = (i - 0) * theta;
-        const imageElement = document.querySelector(`.threeDCarouselContainer figure img:nth-child(${i})`);
-        if (imageElement) {
-            imageElement.style.transform = `rotateY(${angle}rad)`;
-        }
+    const handlePrevClick = () => {
+        setCurrImage(currImage - 1);
     };
 
+    const handleNextClick = () => {
+        setCurrImage(currImage + 1);
+    };
 
     return (
         <div>
@@ -103,7 +84,7 @@ function Services() {
                 </div>
             </div>
 
-{/*Services heading title and Statement */}
+            {/*Services heading title and Statement */}
             <div className="servicestitle">
                 <p id='servicesMaintitle'> Services
                 </p>
@@ -117,10 +98,10 @@ function Services() {
                 </p>
             </div>
 
-{/* 3-d carousel */}
+            {/* 3-d carousel */}
             <div className="carouselSection">
                 <div className="threeDCarouselContainer" data-gap="80">
-                    <figure>
+                    <figure ref={figureRef}>
                         <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
                         <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
                         <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
@@ -131,16 +112,21 @@ function Services() {
                 </div>
 
                 <div className='carouselNav'>
-                    <Button className="carouselPrevButton"
-                    variant='outlined'
-                    onClick={handleFunction}
-                    > Prev </Button>
+                    <Button 
+                        className="carouselPrevButton" 
+                        variant='outlined' 
+                        onClick={handlePrevClick}
+                    >
+                        Prev
+                    </Button>
 
-                    <Button className="carouselNextButton"
-                    variant='outlined'
-                    onClick={handleFunction}
-
-                    > Next </Button>
+                    <Button 
+                        className="carouselNextButton" 
+                        variant='outlined' 
+                        onClick={handleNextClick}
+                    >
+                        Next
+                    </Button>
                 </div>
 
             </div>
