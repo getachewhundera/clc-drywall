@@ -7,6 +7,8 @@ function Services() {
 
     const figureRef = useRef(null);
     const [currImage, setCurrImage] = useState(0);
+    const [serviceImgDescriptionLeft, setServiceImgDescriptionLeft ] = useState(""); 
+    const [serviceImgDescriptionRight, setServiceImgDescriptionRight ] = useState(""); 
 
 
     useEffect(() => {
@@ -98,6 +100,27 @@ function Services() {
                 </p>
             </div>
 
+            <div className="serviceDescriptions">
+                <div className="serviceDescriptionOne">
+                    <p> DRYWALL INSTALLATION AND REPAIR  </p>
+                    <p> We offer complete range of drywall services including drywall hanging,
+                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                        Our skilled team is ready to handle every aspect of your drywall
+                        project with expertise and precision.
+                    </p>
+                    <ul>
+                        <li> Residential Drywall </li>
+                        <li> Drywall Hanging </li>
+                        <li> Drywall Texturing </li>
+                        <li> Commercial Drywall </li>
+                        <li> Drywall Taping </li>
+                        <li> Drywall Installation </li>
+                        <li> Drywall Finishing </li>
+                    </ul>
+                </div>
+
+            </div>
+
             {/* 3-d carousel */}
             <div className="carouselSection">
                 <div className="threeDCarouselContainer" data-gap="80">
@@ -112,17 +135,17 @@ function Services() {
                 </div>
 
                 <div className='carouselNav'>
-                    <Button 
-                        className="carouselPrevButton" 
-                        variant='outlined' 
+                    <Button
+                        className="carouselPrevButton"
+                        variant='outlined'
                         onClick={handlePrevClick}
                     >
                         Prev
                     </Button>
 
-                    <Button 
-                        className="carouselNextButton" 
-                        variant='outlined' 
+                    <Button
+                        className="carouselNextButton"
+                        variant='outlined'
                         onClick={handleNextClick}
                     >
                         Next
