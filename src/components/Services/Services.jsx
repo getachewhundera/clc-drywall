@@ -7,14 +7,25 @@ function Services() {
 
     const figureRef = useRef(null);
     const [currImage, setCurrImage] = useState(0);
-    const [serviceImgDescriptionLeft, setServiceImgDescriptionLeft ] = useState(""); 
-    const [serviceImgDescriptionRight, setServiceImgDescriptionRight ] = useState(""); 
+    //declared state variable for 3D carousel images descriptions 
+    // const [serviceImgDescriptionLeft, setServiceImgDescriptionLeft ] = useState(""); 
+    // const [serviceImgDescriptionRight, setServiceImgDescriptionRight ] = useState(""); 
 
 
     useEffect(() => {
         const numImages = figureRef.current ? figureRef.current.children.length : 0;
         const theta = 2 * Math.PI / numImages;
         figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
+
+            // Clear previous active class
+    Array.from(figureRef.current.children).forEach(child => {
+        child.classList.remove('activeCarouselItem');
+    });
+
+    // Add active class to current item
+    if (figureRef.current.children[currImage]) {
+        figureRef.current.children[currImage].classList.add('activeCarouselItem');
+    }
     }, [currImage]);
 
     const handlePrevClick = () => {
@@ -24,6 +35,23 @@ function Services() {
     const handleNextClick = () => {
         setCurrImage(currImage + 1);
     };
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            
+            const carouselOffsetTop = document.querySelector('.carouselSection').offsetTop;
+            if (window.scrollY > carouselOffsetTop - window.innerHeight / 2) {
+               
+            } else {
+                // Removes the effect when the user scrolls back up
+            }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div>
@@ -118,6 +146,95 @@ function Services() {
                         <li> Drywall Finishing </li>
                     </ul>
                 </div>
+
+                <div className="serviceDescriptionTwo">
+                    <p> UPGRADE YOUR WALLS  </p>
+                    <p> Transform your space and say farewell to outdated popcorn ceilings with our 
+                        range of stylish ceiling upgrades. Experience an upgrade that elevates your 
+                        space with your choice of modern ceiling textures. Whether you desire a sleek,
+                        smooth finish or a textured design, our options offer endless possibilities 
+                        for enhancing the aesthetics of your home.
+                    </p>
+                    <ul>
+                        <li> CEILING TEXTURING </li>
+                        <li> WALL TEXTURING </li>
+                        <li> RESIDENTIAL TEXTURING </li>
+                        <li> COMMERCIAL TEXTURING </li>
+                    </ul>
+                </div>
+
+                <div className="serviceDescriptionThree">
+                    <p> ELEVATE YOUR SPACES  </p>
+                    <p> Elevate your interior space with our professional interior painting services 
+                        that prioritize clean and precise workmanship. Our team takes utmost care to 
+                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                        From meticulous preparation to flawless execution, we go above and beyond to create a 
+                        refreshed and vibrant atmosphere in your space.
+                    </p>
+                    <ul>
+                        <li> Interior Painting  </li>
+                        <li> Residential Painting   </li>
+                        <li> Office Painting  </li>
+                        <li> Commercial Painting </li>
+                    </ul>
+                </div>
+
+                <div className="serviceDescriptionFour">
+                    <p> ELEVATE YOUR SPACES  </p>
+                    <p> Elevate your interior space with our professional interior painting services 
+                        that prioritize clean and precise workmanship. Our team takes utmost care to 
+                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                        From meticulous preparation to flawless execution, we go above and beyond to create a 
+                        refreshed and vibrant atmosphere in your space.
+                    </p>
+                    <ul>
+                        <li> Interior Painting  </li>
+                        <li> Residential Painting   </li>
+                        <li> Office Painting  </li>
+                        <li> Commercial Painting </li>
+                    </ul>
+                </div>
+
+
+                <div className="serviceDescriptionFive">
+                    <p> ELEVATE YOUR SPACES  </p>
+                    <p> Elevate your interior space with our professional interior painting services 
+                        that prioritize clean and precise workmanship. Our team takes utmost care to 
+                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                        From meticulous preparation to flawless execution, we go above and beyond to create a 
+                        refreshed and vibrant atmosphere in your space.
+                    </p>
+                    <ul>
+                        <li> Interior Painting  </li>
+                        <li> Residential Painting   </li>
+                        <li> Office Painting  </li>
+                        <li> Commercial Painting </li>
+                    </ul>
+                </div>
+
+                <div className="serviceDescriptionSix">
+                    <p> ELEVATE YOUR SPACES  </p>
+                    <p> Elevate your interior space with our professional interior painting services 
+                        that prioritize clean and precise workmanship. Our team takes utmost care to 
+                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                        From meticulous preparation to flawless execution, we go above and beyond to create a 
+                        refreshed and vibrant atmosphere in your space.
+                    </p>
+                    <ul>
+                        <li> Interior Painting  </li>
+                        <li> Residential Painting   </li>
+                        <li> Office Painting  </li>
+                        <li> Commercial Painting </li>
+                    </ul>
+                </div>
+
+
+
+
+
+
+
+
 
             </div>
 
