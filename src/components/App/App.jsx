@@ -9,6 +9,10 @@ import Services from '../Services/Services';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 
+//Footer - Displays on all pages 
+import Footer from '../Footer/Footer.jsx'; 
+
+
 
 function App() {
   return (
@@ -25,6 +29,7 @@ function App() {
                 <Route path="/" component={Home} />
               </Switch>       
           </div>
+          <Footer /> 
       </Router>
   );
 }

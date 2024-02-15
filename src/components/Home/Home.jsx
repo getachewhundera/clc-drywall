@@ -1,7 +1,6 @@
 import './Home.css';
 import Header from "../Header/Header";
 import Body from "../Body/Body";
-import Footer from "../Footer/Footer";
 
 function Home() {
 
@@ -10,7 +9,7 @@ function Home() {
         <div id="mainLandingPage">
         <Header />
         <Body />
-        <Footer />
+        
         
         
         </div>
