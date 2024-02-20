@@ -115,7 +115,7 @@ function Services() {
             </div>
 
             {/*Services heading title and Statement */}
-            <div className="servicestitle">
+            {/* <div className="servicestitle">
                 <p id='servicesMaintitle'> Services
                 </p>
             </div>
@@ -228,38 +228,41 @@ function Services() {
                     </ul>
                 </div>
 
-
-
-
-
-
-
-
-
-            </div>
+            </div> */}
 
 
 
             {/* 3-d carousel */}
-            <div role="img" className="">
-                <div className="carouselSection">
-                    <div className="threeDCarouselContainer" data-gap="80">
+            {/* 
+            serviceOfferingOneAnimation = box  is similar to box class - as it contains both img and descriptions  */}
+            {/* ServiceOfferingOne = text - contians all text, but each div/text needs to be formatted differently  */}
 
-                        {/* Service Offering #1 */}
-                        <div className="serviceOfferingOneAnimation">
-                            <div className="figureOne">
-                                <figure ref={figureRef}>
-                                    <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
-                                </figure>
+
+            <div className="carouselSection">
+                <div className="threeDCarouselContainer" data-gap="80">
+
+                    {/* Service Offering #1 */}
+                    <div className="serviceOfferingOneAnimation">
+                        <div className="figureOne">
+                            <figure ref={figureRef}>
+                                <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
+                            </figure>
+                        </div>
+
+                        <div className="serviceOfferingOne">
+                            <div className="serviceOfferingTitleOne" id="text">
+                                <p> DRYWALL INSTALLATION AND REPAIR  </p>
                             </div>
 
-                            <div className="serviceDescriptionOne">
-                                <p> DRYWALL INSTALLATION AND REPAIR  </p>
+                            <div className="serviceOfferingStatementOne" id="text">
                                 <p> We offer complete range of drywall services including drywall hanging,
                                     drywall installation, drywall taping, drywall sanding, and drywall mudding.
                                     Our skilled team is ready to handle every aspect of your drywall
                                     project with expertise and precision.
                                 </p>
+                            </div>
+
+                            <div className="serviceOfferingListOne" id="text">
                                 <ul>
                                     <li> Residential Drywall </li>
                                     <li> Drywall Hanging </li>
@@ -269,29 +272,40 @@ function Services() {
                                     <li> Drywall Installation </li>
                                     <li> Drywall Finishing </li>
                                 </ul>
+
                             </div>
+
                         </div>
                     </div>
+                </div>
 
 
-                    {/* Service Offering #2 */}
+                {/* Service Offering #2 */}
 
 
-                    <div className="serviceOfferingTwoAnimation">
-                        <div className="figureTwo">
-                            <figure ref={figureRef}>
-                                <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-                            </figure>
+                <div className="serviceOfferingTwoAnimation">
+
+                    <div className="figureTwo">
+                        <figure ref={figureRef}>
+                            <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+                        </figure>
+                    </div>
+
+                    <div className="serviceOfferingTwo">
+                        <div className="serviceOfferingTitleTwo">
+                            <p> UPGRADE YOUR WALLS  </p>
                         </div>
 
-                        <div className="serviceDescriptionTwo">
-                            <p> UPGRADE YOUR WALLS  </p>
+                        <div className="serviceOfferingStatementTwo">
                             <p> Transform your space and say farewell to outdated popcorn ceilings with our
                                 range of stylish ceiling upgrades. Experience an upgrade that elevates your
                                 space with your choice of modern ceiling textures. Whether you desire a sleek,
                                 smooth finish or a textured design, our options offer endless possibilities
                                 for enhancing the aesthetics of your home.
                             </p>
+                        </div>
+
+                        <div className="serviceOfferingListTwo">
                             <ul>
                                 <li> CEILING TEXTURING </li>
                                 <li> WALL TEXTURING </li>
@@ -313,20 +327,29 @@ function Services() {
                             </figure>
                         </div>
 
-                        <div className="serviceDescriptionThree">
-                            <p> ELEVATE YOUR SPACES  </p>
-                            <p> Elevate your interior space with our professional interior painting services
-                                that prioritize clean and precise workmanship. Our team takes utmost care to
-                                protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                                From meticulous preparation to flawless execution, we go above and beyond to create a
-                                refreshed and vibrant atmosphere in your space.
-                            </p>
-                            <ul>
-                                <li> Interior Painting  </li>
-                                <li> Residential Painting   </li>
-                                <li> Office Painting  </li>
-                                <li> Commercial Painting </li>
-                            </ul>
+                        <div className="serviceOfferingThree">
+
+                            <div className="serviceOfferingTitleThree">
+                                <p> ELEVATE YOUR SPACES  </p>
+                            </div>
+
+                            <div className="serviceOfferingStatementThree">
+                                <p> Elevate your interior space with our professional interior painting services
+                                    that prioritize clean and precise workmanship. Our team takes utmost care to
+                                    protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                                    From meticulous preparation to flawless execution, we go above and beyond to create a
+                                    refreshed and vibrant atmosphere in your space.
+                                </p>
+                            </div>
+
+                            <div className="serviceOfferingListThree">
+                                <ul>
+                                    <li> Interior Painting  </li>
+                                    <li> Residential Painting   </li>
+                                    <li> Office Painting  </li>
+                                    <li> Commercial Painting </li>
+                                </ul>
+                            </div>
                         </div>
 
 
@@ -342,26 +365,36 @@ function Services() {
                             </figure>
                         </div>
 
-                        <div className="serviceDescriptionFour">
-                            <p> ELEVATE YOUR SPACES  </p>
-                            <p> Elevate your interior space with our professional interior painting services
-                                that prioritize clean and precise workmanship. Our team takes utmost care to
-                                protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                                From meticulous preparation to flawless execution, we go above and beyond to create a
-                                refreshed and vibrant atmosphere in your space.
-                            </p>
-                            <ul>
-                                <li> Interior Painting  </li>
-                                <li> Residential Painting   </li>
-                                <li> Office Painting  </li>
-                                <li> Commercial Painting </li>
-                            </ul>
+                        <div className="serviceOfferingFour">
+                            <div className="serviceOfferingTitleFour">
+                                <p> ELEVATE YOUR SPACES  </p>
+                            </div>
+
+                            <div className="serviceOfferingStatementFour">
+                                <p> Elevate your interior space with our professional interior painting services
+                                    that prioritize clean and precise workmanship. Our team takes utmost care to
+                                    protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                                    From meticulous preparation to flawless execution, we go above and beyond to create a
+                                    refreshed and vibrant atmosphere in your space.
+                                </p>
+                            </div>
+
+                            <div className="serviceOfferingListFour">
+                                <ul>
+                                    <li> Interior Painting  </li>
+                                    <li> Residential Painting   </li>
+                                    <li> Office Painting  </li>
+                                    <li> Commercial Painting </li>
+                                </ul>
+                            </div>
                         </div>
 
 
                     </div>
 
                     {/* Service Offering #5 */}
+
+
 
 
                     <div className="serviceOfferingFiveAnimation">
@@ -371,126 +404,143 @@ function Services() {
                             </figure>
                         </div>
 
-                        <div className="serviceDescriptionFive">
-                            <p> ELEVATE YOUR SPACES  </p>
-                            <p> Elevate your interior space with our professional interior painting services
-                                that prioritize clean and precise workmanship. Our team takes utmost care to
-                                protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                                From meticulous preparation to flawless execution, we go above and beyond to create a
-                                refreshed and vibrant atmosphere in your space.
-                            </p>
-                            <ul>
-                                <li> Interior Painting  </li>
-                                <li> Residential Painting   </li>
-                                <li> Office Painting  </li>
-                                <li> Commercial Painting </li>
-                            </ul>
+                        <div className="serviceOfferingFive">
+
+                            <div className="serviceOfferingTitleFive">
+                                <p> ELEVATE YOUR SPACES  </p>
+                            </div>
+
+                            <div className="serviceOfferingStatementFive">
+                                <p> Elevate your interior space with our professional interior painting services
+                                    that prioritize clean and precise workmanship. Our team takes utmost care to
+                                    protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                                    From meticulous preparation to flawless execution, we go above and beyond to create a
+                                    refreshed and vibrant atmosphere in your space.
+                                </p>
+                            </div>
+
+                            <div className="serviceOfferingListFive">
+                                <ul>
+                                    <li> Interior Painting  </li>
+                                    <li> Residential Painting   </li>
+                                    <li> Office Painting  </li>
+                                    <li> Commercial Painting </li>
+                                </ul>
+                            </div>
+
+
                         </div>
 
+                        {/* Service Offering #6 */}
+
+
+                        <div className="serviceOfferingSixAnimation">
+                            <div className="figureSix">
+                                <figure ref={figureRef}>
+                                    <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+                                </figure>
+                            </div>
+
+                            <div className="serviceOfferingSix">
+
+                                <div className="serviceOfferingTitleSix">
+                                    <p> ELEVATE YOUR SPACES  </p>
+                                </div>
+
+                                <div className="serviceOfferingStatementSix">
+
+                                    <p> Elevate your interior space with our professional interior painting services
+                                        that prioritize clean and precise workmanship. Our team takes utmost care to
+                                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                                        From meticulous preparation to flawless execution, we go above and beyond to create a
+                                        refreshed and vibrant atmosphere in your space.
+                                    </p>
+                                </div>
+
+                                <div className="serviceOfferingListSix">
+                                    <ul>
+                                        <li> Interior Painting  </li>
+                                        <li> Residential Painting   </li>
+                                        <li> Office Painting  </li>
+                                        <li> Commercial Painting </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
 
                     </div>
 
-                    {/* Service Offering #6 */}
 
 
-                    <div className="serviceOfferingSixAnimation">
-                        <div className="figureSix">
-                            <figure ref={figureRef}>
-                                <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-                            </figure>
-                        </div>
+                    <div className='carouselNav'>
+                        <Button
+                            className="carouselPrevButton"
+                            variant='outlined'
+                            onClick={handlePrevClick}
+                        >
+                            Prev
+                        </Button>
 
-                        <div className="serviceDescriptionSix">
-                            <p> ELEVATE YOUR SPACES  </p>
-                            <p> Elevate your interior space with our professional interior painting services
-                                that prioritize clean and precise workmanship. Our team takes utmost care to
-                                protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                                From meticulous preparation to flawless execution, we go above and beyond to create a
-                                refreshed and vibrant atmosphere in your space.
-                            </p>
-                            <ul>
-                                <li> Interior Painting  </li>
-                                <li> Residential Painting   </li>
-                                <li> Office Painting  </li>
-                                <li> Commercial Painting </li>
-                            </ul>
-                        </div>
-
-
+                        <Button
+                            className="carouselNextButton"
+                            variant='outlined'
+                            onClick={handleNextClick}
+                        >
+                            Next
+                        </Button>
                     </div>
 
+
+
+
                 </div>
-
-
-
-                <div className='carouselNav'>
-                    <Button
-                        className="carouselPrevButton"
-                        variant='outlined'
-                        onClick={handlePrevClick}
-                    >
-                        Prev
-                    </Button>
-
-                    <Button
-                        className="carouselNextButton"
-                        variant='outlined'
-                        onClick={handleNextClick}
-                    >
-                        Next
-                    </Button>
-                </div>
-
-
-
 
             </div>
-
-
-            {/* 3-d carousel */}
-            {/* <div className="carouselSection">
-                <div className="threeDCarouselContainer" data-gap="80">
-                    <figure ref={figureRef}>
-                        <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
-                        <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-                        <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
-                        <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
-                        <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
-                        <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-                    </figure>
-                </div>
-
-                <div className='carouselNav'>
-                    <Button
-                        className="carouselPrevButton"
-                        variant='outlined'
-                        onClick={handlePrevClick}
-                    >
-                        Prev
-                    </Button>
-
-                    <Button
-                        className="carouselNextButton"
-                        variant='outlined'
-                        onClick={handleNextClick}
-                    >
-                        Next
-                    </Button>
-                </div>
-
-            </div> */}
+        </div>
 
 
 
 
+        // 3-d carousel
+
+        // <div className="carouselSection">
+        //     <div className="threeDCarouselContainer" data-gap="80">
+        //         <figure ref={figureRef}>
+        //             <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
+        //             <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+        //             <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
+        //             <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
+        //             <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
+        //             <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+        //         </figure>
+        //     </div>
+
+        //     <div className='carouselNav'>
+        //         <Button
+        //             className="carouselPrevButton"
+        //             variant='outlined'
+        //             onClick={handlePrevClick}
+        //         >
+        //             Prev
+        //         </Button>
+
+        //         <Button
+        //             className="carouselNextButton"
+        //             variant='outlined'
+        //             onClick={handleNextClick}
+        //         >
+        //             Next
+        //         </Button>
+        //     </div>
+
+        // </div>
+
+    );
 
 
-
-
-        </div >
-    )
 };
 
-export default Services;
 
-//merge test
+export default Services; 
