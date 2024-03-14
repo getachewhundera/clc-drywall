@@ -183,7 +183,12 @@
 
 
 /* Darken background of non-active items to focus on active */
-.threeDCarouselContainer figure img:not(.activeCarouselItem) {
+.threeDCarouselContainer .serviceOfferingOneAnimation:not(.activeCarouselItem),
+.threeDCarouselContainer .serviceOfferingTwoAnimation:not(.activeCarouselItem),
+.threeDCarouselContainer .serviceOfferingThreeAnimation:not(.activeCarouselItem),
+.threeDCarouselContainer .serviceOfferingFourAnimation:not(.activeCarouselItem),
+.threeDCarouselContainer .serviceOfferingFiveAnimation:not(.activeCarouselItem),
+.threeDCarouselContainer .serviceOfferingSixAnimation:not(.activeCarouselItem)  {
   opacity: 0.7; /* Dim inactive items to highlight the active one */
 }
 
@@ -218,6 +223,8 @@
   transform-style: preserve-3d;
   transition: transform 0.5s; 
   transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
+  padding: 0 calc(var(--item-sepration) /2);
+  Opacity: 0.9; 
 }
 
 
@@ -226,9 +233,6 @@ figure img {
   width: var(--item-width); 
   height: 600px; 
   box-sizing: border-box;
-  padding: 0 calc(var(--item-sepration) /2);
-  Opacity: 0.9; 
-
 }
 
 
