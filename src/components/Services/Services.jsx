@@ -6,21 +6,64 @@ import { Button } from "@mui/material";
 function Services() {
 
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            } else {
-              entry.target.classList.remove('active');
-            }
-          });
-        });
-      
-        document.querySelectorAll('.box').forEach((box) => {
-          observer.observe(box);
-        });
-      });
+    //   document.addEventListener('DOMContentLoaded', () => {
+    //     const observer = new IntersectionObserver((entries) => {
+    //       entries.forEach((entry) => {
+    //         if (entry.isIntersecting) {
+    //           entry.target.classList.add('active');
+    //         } else {
+    //           entry.target.classList.remove('active');
+    //         }
+    //       });
+    //     });
+
+    //     document.querySelectorAll('.box').forEach((box) => {
+    //       observer.observe(box);
+    //     });
+    //   });
+
+    // const figureRef = useRef(null);
+    // const [currImage, setCurrImage] = useState(0);
+    // //declared state variable for 3D carousel images descriptions 
+    // // const [serviceImgDescriptionLeft, setServiceImgDescriptionLeft ] = useState(""); 
+    // // const [serviceImgDescriptionRight, setServiceImgDescriptionRight ] = useState(""); 
+
+
+    // useEffect(() => {
+
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add('activeCarouselItem');
+    //             } else {
+    //                 entry.target.classList.remove('activeCarouselItem');
+    //             }
+    //         });
+    //     }, { threshold: 0.1 });
+
+
+    //     const items = document.querySelectorAll('.serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation, .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation');
+    //     items.forEach(item => observer.observe(item));
+
+    //     // return () => items.forEach(item => observer.unobserve(item));
+
+    //     // const numImages = figureRef.current ? figureRef.current.children.length : 0;
+    //     // const theta = 2 * Math.PI / numImages;
+    //     // figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
+
+    //     // // Clear previous active class
+    //     // Array.from(figureRef.current.children).forEach(child => {
+    //     //     child.classList.remove('activeCarouselItem');
+    //     // });
+
+    //     // // Add active class to current item
+    //     // if (figureRef.current.children[currImage]) {
+    //     //     figureRef.current.children[currImage].classList.add('activeCarouselItem');
+    //     // }
+    // }, [] ); 
+
+    // // [currImage]
+
 
     const figureRef = useRef(null);
     const [currImage, setCurrImage] = useState(0);
@@ -30,39 +73,24 @@ function Services() {
 
 
     useEffect(() => {
+        const numImages = figureRef.current ? figureRef.current.children.length : 0;
+        const theta = 2 * Math.PI / numImages;
+        figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('activeCarouselItem');
-                } else {
-                    entry.target.classList.remove('activeCarouselItem');
-                }
-            });
-        }, { threshold: 0.1 });
+        // Clear previous active class
+        Array.from(figureRef.current.children).forEach(child => {
+            child.classList.remove('activeCarouselItem');
+        });
 
-       
-        const items = document.querySelectorAll('.serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation, .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation');
-        items.forEach(item => observer.observe(item));
+        // Add active class to current item
+        if (figureRef.current.children[currImage]) {
+            figureRef.current.children[currImage].classList.add('activeCarouselItem');
+        }
+    }, [currImage]);
 
-        // return () => items.forEach(item => observer.unobserve(item));
 
-        // const numImages = figureRef.current ? figureRef.current.children.length : 0;
-        // const theta = 2 * Math.PI / numImages;
-        // figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
 
-        // // Clear previous active class
-        // Array.from(figureRef.current.children).forEach(child => {
-        //     child.classList.remove('activeCarouselItem');
-        // });
 
-        // // Add active class to current item
-        // if (figureRef.current.children[currImage]) {
-        //     figureRef.current.children[currImage].classList.add('activeCarouselItem');
-        // }
-    }, [] ); 
-    
-    // [currImage]
 
     const handlePrevClick = () => {
         setCurrImage(currImage - 1);
@@ -163,6 +191,9 @@ function Services() {
 
                     {/* Service Offering #1 */}
                     <div className="serviceOfferingOneAnimation">
+                        <div className="serviceOfferingTitleOne" id="text">
+                            <p> DRYWALL INSTALLATION AND REPAIR  </p>
+                        </div>
                         <div className="figureOne">
                             <figure ref={figureRef}>
                                 <img src='/ServicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
@@ -170,9 +201,7 @@ function Services() {
                         </div>
 
                         <div className="serviceOfferingOne">
-                            <div className="serviceOfferingTitleOne" id="text">
-                                <p> DRYWALL INSTALLATION AND REPAIR  </p>
-                            </div>
+
 
                             <div className="serviceOfferingStatementOne" id="text">
                                 <p> We offer complete range of drywall services including drywall hanging,
@@ -197,50 +226,52 @@ function Services() {
 
                         </div>
                     </div>
-                </div>
 
 
-                {/* Service Offering #2 */}
+                    {/* Service Offering #2 */}
 
-
-                <div className="serviceOfferingTwoAnimation">
-
-                    <div className="figureTwo">
-                        <figure ref={figureRef}>
-                            <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-                        </figure>
-                    </div>
-
-                    <div className="serviceOfferingTwo">
+                    <div className="serviceOfferingTwoAnimation">
                         <div className="serviceOfferingTitleTwo">
                             <p> UPGRADE YOUR WALLS  </p>
                         </div>
 
-                        <div className="serviceOfferingStatementTwo">
-                            <p> Transform your space and say farewell to outdated popcorn ceilings with our
-                                range of stylish ceiling upgrades. Experience an upgrade that elevates your
-                                space with your choice of modern ceiling textures. Whether you desire a sleek,
-                                smooth finish or a textured design, our options offer endless possibilities
-                                for enhancing the aesthetics of your home.
-                            </p>
+                        <div className="figureTwo">
+                            <figure ref={figureRef}>
+                                <img src='/ServicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
+                            </figure>
                         </div>
 
-                        <div className="serviceOfferingListTwo">
-                            <ul>
-                                <li> CEILING TEXTURING </li>
-                                <li> WALL TEXTURING </li>
-                                <li> RESIDENTIAL TEXTURING </li>
-                                <li> COMMERCIAL TEXTURING </li>
-                            </ul>
+                        <div className="serviceOfferingTwo">
+
+                            <div className="serviceOfferingStatementTwo">
+                                <p> Transform your space and say farewell to outdated popcorn ceilings with our
+                                    range of stylish ceiling upgrades. Experience an upgrade that elevates your
+                                    space with your choice of modern ceiling textures. Whether you desire a sleek,
+                                    smooth finish or a textured design, our options offer endless possibilities
+                                    for enhancing the aesthetics of your home.
+                                </p>
+                            </div>
+
+                            <div className="serviceOfferingListTwo">
+                                <ul>
+                                    <li> CEILING TEXTURING </li>
+                                    <li> WALL TEXTURING </li>
+                                    <li> RESIDENTIAL TEXTURING </li>
+                                    <li> COMMERCIAL TEXTURING </li>
+                                </ul>
+                            </div>
+
+
                         </div>
-
-
                     </div>
+
 
                     {/* Service Offering #3 */}
 
-
                     <div className="serviceOfferingThreeAnimation">
+                        <div className="serviceOfferingTitleThree">
+                            <p> ELEVATE YOUR SPACES  </p>
+                        </div>
                         <div className="figureThree">
                             <figure ref={figureRef}>
                                 <img src='/ServicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
@@ -248,10 +279,6 @@ function Services() {
                         </div>
 
                         <div className="serviceOfferingThree">
-
-                            <div className="serviceOfferingTitleThree">
-                                <p> ELEVATE YOUR SPACES  </p>
-                            </div>
 
                             <div className="serviceOfferingStatementThree">
                                 <p> Elevate your interior space with our professional interior painting services
@@ -275,10 +302,14 @@ function Services() {
 
                     </div>
 
+
                     {/* Service Offering #4 */}
 
-
                     <div className="serviceOfferingFourAnimation">
+                        <div className="serviceOfferingTitleFour">
+                            <p> ELEVATE YOUR SPACES  </p>
+                        </div>
+
                         <div className="figureFour">
                             <figure ref={figureRef}>
                                 <img src='/ServicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
@@ -286,9 +317,6 @@ function Services() {
                         </div>
 
                         <div className="serviceOfferingFour">
-                            <div className="serviceOfferingTitleFour">
-                                <p> ELEVATE YOUR SPACES  </p>
-                            </div>
 
                             <div className="serviceOfferingStatementFour">
                                 <p> Elevate your interior space with our professional interior painting services
@@ -308,16 +336,15 @@ function Services() {
                                 </ul>
                             </div>
                         </div>
-
-
                     </div>
+
 
                     {/* Service Offering #5 */}
 
-
-
-
                     <div className="serviceOfferingFiveAnimation">
+                        <div className="serviceOfferingTitleFive">
+                            <p> ELEVATE YOUR SPACES  </p>
+                        </div>
                         <div className="figureFive">
                             <figure ref={figureRef}>
                                 <img src='/ServicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
@@ -325,10 +352,6 @@ function Services() {
                         </div>
 
                         <div className="serviceOfferingFive">
-
-                            <div className="serviceOfferingTitleFive">
-                                <p> ELEVATE YOUR SPACES  </p>
-                            </div>
 
                             <div className="serviceOfferingStatementFive">
                                 <p> Elevate your interior space with our professional interior painting services
@@ -350,79 +373,77 @@ function Services() {
 
 
                         </div>
-
-                        {/* Service Offering #6 */}
-
-
-                        <div className="serviceOfferingSixAnimation">
-                            <div className="figureSix">
-                                <figure ref={figureRef}>
-                                    <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-                                </figure>
-                            </div>
-
-                            <div className="serviceOfferingSix">
-
-                                <div className="serviceOfferingTitleSix">
-                                    <p> ELEVATE YOUR SPACES  </p>
-                                </div>
-
-                                <div className="serviceOfferingStatementSix">
-
-                                    <p> Elevate your interior space with our professional interior painting services
-                                        that prioritize clean and precise workmanship. Our team takes utmost care to
-                                        protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                                        From meticulous preparation to flawless execution, we go above and beyond to create a
-                                        refreshed and vibrant atmosphere in your space.
-                                    </p>
-                                </div>
-
-                                <div className="serviceOfferingListSix">
-                                    <ul>
-                                        <li> Interior Painting  </li>
-                                        <li> Residential Painting   </li>
-                                        <li> Office Painting  </li>
-                                        <li> Commercial Painting </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
 
 
+                    {/* Service Offering #6 */}
+
+                    <div className="serviceOfferingSixAnimation">
+                        <div className="serviceOfferingTitleSix">
+                            <p> ELEVATE YOUR SPACES  </p>
+                        </div>
+                        <div className="figureSix">
+                            <figure ref={figureRef}>
+                                <img src='/ServicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
+                            </figure>
                         </div>
 
+                        <div className="serviceOfferingSix">
+
+                            <div className="serviceOfferingStatementSix">
+
+                                <p> Elevate your interior space with our professional interior painting services
+                                    that prioritize clean and precise workmanship. Our team takes utmost care to
+                                    protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                                    From meticulous preparation to flawless execution, we go above and beyond to create a
+                                    refreshed and vibrant atmosphere in your space.
+                                </p>
+                            </div>
+
+                            <div className="serviceOfferingListSix">
+                                <ul>
+                                    <li> Interior Painting  </li>
+                                    <li> Residential Painting   </li>
+                                    <li> Office Painting  </li>
+                                    <li> Commercial Painting </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-
-
-                    <div className='carouselNav'>
-                        <Button
-                            className="carouselPrevButton"
-                            variant='outlined'
-                            onClick={handlePrevClick}
-                        >
-                            Prev
-                        </Button>
-
-                        <Button
-                            className="carouselNextButton"
-                            variant='outlined'
-                            onClick={handleNextClick}
-                        >
-                            Next
-                        </Button>
-                    </div>
 
 
 
 
                 </div>
 
+
+
+                <div className='carouselNav'>
+                    <Button
+                        className="carouselPrevButton"
+                        variant='outlined'
+                        onClick={handlePrevClick}
+                    >
+                        Prev
+                    </Button>
+
+                    <Button
+                        className="carouselNextButton"
+                        variant='outlined'
+                        onClick={handleNextClick}
+                    >
+                        Next
+                    </Button>
+                </div>
+
+
+
+
             </div>
+
         </div>
-
     );
-
-
 };
 
 

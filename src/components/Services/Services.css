@@ -122,6 +122,10 @@
 
 /*whole carousel turns */
 .threeDCarouselContainer{
+  position: relative;
+  width: 80%;
+  height: 800px;
+  margin: auto;
   margin-top: 5%; 
   padding: 20px; 
   perspective: var(--viewer-distance); 
@@ -130,6 +134,7 @@
   flex-direction: column;
   align-items: center;
   flex: 0 0 auto;
+   transform-style: preserve-3d; /* container allows for 3D space */
 }
 
 figure {
@@ -225,16 +230,11 @@ img {
 }
 
 
-.threeDCarouselContainer {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  transform-style: preserve-3d; /* container allows for 3D space */
-}
+
 
 .serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
 .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation {
-  position: absolute;
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -247,7 +247,7 @@ img {
 .serviceOfferingTitleOne, .serviceOfferingTitleTwo, .serviceOfferingTitleThree,
 .serviceOfferingTitleFour, .serviceOfferingTitleFive, .serviceOfferingTitleSix {
   position: absolute;
-  top: -50px;
+  top: 950px;
   width: 100%;
   text-align: center;
 }
@@ -262,7 +262,7 @@ img {
 .serviceOfferingListOne, .serviceOfferingListTwo, .serviceOfferingListThree,
 .serviceOfferingListFour, .serviceOfferingListFive, .serviceOfferingListSix {
   position: absolute;
-  left: 20px;
+  left:20px;
   width: 220px;
 }
 
