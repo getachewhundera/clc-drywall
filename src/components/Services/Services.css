@@ -123,11 +123,9 @@
 /*whole carousel turns */
 .threeDCarouselContainer{
   position: relative;
-  width: 80%;
+  width: 100%; 
   height: 800px;
-  margin: auto;
   margin-top: 5%; 
-  padding: 20px; 
   perspective: var(--viewer-distance); 
   overflow: hidden; 
   display: flex;
@@ -137,17 +135,22 @@
    transform-style: preserve-3d; /* container allows for 3D space */
 }
 
-figure {
+
+
+/* original */
+/* figure {
   margin: 0; 
   width: var(--item-width); 
   transform-style: preserve-3d;
   transition: transform 0.5s; 
-  transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
-}
+  transform-origin: 50% 50% calc(-1 * var(--apothem));centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis
+} */
 
 
-img {
-  width: 100%;
+
+figure img {
+  margin: 0; 
+  width: var(--item-width); 
   height: 650px; 
   box-sizing: border-box;
   padding: 0 calc(var(--item-sepration) /2);
@@ -156,54 +159,26 @@ img {
 }
 
 /*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */ 
-.threeDCarouselContainer figure img:not(:first-of-type) {
-  position: absolute; /* positioned relative to the nearest positioned ancestor. */
+/* .threeDCarouselContainer figure img:not(:first-of-type) {
   left: 0;
   top: 0;
   transform-origin: 50% 50% calc(-1 * var(--apothem));
-}
+}  */
 
 
 /* rotating each image*/
-.threeDCarouselContainer figure img:nth-child(2) { transform: rotateY(calc(1 * var(--theta))); }
+/* .threeDCarouselContainer figure img:nth-child(2) { transform: rotateY(calc(1 * var(--theta))); }
 .threeDCarouselContainer figure img:nth-child(3) { transform: rotateY(calc(2 * var(--theta))); }
 .threeDCarouselContainer figure img:nth-child(4) { transform: rotateY(calc(3 * var(--theta))); }
 .threeDCarouselContainer figure img:nth-child(5) { transform: rotateY(calc(4 * var(--theta))); }
-.threeDCarouselContainer figure img:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer figure img:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); } */
 
-
-
-/* Next and Prev Button css to rotate carousel */
-
-.carouselNav { 
-  display: flex; 
-  justify-content: center;
-  margin-top: 4%; 
-  margin-bottom: 5%; 
-  
-
-}
-
-
-
-.carouselPrevButton,
-.carouselNextButton {
-  flex: 0 0 auto;
-  margin: 0 5px;  
-  cursor: pointer; 
-  
-
-
-  color: #333; 
-  
-
-} 
-
-.carouselNav button {
-  margin-left: 10px;
-
-}
-
+.threeDCarouselContainer .serviceOfferingOneAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer .serviceOfferingTwoAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer .serviceOfferingThreeAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer .serviceOfferingFourAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer .serviceOfferingFiveAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
+.threeDCarouselContainer .serviceOfferingSixAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
 
 
 /* Scale effect for the active carousel item */
@@ -229,25 +204,33 @@ img {
   overflow: hidden;
 }
 
-
+.serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
+.serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation:not(:first-of-type) {
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50% calc(-1 * var(--apothem));
+}
 
 
 .serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
 .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation {
-  position: relative;
-  width: 100%;
-  display: flex;
+  display: flex; 
+  flex-direction: column; 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%; 
   transition: transform 1s;
   transform-style: preserve-3d;
+  margin: 0; 
+  width: var(--item-width); 
+  transform-style: preserve-3d;
+  transition: transform 0.5s; 
+  transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
 }
 
 /* Positioning text and list around the image */
 .serviceOfferingTitleOne, .serviceOfferingTitleTwo, .serviceOfferingTitleThree,
 .serviceOfferingTitleFour, .serviceOfferingTitleFive, .serviceOfferingTitleSix {
-  position: absolute;
-  top: 950px;
   width: 100%;
   text-align: center;
 }
@@ -255,6 +238,7 @@ img {
 .serviceOfferingStatementOne, .serviceOfferingStatementTwo, .serviceOfferingStatementThree,
 .serviceOfferingStatementFour, .serviceOfferingStatementFive, .serviceOfferingStatementSix {
   position: absolute;
+  bottom: 200px; 
   right: 20px;
   width: 220px;
 }
@@ -262,9 +246,40 @@ img {
 .serviceOfferingListOne, .serviceOfferingListTwo, .serviceOfferingListThree,
 .serviceOfferingListFour, .serviceOfferingListFive, .serviceOfferingListSix {
   position: absolute;
+  bottom: 200px;
   left:20px;
   width: 220px;
 }
+
+
+/* Carousel Nav Buttons Next and Prev Button css to rotate carousel*/
+.carouselNav { 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%; 
+  margin-bottom: 5%; 
+  
+
+}
+
+.carouselPrevButton,
+.carouselNextButton {
+  flex: 0 0 auto;
+  margin: 0 5px;  
+  cursor: pointer; 
+  
+
+
+  color: #333; 
+  
+
+} 
+
+.carouselNav button {
+  margin-left: 10px;
+
+}
+
 
 /* Scroll Animation */
 .box {
