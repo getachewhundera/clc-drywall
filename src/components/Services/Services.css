@@ -109,30 +109,33 @@
   --theta: calc(360deg / var(--n)); /* 6 images. calculates angle rotation for each image.  */
 }
 
-.carouselSection{
-  padding: 40px; 
-  margin-top: 20px;
+/* .carouselSection{
+  padding: 40px;  
+  margin-top: 20px; 
   margin-bottom: 10px;
   font-family: 'Roboto';
   display: flex;
   flex-direction: column;
   height: auto 100vh;
   justify-content: center;
-}
+} */
 
 /*whole carousel turns */
 .threeDCarouselContainer{
   position: relative;
   width: 100%; 
   height: 800px;
-  margin-top: 5%; 
+  margin-top: 20%;
+  margin-bottom: 20%; 
   perspective: var(--viewer-distance); 
   overflow: hidden; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 0 0 auto;
-   transform-style: preserve-3d; /* container allows for 3D space */
+  display: flex; 
+  /* flex-direction: column; */
+  /* align-items: center;  */
+  /* flex: 0 0 auto; */
+  perspective: 1000px;
+  overflow: hidden;
+  transform-style: preserve-3d; /* container allows for 3D space */
 }
 
 
@@ -146,17 +149,6 @@
   transform-origin: 50% 50% calc(-1 * var(--apothem));centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis
 } */
 
-
-
-figure img {
-  margin: 0; 
-  width: var(--item-width); 
-  height: 650px; 
-  box-sizing: border-box;
-  padding: 0 calc(var(--item-sepration) /2);
-  Opacity: 0.9; 
-
-}
 
 /*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */ 
 /* .threeDCarouselContainer figure img:not(:first-of-type) {
@@ -199,10 +191,10 @@ figure img {
 
 
 /* Carousel Section */
-.carouselSection {
+/* .carouselSection {
   perspective: 1000px;
   overflow: hidden;
-}
+} */
 
 .serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
 .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation:not(:first-of-type) {
@@ -228,27 +220,38 @@ figure img {
   transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
 }
 
-/* Positioning text and list around the image */
+
+figure img {
+  margin: 0; 
+  width: var(--item-width); 
+  height: 600px; 
+  box-sizing: border-box;
+  padding: 0 calc(var(--item-sepration) /2);
+  Opacity: 0.9; 
+
+}
+
+
+/* Positioning text and list around the image. Positioned based on serviceOffering1-6animation div container */
 .serviceOfferingTitleOne, .serviceOfferingTitleTwo, .serviceOfferingTitleThree,
 .serviceOfferingTitleFour, .serviceOfferingTitleFive, .serviceOfferingTitleSix {
-  width: 100%;
+  position: relative; 
   text-align: center;
 }
 
 .serviceOfferingStatementOne, .serviceOfferingStatementTwo, .serviceOfferingStatementThree,
 .serviceOfferingStatementFour, .serviceOfferingStatementFive, .serviceOfferingStatementSix {
-  position: absolute;
-  bottom: 200px; 
-  right: 20px;
-  width: 220px;
+  position: relative;
+  left: 70%;
+  bottom: 50%; 
+  width: 50%;
 }
 
 .serviceOfferingListOne, .serviceOfferingListTwo, .serviceOfferingListThree,
 .serviceOfferingListFour, .serviceOfferingListFive, .serviceOfferingListSix {
-  position: absolute;
-  bottom: 200px;
-  left:20px;
-  width: 220px;
+  position: relative;
+  bottom: 60%;
+  right: 70%; 
 }
 
 
