@@ -201,13 +201,23 @@
   overflow: hidden;
 } */
 
-.serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
-.serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation:not(:first-of-type) {
+.threeDCarouselContainer .serviceOfferingOneAnimation:not(:first-of-type),
+.threeDCarouselContainer .serviceOfferingTwoAnimation:not(:first-of-type),
+.threeDCarouselContainer .serviceOfferingThreeAnimation:not(:first-of-type),
+.threeDCarouselContainer .serviceOfferingFourAnimation:not(:first-of-type),
+.threeDCarouselContainer .serviceOfferingFiveAnimation:not(:first-of-type),
+.threeDCarouselContainer .serviceOfferingSixAnimation:not(:first-of-type) {
   left: 0;
   top: 0;
   transform-origin: 50% 50% calc(-1 * var(--apothem));
-}
+} 
 
+/* 
+.threeDCarouselContainer:not(:first-of-type) {
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50% calc(-1 * var(--apothem));
+} */
 
 .serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
 .serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation {
@@ -216,10 +226,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%; 
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  margin: 0; 
-  width: var(--item-width); 
+  margin: 0;
   transform-style: preserve-3d;
   transition: transform 0.5s; 
   transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
@@ -273,7 +280,8 @@ figure img {
 .carouselNextButton {
   flex: 0 0 auto;
   margin: 0 5px;  
-  cursor: pointer; 
+  cursor: pointer;
+  
   
 
 
