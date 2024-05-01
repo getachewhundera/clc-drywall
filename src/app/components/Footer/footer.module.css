@@ -9,3 +9,25 @@
 .container { 
   color: white; 
 }
+
+.row2container {
+  margin-left: 2%; 
+  margin-bottom: 2%; /* gives space between rows */
+  align-items: start;
+
+}
+
+
+
+
+
+.footer-nav1 { 
+  
+  color: red; 
+}
+
+.footer-nav2 {
+    margin-left: 0px;  
+  
+}
+
