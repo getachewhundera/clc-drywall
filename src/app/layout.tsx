@@ -7,7 +7,8 @@ import './styles/globals.css';
 
 //Pages import: 
 import Footer from "./components/Footer/page";
-import CompleteNavBar from "./components/navbar/CompleteNavBar";
+import NavaBarPage from "./components/navbar/NavBarPage"; 
+
 
 
 
@@ -35,7 +36,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
            }`
       }</style> */}
       <body>
-        <CompleteNavBar />
+        <NavaBarPage />
         <main>
           {children}
         </main>

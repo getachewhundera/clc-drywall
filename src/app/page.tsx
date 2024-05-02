@@ -4,7 +4,7 @@
 import React from "react";
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -99,12 +99,6 @@ export default function Page(props: Props) {
 
 
             </div>
-
-            {/* 2nd section  */}
-
-
-
-
 
         </div>
 
