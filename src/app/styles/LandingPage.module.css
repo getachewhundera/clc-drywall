@@ -1,6 +1,8 @@
 
-.landing_page{ 
+.landing_page{
     margin-top: 20%; 
+    width: 100%;
+    position: relative;
 }
 
 .split-screen {
@@ -70,10 +72,9 @@
     0%, 66% { transform: translateY(-100%); }
     67%, 100% { transform: translateY(0); }
   }
-  
 
 
-  .banner_content {
+.banner_content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -82,7 +83,7 @@
     text-align: center; 
   }
 
-  .banner_content span {
+.banner_content span {
     font-size: 24px;
     /* color: #fff; */
     font-family: "Heebo", sans-serif;
@@ -107,31 +108,19 @@
     font-family: "Heebo", sans-serif;
     font-weight: 500;
   }
-.banner_content .mainPageContactUsButton {
-    margin-top: 35px;
-  }
-
-
-  .center-text h3, .center-text h2 {
-    margin: 0; 
-  }
-
-  
-  .center-text h3, .center-text h2 {
-    margin: 0; 
-  }
 
 
   
-  .headerContactUsButton {
+.headerContactUsButton {
     position: absolute;
     margin-top: 5%; 
-    left: 47.5%;
+    left: 50%;
+    transform: translateX(-50%);
     /* transform: translate(-50%, -50%); */
     /* z-index: 10; */
   }
   
-  #mainPageContactUsButton {
+#mainPageContactUsButton {
     padding: 10px 20px;
     background-color: #333; 
     color: #fff;
