@@ -4,6 +4,7 @@
 import React from "react";
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation"; 
 
 type Props = {};
 
@@ -15,6 +16,7 @@ interface ImageProps {
 
 
 export default function Page(props: Props) {
+    const router = useRouter()
 
     // const imagesLeft: ImageProps[] = [
     //     { src: '/images/LandingPageHeaderImages/main1.jpg', alt: "Left main image" },
@@ -53,6 +55,8 @@ export default function Page(props: Props) {
     //     console.log(window.location.href);
     // }
 
+
+
     return (
         <div className={styles.landing_page}>
 
@@ -86,7 +90,7 @@ export default function Page(props: Props) {
                         <div className={styles.headerContactUsButton}>
                             {/* call to action button, sits in the middle
                              of main webpage, easily identifiable*/}
-                            <button type="button" id={styles.mainPageContactUsButton}>
+                            <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
                                 Get A Quote
                             </button>
                         </div>
