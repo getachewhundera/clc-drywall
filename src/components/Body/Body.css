@@ -1,0 +1,358 @@
+/* color_11: 38,38,38; */
+
+
+
+/* services css  */
+#mainPageBodyItems{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px rgb(154, 138, 120) ;
+    margin-left: 70px; 
+    margin-top: 100px; 
+    margin-right: 70px;
+
+}
+
+#mainPageServicesImage img {
+    margin-left: 130px; 
+    width: 750px; 
+    height: 750px;
+    border: solid 1px rgb(154, 138, 120) ;
+
+}
+
+#servicesList {
+    flex-basis: auto;
+    margin-left: 20%;
+    margin-top: 10%; 
+    font-size: large; 
+
+}
+
+#servicesList h1{
+    color: white;
+    font: 16px/1.4em sans-serif;
+    font-size: 50px; 
+
+}
+
+#servicesList ul{
+    color: white; 
+    font: normal normal normal 16px/1.4em raleway,sans-serif;
+    margin: center; 
+
+
+
+}
+
+#mainPageServicesButton{
+    color: white; 
+    margin: center;
+    background-color: #9A8A78;
+
+}
+
+
+#mpContainers {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin-left: 70px; 
+    margin-right: 70px; 
+    gap: 0px; 
+}
+
+
+
+#mpContainerOne,
+#mpContainerTwo,
+#mpContainerThree,
+#mpContainerFour {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100px; 
+    border: 1px solid rgb(154, 138, 120);
+    color: white;
+    font-family: 'Raleway', sans-serif; 
+    flex: 1;
+  }
+
+#mpContainerOne h2,
+#mpContainerTwo h2, 
+#mpContainerThree h2,
+#mpContainerFour h2{
+    margin-top: 10px; 
+    text-align: center; 
+}
+
+
+/* Container sizing */
+#mpContainerOne {
+    width: 450px; 
+    height: 350px; 
+  
+}
+
+#mpContainerTwo {
+    width: 450px; 
+    height: 350px; 
+ 
+}
+
+#mpContainerThree {
+    width: 450px; 
+    height: 350px; 
+
+}
+
+#mpContainerFour {
+    width: 450px; 
+    height: 350px; 
+}
+
+
+
+/* Images  */
+#mpContainerOne img{
+    width: 200px; 
+    height: 200px;
+    margin-bottom: 10px;
+  
+}
+
+#mpContainerTwo img {
+    width: 200px; 
+    height: 200px;
+    margin-bottom: 10px;
+ 
+}
+
+#mpContainerThree img {
+    width: 200px; 
+    height: 200px;  
+    margin-bottom: 10px;
+
+
+}
+
+#mpContainerFour img {
+    width: 200px; 
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* About us section  */ 
+#AboutUsContainers {
+    display: flex; /* has child contianers sitting side by side */
+    border: 1px solid rgb(154, 138, 120); /* Border around the main container */
+    margin-left: 70px; 
+    margin-right: 70px; 
+    gap: 0px; 
+}
+
+.container1, .container2 {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid rgb(154, 138, 120);
+}
+
+#AboutUsImgContainer img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+#AboutUsStatementContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+#AboutUsStatementContainer h1, 
+#AboutUsStatementContainer h2, 
+#AboutUsStatementContainer a {
+    margin: 0; 
+    padding: 0 0 10% 0; 
+}
+
+#AboutUsStatementContainer h2{
+    color: white; 
+    font: normal normal normal 16px/1.4em raleway,sans-serif;
+    color: white;
+    width: 60%; 
+    
+
+}
+
+
+/* CSS FOR RECENT PROJECTS */
+
+/* Entire container for images*/ 
+
+.recentprojectimagescolumns{
+    column-count: 3; 
+    height: 650px; 
+    border: 1px solid white; 
+    /* column-rule: 2px dashed #666;  */
+    /* margin-left: 0%;
+    margin-right: 0%; */
+    
+}
+
+ 
+/* .recentprojectimages .column1{ 
+    column-width: 35%;
+}  */
+
+/* .recentprojectimages .column2{ 
+    column-width: 25%;
+}  */
+
+/* .recentprojectimages .column3{ 
+    column-width: 40%;
+}
+  */
+
+
+
+.recentprojectsButton {
+    display: flex;  
+    flex-direction: column; 
+    width: 100px; 
+    margin: 0 auto;  
+    color: #9A8A78;
+} 
+
+.recentprojectsButton #lprpButton  {
+    color:white; 
+ 
+} 
+
+.recentprojectimages #lprpimg1{
+    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-left: 30%; 
+}
+.recentprojectimages #lprpimg2{
+    padding-top: 25px; 
+    padding-left: 30%; 
+}
+.recentprojectimages #lprpimg3{
+    padding-top: 50px; 
+    padding-bottom: 0px;
+
+}
+.recentprojectimages #lprpimg4{
+    padding-top: 50px; 
+    margin-left: 10%; 
+}
+.recentprojectimages #lprpimg5{
+    padding-top: 50px; 
+}
+
+.recentprojectimages #lprpimg1 img{
+    display: flex;
+    direction: ltr; 
+    border: solid white;
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover;  
+
+
+}
+
+
+.recentprojectimages #lprpimg2 img{ 
+    display: flex;
+    direction: ltr; 
+    border: solid white;  
+    width: 475px; 
+    height: 225px;
+    object-fit: cover; 
+    
+}
+
+.recentprojectimages #lprpimg3 img{ 
+    display: flex;
+    direction: ltr; 
+    border: solid white; 
+    width: 550px; 
+    height: 225px; 
+    object-fit: cover; 
+    margin-right: 15px; 
+    
+}
+
+
+.recentprojectimages #lprpimg4 img{ 
+    display: flex;
+    direction: ltr; 
+    border: solid white; 
+    width: 450px; 
+    height: 275px;
+    object-fit: cover; 
+    
+}
+
+.recentprojectimages #lprpimg5 img{ 
+    display: flex;
+    direction: ltr; 
+    border: solid white;
+    width: 600px; 
+    height: 550px; 
+    object-fit: cover; 
+    column-width: 50%; 
+    
+}
+
+@media screen and (min-width: 80rem) { 
+    #AboutUsContainers{ 
+        max-width: 80rem; 
+    }
+}
+
+
+@media screen and (max-width: 600px) { 
+
+#mpContainerOne h2,
+#mpContainerTwo h2, 
+#mpContainerThree h2,
+#mpContainerFour h2{
+    font-size: 20%; 
+    margin-top: 5%; 
+    text-align: center; 
+}
+
+/* Container sizing */
+#mpContainerOne,
+#mpContainerTwo,
+#mpContainerThree, 
+#mpContainerFour {
+    width: 20%; 
+    height: 35%; 
+  
+}
+
+    /* Images  */
+#mpContainerOne img,
+#mpContainerTwo img,
+#mpContainerThree img, 
+#mpContainerFour img {
+    width: 80%; 
+    height: 75%;
+    margin-bottom: 5%;
+}
+}
+
+
