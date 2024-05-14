@@ -58,13 +58,13 @@ export default function Page(props: Props) {
 
 
     return (
-        <div className={styles.landing_page}>
+        <div className={styles.home_banner_area}>
 
 
             {/* 1st section Header banner*/}
             <div className={styles['banner_container']}>
 
-                <div className={styles['split-screen']}>
+                <div className={styles['banner_inner']}>
                     <div className={styles.pane + " " + styles['left-pane']}>
                         {imagesLeft.map((img, index) => (
                             <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
@@ -76,28 +76,28 @@ export default function Page(props: Props) {
                             <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
                         ))}
                     </div>
-                </div>
 
-                <div className={styles.container}>
-                    <div className={styles['banner_content']}>
-                        <span>CLC DRYWALL LLC</span>
-                        <h3>Where Quality
-                            <br />
-                            Meets
-                            <br />
-                            Craftsmanship.
-                        </h3>
-                        <div className={styles.headerContactUsButton}>
-                            {/* call to action button, sits in the middle
+
+                    <div className={styles.container}>
+                        <div className={styles['banner_content']}>
+                            <span>CLC DRYWALL LLC</span>
+                            <h3>Where Quality
+                                <br />
+                                Meets
+                                <br />
+                                Craftsmanship.
+                            </h3>
+                            <div className={styles.headerContactUsButton}>
+                                {/* call to action button, sits in the middle
                              of main webpage, easily identifiable*/}
-                            <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
-                                Get A Quote
-                            </button>
+                                <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
+                                    Get A Quote
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-
-
             </div>
 
         </div>

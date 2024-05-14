@@ -1,50 +1,30 @@
-'use client'
-//Styling: 
-import 'bootstrap/dist/css/bootstrap.css'; 
-import './styles/globals.css'; 
-// import { Inter } from "next/font/google";
-// import { Roboto } from "next/font/google";
+// app/layout.tsx
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles/globals.css';
 
-//Pages import: 
-import Footer from "./components/Footer/page";
-import NavaBarPage from "./components/navbar/NavBarPage"; 
+// Import your navbar and footer components
+import NavBarPage from './components/navbar/NavBarPage';
+import Footer from './components/Footer/page';
 
 
-
-
-// const inter = Inter({ subsets: ["latin"] });
-
-
-// const roboto = Roboto({
-//   weight: ['400', '700'],
-//   style: ['normal', 'italic'],
-//   subsets: ['latin'],
-// });
-
-
-export default function RootLayout({ children, }: { children: React.ReactNode }) {
-  return (      
- 
-    <html lang="en">
-      {/* External CSS Links */}
- {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css" />
-
-      <style jsx global>{` html, body {
-               font-family: ${roboto.style.fontFamily};
-           }`
-      }</style> */}
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang='en'>
+      <head> 
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'/>  
+      </head>
+      
       <body>
-        <NavaBarPage />
-        <main>
-          {children}
-        </main>
+        <NavBarPage />
+        {children}
         <Footer />
       </body>
-
     </html>
-  )
+  );
 }
 
-// className={inter.className}
+export default RootLayout;
+
+// export default function RootLayout({ children, }: { children: React.ReactNode }) {
+//   return (
