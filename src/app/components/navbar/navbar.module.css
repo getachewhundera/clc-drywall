@@ -1,18 +1,18 @@
-.complete-navbar { 
-  width: 100%; 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-  margin: 0; 
-  padding: 0; 
+.complete-navbar {
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-one { 
+.navbar-one {
   background-color: #312f36;
-  color: white; 
-  height: 30px; 
-  cursor: pointer; 
-  width: 100%; 
-  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out; 
-  position: sticky; 
+  color: white;
+  height: 30px;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -24,12 +24,12 @@
 }
 
 .right, .left {
-  display: inline; 
-  margin-left: 10%; 
+  display: inline;
+  margin-left: 10%;
 }
 
-.call, .city, #follow-us, .facebook, .twitter, .instagram { 
-  display: inline; 
+.call, .city, #follow-us, .facebook, .twitter, .instagram {
+  display: inline;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-weight: 300;
@@ -41,47 +41,48 @@
 .facebook:hover,
 .twitter:hover,
 .instagram:hover {
-  color: red; 
+  color: red;
 }
 
-.city { 
-  padding-left: 5%; 
+.city {
+  padding-left: 5%;
 }
 
-.right { 
+.right {
   padding-left: 25%;
 }
 
-#follow-us { 
-  padding-right: 2%; 
+#follow-us {
+  padding-right: 2%;
 }
 
-.facebook { 
-  padding-right: 1%; 
+.facebook {
+  padding-right: 1%;
 }
-.twitter { 
-  padding-right: 1%; 
+
+.twitter {
+  padding-right: 1%;
 }
 
 .navbar-two {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   position: fixed;
-  top: 30px;  
-  background-color: #32353c; 
-  height: 100px; 
+  top: 30px;
+  background-color: #32353c;
+  height: 100px;
   padding: 0 2%;
   width: 100%;
   z-index: 1000;
-  transition: transform 500ms ease, background 500ms ease;
-  -webkit-transition: transform 500ms ease, background 500ms ease;
+  transition: transform 500ms ease, background 500ms ease, top 0.5s ease-in-out;
+  -webkit-transition: transform 500ms ease, background 500ms ease, top 0.5s ease-in-out;
 }
 
 .navbar-two .logo {
-  margin-left: 2%; 
-  padding-right: 5%; 
-  padding-top: 6px; 
+  margin-left: 2%;
+  padding-right: 5%;
+  padding-top: 6px;
 }
 
 .navbar-two .menu_nav {
@@ -92,13 +93,13 @@
 }
 
 .navbar-two .nav-item {
-  margin: 0 25px; 
-  font-size: 22px; 
-  color: white; 
+  margin: 0 25px;
+  font-size: 22px;
+  color: white;
 }
 
 .navbar-two .nav-item:hover {
-  color: red; 
+  color: red;
 }
 
 .navbar-two .nav-link {
@@ -112,4 +113,8 @@
 
 .show-search {
   display: block;
+}
+/* navbar-two element appears after hidden class*/
+.hidden ~ .navbar-two {
+  top: 0;
 }

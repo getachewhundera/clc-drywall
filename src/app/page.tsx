@@ -5,8 +5,11 @@ import React from "react";
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
-type Props = {};
+type Props = {
+    showHeading?: boolean;
+}
 
 // Define your interface for handling images
 interface ImageProps {
@@ -15,7 +18,7 @@ interface ImageProps {
 }
 
 
-export default function Page(props: Props) {
+export default function Page({ showHeading = true }: Props) {
     const router = useRouter()
 
     // const imagesLeft: ImageProps[] = [
@@ -58,49 +61,84 @@ export default function Page(props: Props) {
 
 
     return (
-        <div className={styles.home_banner_area}>
+        <>
+            <div className={styles.home_banner_area}>
 
 
-            {/* 1st section Header banner*/}
-            <div className={styles['banner_container']}>
+                {/* 1st section Header banner*/}
+                <div className={styles['banner_container']}>
 
-                <div className={styles['banner_inner']}>
-                    <div className={styles.pane + " " + styles['left-pane']}>
-                        {imagesLeft.map((img, index) => (
-                            <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
-                        ))}
-                    </div>
+                    <div className={styles['banner_inner']}>
+                        <div className={styles.pane + " " + styles['left-pane']}>
+                            {imagesLeft.map((img, index) => (
+                                <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
+                            ))}
+                        </div>
 
-                    <div className={styles.pane + " " + styles['right-pane']}>
-                        {imagesRight.map((img, index) => (
-                            <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
-                        ))}
-                    </div>
+                        <div className={styles.pane + " " + styles['right-pane']}>
+                            {imagesRight.map((img, index) => (
+                                <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
+                            ))}
+                        </div>
 
 
-                    <div className={styles.container}>
-                        <div className={styles['banner_content']}>
-                            <span>CLC DRYWALL LLC</span>
-                            <h3>Where Quality
-                                <br />
-                                Meets
-                                <br />
-                                Craftsmanship.
-                            </h3>
-                            <div className={styles.headerContactUsButton}>
-                                {/* call to action button, sits in the middle
+                        <div className={styles.container}>
+                            <div className={styles['banner_content']}>
+                                <span>CLC DRYWALL LLC</span>
+                                <h3>Where Quality
+                                    <br />
+                                    Meets
+                                    <br />
+                                    Craftsmanship.
+                                </h3>
+                                <div className={styles.headerContactUsButton}>
+                                    {/* call to action button, sits in the middle
                              of main webpage, easily identifiable*/}
-                                <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
-                                    Get A Quote
-                                </button>
+                                    <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
+                                        Get A Quote
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+            <section id='mpContainers'>
+
+                <div id='mpContainerOne'>
+                    <img src='./LandingPageServicesIcons/veicon.png' alt='' />
+                    <h2> Vast Experience </h2>
+
+                </div>
+
+                <div id='mpContainerTwo'>
+                    <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
+                    <h2> Professional Team </h2>
+
+                </div>
+
+                <div id='mpContainerThree'>
+                    <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
+                    <h2> Reliable Service </h2>
+
+                </div>
+
+                <div id='mpContainerFour'>
+                    <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
+                    <h2> Quality Work </h2>
+
+                </div>
+
+            </section>
+
+
+        </>
+
+
+
 
 
 

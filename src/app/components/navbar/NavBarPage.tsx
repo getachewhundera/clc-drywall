@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './navbar.module.css';
 
 export default function NavBarPage() {
-    const topNavRef = useRef<HTMLDivElement>(null);  // Ref for top nav
+    const topNavRef = useRef<HTMLDivElement>(null); // Ref for top nav
     const [showSearch, setShowSearch] = useState(false);
     const [searchInput, setSearchInput] = useState('');
 
