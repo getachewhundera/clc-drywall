@@ -106,27 +106,27 @@ export default function Page({ showHeading = true }: Props) {
 
             </div>
 
-            <section id='mpContainers'>
+            <section id={styles['mpContainers']}>
 
-                <div id='mpContainerOne'>
+                <div id={styles['mpContainerOne']}>
                     <img src='./LandingPageServicesIcons/veicon.png' alt='' />
                     <h2> Vast Experience </h2>
 
                 </div>
 
-                <div id='mpContainerTwo'>
+                <div id={styles['mpContainerTwo']}>
                     <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
                     <h2> Professional Team </h2>
 
                 </div>
 
-                <div id='mpContainerThree'>
+                <div id={styles['mpContainerThree']}>
                     <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
                     <h2> Reliable Service </h2>
 
                 </div>
 
-                <div id='mpContainerFour'>
+                <div id={styles['mpContainerFour']}>
                     <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
                     <h2> Quality Work </h2>
 
