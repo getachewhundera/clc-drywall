@@ -106,6 +106,25 @@ export default function Page({ showHeading = true }: Props) {
 
             </div>
 
+            <section className={styles.lp_cs_contianer}>
+                <div className={styles['card_container']}>
+                    <div className={styles['card_content']}>
+                        <div> 
+                            <article className={styles['card_article']}>
+                                <div className={styles['card_image']}> 
+                                <img src=" " alt="" /> 
+                                <div className={styles['card_shadow']}>
+                                    
+                                </div>
+                                </div> 
+                                </article>
+                                </div> 
+
+
+                    </div>
+                </div>
+            </section>
+
             <section id={styles['mpContainers']}>
 
                 <div id={styles['mpContainerOne']}>
