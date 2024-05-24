@@ -106,27 +106,46 @@ export default function Page({ showHeading = true }: Props) {
 
             </div>
 
-            <section id='mpContainers'>
+            <section className={styles.lp_cs_contianer}>
+                <div className={styles['card_container']}>
+                    <div className={styles['card_content']}>
+                        <div> 
+                            <article className={styles['card_article']}>
+                                <div className={styles['card_image']}> 
+                                <img src=" " alt="" /> 
+                                <div className={styles['card_shadow']}>
+                                    
+                                </div>
+                                </div> 
+                                </article>
+                                </div> 
 
-                <div id='mpContainerOne'>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id={styles['mpContainers']}>
+
+                <div id={styles['mpContainerOne']}>
                     <img src='./LandingPageServicesIcons/veicon.png' alt='' />
                     <h2> Vast Experience </h2>
 
                 </div>
 
-                <div id='mpContainerTwo'>
+                <div id={styles['mpContainerTwo']}>
                     <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
                     <h2> Professional Team </h2>
 
                 </div>
 
-                <div id='mpContainerThree'>
+                <div id={styles['mpContainerThree']}>
                     <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
                     <h2> Reliable Service </h2>
 
                 </div>
 
-                <div id='mpContainerFour'>
+                <div id={styles['mpContainerFour']}>
                     <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
                     <h2> Quality Work </h2>
 
