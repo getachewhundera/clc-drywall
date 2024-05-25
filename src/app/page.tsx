@@ -5,7 +5,7 @@ import React from "react";
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
-import Image from 'next/image';
+import Link from "next/link";
 
 type Props = {
     showHeading?: boolean;
@@ -106,21 +106,25 @@ export default function Page({ showHeading = true }: Props) {
 
             </div>
 
-            <section className={styles.lp_cs_contianer}>
-                <div className={styles['card_container']}>
-                    <div className={styles['card_content']}>
-                        <div> 
-                            <article className={styles['card_article']}>
-                                <div className={styles['card_image']}> 
-                                <img src=" " alt="" /> 
-                                <div className={styles['card_shadow']}>
-                                    
+            <section className={styles.lp_cs_container}>
+                <div className={styles.card_container}>
+                    <div className={styles.card_content}>
+                        <div>
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src=" " alt="" />
+                                    <div className={styles.card_shadow}></div>
                                 </div>
-                                </div> 
-                                </article>
-                                </div> 
 
-
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>
