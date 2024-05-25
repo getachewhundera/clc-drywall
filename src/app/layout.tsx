@@ -11,11 +11,13 @@ import Footer from './components/Footer/page';
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
-      <head> 
-      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'/>  
-      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css' crossOrigin=''/>
+      <head>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css' crossOrigin='' />
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css'/>
+        <script src='https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js'/>
       </head>
-      
+
       <body>
         <NavBarPage />
         {children}

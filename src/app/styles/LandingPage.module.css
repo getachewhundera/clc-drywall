@@ -378,15 +378,35 @@
 /* 
   --body-font: "Bai Jamjuree" , sans-serif;  */
  
+/* Card Slider CSS COLORS */
+/*----------------------------------------------------------*/
+/* :root { 
+  --first-color: hsl(38, 92%, 58%); 
+  --first-color-light: hsl(38, 100%, 78%); 
+  --first-color-alt: hsl(32, 75%, 50%);
+  --second-color: hsl(195, 75%, 52%);
+  --dark-color: hsl(212, 40%, 12%);
+  --white-color: hsl(212, 4%, 95%);
+  --body-color: hsl(212, 42%, 15%);
+  --container-color: hsl(212, 42%, 20%);
+} */
+
+/* --body-font: "Bai Jamjuree", sans-serif; 
+--h2-font-size: 20px; 
+--normal-font-size: 16px;  */
 
 
 /* Card Slider CSS */
 /*----------------------------------------------------------*/
 
 .lp_cs_container{ 
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0; 
   display: flex; 
   align-items: center;
   justify-content: center; 
+  height: 100vh; 
   /* margin-top: 50px;  */
 
 }
@@ -412,7 +432,7 @@ padding-block: 80px;
 
 .card_image { 
   position: relative; 
-  background-color: yellow; 
+  background-color: hsl(38, 100%, 78%); 
   /* padding-block: 5px 5px;  */
   padding-top: 28px; 
   margin-bottom: -12px; 
@@ -420,7 +440,46 @@ padding-block: 80px;
 }
 
 
+.card_data { 
+  background-color: darkblue; 
+  Padding: 24px 32px; 
+  border-radius: 16px; 
+  text-align: center; 
+  position: relative; 
+  z-index: 10;
+}
+
+.card_image { 
+width: 180px; 
+margin: 0 auto; 
+position: relative; 
+z-index: 5; 
+}
+
+.card_name { 
+  font-size: 20px;  
+  color:  hsl(195, 75%, 52%); 
+  margin-bottom: 12px; 
+}
+
+.card_description { 
+  font-weight: 500; 
+  margin-bottom: 28px;
+
+}
+
+.card_button { 
+  display: inline-block; 
+  background-color: hsl(38, 92%, 58%); 
+  padding: 12px 24px; 
+  border-radius: 4px; 
+  color: hsl(212, 40%, 12%);
+  font-weight: 600;
+}
 .card_image img { 
+  display: block; 
+  max-width: 100%;
+  height: auto; 
   height: 250px; 
   width: 250px; 
 }
