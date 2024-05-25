@@ -378,3 +378,49 @@
 /* 
   --body-font: "Bai Jamjuree" , sans-serif;  */
  
+
+
+/* Card Slider CSS */
+/*----------------------------------------------------------*/
+
+.lp_cs_container{ 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  /* margin-top: 50px;  */
+
+}
+
+.card_container { 
+padding-block: 80px; 
+}
+
+.card_content { 
+  margin-inline: 28px; 
+  border-radius: 20px; 
+  /* overflow: hidden;  */
+  background-color: gray; 
+
+}
+
+.card_article { 
+  width: 300px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+
+}
+
+.card_image { 
+  position: relative; 
+  background-color: yellow; 
+  /* padding-block: 5px 5px;  */
+  padding-top: 28px; 
+  margin-bottom: -12px; 
+
+}
+
+
+.card_image img { 
+  height: 250px; 
+  width: 250px; 
+}

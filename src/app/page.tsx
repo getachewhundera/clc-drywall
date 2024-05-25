@@ -112,7 +112,7 @@ export default function Page({ showHeading = true }: Props) {
                         <div>
                             <article className={styles.card_article}>
                                 <div className={styles.card_image}>
-                                    <img src=" " alt="" />
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
                                 </div>
 
@@ -124,6 +124,90 @@ export default function Page({ showHeading = true }: Props) {
                                     <Link href="/" className={styles.card_button}>View More</Link>
                                 </div>
                             </article>
+
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+
+                            <article className={styles.card_article}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
