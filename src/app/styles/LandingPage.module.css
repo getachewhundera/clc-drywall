@@ -407,12 +407,12 @@
   align-items: center;
   justify-content: center; 
   height: 100vh; 
-  /* margin-top: 50px;  */
+  /* margin-top: 50px;  */; 
 
 }
 
 .card_container { 
-padding-block: 80px; 
+padding-block: 80px;  
 }
 
 .card_content { 
@@ -425,14 +425,15 @@ padding-block: 80px;
 
 .card_article { 
   width: 300px; 
+  
   border-radius: 20px; 
   overflow: hidden; 
-
+  flex: 0 0 auto; /* Prevents the card from shrinking */
 }
 
 .card_image { 
   position: relative; 
-  background-color: hsl(38, 100%, 78%); 
+  /* background-color: hsl(38, 100%, 78%);  */
   /* padding-block: 5px 5px;  */
   padding-top: 28px; 
   margin-bottom: -12px; 
@@ -482,4 +483,41 @@ z-index: 5;
   height: auto; 
   height: 250px; 
   width: 250px; 
+}
+
+
+.swiper-button-prev::after, 
+.swiper-button-next::after { 
+  content: ''; 
+}
+
+.swiper-button-prev,
+.swiper-button-next { 
+  width: initial; 
+  height: initial; 
+  font-size: 48px; 
+  color: hsl(195, 75%, 52%);
+  /* display: none;  */
+
+}
+
+/* Ensure that the swiper wrapper is a flex container with horizontal alignment */
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center`
+}
+
+/* Each swiper slide should have a fixed width */
+.swiper-slide {
+  width: 300px; /* Adjust this width according to your design */
+  margin-right: 80px; /* Space between cards */
+}
+
+.swiper-button-prev { 
+left: 0; 
+}
+
+.swiper-button-next{ 
+right: 0; 
 }

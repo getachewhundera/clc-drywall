@@ -82,7 +82,7 @@ export default function NavBarPage() {
                         <Link href="/" className={styles['nav-link']}>Home</Link>
                     </li>
                     <li className={styles['nav-item']}>
-                        <Link href="/about" className={styles['nav-link']}>About</Link>
+                        <Link href="/AboutUs" className={styles['nav-link']}>About</Link>
                     </li>
                     <li className={styles['nav-item']}>
                         <Link href="/services" className={styles['nav-link']}>Services</Link>

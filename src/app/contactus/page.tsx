@@ -1,4 +1,13 @@
-// `app/contactus/page.tsx` is the UI for the `/contactus` URL
-export default function Page() {
-    return <h1>Hello,contactus Page!</h1>
-  }
+// `app/contactus/page.tsx` is the UI for the `/contactUs` URL
+import React from 'react'
+
+type Props = {}
+
+export default function contactUs(props: Props) {
+    return (
+        <>
+
+            <h1>Hello, This is the Contact Us Page!</h1>
+        </>
+    )
+};

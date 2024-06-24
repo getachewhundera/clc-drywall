@@ -18,7 +18,7 @@ type Props = {}
 export default function services(props: Props) {
    return (
     <>
-    <h1>Hello, projects Page!</h1>
+    <h1>Hello, services Page!</h1>
       {/* <PageHeader title="Our Services" navTitle="Services" /> */}
 
       {/* <StatsSection /> */}

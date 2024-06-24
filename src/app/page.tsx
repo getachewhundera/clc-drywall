@@ -1,13 +1,16 @@
 // `app/page.tsx` is the UI for the `/` URL
 // `app/page.tsx` is the UI for the `/` URL
 'use client'
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 
+// Import Swiper styles from the public directory
+// import '/swiper/swiper-bundle.min.css';
+import '/public/swiper/swiper-bundle.min.css';
 
 type Props = {
     showHeading?: boolean;
@@ -60,6 +63,73 @@ export default function Page({ showHeading = true }: Props) {
     //     console.log(window.location.href);
     // }
 
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         const script = document.createElement('script');
+    //         script.src = '/swiper/swiper-bundle.min.js';
+    //         script.onload = () => {
+    //             let swiperCards = window.Swiper;
+    //             new Swiper('.card_content', {
+    //                 loop: true,
+    //                 spaceBetween: 32,
+    //                 grabCursor: true,
+
+    //                 pagination: {
+    //                     el: '.swiper-pagination',
+    //                     clickable: true, 
+    //                     dynamicBullets: true, 
+    //                 },
+    //                 navigation: {
+    //                     nextEl: '.swiper-button-next',
+    //                     prevEl: '.swiper-button-prev',
+    //                 },
+    //             });
+    //         };
+    //         document.body.appendChild(script);
+    //     }
+    // }, []);
+
+//    let [changeCards, Swiper] = useState("swiper"); 
+
+    // let swiper = new Swiper('.swiper', {
+        // Optional parameters
+    //     direction: 'horizontal',
+    //     loop: true,
+    //     spaceBetween: 32,
+    //     grabCursor: true,
+      
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         clickable: true, 
+    //         dynamicBullets: true, 
+    //     },
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    //   });
+
+
+
+    // let swiperCards = new Swiper('.card_content', {
+    //     loop: true,
+    //     spaceBetween: 32, 
+    //     grabCursor: true, 
+
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //     },
+
+    //     // Navigation arrows
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+    //   });
+
+
+
+
 
 
     return (
@@ -109,10 +179,10 @@ export default function Page({ showHeading = true }: Props) {
             </div>
 
             <section className={styles.lp_cs_container}>
-                <div className={styles.card_container}>
+                <div className={styles['card_container swiper']}>
                     <div className={styles.card_content}>
-                        <div>
-                            <article className={styles.card_article}>
+                        <div className={styles['swiper-wrapper']}>
+                            <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
@@ -127,7 +197,7 @@ export default function Page({ showHeading = true }: Props) {
                                 </div>
                             </article>
 
-                            <article className={styles.card_article}>
+                            <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
@@ -142,23 +212,7 @@ export default function Page({ showHeading = true }: Props) {
                                 </div>
                             </article>
 
-                            <article className={styles.card_article}>
-                                <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                    <div className={styles.card_shadow}></div>
-                                </div>
-
-                                <div className={styles.card_data}>
-                                    <h3 className={styles.card_name}> Drywall Installation </h3>
-                                    <p className={styles.card_description}>
-                                        sdfddsfdsfsdfdfsdfsdf
-                                    </p>
-                                    <Link href="/" className={styles.card_button}>View More</Link>
-                                </div>
-                            </article>
-
-
-                            <article className={styles.card_article}>
+                            <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
@@ -174,7 +228,7 @@ export default function Page({ showHeading = true }: Props) {
                             </article>
 
 
-                            <article className={styles.card_article}>
+                            <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
@@ -190,7 +244,7 @@ export default function Page({ showHeading = true }: Props) {
                             </article>
 
 
-                            <article className={styles.card_article}>
+                            <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
                                     <div className={styles.card_shadow}></div>
@@ -206,12 +260,34 @@ export default function Page({ showHeading = true }: Props) {
                             </article>
 
 
+                            <article className={styles['card_article swiper-slider']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
 
-
-
-
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
                         </div>
                     </div>
+                    {/* Card Slider Navigation buttons */}
+                    <div className={styles['swiper-button-prev']}>
+                        <i className={styles['ri-arrow-left-s-line']}></i>
+                    </div>
+
+                    <div className={styles['swiper-button-next']}>
+                        <i className={styles['ri-arrow-right-s-line']}></i>
+                    </div>
+
+                    {/* Card Slider  pagination*/}
+                    <div className={styles['swiper-pagination']}></div>
+
                 </div>
             </section>
 
