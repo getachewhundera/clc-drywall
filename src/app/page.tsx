@@ -89,15 +89,15 @@ export default function Page({ showHeading = true }: Props) {
     //     }
     // }, []);
 
-//    let [changeCards, Swiper] = useState("swiper"); 
+    //    let [changeCards, Swiper] = useState("swiper"); 
 
     // let swiper = new Swiper('.swiper', {
-        // Optional parameters
+    // Optional parameters
     //     direction: 'horizontal',
     //     loop: true,
     //     spaceBetween: 32,
     //     grabCursor: true,
-      
+
     //     pagination: {
     //         el: '.swiper-pagination',
     //         clickable: true, 
@@ -134,13 +134,11 @@ export default function Page({ showHeading = true }: Props) {
 
     return (
         <>
+            {/* START of Hero Section on Landing Page */}
             <div className={styles.home_banner_area}>
-
-
-                {/* 1st section Header banner*/}
                 <div className={styles['banner_container']}>
-
                     <div className={styles['banner_inner']}>
+
                         <div className={styles.pane + " " + styles['left-pane']}>
                             {imagesLeft.map((img, index) => (
                                 <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
@@ -152,7 +150,6 @@ export default function Page({ showHeading = true }: Props) {
                                 <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
                             ))}
                         </div>
-
 
                         <div className={styles.container}>
                             <div className={styles['banner_content']}>
@@ -175,13 +172,51 @@ export default function Page({ showHeading = true }: Props) {
 
                     </div>
                 </div>
-
             </div>
+            {/* END of Hero Section on Landing Page */}
 
+
+
+            {/* START of CARD SLIDER ANIMATION SERVICES SECTION */}
+            {/* lp_cs = landing page card slider */}
             <section className={styles.lp_cs_container}>
+
+                <h2>What we provide</h2>
+
                 <div className={styles['card_container swiper']}>
                     <div className={styles.card_content}>
                         <div className={styles['swiper-wrapper']}>
+
+                            <article className={styles['card_article swiper-slider']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+                            <article className={styles['card_article swiper-slider']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <div className={styles.card_shadow}></div>
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
                             <article className={styles['card_article swiper-slider']}>
                                 <div className={styles.card_image}>
                                     <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
@@ -243,39 +278,9 @@ export default function Page({ showHeading = true }: Props) {
                                 </div>
                             </article>
 
-
-                            <article className={styles['card_article swiper-slider']}>
-                                <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                    <div className={styles.card_shadow}></div>
-                                </div>
-
-                                <div className={styles.card_data}>
-                                    <h3 className={styles.card_name}> Drywall Installation </h3>
-                                    <p className={styles.card_description}>
-                                        sdfddsfdsfsdfdfsdfsdf
-                                    </p>
-                                    <Link href="/" className={styles.card_button}>View More</Link>
-                                </div>
-                            </article>
-
-
-                            <article className={styles['card_article swiper-slider']}>
-                                <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                    <div className={styles.card_shadow}></div>
-                                </div>
-
-                                <div className={styles.card_data}>
-                                    <h3 className={styles.card_name}> Drywall Installation </h3>
-                                    <p className={styles.card_description}>
-                                        sdfddsfdsfsdfdfsdfsdf
-                                    </p>
-                                    <Link href="/" className={styles.card_button}>View More</Link>
-                                </div>
-                            </article>
                         </div>
                     </div>
+
                     {/* Card Slider Navigation buttons */}
                     <div className={styles['swiper-button-prev']}>
                         <i className={styles['ri-arrow-left-s-line']}></i>
@@ -289,35 +294,72 @@ export default function Page({ showHeading = true }: Props) {
                     <div className={styles['swiper-pagination']}></div>
 
                 </div>
-            </section>
 
+                {/*cs = card slider */}
+                <div className='cs_services_button'>
+                    <button type="button" onClick={() => router.push('/services')}>Our Services</button>
+                </div>
+
+            </section>
+            {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
+
+
+
+            {/* START of FIXED CARDS DISPLAY SECTION */}
             <section id={styles['mpContainers']}>
+
+                <h2>EXPERT SOLUTIONS YOU CAN RELY ON</h2>
 
                 <div id={styles['mpContainerOne']}>
                     <img src='./LandingPageServicesIcons/veicon.png' alt='' />
                     <h2> Vast Experience </h2>
-
                 </div>
 
                 <div id={styles['mpContainerTwo']}>
                     <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
                     <h2> Professional Team </h2>
-
                 </div>
 
                 <div id={styles['mpContainerThree']}>
                     <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
                     <h2> Reliable Service </h2>
-
                 </div>
 
                 <div id={styles['mpContainerFour']}>
                     <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
                     <h2> Quality Work </h2>
-
                 </div>
 
             </section>
+            {/* END of FIXED CARDS DISPLAY SECTION */}
+
+
+
+            {/* START of RECENT PROJECTS DISPLAY SECTION */}
+
+            <section className="lp_recent_projects_section">
+
+                <h2>RECENT PROJECTS</h2>
+
+                <div
+                    className="all_images"
+                    onClick={() => href='services/{id}'}
+                >
+                    <div className="allprojects_image_container">
+                        <img src='' alt='' id='allprojects_image1' />
+                        <img src='' alt='' id='allprojects_image2' />
+                        <img src='' alt='' id='allprojects_image3' />
+                        <img src='' alt='' id='allprojects_image4' />
+                        <img src='' alt='' id='allprojects_image5' />
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            {/* END of RECENT PROJECTS DISPLAY SECTION */}
+
 
 
         </>
