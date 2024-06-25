@@ -4,6 +4,7 @@
     position: relative;
     /* z-index: 1; */
     min-height: 770px;
+    margin-top: 100px; 
 }
 
 .banner_inner {
@@ -398,8 +399,55 @@
 
 /* Card Slider CSS */
 /*----------------------------------------------------------*/
+/*--START--CSS for the 'Title' of the card slider animation section */
+/* lp_cs_... = landing page card slider */
+.lp_cs_section_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 0px;  
+}
+
+.lp_cs_section_title h2 {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+
+.lp_cs_section_title h2::before,
+.lp_cs_section_title h2::after {
+  content: '';
+  position: absolute; 
+  top: 50%; 
+  width: 100vw;
+  height: 3px; 
+  background-color: black;
+}
+
+
+.lp_cs_section_title h2::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.lp_cs_section_title h2::after {
+  right: 0;
+  transform: translateX(100%);
+}
+
+/*--END--CSS for the 'Title' of the card slider animation section */
+
+
+
+
+
 
 .lp_cs_container{ 
+  position: relative; 
   box-sizing: border-box;
   padding: 0; 
   margin: 0; 
@@ -412,7 +460,8 @@
 }
 
 .card_container { 
-padding-block: 80px;  
+/* padding-block: 80px;  */
+position: absolute; 
 }
 
 .card_content { 
@@ -505,7 +554,7 @@ z-index: 5;
 .swiper-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: center`
+  align-items: center;
 }
 
 /* Each swiper slide should have a fixed width */
@@ -520,4 +569,12 @@ left: 0;
 
 .swiper-button-next{ 
 right: 0; 
+}
+
+
+
+
+
+.cs_services_button { 
+  position: absolute; 
 }
