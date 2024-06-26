@@ -397,9 +397,11 @@
 --normal-font-size: 16px;  */
 
 
-/* Card Slider CSS */
-/*----------------------------------------------------------*/
-/*--START--CSS for the 'Title' of the card slider animation section */
+/* Card Slider CSS SECTION */
+/*----------------------------------------------------------------------------------------------*/
+
+/*--START--CSS for the 'Title' and horizontal lines of the card slider animation section */
+/*-----------------------------------------*/
 /* lp_cs_... = landing page card slider */
 .lp_cs_section_title {
   display: flex;
@@ -407,7 +409,7 @@
   justify-content: center;
   position: relative;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 2%;
   margin-bottom: 0px;  
 }
 
@@ -438,14 +440,45 @@
   right: 0;
   transform: translateX(100%);
 }
-
-/*--END--CSS for the 'Title' of the card slider animation section */
-
-
+/*-----------------------------------------*/
+/*--END--CSS for the 'Title' and horizontal lines of the card slider animation section */
 
 
 
+/*--START--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
+/*-----------------------------------------*/
+.decorativelines {
+  position: relative;
+  display: flex;  
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 8%;
+  margin-bottom: 0%;
+}
 
+/*thinner decorative line*/
+.decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.decorativelineoverlayed {
+  position: absolute;
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
+
+
+
+/*--START--CSS FOR CARD SLIDER ANIMATION*/
 .lp_cs_container{ 
   position: relative; 
   box-sizing: border-box;
@@ -455,8 +488,8 @@
   align-items: center;
   justify-content: center; 
   height: 100vh; 
-  /* margin-top: 50px;  */; 
-
+  /* margin-top: 50px; ;  */
+  border: solid black 1px;
 }
 
 .card_container { 
@@ -469,6 +502,7 @@ position: absolute;
   border-radius: 20px; 
   /* overflow: hidden;  */
   background-color: gray; 
+  border: solid black 1px;
 
 }
 
@@ -526,6 +560,7 @@ z-index: 5;
   color: hsl(212, 40%, 12%);
   font-weight: 600;
 }
+
 .card_image img { 
   display: block; 
   max-width: 100%;

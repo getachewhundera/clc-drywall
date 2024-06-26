@@ -181,6 +181,10 @@ export default function Page({ showHeading = true }: Props) {
             {/* START of CARD SLIDER ANIMATION SERVICES SECTION */}
             {/* lp_cs = landing page card slider */}
             <section className='landing_page_cs_animation_section'>
+                <div className={styles.decorativelines}>
+                    <div className={styles.decorativelinebase}> </div>
+                    <div className={styles.decorativelineoverlayed}> </div>
+                </div>
                 <div className={styles['lp_cs_section_title']}>
                     <h2>WHAT WE PROVIDE</h2>
                 </div>
