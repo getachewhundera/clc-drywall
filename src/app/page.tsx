@@ -7,6 +7,10 @@ import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// import boxicons from 'boxicons'; 
+
 
 // Import Swiper styles from the public directory
 // import '/swiper/swiper-bundle.min.css';
@@ -180,7 +184,7 @@ export default function Page({ showHeading = true }: Props) {
 
             {/* START of CARD SLIDER ANIMATION SERVICES SECTION */}
             {/* lp_cs = landing page card slider */}
-            <section className='landing_page_cs_animation_section'>
+            <section className={styles['landing_page_cs_animation_section']}>
                 <div className={styles.decorativelines}>
                     <div className={styles.decorativelinebase}> </div>
                     <div className={styles.decorativelineoverlayed}> </div>
@@ -189,125 +193,103 @@ export default function Page({ showHeading = true }: Props) {
                     <h2>WHAT WE PROVIDE</h2>
                 </div>
                 <div className={styles.lp_cs_container}>
-                    <div className={styles['card_container swiper']}>
-                        <div className={styles.card_content}>
-                            <div className={styles['swiper-wrapper']}>
+                    <div className={styles['card_container']}>
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+                        
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
-
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
-
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
 
-                                <article className={styles['card_article swiper-slider']}>
-                                    <div className={styles.card_image}>
-                                        <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                                        <div className={styles.card_shadow}></div>
-                                    </div>
+                            <article className={styles['card_article']}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                                    <div className={styles.card_data}>
-                                        <h3 className={styles.card_name}> Drywall Installation </h3>
-                                        <p className={styles.card_description}>
-                                            sdfddsfdsfsdfdfsdfsdf
-                                        </p>
-                                        <Link href="/" className={styles.card_button}>View More</Link>
-                                    </div>
-                                </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+              
 
-                            </div>
-                        </div>
-
-                        {/* Card Slider Navigation buttons */}
-                        <div className={styles['swiper-button-prev']}>
-                            <i className={styles['ri-arrow-left-s-line']}></i>
-                        </div>
-
-                        <div className={styles['swiper-button-next']}>
-                            <i className={styles['ri-arrow-right-s-line']}></i>
-                        </div>
-
-                        {/* Card Slider  pagination*/}
-                        <div className={styles['swiper-pagination']}></div>
 
                     </div>
-
-
-
                 </div>
+
+
                 {/*cs = card slider */}
-                <div className='cs_services_button'>
+                <div className={styles.cs_services_button}>
                     <button type="button" onClick={() => router.push('/services')}>Our Services</button>
                 </div>
+
             </section>
             {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
 
