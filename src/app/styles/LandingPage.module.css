@@ -487,7 +487,7 @@
 
 
 /*--START--CSS for the animation of the CARD SLIDER*/
-.lp_cs_container{ 
+.lp-cs-container{ 
   position: relative; 
   box-sizing: border-box;
   padding: 0; 
@@ -505,17 +505,17 @@
 
 
 
-.card_container { 
+.card-container { 
   /* margin-inline: 28px;  */
   border-radius: 20px; 
   /* overflow: hidden;  */
-  border: solid black 1px;
+  border: solid black 10px;
   display: flex;
   column-gap: 10px; 
 }
 
 
-.card_article { 
+.card-article { 
   width: 400px; 
   border-radius: 20px; 
   overflow: hidden; 
