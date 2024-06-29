@@ -270,19 +270,20 @@ export default function Page({ showHeading = true }: Props) {
                     <div className={styles['swiper-pagination']}></div>
 
                     {/*--Naviagtion Buttons--*/}
-                    <div onClick={(event) => {moveLeft}} className={styles['swiper-button-prev']}>
-                        <i className='bx bx-chevron-left'></i>
+                    <div className={styles.navigationArrows}>
+                        <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
+                            <i className='bx bx-chevron-left bx-lg'></i>
+                        </div>
+                        <div onClick={handleNextClick} className={styles['swiper-button-next']}>
+                            <i className='bx bx-chevron-right bx-lg'></i>
+                        </div>
                     </div>
-                    <div onClick={(event) => {moveRight}} className={styles['swiper-button-next']}>
-                        <i className='bx bx-chevron-right'></i>
-                    </div>
-
 
                     {/*cs = card slider */}
                     <div className={styles.cs_services_button}>
                         <button type="button" onClick={() => router.push('/services')}>Our Services</button>
                     </div>
-                    
+
                 </div>
             </section>
             {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
