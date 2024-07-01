@@ -33,7 +33,7 @@ interface ImageProps {
 
 export default function Page({ showHeading = true }: Props) {
     const router = useRouter();
-    const swiperRef = useRef<HTMLDivElement | null>(null);
+    const swiperRef = useRef<Swiper | null>(null);
 
     // const imagesLeft: ImageProps[] = [
     //     { src: '/images/LandingPageHeaderImages/main1.jpg', alt: "Left main image" },
@@ -76,54 +76,66 @@ export default function Page({ showHeading = true }: Props) {
 
     //initialized after component is rendered
     useEffect(() => {
-        if (swiperRef.current) {
-            new Swiper(swiperRef.current, {
-                modules: [Navigation, Pagination],
-                //   Default parameters
-                slidesPerView: 3,
-                spaceBetween: 32,
-                slidesPerGroup: 1,
-                loop: true,
-                // Optional parameters
-                direction: 'horizontal',
-                grabCursor: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+        const swiperInstance = new Swiper('.mySwiper', {
+            modules: [Navigation, Pagination],
+            //   Default parameters
+            slidesPerView: 3,
+            spaceBetween: 32,
+            slidesPerGroup: 1,
+            loop: false,
+            // Optional parameters
+            direction: 'horizontal',
+            grabCursor: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+                dynamicBullets: true,
+                dynamicMainBullets: 6,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    clickable: true,
-                    dynamicBullets: true,
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
                 },
-                // Responsive breakpoints
-                breakpoints: {
-                    // when window width is >= 320px
-                    320: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    },
-                    // when window width is >= 480px
-                    480: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    },
-                    // when window width is >= 640px
-                    640: {
-                        slidesPerView: 4,
-                        spaceBetween: 40
-                    }
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 4,
+                    spaceBetween: 40
                 }
-            });
+            }
+        });
+        swiperRef.current = swiperInstance;
+    }, []);
+
+
+    //funtions for the handle click events for Card Slider Navigation arrows
+    const handlePrevClick = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slidePrev();
         }
-    }, [swiperRef]);
+    };
 
-
+    const handleNextClick = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slideNext();
+        }
+    };
 
 
     return (
-        <>
+        <div className={styles['LandingPageBody']}>
             {/* START of Hero Section on Landing Page */}
             <div className={styles.home_banner_area}>
                 <div className={styles['banner_container']}>
@@ -170,14 +182,20 @@ export default function Page({ showHeading = true }: Props) {
 
             {/* START of CARD SLIDER ANIMATION SERVICES SECTION */}
             {/* lp_cs = landing page card slider */}
-            <section className={styles['landing_page_cs_animation_section']}>
-                <div className={styles.decorativelines}>
-                    <div className={styles.decorativelinebase}> </div>
-                    <div className={styles.decorativelineoverlayed}> </div>
+            <div className={styles['landing_page_cs_animation_section']}>
+                <div className={styles['decorative-lines-container']}>
+                    <div className={styles.decorativelines}>
+                        <div className={styles.decorativelinebase}> </div>
+                        <div className={styles.decorativelineoverlayed}> </div>
+                    </div>
                 </div>
-                <div className={styles['lp_cs_section_title']}>
-                    <h2>WHAT WE PROVIDE</h2>
+
+                <div className={styles['lp-cs-section-title-container']}>
+                    <div className={styles['lp_cs_section_title']}>
+                        <h2>WHAT WE PROVIDE</h2>
+                    </div>
                 </div>
+
                 <div ref={swiperRef} className={`swiper mySwiper ${styles['lp-cs-container']}`}>
                     <div className={`swiper-wrapper ${styles['card-container']}`}>
                         <article className={`swiper-slide ${styles['card-article']}`}>
@@ -265,27 +283,28 @@ export default function Page({ showHeading = true }: Props) {
                             </div>
                         </article>
                     </div>
-
-                    {/*--Pagination--*/}
-                    <div className={styles['swiper-pagination']}></div>
-
-                    {/*--Naviagtion Buttons--*/}
-                    <div className={styles.navigationArrows}>
-                        <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
-                            <i className='bx bx-chevron-left bx-lg'></i>
-                        </div>
-                        <div onClick={handleNextClick} className={styles['swiper-button-next']}>
-                            <i className='bx bx-chevron-right bx-lg'></i>
-                        </div>
-                    </div>
-
-                    {/*cs = card slider */}
-                    <div className={styles.cs_services_button}>
-                        <button type="button" onClick={() => router.push('/services')}>Our Services</button>
-                    </div>
-
                 </div>
-            </section>
+
+                {/* Pagination */}
+                <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
+
+                {/*--Naviagtion Buttons--*/}
+                <div className={styles.navigationArrows}>
+                    <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
+                        <i className='bx bx-chevron-left bx-lg'></i>
+                    </div>
+                    <div onClick={handleNextClick} className={styles['swiper-button-next']}>
+                        <i className='bx bx-chevron-right bx-lg'></i>
+                    </div>
+                </div>
+
+
+                {/*cs = card slider */}
+                <div className={styles.cs_services_button}>
+                    <button type="button" onClick={() => router.push('/services')}>Our Services</button>
+                </div>
+
+            </div>
             {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
 
 
@@ -343,12 +362,6 @@ export default function Page({ showHeading = true }: Props) {
 
             {/* END of RECENT PROJECTS DISPLAY SECTION */}
 
-        </>
-
-
-
-
-
-
+        </div >
     );
 };
