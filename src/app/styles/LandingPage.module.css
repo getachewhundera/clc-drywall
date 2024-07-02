@@ -1,6 +1,10 @@
+
 .LandingPageBody {
   overflow-x: hidden;
 }
+
+/*--------LANDING PAGE HERO SECTION-----------*/
+/*---------------------------------------------------------------------*/
 .home_banner_area {
     width: 100%;
     position: relative;
@@ -143,12 +147,6 @@
       background-color: #555;
     }
   }
-
-
-
-
-
-
   @media (max-width:1199px){
 	.home_banner_area .banner_inner {
 		min-height: 700px;
@@ -178,7 +176,6 @@
 	}
 }
 
-
 @media (max-width:480px){
 .home_banner_area .banner_inner .banner_content {
 		padding: 30px 15px;
@@ -191,8 +188,6 @@
 		min-height: 400px;
 	}
 }
-
-
 
 @media (max-width: 767px) {
   .home_banner_area .banner_inner .banner_content span::after {
@@ -224,155 +219,9 @@
     margin-top: 35px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* mp container section*/
-
-#mpContainers {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  margin-left: 70px; 
-  margin-right: 70px; 
-  margin-top: 50px; 
-  gap: 0px; 
-}
-
-
-
-#mpContainerOne,
-#mpContainerTwo,
-#mpContainerThree,
-#mpContainerFour {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100px; 
-  border: 1px solid rgb(154, 138, 120);
-  color: black; 
-  font-family: 'Raleway', sans-serif; 
-  flex: 1;
-}
-
-#mpContainerOne h2,
-#mpContainerTwo h2, 
-#mpContainerThree h2,
-#mpContainerFour h2{
-  margin-top: 10px; 
-  text-align: center; 
-}
-
-
-/* Container sizing */
-#mpContainerOne {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerTwo {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerThree {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerFour {
-  width: 450px; 
-  height: 350px; 
-}
-
-
-
-/* Images  */
-#mpContainerOne img{
-  width: 200px; 
-  height: 200px;
-  margin-bottom: 10px;
-
-}
-
-#mpContainerTwo img {
-  width: 200px; 
-  height: 200px;
-  margin-bottom: 10px;
-
-}
-
-#mpContainerThree img {
-  width: 200px; 
-  height: 200px;  
-  margin-bottom: 10px;
-
-
-}
-
-#mpContainerFour img {
-  width: 200px; 
-  height: 200px;
-  margin-bottom: 10px;
-}
-
-
-
-@media screen and (max-width: 600px) { 
-
-  #mpContainerOne h2,
-  #mpContainerTwo h2, 
-  #mpContainerThree h2,
-  #mpContainerFour h2{
-      font-size: 20%; 
-      margin-top: 5%; 
-      text-align: center; 
-  }
-  
-  /* Container sizing */
-  #mpContainerOne,
-  #mpContainerTwo,
-  #mpContainerThree, 
-  #mpContainerFour {
-      width: 20%; 
-      height: 35%; 
-    
-  }
-  
-      /* Images  */
-  #mpContainerOne img,
-  #mpContainerTwo img,
-  #mpContainerThree img, 
-  #mpContainerFour img {
-      width: 80%; 
-      height: 75%;
-      margin-bottom: 5%;
-  }
-  }
-  
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
 /*   
   @import url("https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css");
 
@@ -399,7 +248,7 @@
 --normal-font-size: 16px;  */
 
 
-/* Card Slider CSS SECTION */
+/*--------Card Slider CSS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
 
 .landing_page_cs_animation_section {
@@ -506,13 +355,20 @@
 
 
 /*--START--CSS for the animation of the CARD SLIDER*/
-.lp-cs-container{ 
+.lp-cards-main-container {
   display: flex; 
   position: relative; 
+  margin-bottom: 4%; 
+  margin-top: 4%;
+}
+
+.lp-cs-container{ 
+  display: flex; 
+  position: absolute; 
   box-sizing: border-box;
   padding: 0; 
   margin: 0; 
-  margin-top: 4%;
+  
   /* border: solid black 1px; */
   max-width: 100%; 
 }
@@ -595,21 +451,33 @@ z-index: 5;
 }
 
 
+.pagination-bullets-container{
+  display: flex; 
+  position: relative;
+  justify-content: center;
+  margin-top: 2%; 
+
+}
+
+
 
 .swiper-pagination {
-  display: flex; 
   position: absolute;
+}
+
+
+.navigationArrows-container {
+  display: flex; 
   justify-content: center;
-  align-items: center; 
-  bottom: 10px; 
-  width: 100%; 
+  position: relative;
+
 }
 
 .navigationArrows{
   position: absolute; 
   display: flex;
   margin-top: 2%; 
-  margin-bottom: 0%; 
+  margin-bottom: 2%; 
 }
 
 
@@ -618,11 +486,16 @@ color: red;
 }
 
 
+.cs-services-button-container{
+  display: flex; 
+  position: relative;
+  margin-top: 8%; 
+  justify-content: center;
+}
+
 
 .cs_services_button { 
   position: absolute;
-  display: flex; 
-  margin-top: 2%; 
   margin-bottom: 2%; 
 }
 
@@ -635,3 +508,185 @@ color: red;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif; 
 }
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+
+/*--------FIXED CARDS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+
+
+.fixed-cards-section-main-container{
+  position: relative; 
+  /* border: solid orange 10px;  */
+  background-color: #555;
+  margin-bottom: 15%; 
+  border: solid yellow 4px;
+  height: auto; 
+}
+
+.fixed-cards-section-title-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 1.5%;
+}
+
+.fixed-cards-section-title h2 {
+  color: black; 
+}
+
+.fixed-cards-container{
+  position: relative;
+  display: flex;
+  margin-bottom: 4%;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; 
+  /* justify-content: space-between;  */
+  margin-left: 70px; 
+  margin-right: 70px; 
+  margin-top: 50px; 
+  gap: 8px; 
+}
+
+.card-1, 
+.card-2, 
+.card-3, 
+.card-4 {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  min-height: 100px; 
+  border: 1.5px solid #9A8A78;
+  background-color: #262626;
+  color: black; 
+  font-family: 'Raleway', sans-serif; 
+  flex: 1;
+  width: 450px; 
+  height: 350px; 
+
+}
+
+.card-1 h2, 
+.card-2 h2, 
+.card-3 h2, 
+.card-4 h2 {
+  margin-top: 10px; 
+  text-align: center; 
+  color: white; 
+}
+
+.card-1 img, 
+.card-2 img, 
+.card-3 img, 
+.card-4 img {
+  width: 200px; 
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) { 
+
+  .card-1 h2, 
+  .card-2 h2, 
+  .card-3 h2, 
+  .card-4 h2 {
+      font-size: 20%; 
+      margin-top: 5%; 
+      text-align: center; 
+  }
+  
+  /* Container sizing */
+  .card-1, 
+  .card-2, 
+  .card-3, 
+  .card-4  {
+      width: 20%; 
+      height: 35%; 
+    
+  }
+  
+      /* Images  */
+      .card-1 img, 
+      .card-2 img, 
+      .card-3 img, 
+      .card-4 img {
+      width: 80%; 
+      height: 75%;
+      margin-bottom: 5%;
+  }
+  }
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+
+
+/*--------RECENT PROJECTS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+.lp-recent-projects-section-main-container {
+  position: relative; 
+  /* border: solid orange 10px;  */
+  background-color: #555;
+  margin-bottom: 15%; 
+  border: solid yellow 4px;
+  height: 2000px; 
+}
+
+/*--START--CSS FOR decorative line above "Recent Projects" title*/
+/*-----------------------------------------*/
+.lp-projects-decorative-lines-container {
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.lp-projects-decorativelines {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 0%;
+}
+
+/*thinner decorative line*/
+.lp-projects-decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.lp-projects-decorativelineoverlayed {
+  position: absolute; 
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "Recent Projects" title*/
+
+
+/*--START--CSS FOR "Recent Projects" title*/
+/*-----------------------------------------*/
+.recent-projects-section-title-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 1.5%;
+}
+
+.recent-projects-section-title h2 {
+  color: black; 
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR "Recent Projects" title*/

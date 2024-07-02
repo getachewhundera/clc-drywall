@@ -195,114 +195,123 @@ export default function Page({ showHeading = true }: Props) {
                         <h2>WHAT WE PROVIDE</h2>
                     </div>
                 </div>
+                <div className={styles['lp-cards-main-container']}>
+                    <div ref={swiperRef} className={`swiper mySwiper ${styles['lp-cs-container']}`}>
+                        <div className={`swiper-wrapper ${styles['card-container']}`}>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                <div ref={swiperRef} className={`swiper mySwiper ${styles['lp-cs-container']}`}>
-                    <div className={`swiper-wrapper ${styles['card-container']}`}>
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
-
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        sdfddsfdsfsdfdfsdfsdf
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
 
                 {/* Pagination */}
-                <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
+                <div className={styles['pagination-bullets-container']}>
+                    <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
+                </div>
 
                 {/*--Naviagtion Buttons--*/}
-                <div className={styles.navigationArrows}>
-                    <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
-                        <i className='bx bx-chevron-left bx-lg'></i>
-                    </div>
-                    <div onClick={handleNextClick} className={styles['swiper-button-next']}>
-                        <i className='bx bx-chevron-right bx-lg'></i>
+                <div className={styles['navigationArrows-container']}>
+                    <div className={styles.navigationArrows}>
+                        <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
+                            <i className='bx bx-chevron-left bx-lg'></i>
+                        </div>
+                        <div onClick={handleNextClick} className={styles['swiper-button-next']}>
+                            <i className='bx bx-chevron-right bx-lg'></i>
+                        </div>
                     </div>
                 </div>
+
 
 
                 {/*cs = card slider */}
-                <div className={styles.cs_services_button}>
-                    <button type="button" onClick={() => router.push('/services')}>Our Services</button>
+                <div className={styles['cs-services-button-container']}>
+                    <div className={styles.cs_services_button}>
+                        <button type="button" onClick={() => router.push('/services')}>Our Services</button>
+                    </div>
                 </div>
+
 
             </div>
             {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
@@ -310,56 +319,90 @@ export default function Page({ showHeading = true }: Props) {
 
 
             {/* START of FIXED CARDS DISPLAY SECTION */}
-            <section id={styles['mpContainers']}>
-
-                <h2>EXPERT SOLUTIONS YOU CAN RELY ON</h2>
-
-                <div id={styles['mpContainerOne']}>
-                    <img src='./LandingPageServicesIcons/veicon.png' alt='' />
-                    <h2> Vast Experience </h2>
+            <div className={styles['fixed-cards-section-main-container']}>
+                <div className={styles['fixed-cards-section-title-container']}>
+                    <div className={styles['fixed-cards-section-title']}>
+                        <h2>EXPERT SOLUTIONS YOU CAN RELY ON</h2>
+                    </div>
                 </div>
-
-                <div id={styles['mpContainerTwo']}>
-                    <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
-                    <h2> Professional Team </h2>
+                <div className={styles['fixed-cards-container']}>
+                    <div className={styles['cards-container']}>
+                        <div className={styles['card-1']}>
+                            <img src='./LandingPageServicesIcons/veicon.png' alt='' />
+                            <h2> Vast Experience </h2>
+                        </div>
+                        <div className={styles['card-2']}>
+                            <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
+                            <h2> Professional Team </h2>
+                        </div>
+                        <div className={styles['card-3']}>
+                            <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
+                            <h2> Reliable Service </h2>
+                        </div>
+                        <div className={styles['card-4']}>
+                            <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
+                            <h2> Quality Work </h2>
+                        </div>
+                    </div>
                 </div>
-
-                <div id={styles['mpContainerThree']}>
-                    <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
-                    <h2> Reliable Service </h2>
-                </div>
-
-                <div id={styles['mpContainerFour']}>
-                    <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
-                    <h2> Quality Work </h2>
-                </div>
-
-            </section>
+            </div>
             {/* END of FIXED CARDS DISPLAY SECTION */}
 
 
 
             {/* START of RECENT PROJECTS DISPLAY SECTION */}
 
-            <section className="lp_recent_projects_section">
+            <div className={styles['lp-recent-projects-section-main-container']}>
 
-                <h2>RECENT PROJECTS</h2>
-
-                <div
-                    className="all_images"
-                    onClick={() => href = 'services/{id}'}
-                >
-                    <div className="allprojects_image_container">
-                        <img src='' alt='' id='allprojects_image1' />
-                        <img src='' alt='' id='allprojects_image2' />
-                        <img src='' alt='' id='allprojects_image3' />
-                        <img src='' alt='' id='allprojects_image4' />
-                        <img src='' alt='' id='allprojects_image5' />
+                <div className={styles['lp-projects-decorative-lines-container']}>
+                    <div className={styles['lp-projects-decorativelines']}>
+                        <div className={styles['lp-projects-decorativelinebase']}> </div>
+                        <div className={styles['lp-projects-decorativelineoverlayed']}> </div>
                     </div>
                 </div>
 
-            </section>
 
+                <div className={styles['recent-projects-section-title-container']}>
+                    <div className={styles['recent-projects-section-title']}>
+                        <h2>RECENT PROJECTS</h2>
+                    </div>
+                </div>
+                {/* onClick={() => href = 'services/{id}'} */}
+                <div className={styles['categories']}>
+                    <div className={styles['category-container']}>
+
+                        <div className={styles['category-1-container']}>
+                            <div className={styles['category-1-title']}>All</div>
+                            <div className={styles['category-1-all']}>
+                                <img src='' alt='' id='category1-image1' />
+                            </div>
+                        </div>
+
+                        <div className={styles['category-2-container']}>
+                            <div className={styles['category-2-title']}>Residential</div>
+                            <div className={styles['category-2-residential']}>
+                                <img src='' alt='' id='category2-image2' />
+                            </div>
+                        </div>
+
+                        <div className={styles['category-3-container']}>
+                            <div className={styles['category-3-title']}>Commercial</div>
+                            <div className={styles['category-3-commercial']}>
+                                <img src='' alt='' id='category3-image3' />
+                            </div>
+                        </div>
+
+                        <div className={styles['category-4-container']}>
+                            <div className={styles['category-4-title']}>Repairs</div>
+                            <div className={styles['category-4-repairs']}>
+                                <img src='' alt='' id='category4-image4' />
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
             {/* END of RECENT PROJECTS DISPLAY SECTION */}
 
         </div >
