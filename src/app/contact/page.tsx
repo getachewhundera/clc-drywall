@@ -3,7 +3,7 @@ import React from 'react'
 
 type Props = {}
 
-export default function contactUs(props: Props) {
+export default function contact(props: Props) {
     return (
         <>
 

@@ -402,6 +402,12 @@ export default function Page({ showHeading = true }: Props) {
 
                     </div>
                 </div>
+                <div className={styles['recent-projects-button-container']}>
+                    <div className={styles['recent-projects-button']}>
+                        <button type="button" onClick={() => router.push('/projects')}>View All</button>
+                    </div>
+                </div>
+
             </div>
             {/* END of RECENT PROJECTS DISPLAY SECTION */}
 

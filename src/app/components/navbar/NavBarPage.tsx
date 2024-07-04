@@ -91,7 +91,7 @@ export default function NavBarPage() {
                         <Link href="/projects" className={styles['nav-link']}>Projects</Link>
                     </li>
                     <li className={styles['nav-item']}>
-                        <Link href="/contactUs" className={styles['nav-link']}>Contact</Link>
+                        <Link href="/contact" className={styles['nav-link']}>Contact</Link>
                     </li>
                 </ul>
 

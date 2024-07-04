@@ -2,6 +2,11 @@
 // this section is only on the Home page and on the Services page
 import Image from 'next/image'
 import React from 'react'
+
+import PageHeader from '../components/PageHeader/PageHeader'
+//Styles 
+import styles from './services.modules.css'; 
+
 //Import this in and move PageHeader to global 
 // import PageHeader from '../components/PageHeader/PageHeader';
 //Global section import from Components
@@ -16,9 +21,27 @@ import React from 'react'
 type Props = {}
 
 export default function services(props: Props) {
-   return (
-    <>
-    <h1>Hello, services Page!</h1>
+  return (
+    <div className={styles['ServicePageBody']}>
+
+      <div className={styles['services_banner_area']}>
+        <PageHeader />
+      </div>
+
+      <div className={styles['decorative-lines-container']}>
+        <div className={styles.decorativelines}>
+          <div className={styles.decorativelinebase}> </div>
+          <div className={styles.decorativelineoverlayed}> </div>
+        </div>
+      </div>
+
+      <div className={styles['lp-cs-section-title-container']}>
+        <div className={styles['lp_cs_section_title']}>
+          <h2>WHAT WE PROVIDE</h2>
+        </div>
+      </div>
+
+
       {/* <PageHeader title="Our Services" navTitle="Services" /> */}
 
       {/* <StatsSection /> */}
@@ -99,6 +122,6 @@ export default function services(props: Props) {
       </section>
 
       {/* <TestomonialsCarouselSection /> */}
-    </>
+    </div >
   )
 };
