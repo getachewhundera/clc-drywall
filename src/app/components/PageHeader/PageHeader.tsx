@@ -13,7 +13,7 @@ type Props = {
 //Secondary navigiation 
 //location-based breadcrumb that directly takes you home page from other pages on the website. 
 
-const PageHeader = ({ title = "About Us", navTitle = "About Us" }: Props) => {
+const PageHeader = ({ title = "Title", navTitle = "NavTitle" }: Props) => {
     return (
         <div className={styles.heroBanner}>
             <div className={styles.container}>
@@ -21,9 +21,9 @@ const PageHeader = ({ title = "About Us", navTitle = "About Us" }: Props) => {
                 <nav aria-label="breadcrumb" className={styles.bannerBreadcrumb}>
                     <ol className={styles.breadcrumb}>
                         <li className={styles.breadcrumbItem}>
-                            <Link href="/">Home</Link>
+                            <Link href="/" className={styles['link']}>Home</Link>
                         </li>
-                        <li className={styles.breadcrumbItem}>/</li>
+                        <li className={styles.breadcrumbSeparator}>/</li>
                         
                         <li className={`${styles.breadcrumbItem} ${styles.active}`} aria-current="page">
                             {navTitle}
