@@ -45,7 +45,7 @@
 .breadcrumbItem .link {
   text-decoration: none;
   color: inherit;
-  
+
 }
 
 .link:hover {
@@ -61,4 +61,6 @@
 .active {
   font-weight: bold;
 }
+
+
 

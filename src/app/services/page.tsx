@@ -5,7 +5,7 @@ import React from 'react'
 
 import PageHeader from '../components/PageHeader/PageHeader'
 //Styles 
-import styles from './services.modules.css'; 
+import styles from './services.module.css'; 
 
 //Import this in and move PageHeader to global 
 // import PageHeader from '../components/PageHeader/PageHeader';
@@ -25,7 +25,7 @@ export default function services(props: Props) {
     <div className={styles['ServicePageBody']}>
 
       <div className={styles['services_banner_area']}>
-        <PageHeader />
+        <PageHeader title='Services' navTitle='services'/>
       </div>
 
       <div className={styles['decorative-lines-container']}>
