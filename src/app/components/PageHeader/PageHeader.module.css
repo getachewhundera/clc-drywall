@@ -37,16 +37,28 @@
 }
 
 .breadcrumbItem {
-  margin-right: 10px;
+  margin-right: 5px;
   display: flex;
   align-items: center;
 }
 
-.breadcrumbItem a {
+.breadcrumbItem .link {
   text-decoration: none;
   color: inherit;
+  
+}
+
+.link:hover {
+  color: red;
+}
+
+.breadcrumbSeparator { 
+  margin-right: 5px; 
+  display: flex;
+  align-items: center; 
 }
 
 .active {
   font-weight: bold;
 }
+

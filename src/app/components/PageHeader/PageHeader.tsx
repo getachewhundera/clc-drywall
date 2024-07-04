@@ -21,7 +21,7 @@ const PageHeader = ({ title = "Title", navTitle = "NavTitle" }: Props) => {
                 <nav aria-label="breadcrumb" className={styles.bannerBreadcrumb}>
                     <ol className={styles.breadcrumb}>
                         <li className={styles.breadcrumbItem}>
-                            <Link href="/" className={styles['link']}>Home</Link>
+                            <Link href="/" className={styles['link']} >Home</Link>
                         </li>
                         <li className={styles.breadcrumbSeparator}>/</li>
                         
