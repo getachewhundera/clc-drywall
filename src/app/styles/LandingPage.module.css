@@ -688,8 +688,49 @@ color: red;
 .recent-projects-section-title h2 {
   color: black; 
 }
+
 /*-----------------------------------------*/
 /*--END--CSS FOR "Recent Projects" title*/
+
+
+/*--START--CSS FOR Recent Project's filterable portfolio */
+/*-----------------------------------------*/
+.filterable-portfolio-container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px auto;
+
+
+}
+
+.portfolio-navigation ul { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  margin-bottom: 4%;
+
+}
+
+.portfolio-navigation ul li { 
+  list-style: none; 
+  background: #eee; 
+  padding: 12px 20px;
+  margin: 5px; 
+  letter-spacing: 1px; 
+  cursor: pointer; 
+}
+
+.portfolio-navigation ul li.active { 
+  background-color: #03a9f4;
+  color: #fff; 
+
+}
+
+/*-----------------------------------------*/
+/*--END--CSS FOR Recent Project's filterable portfolio*/
 
 
 

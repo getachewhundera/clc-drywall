@@ -367,41 +367,47 @@ export default function Page({ showHeading = true }: Props) {
                         <h2>RECENT PROJECTS</h2>
                     </div>
                 </div>
-                {/* onClick={() => href = 'services/{id}'} */}
-                <div className={styles['categories']}>
-                    <div className={styles['category-container']}>
 
-                        <div className={styles['category-1-container']}>
-                            <div className={styles['category-1-title']}>All</div>
-                            <div className={styles['category-1-all']}>
-                                <img src='' alt='' id='category1-image1' />
+
+                {/*Filterable Portfolio*/}
+                <div className={styles['filterable-portfolio-container']}>
+                    <div className={styles['portfolio-navigation']}>
+                        <ul>
+                            <li className={`${styles.active} ${styles['category']}`} data-filter="all">All</li>
+                            <li className={styles['category']} data-filter="residential">Residential</li>
+                            <li className={styles['category']} data-filter="commercial">Commercial</li>
+                            <li className={styles['category']} data-filter="repair">Repair</li>
+                        </ul>
+
+                        <div className={styles['category-display-container']}>
+                            <div className={styles['category-1-container']}>
+                                <div id='category1' className={styles['all-images']}>
+                                    <img src='./images/1.jpg.webp' alt='' id='category1-all-image1' />
+                                </div>
+                            </div>
+
+                            <div className={styles['category-2-container']}>
+                                <div id='category2' className={styles['all-images']}>
+                                    <img src='./images/2.jpg (1).webp' alt='' id='category2-all-image1' />
+                                </div>
+                            </div>
+
+                            <div className={styles['category-3-container']}>
+                                <div id='category3' className={styles['all-images']}>
+                                    <img src='./images/3.jpg.webp' alt='' id='category3-all-image1' />
+                                </div>
+                            </div>
+
+                            <div className={styles['category-4-container']}>
+                                <div id='category4' className={styles['all-images']}>
+                                    <img src='./images/4.jpg.webp' alt='' id='category4-all-image1' />
+                                </div>
                             </div>
                         </div>
-
-                        <div className={styles['category-2-container']}>
-                            <div className={styles['category-2-title']}>Residential</div>
-                            <div className={styles['category-2-residential']}>
-                                <img src='' alt='' id='category2-image2' />
-                            </div>
-                        </div>
-
-                        <div className={styles['category-3-container']}>
-                            <div className={styles['category-3-title']}>Commercial</div>
-                            <div className={styles['category-3-commercial']}>
-                                <img src='' alt='' id='category3-image3' />
-                            </div>
-                        </div>
-
-                        <div className={styles['category-4-container']}>
-                            <div className={styles['category-4-title']}>Repairs</div>
-                            <div className={styles['category-4-repairs']}>
-                                <img src='' alt='' id='category4-image4' />
-                            </div>
-                        </div>
-
 
                     </div>
                 </div>
+
                 <div className={styles['recent-projects-button-container']}>
                     <div className={styles['recent-projects-button']}>
                         <button type="button" onClick={() => router.push('/projects')}>View All</button>

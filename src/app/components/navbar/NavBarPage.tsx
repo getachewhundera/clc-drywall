@@ -3,11 +3,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './navbar.module.css';
+import 'hamburgers';
 
 export default function NavBarPage() {
     const topNavRef = useRef<HTMLDivElement>(null); // Ref for top nav
     const [showSearch, setShowSearch] = useState(false);
     const [searchInput, setSearchInput] = useState('');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,6 +38,11 @@ export default function NavBarPage() {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         console.log("Searching for:", searchInput);
+    };
+
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
@@ -72,9 +79,11 @@ export default function NavBarPage() {
 
             <div className={styles['navbar-two']}>
                 <div className={styles.logo}>
-                    <Link href="/" className={styles['navbar-brand logo_h']}>
+                    <h1>CLC DRYWALL</h1>
+
+                    {/* <Link href="/" className={styles['navbar-brand logo_h']}>
                         <Image src="./images/CompnayLogo/logo.jpg" alt="" width={165} height={80} />
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <ul className={styles['menu_nav']}>
@@ -112,6 +121,33 @@ export default function NavBarPage() {
                         ></span>
                     </form>
                 </div>
+
+
+                {/*HAMBURGER MENU*/}
+                <nav>
+
+                    <button
+                        className={`${styles['hamburger-menu']} ${isMenuOpen ? styles.active : ''}`}
+                        type="button"
+                        aria-label="Menu"
+                        aria-controls="navigation"
+                        aria-expanded={isMenuOpen}
+                        onClick={toggleMenu}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div id="popUpNav" className={`${styles.overlay} ${isMenuOpen ? styles.open : ''}`}>
+                        <button className={styles['close-button']} onClick={toggleMenu}>×</button>
+                        <div id="navigation" className={styles['overlay-content']}>
+                            <Link href="/AboutUs" onClick={() => setIsMenuOpen(false)}>About</Link>
+                            <Link href="/projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+                        </div>
+                    </div>
+                </nav>
+
             </div>
         </nav>
     );
