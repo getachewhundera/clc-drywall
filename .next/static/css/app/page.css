@@ -691,8 +691,75 @@ color: red;
 .LandingPage_recent-projects-section-title__kgVSx h2 {
   color: black; 
 }
+
 /*-----------------------------------------*/
 /*--END--CSS FOR "Recent Projects" title*/
+
+
+/*--START--CSS FOR Recent Project's filterable portfolio */
+/*-----------------------------------------*/
+.LandingPage_filterable-portfolio-container__sbHn_ { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px auto;
+
+
+}
+
+.LandingPage_portfolio-navigation__Hu8WR ul { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  margin-bottom: 4%;
+
+}
+
+.LandingPage_portfolio-navigation__Hu8WR ul li { 
+  list-style: none; 
+  background: #eee; 
+  padding: 12px 20px;
+  margin: 5px; 
+  letter-spacing: 1px; 
+  cursor: pointer; 
+}
+
+.LandingPage_portfolio-navigation__Hu8WR ul li.LandingPage_active__wRPx_ { 
+  background-color: #03a9f4;
+  color: #fff; 
+
+}
+
+.LandingPage_category-display-container__YoIfJ { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+.LandingPage_category-display-container__YoIfJ .LandingPage_portfolio-item__eqQtR {
+  width: 200px;
+  height: 200px;
+}
+
+.LandingPage_hide__9vcXb {
+  display: none;
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR Recent Project's filterable portfolio*/
+
+
+
+
+
+/*--START--CSS FOR CUSTOMER REVIEWS SECTION*/
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+/*--END--CSS FOR CUSTOMER REVIEWS SECTION*/
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/swiper/swiper.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/

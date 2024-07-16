@@ -12016,7 +12016,7 @@ textarea.form-control-lg {
 }
 
 .navbar_navbar-one__xF5KV {
-  background-color: #312f36;
+  background-color: #313030;
   color: white;
   height: 30px;
   cursor: pointer;
@@ -12083,7 +12083,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   position: fixed;
   top: 30px;
-  background-color: #32353c;
+  background-color: #000000;
   height: 100px;
   padding: 0 2%;
   width: 100%;
@@ -12098,6 +12098,11 @@ textarea.form-control-lg {
   margin-left: 2%;
   padding-right: 5%;
   padding-top: 6px;
+  
+}
+
+.navbar_navbar-two__YA9XF .navbar_logo__YN5V1 h1 {
+  color: white; 
 }
 
 .navbar_navbar-two__YA9XF .navbar_menu_nav__p7nHF {
@@ -12114,7 +12119,7 @@ textarea.form-control-lg {
 }
 
 .navbar_navbar-two__YA9XF .navbar_nav-item__G0b6c:hover {
-  color: red;
+  color: #F2D68D; 
 }
 
 .navbar_navbar-two__YA9XF .navbar_nav-link__ka6tX {
@@ -12132,6 +12137,95 @@ textarea.form-control-lg {
 /* navbar-two element appears after hidden class*/
 .navbar_hidden__a2y_6 ~ .navbar_navbar-two__YA9XF {
   top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ham menu */
+.navbar_hamburger-menu__UNxgs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.navbar_hamburger-menu__UNxgs span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.navbar_overlay__9G6am {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.5s;
+}
+
+.navbar_overlay__9G6am.navbar_open__GWxa2 {
+  display: flex;
+}
+
+.navbar_overlay-content__Byk5h a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.navbar_overlay-content__Byk5h a:hover {
+  color: #f1f1f1;
+}
+
+.navbar_overlay__9G6am .navbar_close-button___BoDv {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/styles/globals.css ***!
