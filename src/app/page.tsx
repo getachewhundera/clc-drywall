@@ -18,6 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import 'boxicons/css/boxicons.min.css';
+import { data } from 'autoprefixer';
 
 
 type Props = {
@@ -34,6 +35,9 @@ interface ImageProps {
 export default function Page({ showHeading = true }: Props) {
     const router = useRouter();
     const swiperRef = useRef<Swiper | null>(null);
+    // const categoryRef = useRef<NodeListOf<Element> | null>(null);
+    // const itemsContainerRef = useRef<NodeListOf<Element> | null>(null);
+
 
     // const imagesLeft: ImageProps[] = [
     //     { src: '/images/LandingPageHeaderImages/main1.jpg', alt: "Left main image" },
@@ -119,6 +123,42 @@ export default function Page({ showHeading = true }: Props) {
         swiperRef.current = swiperInstance;
     }, []);
 
+ 
+//Filterable Portfolio: 
+    useEffect(() => {
+        const categoryElements = document.querySelectorAll('.category');
+        const items = document.querySelectorAll('.portfolio-item');
+
+        const showItems = (filter: string) => {
+            items.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        };
+
+        showItems('all'); // Show all items initially
+
+        categoryElements.forEach(cate => {
+            cate.addEventListener('click', () => {
+                categoryElements.forEach(c => c.classList.remove('active'));
+                cate.classList.add('active');
+
+                const filter = cate.dataset.filter;
+                showItems(filter);
+            });
+        });
+
+        return () => {
+            categoryElements.forEach(cate => {
+                cate.removeEventListener('click', () => { });
+            });
+        };
+    }, []);
+ 
+
 
     //funtions for the handle click events for Card Slider Navigation arrows
     const handlePrevClick = () => {
@@ -132,6 +172,8 @@ export default function Page({ showHeading = true }: Props) {
             swiperRef.current.slideNext();
         }
     };
+
+
 
 
     return (
@@ -370,41 +412,32 @@ export default function Page({ showHeading = true }: Props) {
 
 
                 {/*Filterable Portfolio*/}
+
                 <div className={styles['filterable-portfolio-container']}>
                     <div className={styles['portfolio-navigation']}>
                         <ul>
-                            <li className={`${styles.active} ${styles['category']}`} data-filter="all">All</li>
+                            <li className={`${styles['category']} active`} data-filter="all">All</li>
                             <li className={styles['category']} data-filter="residential">Residential</li>
                             <li className={styles['category']} data-filter="commercial">Commercial</li>
                             <li className={styles['category']} data-filter="repair">Repair</li>
                         </ul>
-
                         <div className={styles['category-display-container']}>
-                            <div className={styles['category-1-container']}>
-                                <div id='category1' className={styles['all-images']}>
-                                    <img src='./images/1.jpg.webp' alt='' id='category1-all-image1' />
-                                </div>
-                            </div>
-
-                            <div className={styles['category-2-container']}>
+                            <div className={styles['portfolio-item']} data-category="residential">
                                 <div id='category2' className={styles['all-images']}>
-                                    <img src='./images/2.jpg (1).webp' alt='' id='category2-all-image1' />
+                                    <img src='./images/2.jpg.webp' alt='' id='category2-all-image1' />
                                 </div>
                             </div>
-
-                            <div className={styles['category-3-container']}>
+                            <div className={styles['portfolio-item']} data-category="commercial">
                                 <div id='category3' className={styles['all-images']}>
                                     <img src='./images/3.jpg.webp' alt='' id='category3-all-image1' />
                                 </div>
                             </div>
-
-                            <div className={styles['category-4-container']}>
+                            <div className={styles['portfolio-item']} data-category="repair">
                                 <div id='category4' className={styles['all-images']}>
                                     <img src='./images/4.jpg.webp' alt='' id='category4-all-image1' />
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -417,6 +450,6 @@ export default function Page({ showHeading = true }: Props) {
             </div>
             {/* END of RECENT PROJECTS DISPLAY SECTION */}
 
-        </div >
+        </div>
     );
 };
