@@ -1,20 +1,24 @@
 .complete-navbar {
   width: 100%;
+  min-width: 100%; 
+  max-width: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .navbar-one {
-  background-color: #312f36;
+  background-color: #313030;
   color: white;
   height: 30px;
   cursor: pointer;
+  min-width: 100%;
   width: 100%;
   transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
   position: sticky;
   top: 0;
   z-index: 999;
+  max-width: 100%;
 }
 
 .navbar-one.hidden {
@@ -70,10 +74,12 @@
   justify-content: space-between;
   position: fixed;
   top: 30px;
-  background-color: #32353c;
+  background-color: #000000;
   height: 100px;
   padding: 0 2%;
   width: 100%;
+  max-width: 100%;
+  min-width: 100%;
   z-index: 1000;
   transition: transform 500ms ease, background 500ms ease, top 0.5s ease-in-out;
   -webkit-transition: transform 500ms ease, background 500ms ease, top 0.5s ease-in-out;
@@ -83,6 +89,11 @@
   margin-left: 2%;
   padding-right: 5%;
   padding-top: 6px;
+  
+}
+
+.navbar-two .logo h1 {
+  color: white; 
 }
 
 .navbar-two .menu_nav {
@@ -99,7 +110,7 @@
 }
 
 .navbar-two .nav-item:hover {
-  color: red;
+  color: #F2D68D; 
 }
 
 .navbar-two .nav-link {
@@ -117,4 +128,93 @@
 /* navbar-two element appears after hidden class*/
 .hidden ~ .navbar-two {
   top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ham menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.overlay {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.5s;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.overlay-content a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay-content a:hover {
+  color: #f1f1f1;
+}
+
+.overlay .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }

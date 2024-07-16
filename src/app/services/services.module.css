@@ -1,10 +1,8 @@
-/*added during 3-d carousel*/
-* {
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+.ServicePageBody {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
-
 
 
 /* Horizontal scrolling Bar on top services page  */
@@ -22,6 +20,7 @@
   width: 100%;
   overflow-x: hidden;
   background-color:slategray;
+  margin-top:100px;
 }
 
 .horizontalScrollingItems {
@@ -40,67 +39,115 @@
 
 
 
+.services-banner-area  {
+    margin-top:0px; 
+}
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
 
-/* Services description items */
-.servicesdescription {
-    padding: 20px; 
+
+
+
+/*--3D CAROUSEL'S COMPLETE SECTION INCLUDING decorative lines and titles css STARTS HERE.*/
+/*--START--CSS FOR decorative line above "Recent Projects" title*/
+/*-----------------------------------------*/
+.sp-decorative-lines-container {
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.sp-decorativelines {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 0%;
+}
+
+/*thinner decorative line*/
+.sp-decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.sp-decorativelineoverlayed {
+  position: absolute; 
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "Recent Projects" title*/
+
+
+
+
+/*--START--CSS for the 'Title' and horizontal lines on the first section of the services page */
+/*-----------------------------------------*/
+/* sp = service page */
+
+.sp-first-section-title-container {
     display: flex;
     justify-content: center;
-    align-items: stretch; /*fill vertical space*/
-}
-
-.servicesdescriptioncontainers {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: stretch; /* containers stretch to the full height */
-    width: 100%; 
-}
-
-.items {
-    display: flex; 
-    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    flex-wrap: wrap; 
-    align-items: stretch; 
-}
+    margin-top: 1.5%;
+  }
+  
+  .sp-first-section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .sp-first-section-title h2 {
+    position: relative;
+    padding: 0 20px;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black; 
+  }
+  
+  .sp-first-section-title h2::before,
+  .sp-first-section-title h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(100vw - 40px); 
+    height: 3px;
+    background-color: black;
+  }
+  
+  .sp-first-section-title h2::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  
+  .sp-first-section-title h2::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+  /*-----------------------------------------*/
+  /*--END--CSS for the 'Title' and horizontal lines on the first section of the services page  */
 
-.itemContainer {
-    display: flex;
-    flex-direction: column; /* Stacks title, description, and img */
-    align-items: center; 
-    width: calc(100% / 6 - 20px); /* Give equal width to each container */
-    margin: 10px; /* spacing between continers- decide on later */
-    box-sizing: border-box; 
-    border: 2px solid black; 
-    flex-grow: 1; 
-}
-
-.itemContainer img {
-    width: 100%; 
-    object-fit: cover; 
-    height: 200px;
-}
-
-.itemTitle, .itemDescription {
-    margin: 10px 0;
-}
-
-.servicestitle, #servicesMaintitle {
-  display: flex;
-  flex-direction: row; 
-  justify-content: center; 
-  font-weight: 700;
-  font-size: xx-large;
-}
 
 
 
 
-/* CSS for 3-D Carousel*/
+/*--START--CSS FOR 3D CAROUSEL */
+/*-----------------------------------------*/
+
 
 /* CSS Custom Properties- global use*/ 
-:root{ 
+.threeDCarouselWrapper { 
   --n: 6; /* number of images*/
   --item-width:820px; 
   --item-sepration:300px; /* space between images will decrease the effective item width*/
@@ -235,7 +282,7 @@
 }
 
 
-figure img {
+.figure img {
   margin: 0; 
   width: var(--item-width); 
   height: 600px; 
@@ -305,3 +352,120 @@ figure img {
   transform: translateY(0);
   visibility: visible;
 }
+
+
+/*--END--CSS FOR 3D CAROUSEL */
+/*--3D CAROUSEL'S COMPLETE SECTION INCLUDING decorative lines and titles css ENDS HERE.*/
+/*-----------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+
+
+
+
+
+/*--START--STATS SECTION*/
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+/*--END--STATS SECTION*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+
+
+
+/*--START--CUSTOMER REVIEWS SECTION*/
+/*-----------------------------------------*/
+/*--START--CSS FOR decorative line above "Recent Projects" title*/
+/*-----------------------------------------*/
+.sp-decorative-lines-container {
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.sp-decorativelines {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 0%;
+}
+
+/*thinner decorative line*/
+.sp-decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.sp-decorativelineoverlayed {
+  position: absolute; 
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "Recent Projects" title*/
+
+
+
+
+/*--START--CSS for the 'Title' and horizontal lines on the first section of the services page */
+/*-----------------------------------------*/
+/* sp = service page */
+
+.sp-first-section-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5%;
+  }
+  
+  .sp-first-section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .sp-first-section-title h2 {
+    position: relative;
+    padding: 0 20px;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black; 
+  }
+  
+  .sp-first-section-title h2::before,
+  .sp-first-section-title h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(100vw - 40px); 
+    height: 3px;
+    background-color: black;
+  }
+  
+  .sp-first-section-title h2::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  
+  .sp-first-section-title h2::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+  /*-----------------------------------------*/
+  /*--END--CSS for the 'Title' and horizontal lines on the first section of the services page  */
+/*-----------------------------------------*/
+/*--END--CUSTOMER REVIEWS SECTION*/

@@ -1,9 +1,16 @@
 
+.LandingPageBody {
+  overflow-x: hidden;
+}
+
+/*--------LANDING PAGE HERO SECTION-----------*/
+/*---------------------------------------------------------------------*/
 .home_banner_area {
     width: 100%;
     position: relative;
     /* z-index: 1; */
     min-height: 770px;
+    margin-top: 100px; 
 }
 
 .banner_inner {
@@ -140,12 +147,6 @@
       background-color: #555;
     }
   }
-
-
-
-
-
-
   @media (max-width:1199px){
 	.home_banner_area .banner_inner {
 		min-height: 700px;
@@ -175,7 +176,6 @@
 	}
 }
 
-
 @media (max-width:480px){
 .home_banner_area .banner_inner .banner_content {
 		padding: 30px 15px;
@@ -188,8 +188,6 @@
 		min-height: 400px;
 	}
 }
-
-
 
 @media (max-width: 767px) {
   .home_banner_area .banner_inner .banner_content span::after {
@@ -221,160 +219,525 @@
     margin-top: 35px;
   }
 }
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*   
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css");
+
+  /* Google fonts */
+  /* @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"); */
+/* 
+  --body-font: "Bai Jamjuree" , sans-serif;  */
+ 
+/* Card Slider CSS COLORS */
+/*----------------------------------------------------------*/
+/* :root { 
+  --first-color: hsl(38, 92%, 58%); 
+  --first-color-light: hsl(38, 100%, 78%); 
+  --first-color-alt: hsl(32, 75%, 50%);
+  --second-color: hsl(195, 75%, 52%);
+  --dark-color: hsl(212, 40%, 12%);
+  --white-color: hsl(212, 4%, 95%);
+  --body-color: hsl(212, 42%, 15%);
+  --container-color: hsl(212, 42%, 20%);
+} */
+
+/* --body-font: "Bai Jamjuree", sans-serif; 
+--h2-font-size: 20px; 
+--normal-font-size: 16px;  */
 
 
+/*--------Card Slider CSS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+
+.landing_page_cs_animation_section {
+  position: relative; 
+  /* border: solid orange 10px;  */
+  background-color: #555;
+  margin-bottom: 15%; 
+  border: solid yellow 4px;
+  height: 1500px; 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* mp container section*/
-
-#mpContainers {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  margin-left: 70px; 
-  margin-right: 70px; 
-  margin-top: 50px; 
-  gap: 0px; 
 }
 
 
 
-#mpContainerOne,
-#mpContainerTwo,
-#mpContainerThree,
-#mpContainerFour {
+/*--START--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
+/*-----------------------------------------*/
+.decorative-lines-container {
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%;
+}
+
+
+.decorativelines {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 0%;
+}
+
+/*thinner decorative line*/
+.decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.decorativelineoverlayed {
+  position: absolute; 
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
+
+
+
+/*--START--CSS for the 'Title' and horizontal lines of the card slider animation section */
+/*-----------------------------------------*/
+/* lp_cs_... = landing page card slider */
+
+.lp-cs-section-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5%;
+}
+
+.lp_cs_section_title {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.lp_cs_section_title h2 {
+  position: relative;
+  padding: 0 20px;
+  display: inline-block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black; 
+}
+
+.lp_cs_section_title h2::before,
+.lp_cs_section_title h2::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(100vw - 40px); 
+  height: 3px;
+  background-color: black;
+}
+
+.lp_cs_section_title h2::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.lp_cs_section_title h2::after {
+  right: 0;
+  transform: translateX(100%);
+}
+/*-----------------------------------------*/
+/*--END--CSS for the 'Title' and horizontal lines of the card slider animation section */
+
+
+
+/*--START--CSS for the animation of the CARD SLIDER*/
+.lp-cards-main-container {
+  display: flex; 
+  position: relative; 
+  margin-bottom: 4%; 
+  margin-top: 4%;
+}
+
+.lp-cs-container{ 
+  display: flex; 
+  position: absolute; 
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0; 
+  
+  /* border: solid black 1px; */
+  max-width: 100%; 
+}
+
+
+
+.card-container { 
+  /* margin-inline: 28px;  */
+  border-radius: 20px; 
+  /* overflow: hidden;  */
+  /* border: solid black 1px; */
+  display: flex;
+  position: absolute; 
+  column-gap: 10px; 
+}
+
+
+.card-article { 
+  width: 400px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  flex: 0 0 auto; 
+  /* border: yellow 1px solid;  */
+  background-color: gray;
+}
+
+.card_image { 
+  position: relative; 
+  /* background-color: hsl(38, 100%, 78%);  */
+  /* padding-block: 5px 5px;  */
+  padding-top: 28px; 
+  margin-bottom: -12px; 
+
+}
+
+
+.card_data { 
+  background-color: darkblue; 
+  Padding: 24px 32px; 
+  border-radius: 16px; 
+  text-align: center; 
+  position: relative; 
+  z-index: 10;
+}
+
+.card_image { 
+width: 180px; 
+margin: 0 auto; 
+position: relative; 
+z-index: 5; 
+}
+
+.card_name { 
+  font-size: 20px;  
+  color:  hsl(195, 75%, 52%); 
+  margin-bottom: 12px; 
+}
+
+.card_description { 
+  font-weight: 500; 
+  margin-bottom: 28px;
+
+}
+
+.card_button { 
+  display: inline-block; 
+  background-color: hsl(38, 92%, 58%); 
+  padding: 12px 24px; 
+  border-radius: 4px; 
+  color: hsl(212, 40%, 12%);
+  font-weight: 600;
+}
+
+.card_image img { 
+  display: block; 
+  max-width: 100%;
+  height: auto; 
+  height: 250px; 
+  width: 250px; 
+}
+
+
+.pagination-bullets-container{
+  display: flex; 
+  position: relative;
+  justify-content: center;
+  margin-top: 2%; 
+
+}
+
+
+
+.swiper-pagination {
+  position: absolute;
+}
+
+
+.navigationArrows-container {
+  display: flex; 
+  justify-content: center;
+  position: relative;
+
+}
+
+.navigationArrows{
+  position: absolute; 
+  display: flex;
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+
+
+.swiper-button-prev i, .swiper-button-next i {
+color: red; 
+}
+
+
+.cs-services-button-container{
+  display: flex; 
+  position: relative;
+  margin-top: 8%; 
+  justify-content: center;
+}
+
+
+.cs_services_button { 
+  position: absolute;
+  margin-bottom: 2%; 
+}
+
+.cs_services_button button { 
+  color: red; 
+  border-radius: 8px; 
+  width: 250px;
+  height: 65px; 
+  font-size: 30px; 
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+
+/*--------FIXED CARDS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+
+
+.fixed-cards-section-main-container{
+  position: relative; 
+  /* border: solid orange 10px;  */
+  background-color: #555;
+  margin-bottom: 15%; 
+  border: solid yellow 4px;
+  height: auto; 
+}
+
+.fixed-cards-section-title-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 1.5%;
+}
+
+.fixed-cards-section-title h2 {
+  color: black; 
+}
+
+.fixed-cards-container{
+  position: relative;
+  display: flex;
+  margin-bottom: 4%;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; 
+  /* justify-content: space-between;  */
+  margin-left: 70px; 
+  margin-right: 70px; 
+  margin-top: 50px; 
+  gap: 8px; 
+}
+
+.card-1, 
+.card-2, 
+.card-3, 
+.card-4 {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
   min-height: 100px; 
-  border: 1px solid rgb(154, 138, 120);
+  border: 1.5px solid #9A8A78;
+  background-color: #262626;
   color: black; 
   font-family: 'Raleway', sans-serif; 
   flex: 1;
+  width: 450px; 
+  height: 350px; 
+
 }
 
-#mpContainerOne h2,
-#mpContainerTwo h2, 
-#mpContainerThree h2,
-#mpContainerFour h2{
+.card-1 h2, 
+.card-2 h2, 
+.card-3 h2, 
+.card-4 h2 {
   margin-top: 10px; 
   text-align: center; 
+  color: white; 
 }
 
-
-/* Container sizing */
-#mpContainerOne {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerTwo {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerThree {
-  width: 450px; 
-  height: 350px; 
-
-}
-
-#mpContainerFour {
-  width: 450px; 
-  height: 350px; 
-}
-
-
-
-/* Images  */
-#mpContainerOne img{
-  width: 200px; 
-  height: 200px;
-  margin-bottom: 10px;
-
-}
-
-#mpContainerTwo img {
-  width: 200px; 
-  height: 200px;
-  margin-bottom: 10px;
-
-}
-
-#mpContainerThree img {
-  width: 200px; 
-  height: 200px;  
-  margin-bottom: 10px;
-
-
-}
-
-#mpContainerFour img {
+.card-1 img, 
+.card-2 img, 
+.card-3 img, 
+.card-4 img {
   width: 200px; 
   height: 200px;
   margin-bottom: 10px;
 }
-
-
 
 @media screen and (max-width: 600px) { 
 
-  #mpContainerOne h2,
-  #mpContainerTwo h2, 
-  #mpContainerThree h2,
-  #mpContainerFour h2{
+  .card-1 h2, 
+  .card-2 h2, 
+  .card-3 h2, 
+  .card-4 h2 {
       font-size: 20%; 
       margin-top: 5%; 
       text-align: center; 
   }
   
   /* Container sizing */
-  #mpContainerOne,
-  #mpContainerTwo,
-  #mpContainerThree, 
-  #mpContainerFour {
+  .card-1, 
+  .card-2, 
+  .card-3, 
+  .card-4  {
       width: 20%; 
       height: 35%; 
     
   }
   
       /* Images  */
-  #mpContainerOne img,
-  #mpContainerTwo img,
-  #mpContainerThree img, 
-  #mpContainerFour img {
+      .card-1 img, 
+      .card-2 img, 
+      .card-3 img, 
+      .card-4 img {
       width: 80%; 
       height: 75%;
       margin-bottom: 5%;
   }
   }
-  
-  
-  @import url("https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css");
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
 
-  /* Google fonts */
-  @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-/* 
-  --body-font: "Bai Jamjuree" , sans-serif;  */
 
+
+/*--------RECENT PROJECTS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+.lp-recent-projects-section-main-container {
+  position: relative; 
+  /* border: solid orange 10px;  */
+  background-color: #555;
+  margin-bottom: 15%; 
+  border: solid yellow 4px;
+  height: 2000px; 
+}
+
+/*--START--CSS FOR decorative line above "Recent Projects" title*/
+/*-----------------------------------------*/
+.lp-projects-decorative-lines-container {
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.lp-projects-decorativelines {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 0%;
+}
+
+/*thinner decorative line*/
+.lp-projects-decorativelinebase {
+  position: absolute; 
+  width: 350px; 
+  height: 2px; 
+  background: #E82C2C;
+  z-index: 0; 
+}
+
+/*thicker decorative line*/
+.lp-projects-decorativelineoverlayed {
+  position: absolute; 
+  width: 150px;
+  height: 8px; 
+  background: red;
+  z-index: 1; /* > stack order -> top line*/
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR decorative line above "Recent Projects" title*/
+
+
+/*--START--CSS FOR "Recent Projects" title*/
+/*-----------------------------------------*/
+.recent-projects-section-title-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 1.5%;
+}
+
+.recent-projects-section-title h2 {
+  color: black; 
+}
+
+/*-----------------------------------------*/
+/*--END--CSS FOR "Recent Projects" title*/
+
+
+/*--START--CSS FOR Recent Project's filterable portfolio */
+/*-----------------------------------------*/
+.filterable-portfolio-container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px auto;
+
+
+}
+
+.portfolio-navigation ul { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  margin-bottom: 4%;
+
+}
+
+.portfolio-navigation ul li { 
+  list-style: none; 
+  background: #eee; 
+  padding: 12px 20px;
+  margin: 5px; 
+  letter-spacing: 1px; 
+  cursor: pointer; 
+}
+
+.portfolio-navigation ul li.active { 
+  background-color: #03a9f4;
+  color: #fff; 
+
+}
+
+/*-----------------------------------------*/
+/*--END--CSS FOR Recent Project's filterable portfolio*/
+
+
+
+
+
+/*--START--CSS FOR CUSTOMER REVIEWS SECTION*/
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+/*--END--CSS FOR CUSTOMER REVIEWS SECTION*/
