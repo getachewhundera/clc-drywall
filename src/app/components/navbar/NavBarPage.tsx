@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import styles from './navbar.module.css';
-import 'hamburgers';
+import 'hamburgers'; 
 
 export default function NavBarPage() {
     const topNavRef = useRef<HTMLDivElement>(null); // Ref for top nav
