@@ -1,7 +1,7 @@
 # Project Name: CLC DRYWALL 
 
 ## Description:
-This web application acts as a dynamic digital presence for CLC DRYWALL, a Rochester, MN-based company specializing in drywall services and interior painting. Crafted to reflect the company's unwavering commitment to excellence and customer satisfaction, this platform significantly boosts business visibility, fosters customer engagement, and simplifies the inquiry and quotation processes. It features an overview of the services provided, a portfolio showcasing the company's previous projects, detailed company information, customer testimonials with a feedback option, and straightforward contact methods. Beyond enhancing CLC DRYWALL's digital footprint, the application provides potential clients with a comprehensive, accessible, and user-friendly avenue to discover, engage with, and benefit from the services CLC DRYWALL offers.
+This web application acts as a dynamic digital presence for CLC DRYWALL. Based out of Rochester, MN CLC DRYWALL specializes in drywall services and interior painting. Crafted to reflect the company's unwavering commitment to excellence and customer satisfaction, this platform significantly boosts business visibility, fosters customer engagement, and simplifies the inquiry and quotation processes. It features an overview of the services provided, a portfolio showcasing the company's previous projects, detailed company information, customer testimonials with a feedback option, and straightforward contact methods. Beyond enhancing CLC DRYWALL's digital footprint, the application provides potential clients with a comprehensive, accessible, and user-friendly avenue to discover, engage with, and benefit from the services CLC DRYWALL offers.
 
 ## Project Duration: Ongoing
 
@@ -20,47 +20,70 @@ This web application acts as a dynamic digital presence for CLC DRYWALL, a Roche
 ## Design Wireframes
 
 <p align-items="center">
-Full view of Landing Page
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_FULL_LANDINGPAGE.png" width="850" alt="Design wireframe of CLC'S full landing page view.">
+Figma design of all webpages
+<img src="./public/design/clc-complete-5-wireframe-design.png" width="850" alt="Design wireframe of CLC'S full figma design of all the diffrent web pages.">
 
-Landing Page Header 
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_HEADER.png" width="850" alt="Design wireframe of CLC'S landing page header.">
+Landing Page - Full Web Page
+<img src="./public/design/wireframe-home-page/clc-home-page-wireframe-full.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's full landing web page.">
 
-Landing Page Our Services Section
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_OURSERVICES.png" width="850" alt="Design wireframe of CLC'S Our Services section on the landing page.">
+Landing Page - Nav/Hero/content
+<img src="./public/design/wireframe-home-page/clc-home-page-wireframe-nav-hero-cs.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's navigation/hero secton of the landing page.">
 
-Landing Page About Us Section
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_ABOUTUS.png" width="850" alt="Design wireframe of CLC'S About Us section on the landing page.">
+Landing Page - Content
+<img src="./public/design/wireframe-home-page/clc-home-page-wireframe-fixedcards-projects.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's second body section containing fixed cards on the landing page.">
 
-Landing Page Recent Projects Section
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_RECENTPROJECTS.png" width="850" alt="Design wireframe of CLC'S Recent Projects section on the landing page.">
+Landing Page - Content
+<img src="./public/design/wireframe-home-page/clc-home-page-wireframe-projects-footer.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's third body section containing a filterable portfolio of recent projects on the landing page.">
 
-Landing Page Foooter 
-<img src="./public/CLC_DRYWALL_DESIGN_WIREFRAMES/CLC_LANDINGPAGE_FOOTER.png" width="850" alt="Design wireframe of CLC'S Footer on the landing page.">
+Landing Page - Footer
+<img src="./public/design/wireframe-home-page/clc-home-page-wireframe-footer.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's footer section that is used on various pages on the website.">
 
+About Page - Full Web Page
+<img src="./public/design/wireframe-about-page/clc-about-page-wireframe-full.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's full about web page.">
+
+Services Page - Full Web Page
+<img src="./public/design/wireframe-services-page/clc-services-page-wireframe-full.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's full services web page.">
+
+Projects Page - Full Web Page
+<img src="./public/design/wireframe-projects-page/clc-projects-page-wireframe-full.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's full projects web page.">
+
+Contact Page - Full Web Page
+<img src="./public/design/wireframe-contact-page/clc-contact-page-wireframe-full.png" width="850" alt="Image of a Figma design wireframe of CLC DRYWALL's full contact web page.">
 </p>
 
 
 ## Technologies Used: 
-- JavaScript 
+- JavaScript
+- TypeScript 
 - React
-- Material UI 
 - CSS
+- HTML 
+- Next.js 14 react framework
+
 
 ## Dependencies installed: 
 - npm install 
-- npm install axios 
+- npm install normalize.css
 - npm install @mui/material @emotion/react @emotion/styled   -- optional (for later use)
-- npm install react-router-dom@5
+- npm i bootstrap
+- npm install boxicons --save
+- npm install swiper
+- npm install hamburgers
+
 
 
 ## Setup Insturctins: 
 - Fork repo 
 - git clone to local computer
-- open the project 
+- `cd " "` into project directory. 
+- code . - open the project 
 - run `npm install` 
-- run `npm run server`, on seprate terminal page run `npm run client`
+- run `npm run dev`
 
+
+
+## Acknowledgement
+- CLC DRYWALL CLIENT
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
