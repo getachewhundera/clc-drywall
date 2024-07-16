@@ -729,6 +729,21 @@ color: red;
 
 }
 
+.category-display-container { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+.category-display-container .portfolio-item {
+  width: 200px;
+  height: 200px;
+}
+
+.hide {
+  display: none;
+}
 /*-----------------------------------------*/
 /*--END--CSS FOR Recent Project's filterable portfolio*/
 
