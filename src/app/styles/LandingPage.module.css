@@ -347,43 +347,27 @@
 .landing_page_cs_animation_section {
   position: relative; 
   background-color: #F9F9F9;
-  /* border: solid yellow 4px; */
-  /* height: 1500px;  */
-
+  display: flex;
+  flex-direction: column;
 }
 
-.lp-cards-main-container {
+.lp-cs-container{
   display: flex; 
   position: relative; 
   margin-bottom: 4%; 
   margin-top: 4%;
+  width: 100%;
+  height: auto; 
 }
 
-.lp-cs-container{ 
-  display: flex; 
-  position: absolute; 
-  box-sizing: border-box;
-  padding: 0; 
-  margin: 0; 
-  
-  /* border: solid black 1px; */
-  max-width: 100%; 
+.card-container {
+    display: flex;
+    position: absolute; 
+    column-gap: 10px; 
 }
-
-
-
-.card-container { 
-  /* margin-inline: 28px;  */
-  border-radius: 20px; 
-  /* overflow: hidden;  */
-  /* border: solid black 1px; */
-  display: flex;
-  position: absolute; 
-  column-gap: 10px; 
-}
-
 
 .card-article { 
+  position: absolute;
   width: 400px; 
   border-radius: 20px; 
   border: 1px solid #9A8A78; 
@@ -393,31 +377,30 @@
 }
 
 .card_image { 
-  position: relative; 
-  border-radius: 5px; 
+  display: block;
+  height: 250px; 
+  width: 250px; 
+  margin: 0 auto; 
   padding-top: 28px; 
+   z-index: 5; 
 }
 
 .card_image img { 
+  max-width: 100%;
+  max-height: 100%; 
+  height: 250px; 
+  width: 250px; 
   border-radius: 10px; 
 }
 
-
 .card_data { 
+  position: relative;
   margin-top: 5%; 
   background-color: #262626; 
   Padding: 24px 32px; 
   border-radius: 0px; 
   text-align: center; 
-  position: relative; 
   z-index: 10;
-}
-
-.card_image { 
-width: 180px; 
-margin: 0 auto; 
-position: relative; 
-z-index: 5; 
 }
 
 .card_name { 
@@ -442,24 +425,13 @@ z-index: 5;
   font-weight: 600;
 }
 
-.card_image img { 
-  display: block; 
-  max-width: 100%;
-  height: auto; 
-  height: 250px; 
-  width: 250px; 
-}
-
 
 .pagination-bullets-container{
   display: flex; 
   position: relative;
   justify-content: center;
   margin-top: 2%; 
-
 }
-
-
 
 .swiper-pagination {
   position: absolute;
@@ -470,16 +442,15 @@ z-index: 5;
   display: flex; 
   justify-content: center;
   position: relative;
-
+  margin-top: 2%; 
+  margin-bottom: 2%; 
 }
 
 .navigationArrows{
   position: absolute; 
   display: flex;
-  margin-top: 2%; 
-  margin-bottom: 2%; 
+ 
 }
-
 
 .swiper-button-prev i, .swiper-button-next i {
 color: black;  
@@ -488,17 +459,10 @@ color: black;
 
 .cs-services-button-container{
   display: flex; 
-  position: relative;
-  margin-top: 8%; 
-  margin-bottom: 8%; 
+  position: relative; 
+  margin-top: 3%; 
+  margin-bottom: 3%; 
   justify-content: center;
-}
-
-
-.cs_services_button { 
-  position: absolute;
-  margin-bottom: 2%; 
-  background-color: #CEBF8A;
 }
 
 .cs_services_button button { 
@@ -518,15 +482,11 @@ color: black;
 
 /*--------FIXED CARDS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
-
-
 .fixed-cards-section-main-container{
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: auto; 
+  background-color: #FFFFFF; 
+  padding-top: 3%; 
+  padding-bottom: 3%; 
 }
 
 .fixed-cards-section-title-container {
@@ -548,8 +508,8 @@ color: black;
 
 .cards-container {
   display: flex;
+  position: relative; 
   flex-wrap: wrap; 
-  /* justify-content: space-between;  */
   margin-left: 70px; 
   margin-right: 70px; 
   margin-top: 50px; 
@@ -564,7 +524,6 @@ color: black;
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  min-height: 100px; 
   border: 1.5px solid #9A8A78;
   background-color: #262626;
   color: black; 
@@ -634,11 +593,11 @@ color: black;
 /*----------------------------------------------------------------------------------------------*/
 .lp-recent-projects-section-main-container {
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
+  background-color: #F9F9F9;  
   border: solid yellow 4px;
-  height: 2000px; 
+  padding-top: 3%; 
+  padding-bottom: 3%; 
+  /* height: 2000px;  */
 }
 
 /*--START--CSS FOR decorative line above "Recent Projects" title*/
@@ -647,15 +606,14 @@ color: black;
   position: relative; 
   display: flex; 
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .lp-projects-decorativelines {
-  position: relative; 
+  position: absolute; 
   display: flex;
   justify-content: center;
   align-items: center; 
-  margin-bottom: 0%;
 }
 
 /*thinner decorative line*/
@@ -686,6 +644,7 @@ color: black;
   position: relative;
   justify-content: center;
   margin-top: 1.5%;
+  margin-bottom: 2%; 
 }
 
 .recent-projects-section-title h2 {
@@ -700,24 +659,27 @@ color: black;
 /*-----------------------------------------*/
 .filterable-portfolio-container { 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; 
   flex-direction: column;
-  margin: 40px auto;
-
+  justify-content: center; 
+  align-items: center; 
+  border: solid 4px green; 
+  padding: 20px; 
 
 }
 
-.portfolio-navigation ul { 
-  display: flex;
+.filterable-portfolio-container ul { 
+  display: flex; 
+  position: relative; 
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; 
   margin-bottom: 4%;
+  border: solid 4px red; 
 
 }
 
-.portfolio-navigation ul li { 
+.filterable-portfolio-container ul li { 
   list-style: none; 
   background: #eee; 
   padding: 12px 20px;
@@ -726,26 +688,68 @@ color: black;
   cursor: pointer; 
 }
 
-.portfolio-navigation ul li.active { 
+.filterable-portfolio-container ul li:hover { 
   background-color: #03a9f4;
   color: #fff; 
 
 }
 
-.category-display-container { 
+.portfolio-items { 
   display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap; 
 }
 
-.category-display-container .portfolio-item {
-  width: 200px;
-  height: 200px;
+.portfolio-items .itemBox { 
+  position: relative; 
+  width: 200px; 
+  height: 200px; 
+  margin: 5px;
+  display: block; 
 }
+
+.portfolio-items .itemBox img { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.item-display-container { 
+  display: flex; 
+  position: relative;
+  flex-wrap: wrap; 
+  /* justify-content: center;  */
+  /* align-items: center;  */
+  border: solid 4px blue; 
+}
+
 
 .hide {
   display: none;
+}
+
+
+.recent-projects-button-container {
+  display: flex; 
+  position: relative; 
+  justify-content: center;
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+
+.recent-projects-button button {
+  background-color: #CEBF8A;
+  color: white;  
+  border-radius: 8px; 
+  width: 250px;
+  height: 65px; 
+  font-size: 30px; 
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif; 
 }
 /*-----------------------------------------*/
 /*--END--CSS FOR Recent Project's filterable portfolio*/

@@ -125,38 +125,11 @@ export default function Page({ showHeading = true }: Props) {
 
  
 //Filterable Portfolio: 
-    useEffect(() => {
-        const categoryElements = document.querySelectorAll('.category');
-        const items = document.querySelectorAll('.portfolio-item');
 
-        const showItems = (filter: string) => {
-            items.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    item.classList.remove('hide');
-                } else {
-                    item.classList.add('hide');
-                }
-            });
-        };
+let category = document.querySelectorAll('category'); 
+let itemBox = document.querySelectorAll('itemBox'); 
 
-        showItems('all'); // Show all items initially
 
-        categoryElements.forEach(cate => {
-            cate.addEventListener('click', () => {
-                categoryElements.forEach(c => c.classList.remove('active'));
-                cate.classList.add('active');
-
-                const filter = cate.dataset.filter;
-                showItems(filter);
-            });
-        });
-
-        return () => {
-            categoryElements.forEach(cate => {
-                cate.removeEventListener('click', () => { });
-            });
-        };
-    }, []);
  
 
 
@@ -237,8 +210,8 @@ export default function Page({ showHeading = true }: Props) {
                         <h2>WHAT WE PROVIDE</h2>
                     </div>
                 </div>
-                <div className={styles['lp-cards-main-container']}>
-                    <div ref={swiperRef} className={`swiper mySwiper ${styles['lp-cs-container']}`}>
+               
+                    <div className={`swiper mySwiper ${styles['lp-cs-container']}`} ref={swiperRef} >
                         <div className={`swiper-wrapper ${styles['card-container']}`}>
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
@@ -326,7 +299,6 @@ export default function Page({ showHeading = true }: Props) {
                             </article>
                         </div>
                     </div>
-                </div>
 
                 {/* Pagination */}
                 <div className={styles['pagination-bullets-container']}>
@@ -392,7 +364,7 @@ export default function Page({ showHeading = true }: Props) {
 
 
 
-            {/* START of RECENT PROJECTS DISPLAY SECTION */}
+            {/* START of RECENT PROJECTS DISPLAY SECTION. Filterable Portfolio */}
 
             <div className={styles['lp-recent-projects-section-main-container']}>
 
@@ -411,34 +383,34 @@ export default function Page({ showHeading = true }: Props) {
                 </div>
 
 
-                {/*Filterable Portfolio*/}
-
                 <div className={styles['filterable-portfolio-container']}>
-                    <div className={styles['portfolio-navigation']}>
                         <ul>
-                            <li className={`${styles['category']} active`} data-filter="all">All</li>
-                            <li className={styles['category']} data-filter="residential">Residential</li>
-                            <li className={styles['category']} data-filter="commercial">Commercial</li>
-                            <li className={styles['category']} data-filter="repair">Repair</li>
+                            <li className={`${selectedCategory === 'all' ? 'active' : ''} ${styles['category']}`} data-filter="all" onClick={() => handleCategoryClick('all')}>All</li>
+                            <li className={`${selectedCategory === 'residential' ? 'active' : ''} ${styles['category']}`} data-filter="residential" onClick={() => handleCategoryClick('residential')}>Residential</li>
+                            <li className={`${selectedCategory === 'commercial' ? 'active' : ''} ${styles['category']}`}  data-filter="commercial" onClick={() => handleCategoryClick('commercial')}>Commercial</li>
+                            <li className={`${selectedCategory === 'repair' ? 'active' : ''} ${styles['category']}`}  data-filter="repair" onClick={() => handleCategoryClick('repair')}>Repair</li>
                         </ul>
-                        <div className={styles['category-display-container']}>
-                            <div className={styles['portfolio-item']} data-category="residential">
-                                <div id='category2' className={styles['all-images']}>
-                                    <img src='./images/2.jpg.webp' alt='' id='category2-all-image1' />
+
+                        <div className={styles['item-display-container']} data-category="all">
+                            <div className={styles['portfolio-items']} data-category="all">
+                                    <div className={styles['itemBox']}><img src='./images/2.jpg.webp' alt='' id='category2-all-image1'/></div>
+                                    <div className={styles['itemBox']}><img src='./images/3.jpg.webp' alt='' id='category3-all-image1'/></div>
+                                    <div className={styles['itemBox']}><img src='./images/4.jpg.webp' alt='' id='category4-all-image1'/></div>
+                                    {/* <div className={styles['itemBox']}>  </div> */}
+                            </div>
+
+                            {/* <div className={styles['portfolio-item']}>
+                                <div id='category3' className={styles['all-images']} data-category="commercial">
+                                 
                                 </div>
                             </div>
-                            <div className={styles['portfolio-item']} data-category="commercial">
-                                <div id='category3' className={styles['all-images']}>
-                                    <img src='./images/3.jpg.webp' alt='' id='category3-all-image1' />
+
+                            <div className={styles['portfolio-item']}>
+                                <div id='category4' className={styles['all-images']} data-category="repair">
+                                   
                                 </div>
-                            </div>
-                            <div className={styles['portfolio-item']} data-category="repair">
-                                <div id='category4' className={styles['all-images']}>
-                                    <img src='./images/4.jpg.webp' alt='' id='category4-all-image1' />
-                                </div>
-                            </div>
+                            </div> */}
                         </div>
-                    </div>
                 </div>
 
                 <div className={styles['recent-projects-button-container']}>
