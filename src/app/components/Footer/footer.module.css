@@ -2,9 +2,8 @@
   background-color: #262626;
   border-top: 2px solid black;
   padding-top: 80px;
-  Margin: 30% 0% 0% 0%; 
+  /* Margin: 30% 0% 0% 0%;  */
 }
-
 
 .container { 
   color: white; 
@@ -14,20 +13,13 @@
   margin-left: 2%; 
   margin-bottom: 2%; /* gives space between rows */
   align-items: start;
-
 }
 
-
-
-
-
 .footer-nav1 { 
-  
   color: red; 
 }
 
 .footer-nav2 {
     margin-left: 0px;  
-  
 }
 

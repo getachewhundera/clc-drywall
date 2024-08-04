@@ -92,7 +92,7 @@ export default function NavBarPage() {
                     </li>
                     <li className={styles['nav-item']}>
                         <Link href="/AboutUs" className={styles['nav-link']}>About</Link>
-                    </li>
+                    </li> 
                     <li className={styles['nav-item']}>
                         <Link href="/services" className={styles['nav-link']}>Services</Link>
                     </li>
@@ -102,7 +102,7 @@ export default function NavBarPage() {
                     <li className={styles['nav-item']}>
                         <Link href="/contact" className={styles['nav-link']}>Contact</Link>
                     </li>
-                </ul>
+                </ul>       
 
                 <div className={`${styles.search_input} ${showSearch ? styles['show-search'] : ''}`}>
                     <form className={styles['d-flex justify-content-between search-inner']} onSubmit={handleSearchSubmit}>
