@@ -1,6 +1,6 @@
 // `app/page.tsx` is the UI for the `/` URL
 'use client'
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
@@ -35,6 +35,9 @@ interface ImageProps {
 export default function Page({ showHeading = true }: Props) {
     const router = useRouter();
     const swiperRef = useRef<Swiper | null>(null);
+
+    const [selectedCategory, setSelectedCategory] = useState('all'); 
+
     // const categoryRef = useRef<NodeListOf<Element> | null>(null);
     // const itemsContainerRef = useRef<NodeListOf<Element> | null>(null);
 
@@ -126,11 +129,13 @@ export default function Page({ showHeading = true }: Props) {
  
 //Filterable Portfolio: 
 
-let category = document.querySelectorAll('category'); 
-let itemBox = document.querySelectorAll('itemBox'); 
 
+//event handler funtion for `handleCategoryClick` 
+//category associated with the clicked button is passed (i.e 'all', 'residential', etc. )
+const handleCategoryClick = (category: string) => { 
+    setSelectedCategory(category); 
+};
 
- 
 
 
     //funtions for the handle click events for Card Slider Navigation arrows
