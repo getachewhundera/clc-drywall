@@ -137,11 +137,18 @@ export default function Page({ showHeading = true }: Props) {
     };
 
 
+    //object for filterable portfolio
     const portfolioItems = [
         { id: 1, category: 'residential', src: './images/2.jpg.webp' },
         { id: 2, category: 'commercial', src: './images/3.jpg.webp' },
         { id: 3, category: 'repair', src: './images/4.jpg.webp' },
     ];
+
+//filtering logic. creates "new array"
+    const filteredItems = portfolioItems.filter(
+        item => selectedCategory === 'all' || item.category === selectedCategory
+    );
+
 
 
 
@@ -402,6 +409,15 @@ export default function Page({ showHeading = true }: Props) {
                         <li className={`${selectedCategory === 'commercial' ? 'active' : ''} ${styles['category']}`} data-filter="commercial" onClick={() => handleCategoryClick('commercial')}>Commercial</li>
                         <li className={`${selectedCategory === 'repair' ? 'active' : ''} ${styles['category']}`} data-filter="repair" onClick={() => handleCategoryClick('repair')}>Repair</li>
                     </ul>
+
+{/* mapping over "new array" (filteredItems) after items have been filtered through*/}
+                    <div className={styles['item-display-container']}>
+                        {filteredItems.map(item => (
+                            <div key={item.id} className={styles['itemBox']}>
+                                <img src={item.src} alt={item.category} />
+                            </div>
+                        ))}
+                    </div>
 
 
 
