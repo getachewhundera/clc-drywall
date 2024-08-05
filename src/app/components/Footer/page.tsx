@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import CopyrightFooter from './copyright-footer/copyrightFooter';
+
 //Styles 
 import styles from './footer.module.css';
 
@@ -115,7 +115,6 @@ const Footer = (props: Props) => {
 
         </div>
       </div>
-      <CopyrightFooter />
    </footer>
   );
 };

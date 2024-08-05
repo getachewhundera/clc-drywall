@@ -11,12 +11,8 @@ const CopyrightFooter = () => {
     return (
         <div className={styles['copyright-footer-area']}>
             <div className={styles['secondary-footer-area']}>
-                <div className="bottom-footer">
-                    <p>
-                        Copyright &copy;
-                        2024 CLCDRYWALL. All
-                        rights reserved
-                    </p>
+                <div className={styles['bottom-footer']}>
+                    <p>Copyright &copy; 2024, CLC DRYWALL. ALL RIGHTS RESERVED</p>
                 </div>
             </div>
         </div>

@@ -1,15 +1,16 @@
 .footer-area {
- 
-  
-  border-top: 2px solid black;
-  /* Margin: 30% 0% 0% 0%;  */
+  background-color: #16191A;
+  margin: 0; 
+  width: 100%;
+  min-width: 100%; 
+  min-height: 450px; 
+  border: 8px solid green; 
 }
 
-.main-footer-area { 
-   background-color: #262626;
-   padding-top: 80px;
-   border: 2px solid blue; 
-
+.main-footer-area {
+  padding-top: 80px;
+  border: 2px solid blue; 
+  min-height: 450px; 
 }
 
 .container { 
