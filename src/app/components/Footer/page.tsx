@@ -14,12 +14,17 @@ const Footer = (props: Props) => {
       <div className={styles['main-footer-area']}>
 
         <div className={styles['row']}>
-          {/*Column 1*/}
+          {/* Column 1. Left Column */}
           <div className={`${styles['column']} ${styles['left']}`}>
             <div className={styles['column1-container']}>
               <div className={styles['column1-title']}>
                 <h2>Contact Us</h2>
               </div>
+              <div className={styles['underline-divider-container']}>
+                    <div className={styles.underline}>
+                        <div className={styles.line}> </div>
+                    </div>
+                </div>
 
               <div className={styles['footer-quote-button-container']}>
                 <div className={styles['quote-button']}>
@@ -41,7 +46,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
 
-          {/*Column 2*/}
+          {/*Column 2. Middle Column */}
           <div className={`${styles['column']} ${styles['middle']}`}>
             <div className={styles['column2-container']}>
               <div className={styles['column2-title']}>
@@ -65,7 +70,7 @@ const Footer = (props: Props) => {
           </div>
 
 
-          {/*Column 3*/}
+          {/*Column 3. Right Column*/}
           <div className={`${styles['column']} ${styles['right']}`}>
             <div className={styles['column3-container']}>
               <div className={styles['column3-title']}>

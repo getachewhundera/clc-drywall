@@ -8,7 +8,6 @@
 }
 
 .main-footer-area {
-  padding-top: 80px;
   border: 2px solid blue; 
   min-height: 450px; 
 }
@@ -19,14 +18,20 @@
 
 .left { 
   width: 25%; 
+  border: 2px solid red; 
+  min-height: 450px; 
 }
 
 .middle { 
   width: 25%; 
+  border: 2px solid white; 
+  min-height: 450px; 
 }
 
 .right { 
   width: 50%; 
+  border: 2px solid orange; 
+  min-height: 450px; 
 }
 
 /* Clear floats after the columns */
@@ -36,3 +41,84 @@
   clear: both;
 }
 
+
+
+/*Column's title */
+.column1-title,
+.column2-title,
+.column3-title h2 { 
+  color: white;
+}
+
+/*---------------------- Column 1. Left Column Specific CSS ------------------------*/
+
+.underline-divider-container {
+  position: relative; 
+  display: flex; 
+  margin-top: 2%;
+  margin-left: 4px; 
+}
+
+.underline { 
+  position: absolute; 
+  display: flex;
+}
+
+.line { 
+  position: absolute; 
+  width: 300px; 
+  height: 2px; 
+  background: #5A5A5A;
+}
+
+
+
+/* Quote Button */
+.footer-quote-button-container {
+  display: flex; 
+  position: relative; 
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+
+.footer-quote-button-container button {
+  border-color: #CEBF8A; 
+  background-color: #262626;
+  color: #888888;  
+  border-radius: 8px; 
+  width: 220px;
+  height: 75px; 
+  font-size: 18pt; 
+  font-weight: 300; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+
+
+/*---------------------- Column 2. Middle Column Specific CSS ------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------- Column 3. Right Column Specific CSS ------------------------*/
+
+
+
+
+
+
+
+
+/* Responsive Layout. When screen is < 600px, the three columns stack on top of each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
