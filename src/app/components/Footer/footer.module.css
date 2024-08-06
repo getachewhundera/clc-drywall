@@ -52,12 +52,31 @@
 
 /*---------------------- Column 1. Left Column Specific CSS ------------------------*/
 
+.column1-title,
+.underline-divider-container, 
+.footer-quote-button-container, 
+.company-phone-number-container-footer,
+.company-email-address-container-footer { 
+  margin-left: 4%;
+}
+
+.column1-container { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+
+.column1-title {
+  margin-bottom: 0;
+}
+
+
+
 /* Underline Divider */
 .underline-divider-container {
   position: relative; 
-  display: flex; 
-  margin-top: 2%;
-  margin-left: 4px; 
+  display: flex;
 }
 
 .underline { 
@@ -77,21 +96,48 @@
 .footer-quote-button-container {
   display: flex; 
   position: relative; 
-  margin-top: 2%; 
-  margin-bottom: 2%; 
+  margin-top: 8%; 
 }
 
 .footer-quote-button-container button {
   border-color: #CEBF8A; 
+  border-width: 1px;
   background-color: #262626;
-  color: #888888;  
-  border-radius: 8px; 
+  color: whitesmoke; 
+  /* color: #888888;   */
+  border-radius: 4px; 
   width: 220px;
   height: 75px; 
   font-size: 18pt; 
   font-weight: 300; 
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
+
+/* Phone Number & Icon */
+.company-phone-number-container-footer { 
+  margin-top: 8%;  
+}
+
+.company-phone-number-footer {
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  color: #888888; 
+}
+
+
+
+
+/* Email Address & Icon */
+.company-email-address-container-footer {
+  margin-top: 8%;  
+}
+
+.company-email-address-footer text { 
+  color: #888888; 
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
 
 
 

@@ -14,17 +14,20 @@ const Footer = (props: Props) => {
       <div className={styles['main-footer-area']}>
 
         <div className={styles['row']}>
+
           {/* Column 1. Left Column */}
           <div className={`${styles['column']} ${styles['left']}`}>
             <div className={styles['column1-container']}>
+
               <div className={styles['column1-title']}>
                 <h2>Contact Us</h2>
               </div>
+
               <div className={styles['underline-divider-container']}>
-                    <div className={styles.underline}>
-                        <div className={styles.line}> </div>
-                    </div>
+                <div className={styles.underline}>
+                  <div className={styles.line}> </div>
                 </div>
+              </div>
 
               <div className={styles['footer-quote-button-container']}>
                 <div className={styles['quote-button']}>
@@ -41,7 +44,9 @@ const Footer = (props: Props) => {
               <div className={styles['company-email-address-container-footer']}>
                 <div className={styles['email-icon-footer']}>
                 </div>
-                <div className={styles['company-email-address-footer']}>Christianloera1214@icloud.com </div>
+                <div className={styles['company-email-address-footer']}> <text> Christianloera1214@icloud.com </text> </div>
+
+
               </div>
             </div>
           </div>
@@ -54,10 +59,10 @@ const Footer = (props: Props) => {
               </div>
 
               <div className={styles['column2-underline-divider-container']}>
-                    <div className={styles['column2-underline']}>
-                        <div className={styles['column2-line']}> </div>
-                    </div>
+                <div className={styles['column2-underline']}>
+                  <div className={styles['column2-line']}> </div>
                 </div>
+              </div>
 
               <ul className={styles['business-hours']}>
                 <li>
@@ -86,10 +91,10 @@ const Footer = (props: Props) => {
               </div>
 
               <div className={styles['column3-underline-divider-container']}>
-                    <div className={styles['column3-underline']}>
-                        <div className={styles['column3-line']}> </div>
-                    </div>
+                <div className={styles['column3-underline']}>
+                  <div className={styles['column3-line']}> </div>
                 </div>
+              </div>
 
               <div className={styles['secondary-column1-links-left']}>
                 <ul className={styles['footer-nav1']}>
