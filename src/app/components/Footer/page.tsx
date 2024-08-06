@@ -52,6 +52,13 @@ const Footer = (props: Props) => {
               <div className={styles['column2-title']}>
                 <h2>Buisness Hours</h2>
               </div>
+
+              <div className={styles['column2-underline-divider-container']}>
+                    <div className={styles['column2-underline']}>
+                        <div className={styles['column2-line']}> </div>
+                    </div>
+                </div>
+
               <ul className={styles['business-hours']}>
                 <li>
                   Monday - Thursday: <span>8:00 AM - 5:00 PM</span>{" "}
@@ -73,9 +80,17 @@ const Footer = (props: Props) => {
           {/*Column 3. Right Column*/}
           <div className={`${styles['column']} ${styles['right']}`}>
             <div className={styles['column3-container']}>
+
               <div className={styles['column3-title']}>
                 <h2>Useful Links</h2>
               </div>
+
+              <div className={styles['column3-underline-divider-container']}>
+                    <div className={styles['column3-underline']}>
+                        <div className={styles['column3-line']}> </div>
+                    </div>
+                </div>
+
               <div className={styles['secondary-column1-links-left']}>
                 <ul className={styles['footer-nav1']}>
                   <li>
