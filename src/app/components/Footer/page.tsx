@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-
+import { useRouter } from "next/navigation";
 //Styles 
 import styles from './footer.module.css';
 
@@ -8,31 +8,70 @@ import styles from './footer.module.css';
 type Props = {}
 
 const Footer = (props: Props) => {
+  const router = useRouter();
   return (
     <footer className={styles['footer-area']}>
       <div className={styles['main-footer-area']}>
-        <div className={styles.container}>
 
-          {/*  */}
-          {/* Row 1  */}
+        <div className={styles['row']}>
+          {/*Column 1*/}
+          <div className={`${styles['column']} ${styles['left']}`}>
+            <div className={styles['column1-container']}>
+              <div className={styles['column1-title']}>
+                <h2>Contact Us</h2>
+              </div>
 
-          <div className="row">
-            <div className="col-md-4">
-              <h6>Userful Links</h6>
+              <div className={styles['footer-quote-button-container']}>
+                <div className={styles['quote-button']}>
+                  <button type="button" onClick={() => router.push('/contact')}>GET A QUOTE!</button>
+                </div>
+              </div>
+
+              <div className={styles['company-phone-number-container-footer']}>
+                <div className={styles['phone-icon-footer']}>
+                </div>
+                <div className={styles['company-phone-number-footer']}>507-358-4948</div>
+              </div>
+
+              <div className={styles['company-email-address-container-footer']}>
+                <div className={styles['email-icon-footer']}>
+                </div>
+                <div className={styles['company-email-address-footer']}>Christianloera1214@icloud.com </div>
+              </div>
             </div>
-            <div className="col-md-4">
-              <h6>Business Hours</h6>
-            </div>
-            <div className="col-md-4">
-              <h6>Social Links</h6>
+          </div>
+
+          {/*Column 2*/}
+          <div className={`${styles['column']} ${styles['middle']}`}>
+            <div className={styles['column2-container']}>
+              <div className={styles['column2-title']}>
+                <h2>Buisness Hours</h2>
+              </div>
+              <ul className={styles['business-hours']}>
+                <li>
+                  Monday - Thursday: <span>8:00 AM - 5:00 PM</span>{" "}
+                </li>
+                <li>
+                  Friday : <span> 9:00 AM  - 5:00 PM</span>
+                </li>
+                <li>
+                  Saturday : <span>Closed</span>
+                </li>
+                <li>
+                  Sunday : <span>Closed</span>
+                </li>
+              </ul>
             </div>
           </div>
 
 
-          {/* Row 2 */}
-          <div className={styles.row2container}>
-            <div className="row">
-              <div className="col">
+          {/*Column 3*/}
+          <div className={`${styles['column']} ${styles['right']}`}>
+            <div className={styles['column3-container']}>
+              <div className={styles['column3-title']}>
+                <h2>Useful Links</h2>
+              </div>
+              <div className={styles['secondary-column1-links-left']}>
                 <ul className={styles['footer-nav1']}>
                   <li>
                     <i className="ti-angle-right"></i>
@@ -40,28 +79,24 @@ const Footer = (props: Props) => {
                   </li>
                   <li>
                     <i className="ti-angle-right"></i>
-                    <a href="/services">Services</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
                     <a href="/about">About Us</a>
                   </li>
                   <li>
                     <i className="ti-angle-right"></i>
-                    <a href="/projects">Projects</a>
+                    <a href="/contactus">Contact Us</a>
                   </li>
                 </ul>
               </div>
 
-              <div className="col col-sm-2">
+              <div className={styles['secondary-column2-links-middle']}>
                 <ul className={styles['footer-nav1']}>
                   <li>
                     <i className="ti-angle-right"></i>
-                    <a href="/contactus">Contact Us</a>
+                    <a href="/services">Services</a>
                   </li>
                   <li>
                     <i className="ti-angle-right"></i>
-                    <a href="/feedback">Feedback</a>
+                    <a href="/projects">Projects</a>
                   </li>
                   <li>
                     <i className="ti-angle-right"></i>
@@ -74,48 +109,19 @@ const Footer = (props: Props) => {
                 </ul>
               </div>
 
-              <div className="col">
-                <ul className="business-hour">
-                  <li>
-                    Monday - Thursday : <span>8:00 am - 5:00 pm</span>{" "}
-                  </li>
-                  <li>
-                    Friday : <span> 9:00 am - 5:00 pm</span>
-                  </li>
-                  <li>
-                    Saturday : <span>Closed</span>
-                  </li>
-                  <li>
-                    Sunday : <span>Closed</span>
-                  </li>
-                </ul>
-              </div>
-
-
-              <div className="col">
+              <div className={styles['secondary-column3-socialmedia-icons-right']}>
                 <ul className="social-links">
                   {/* <li><a href="">Facebook</a></li>                    
                             <li><a href="">Instagram</a></li> */}
                 </ul>
               </div>
             </div>
-
           </div>
 
-
-          {/* Row 3 Single row button only */}
-          <div className="row">
-            <div className="col">
-              <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white 
-                 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                <a href='/contactus'>GET A QUOTE!</a>
-              </button>
-            </div>
-          </div>
 
         </div>
       </div>
-   </footer>
+    </footer >
   );
 };
 

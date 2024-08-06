@@ -13,21 +13,26 @@
   min-height: 450px; 
 }
 
-.container { 
-  color: white; 
+.column { 
+  float: left; 
 }
 
-.row2container {
-  margin-left: 2%; 
-  margin-bottom: 2%; /* gives space between rows */
-  align-items: start;
+.left { 
+  width: 25%; 
 }
 
-.footer-nav1 { 
-  color: red; 
+.middle { 
+  width: 25%; 
 }
 
-.footer-nav2 {
-    margin-left: 0px;  
+.right { 
+  width: 50%; 
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
