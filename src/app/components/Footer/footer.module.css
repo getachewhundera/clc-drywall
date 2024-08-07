@@ -4,11 +4,11 @@
   width: 100%;
   min-width: 100%; 
   min-height: 450px; 
-  border: 8px solid green; 
+  /* border: 8px solid green;  */
 }
 
 .main-footer-area {
-  border: 2px solid blue; 
+  /* border: 2px solid blue;  */
   min-height: 450px; 
 }
 
@@ -17,20 +17,20 @@
 }
 
 .left { 
-  width: 25%; 
-  border: 2px solid red; 
+  width: 33.333%; 
+  /* border: 2px solid red;  */
   min-height: 450px; 
 }
 
 .middle { 
-  width: 25%; 
-  border: 2px solid white; 
+  width: 33.333%; 
+  /* border: 2px solid white;  */
   min-height: 450px; 
 }
 
 .right { 
-  width: 50%; 
-  border: 2px solid orange; 
+  width: 33.333%; 
+  /* border: 2px solid orange;  */
   min-height: 450px; 
 }
 
@@ -66,13 +66,6 @@
   padding-top: 40px; 
 }
 
-
-.column1-title {
-  margin-bottom: 0;
-}
-
-
-
 /* Underline Divider */
 .underline-divider-container {
   position: relative; 
@@ -96,7 +89,7 @@
 .footer-quote-button-container {
   display: flex; 
   position: relative; 
-  margin-top: 8%; 
+  margin-top: 6%; 
 }
 
 .footer-quote-button-container button {
@@ -122,8 +115,16 @@
   font-size: 14pt;
   font-family: Georgia, 'Times New Roman', Times, serif; 
   color: #888888; 
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.company-phone-number-footer span, 
+.company-email-address-footer span { 
+  color: rgb(65, 65, 216); 
+  margin-right: 10px; 
+  font-size: 26px;
+}
 
 
 
@@ -142,14 +143,23 @@
 
 
 /*---------------------- Column 2. Middle Column Specific CSS ------------------------*/
+.column2-container { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+.column2-title,
+.column2-underline-divider-container, 
+.business-hours-column { 
+  margin-left: 4%; 
+}
 
 
 /* Underline Divider */
 .column2-underline-divider-container{ 
   position: relative; 
   display: flex; 
-  margin-top: 2%;
-  margin-left: 4px; 
 }
 
 .column2-underline { 
@@ -165,7 +175,35 @@
 }
 
 
+/* Business Hours */
+.business-hours-column { 
+  margin-top: 6%; 
+  padding-left: 0;
+}
 
+.business-hours-column ul {
+  padding-left: 0; 
+  list-style-type: none; 
+}
+
+.business-hours-column ul li {
+  display: flex; 
+  justify-content: space-between; /* Add space between date and time */
+  align-items: center; 
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  color: #888888;
+  margin-bottom: 8px; /* space between each row */
+}
+
+.date {
+  flex: 0 0 200px; 
+}
+
+.time {
+  margin-left: 40px; /* adjust this to increase/decrease space */
+  flex: 1; /* Push to the right */
+}
 
 
 
@@ -174,14 +212,90 @@
 
 
 /*---------------------- Column 3. Right Column Specific CSS ------------------------*/
+.column3-container { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+.column3-title,
+.column3-underline-divider-container, 
+.secondary-column1-links-left { 
+  margin-left: 4%; 
+}
+
+/* main container for both rows of links and the social media icons */
+.secondary-row-container{ 
+  float: left; 
+  display: flex; 
+  flex-wrap: wrap;
+  margin-top: 6%; 
+}
+
+/* Setting container widths for the 3 secondary containers */
+.secondary-column1, 
+.secondary-column2 { 
+  width: 40%; 
+  /* border: 2px solid red;  */
+}
+
+.secondary-column3 { 
+  width: 20%; 
+  /* border: 2px solid red;   */
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: center; /* move icons in center of container (alternative; flex start*/
+}
+
+.secondary-column1 li, 
+.secondary-column2 li {
+  display: flex;
+  list-style-type: none;
+
+}
+
+.secondary-column1 li a, 
+.secondary-column2 li a { 
+  color: #888888; 
+}
+
+.secondary-column1 li::before, 
+.secondary-column2 li::before { 
+  display: flex; 
+  justify-content: start;
+  margin-right: 20px; 
+  align-items: center;
+  /* border: 1px solid orange; */
+  content: ">"; 
+  font-size: 19px;
+  font-weight: 600;
+  color: #888888; 
+}
+
+
+/* Social media icons */
+.secondary-column3 .facebook-icon, 
+.secondary-column3 .instagram-icon, 
+.secondary-column3 .tiktok-icon { 
+  color: #CEBF8A;
+  font-size: 32px; /* change icons size */
+  margin-bottom: 15px; /* add space between icons*/
+}
+
+.secondary-column3 .facebook-icon:hover, 
+.secondary-column3 .instagram-icon:hover, 
+.secondary-column3 .tiktok-icon:hover {
+  color: #888888; /* Change icon color on hover */
+}
+
+
 
 
 /* Underline Divider */
 .column3-underline-divider-container{ 
   position: relative; 
   display: flex; 
-  margin-top: 2%;
-  margin-left: 4px; 
 }
 
 .column3-underline { 

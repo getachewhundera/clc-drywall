@@ -3,7 +3,11 @@ import React from 'react'
 import { useRouter } from "next/navigation";
 //Styles 
 import styles from './footer.module.css';
-
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {}
 
@@ -36,15 +40,17 @@ const Footer = (props: Props) => {
               </div>
 
               <div className={styles['company-phone-number-container-footer']}>
-                <div className={styles['phone-icon-footer']}>
-                </div>
-                <div className={styles['company-phone-number-footer']}>507-358-4948</div>
+                {/* <div className={styles['phone-icon-footer']}>
+                <FontAwesomeIcon icon={faMobile} />
+                </div> */}
+                <div className={styles['company-phone-number-footer']}><span><FontAwesomeIcon icon={faMobile} /></span><text>507-358-4948</text></div>
               </div>
 
               <div className={styles['company-email-address-container-footer']}>
-                <div className={styles['email-icon-footer']}>
-                </div>
-                <div className={styles['company-email-address-footer']}> <text> Christianloera1214@icloud.com </text> </div>
+                {/* <div className={styles['email-icon-footer']}>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </div> */}
+                <div className={styles['company-email-address-footer']}><span><FontAwesomeIcon icon={faEnvelope} /></span> <text> Christianloera1214@icloud.com </text> </div>
 
 
               </div>
@@ -64,20 +70,15 @@ const Footer = (props: Props) => {
                 </div>
               </div>
 
-              <ul className={styles['business-hours']}>
-                <li>
-                  Monday - Thursday: <span>8:00 AM - 5:00 PM</span>{" "}
-                </li>
-                <li>
-                  Friday : <span> 9:00 AM  - 5:00 PM</span>
-                </li>
-                <li>
-                  Saturday : <span>Closed</span>
-                </li>
-                <li>
-                  Sunday : <span>Closed</span>
-                </li>
-              </ul>
+              <div className={styles['business-hours-column']}>
+                <ul>
+                  <li><span className={styles['date']}>Monday - Thursday :</span> <span className={styles['time']}>8:00 AM - 5:00 PM</span></li>
+                  <li><span className={styles['date']}>Friday :</span> <span className={styles['time']}>9:00 AM - 5:00 PM</span></li>
+                  <li><span className={styles['date']}>Saturday :</span> <span className={styles['time']}>Closed</span></li>
+                  <li><span className={styles['date']}>Sunday :</span> <span className={styles['time']}>Closed</span></li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
@@ -96,50 +97,56 @@ const Footer = (props: Props) => {
                 </div>
               </div>
 
-              <div className={styles['secondary-column1-links-left']}>
-                <ul className={styles['footer-nav1']}>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/about">About Us</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/contactus">Contact Us</a>
-                  </li>
-                </ul>
+  {/* //TODO: add navigation for the links */}
+              <div className={styles['secondary-row-container']}>
+                <div className={styles['secondary-column1']}>
+                  <ul className={styles['footer-nav1']}>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/">Home</a>
+                    </li>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/contactus">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className={styles['secondary-column2']}>
+                  <ul className={styles['footer-nav1']}>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/services">Services</a>
+                    </li>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/projects">Projects</a>
+                    </li>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/termsandcondition">Terms and condition</a>
+                    </li>
+                    <li>
+                      <i className="ti-angle-right"></i>
+                      <a href="/privacypolicy"> Privacy Policy</a>
+                    </li>
+                  </ul>
+                </div>
+                {/* //TODO: ADD links to social media accounts. Add contact links for phone and email. */}
+
+{/*  */}
+                <div className={styles['secondary-column3']}>
+                  <FontAwesomeIcon className={styles['facebook-icon']} icon={faFacebook} />
+                  <FontAwesomeIcon className={styles['instagram-icon']}  icon={faInstagram} />
+                  <FontAwesomeIcon className={styles['tiktok-icon']}  icon={faTiktok} />
+                </div>
+
               </div>
 
-              <div className={styles['secondary-column2-links-middle']}>
-                <ul className={styles['footer-nav1']}>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/services">Services</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/projects">Projects</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/termsandcondition">Terms and condition</a>
-                  </li>
-                  <li>
-                    <i className="ti-angle-right"></i>
-                    <a href="/privacypolicy"> Privacy Policy</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className={styles['secondary-column3-socialmedia-icons-right']}>
-                <ul className="social-links">
-                  {/* <li><a href="">Facebook</a></li>                    
-                            <li><a href="">Instagram</a></li> */}
-                </ul>
-              </div>
             </div>
           </div>
 

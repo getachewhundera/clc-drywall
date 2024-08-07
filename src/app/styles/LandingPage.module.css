@@ -594,7 +594,7 @@ color: black;
 .lp-recent-projects-section-main-container {
   position: relative; 
   background-color: #F9F9F9;  
-  border: solid yellow 4px;
+  /* border: solid yellow 4px; */
   padding-top: 3%; 
   padding-bottom: 3%; 
   /* height: 2000px;  */
@@ -663,7 +663,7 @@ color: black;
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  border: solid 4px green; 
+  /* border: solid 4px green;  */
   padding: 20px; 
 
 }
@@ -675,7 +675,7 @@ color: black;
   align-items: center;
   flex-wrap: wrap; 
   margin-bottom: 4%;
-  border: solid 4px red; 
+  /* border: solid 4px red;  */
 
 }
 
@@ -724,7 +724,7 @@ color: black;
   flex-wrap: wrap; 
   /* justify-content: center;  */
   /* align-items: center;  */
-  border: solid 4px blue; 
+  /* border: solid 4px blue;  */
 }
 
 
