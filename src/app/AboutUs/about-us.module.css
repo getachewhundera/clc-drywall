@@ -2,3 +2,44 @@
     margin-top:0px; 
 }
 
+.main-body-container { 
+   padding-top: 4%;
+   padding-bottom: 4%; 
+   min-width: 100%; 
+   border: 2px solid yellow; 
+   display: flex; 
+   justify-content: space-between;
+   align-items: center;
+}
+
+.aboutus-description-container {
+    border: 2px solid red; 
+    width: 50%; 
+    padding-right: 20px;
+
+}
+.aboutus-image-container {
+    border: 2px solid red; 
+    width: 50%;
+    text-align: right; /* moves image to the right of the container*/
+}
+
+
+/* description-container Image */
+.aboutus-image-container img { 
+    width: 550x; 
+    height: 650px;
+    border: solid black 2px;
+}
+
+
+/* 'GET IN TOUCH' Button */
+.contact-button-container { 
+    margin-top: 2%; 
+}
+
+.contact-button-container button { 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer;
+}
