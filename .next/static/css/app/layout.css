@@ -11966,43 +11966,359 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/components/Footer/copyright-footer/copyrightFooter.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+.copyrightFooter_copyright-footer-area__mbDFV {
+    width: 100%;
+    min-width: 100%; 
+    height: 80px; 
+    background-color: #111314;
+    /* border: 4px solid red;  */
+    padding: 20px 20px;   
+    position: relative;
+}
+
+.copyrightFooter_secondary-footer-area__TqpXn {
+    display: flex; 
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+}
+
+.copyrightFooter_bottom-footer__vtYIg p {
+    color: white; 
+    font-family: inter; 
+    font-size: large;
+
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/components/Footer/footer.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/
 .footer_footer-area__AQS8a {
+  background-color: #16191A;
+  margin: 0; 
+  width: 100%;
+  min-width: 100%; 
+  min-height: 450px; 
+  /* border: 8px solid green;  */
+}
+
+.footer_main-footer-area__PLsWa {
+  /* border: 2px solid blue;  */
+  min-height: 450px; 
+}
+
+.footer_column__mOktQ { 
+  float: left; 
+}
+
+.footer_left__fuQlu { 
+  width: 33.333%; 
+  /* border: 2px solid red;  */
+  min-height: 450px; 
+}
+
+.footer_middle__UkZwn { 
+  width: 33.333%; 
+  /* border: 2px solid white;  */
+  min-height: 450px; 
+}
+
+.footer_right__8lwWa { 
+  width: 33.333%; 
+  /* border: 2px solid orange;  */
+  min-height: 450px; 
+}
+
+/* Clear floats after the columns */
+.footer_row__w_lj0:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/*Column's title */
+.footer_column1-title__MTrmd,
+.footer_column2-title__2j3xO,
+.footer_column3-title__4_AsR h2 { 
+  color: white;
+}
+
+/*---------------------- Column 1. Left Column Specific CSS ------------------------*/
+
+.footer_column1-title__MTrmd,
+.footer_underline-divider-container__b0dK_, 
+.footer_footer-quote-button-container__oAKAM, 
+.footer_company-phone-number-container-footer___WSD5,
+.footer_company-email-address-container-footer__9h0gm { 
+  margin-left: 4%;
+}
+
+.footer_column1-container__I13rv { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+/* Underline Divider */
+.footer_underline-divider-container__b0dK_ {
+  position: relative; 
+  display: flex;
+}
+
+.footer_underline__fotN6 { 
+  position: absolute; 
+  display: flex;
+}
+
+.footer_line__sGk9t { 
+  position: absolute; 
+  width: 300px; 
+  height: 2px; 
+  background: #5A5A5A;
+}
+
+
+/* Quote Button */
+.footer_footer-quote-button-container__oAKAM {
+  display: flex; 
+  position: relative; 
+  margin-top: 6%; 
+}
+
+.footer_footer-quote-button-container__oAKAM button {
+  border-color: #CEBF8A; 
+  border-width: 1px;
   background-color: #262626;
-  border-top: 2px solid black;
-  padding-top: 80px;
-  Margin: 30% 0% 0% 0%; 
+  color: whitesmoke; 
+  /* color: #888888;   */
+  border-radius: 4px; 
+  width: 220px;
+  height: 75px; 
+  font-size: 18pt; 
+  font-weight: 300; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+/* Phone Number & Icon */
+.footer_company-phone-number-container-footer___WSD5 { 
+  margin-top: 8%;  
+}
+
+.footer_company-phone-number-footer__oj5ui {
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  color: #888888; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer_company-phone-number-footer__oj5ui span, 
+.footer_company-email-address-footer__0GYCd span { 
+  color: rgb(65, 65, 216); 
+  margin-right: 10px; 
+  font-size: 26px;
 }
 
 
-.footer_container__IxwGR { 
-  color: white; 
+
+/* Email Address & Icon */
+.footer_company-email-address-container-footer__9h0gm {
+  margin-top: 8%;  
 }
 
-.footer_row2container__rth2D {
-  margin-left: 2%; 
-  margin-bottom: 2%; /* gives space between rows */
-  align-items: start;
-
-}
-
-
-
-
-
-.footer_footer-nav1__fn6NK { 
-  
-  color: red; 
-}
-
-.footer_footer-nav2__c4mrQ {
-    margin-left: 0px;  
-  
+.footer_company-email-address-footer__0GYCd text { 
+  color: #888888; 
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
 }
 
 
+
+
+/*---------------------- Column 2. Middle Column Specific CSS ------------------------*/
+.footer_column2-container__zXbLw { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+.footer_column2-title__2j3xO,
+.footer_column2-underline-divider-container___LE9E, 
+.footer_business-hours-column__XZWpj { 
+  margin-left: 4%; 
+}
+
+
+/* Underline Divider */
+.footer_column2-underline-divider-container___LE9E{ 
+  position: relative; 
+  display: flex; 
+}
+
+.footer_column2-underline__Ujei9 { 
+  position: absolute; 
+  display: flex;
+}
+
+.footer_column2-line__K5_ET { 
+  position: absolute; 
+  width: 300px; 
+  height: 2px; 
+  background: #5A5A5A;
+}
+
+
+/* Business Hours */
+.footer_business-hours-column__XZWpj { 
+  margin-top: 6%; 
+  padding-left: 0;
+}
+
+.footer_business-hours-column__XZWpj ul {
+  padding-left: 0; 
+  list-style-type: none; 
+}
+
+.footer_business-hours-column__XZWpj ul li {
+  display: flex; 
+  justify-content: space-between; /* Add space between date and time */
+  align-items: center; 
+  font-size: 14pt;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  color: #888888;
+  margin-bottom: 8px; /* space between each row */
+}
+
+.footer_date__pcWbv {
+  flex: 0 0 200px; 
+}
+
+.footer_time__Z3bAZ {
+  margin-left: 40px; /* adjust this to increase/decrease space */
+  flex: 1 1; /* Push to the right */
+}
+
+
+
+
+
+
+
+/*---------------------- Column 3. Right Column Specific CSS ------------------------*/
+.footer_column3-container__jGizO { 
+  display: flex; 
+  flex-direction: column;
+  padding-top: 40px; 
+}
+
+.footer_column3-title__4_AsR,
+.footer_column3-underline-divider-container__4Stfx, 
+.footer_secondary-column1-links-left__Z3D_S { 
+  margin-left: 4%; 
+}
+
+/* main container for both rows of links and the social media icons */
+.footer_secondary-row-container___p2od{ 
+  float: left; 
+  display: flex; 
+  flex-wrap: wrap;
+  margin-top: 6%; 
+}
+
+/* Setting container widths for the 3 secondary containers */
+.footer_secondary-column1__ZABcF, 
+.footer_secondary-column2__1ZmkV { 
+  width: 40%; 
+  /* border: 2px solid red;  */
+}
+
+.footer_secondary-column3__iwJ_S { 
+  width: 20%; 
+  /* border: 2px solid red;   */
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: center; /* move icons in center of container (alternative; flex start*/
+}
+
+.footer_secondary-column1__ZABcF li, 
+.footer_secondary-column2__1ZmkV li {
+  display: flex;
+  list-style-type: none;
+
+}
+
+.footer_secondary-column1__ZABcF li a, 
+.footer_secondary-column2__1ZmkV li a { 
+  color: #888888; 
+}
+
+.footer_secondary-column1__ZABcF li::before, 
+.footer_secondary-column2__1ZmkV li::before { 
+  display: flex; 
+  justify-content: start;
+  margin-right: 20px; 
+  align-items: center;
+  /* border: 1px solid orange; */
+  content: ">"; 
+  font-size: 19px;
+  font-weight: 600;
+  color: #888888; 
+}
+
+
+/* Social media icons */
+.footer_secondary-column3__iwJ_S .footer_facebook-icon__pnw_0, 
+.footer_secondary-column3__iwJ_S .footer_instagram-icon__QzDOh, 
+.footer_secondary-column3__iwJ_S .footer_tiktok-icon__pcvFn { 
+  color: #CEBF8A;
+  font-size: 32px; /* change icons size */
+  margin-bottom: 15px; /* add space between icons*/
+}
+
+.footer_secondary-column3__iwJ_S .footer_facebook-icon__pnw_0:hover, 
+.footer_secondary-column3__iwJ_S .footer_instagram-icon__QzDOh:hover, 
+.footer_secondary-column3__iwJ_S .footer_tiktok-icon__pcvFn:hover {
+  color: #888888; /* Change icon color on hover */
+}
+
+
+
+
+/* Underline Divider */
+.footer_column3-underline-divider-container__4Stfx{ 
+  position: relative; 
+  display: flex; 
+}
+
+.footer_column3-underline__D4qW_ { 
+  position: absolute; 
+  display: flex;
+}
+
+.footer_column3-line__baMW8 { 
+  position: absolute; 
+  width: 300px; 
+  height: 2px; 
+  background: #5A5A5A;
+}
+
+
+
+
+
+
+
+/* Responsive Layout. When screen is < 600px, the three columns stack on top of each other */
+@media screen and (max-width: 600px) {
+  .footer_column__mOktQ {
+    width: 100%;
+  }
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/components/navbar/navbar.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/
@@ -12016,7 +12332,7 @@ textarea.form-control-lg {
 }
 
 .navbar_navbar-one__xF5KV {
-  background-color: #312f36;
+  background-color: #313030;
   color: white;
   height: 30px;
   cursor: pointer;
@@ -12083,7 +12399,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   position: fixed;
   top: 30px;
-  background-color: #32353c;
+  background-color: #000000;
   height: 100px;
   padding: 0 2%;
   width: 100%;
@@ -12098,6 +12414,11 @@ textarea.form-control-lg {
   margin-left: 2%;
   padding-right: 5%;
   padding-top: 6px;
+  
+}
+
+.navbar_navbar-two__YA9XF .navbar_logo__YN5V1 h1 {
+  color: white; 
 }
 
 .navbar_navbar-two__YA9XF .navbar_menu_nav__p7nHF {
@@ -12114,7 +12435,7 @@ textarea.form-control-lg {
 }
 
 .navbar_navbar-two__YA9XF .navbar_nav-item__G0b6c:hover {
-  color: red;
+  color: #F2D68D; 
 }
 
 .navbar_navbar-two__YA9XF .navbar_nav-link__ka6tX {
@@ -12132,6 +12453,95 @@ textarea.form-control-lg {
 /* navbar-two element appears after hidden class*/
 .navbar_hidden__a2y_6 ~ .navbar_navbar-two__YA9XF {
   top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ham menu */
+.navbar_hamburger-menu__UNxgs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.navbar_hamburger-menu__UNxgs span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.navbar_hamburger-menu__UNxgs.navbar_active__eq4m6 span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.navbar_overlay__9G6am {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.5s;
+}
+
+.navbar_overlay__9G6am.navbar_open__GWxa2 {
+  display: flex;
+}
+
+.navbar_overlay-content__Byk5h a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.navbar_overlay-content__Byk5h a:hover {
+  color: #f1f1f1;
+}
+
+.navbar_overlay__9G6am .navbar_close-button___BoDv {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/styles/globals.css ***!

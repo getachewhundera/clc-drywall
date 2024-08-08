@@ -254,18 +254,6 @@
 /*--------Card Slider CSS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
 
-.LandingPage_landing_page_cs_animation_section__YC5eW {
-  position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: 1500px; 
-
-
-}
-
-
 
 /*--START--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
 /*-----------------------------------------*/
@@ -358,99 +346,86 @@
 
 
 /*--START--CSS for the animation of the CARD SLIDER*/
-.LandingPage_lp-cards-main-container__AVbBZ {
+
+.LandingPage_landing_page_cs_animation_section__YC5eW {
+  position: relative; 
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+}
+
+.LandingPage_lp-cs-container__T8Dt6{
   display: flex; 
   position: relative; 
   margin-bottom: 4%; 
   margin-top: 4%;
+  width: 100%;
+  height: auto; 
 }
 
-.LandingPage_lp-cs-container__T8Dt6{ 
-  display: flex; 
-  position: absolute; 
-  box-sizing: border-box;
-  padding: 0; 
-  margin: 0; 
-  
-  /* border: solid black 1px; */
-  max-width: 100%; 
+.LandingPage_card-container__vuOcR {
+    display: flex;
+    position: absolute; 
+    column-gap: 10px; 
 }
-
-
-
-.LandingPage_card-container__vuOcR { 
-  /* margin-inline: 28px;  */
-  border-radius: 20px; 
-  /* overflow: hidden;  */
-  /* border: solid black 1px; */
-  display: flex;
-  position: absolute; 
-  column-gap: 10px; 
-}
-
 
 .LandingPage_card-article__AmueJ { 
+  position: absolute;
   width: 400px; 
   border-radius: 20px; 
+  border: 1px solid #9A8A78; 
   overflow: hidden; 
   flex: 0 0 auto; 
-  /* border: yellow 1px solid;  */
-  background-color: gray;
+  background-color:#262626; 
 }
 
 .LandingPage_card_image__79tvB { 
-  position: relative; 
-  /* background-color: hsl(38, 100%, 78%);  */
-  /* padding-block: 5px 5px;  */
+  display: block;
+  height: 250px; 
+  width: 250px; 
+  margin: 0 auto; 
   padding-top: 28px; 
-  margin-bottom: -12px; 
-
+   z-index: 5; 
 }
 
+.LandingPage_card_image__79tvB img { 
+  max-width: 100%;
+  max-height: 100%; 
+  height: 250px; 
+  width: 250px; 
+  border-radius: 10px; 
+}
 
 .LandingPage_card_data__eF6nV { 
-  background-color: darkblue; 
+  position: relative;
+  margin-top: 5%; 
+  background-color: #262626; 
   Padding: 24px 32px; 
-  border-radius: 16px; 
+  border-radius: 0px; 
   text-align: center; 
-  position: relative; 
   z-index: 10;
-}
-
-.LandingPage_card_image__79tvB { 
-width: 180px; 
-margin: 0 auto; 
-position: relative; 
-z-index: 5; 
 }
 
 .LandingPage_card_name__BTtlf { 
   font-size: 20px;  
-  color:  hsl(195, 75%, 52%); 
+  color:  white; 
   margin-bottom: 12px; 
 }
 
 .LandingPage_card_description__pUWpE { 
   font-weight: 500; 
   margin-bottom: 28px;
+  color: white; 
 
 }
 
 .LandingPage_card_button__Xz5SN { 
   display: inline-block; 
-  background-color: hsl(38, 92%, 58%); 
+  background-color: #CEBF8A; 
   padding: 12px 24px; 
   border-radius: 4px; 
-  color: hsl(212, 40%, 12%);
+  color: white;
   font-weight: 600;
-}
-
-.LandingPage_card_image__79tvB img { 
-  display: block; 
-  max-width: 100%;
-  height: auto; 
-  height: 250px; 
-  width: 250px; 
 }
 
 
@@ -459,10 +434,7 @@ z-index: 5;
   position: relative;
   justify-content: center;
   margin-top: 2%; 
-
 }
-
-
 
 .LandingPage_swiper-pagination__qk0ix {
   position: absolute;
@@ -473,37 +445,32 @@ z-index: 5;
   display: flex; 
   justify-content: center;
   position: relative;
-
+  margin-top: 2%; 
+  margin-bottom: 2%; 
 }
 
 .LandingPage_navigationArrows__E3ugR{
   position: absolute; 
   display: flex;
-  margin-top: 2%; 
-  margin-bottom: 2%; 
+ 
 }
 
-
 .LandingPage_swiper-button-prev__dZj5H i, .LandingPage_swiper-button-next__nV_2M i {
-color: red; 
+color: black;  
 }
 
 
 .LandingPage_cs-services-button-container__aRmQ7{
   display: flex; 
-  position: relative;
-  margin-top: 8%; 
+  position: relative; 
+  margin-top: 3%; 
+  margin-bottom: 3%; 
   justify-content: center;
 }
 
-
-.LandingPage_cs_services_button__1gzvY { 
-  position: absolute;
-  margin-bottom: 2%; 
-}
-
 .LandingPage_cs_services_button__1gzvY button { 
-  color: red; 
+  background-color: #CEBF8A;
+  color: white;  
   border-radius: 8px; 
   width: 250px;
   height: 65px; 
@@ -518,15 +485,11 @@ color: red;
 
 /*--------FIXED CARDS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
-
-
 .LandingPage_fixed-cards-section-main-container__XB8jq{
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: auto; 
+  background-color: #FFFFFF; 
+  padding-top: 3%; 
+  padding-bottom: 3%; 
 }
 
 .LandingPage_fixed-cards-section-title-container__Ph5kZ {
@@ -548,8 +511,8 @@ color: red;
 
 .LandingPage_cards-container__5Je8U {
   display: flex;
+  position: relative; 
   flex-wrap: wrap; 
-  /* justify-content: space-between;  */
   margin-left: 70px; 
   margin-right: 70px; 
   margin-top: 50px; 
@@ -564,7 +527,6 @@ color: red;
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  min-height: 100px; 
   border: 1.5px solid #9A8A78;
   background-color: #262626;
   color: black; 
@@ -634,11 +596,11 @@ color: red;
 /*----------------------------------------------------------------------------------------------*/
 .LandingPage_lp-recent-projects-section-main-container__Fxere {
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: 2000px; 
+  background-color: #F9F9F9;  
+  /* border: solid yellow 4px; */
+  padding-top: 3%; 
+  padding-bottom: 3%; 
+  /* height: 2000px;  */
 }
 
 /*--START--CSS FOR decorative line above "Recent Projects" title*/
@@ -647,15 +609,14 @@ color: red;
   position: relative; 
   display: flex; 
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .LandingPage_lp-projects-decorativelines__WQky2 {
-  position: relative; 
+  position: absolute; 
   display: flex;
   justify-content: center;
   align-items: center; 
-  margin-bottom: 0%;
 }
 
 /*thinner decorative line*/
@@ -686,13 +647,126 @@ color: red;
   position: relative;
   justify-content: center;
   margin-top: 1.5%;
+  margin-bottom: 2%; 
 }
 
 .LandingPage_recent-projects-section-title__kgVSx h2 {
   color: black; 
 }
+
 /*-----------------------------------------*/
 /*--END--CSS FOR "Recent Projects" title*/
+
+
+/*--START--CSS FOR Recent Project's filterable portfolio */
+/*-----------------------------------------*/
+.LandingPage_filterable-portfolio-container__sbHn_ { 
+  display: flex;
+  position: relative; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  /* border: solid 4px green;  */
+  padding: 20px; 
+
+}
+
+.LandingPage_filterable-portfolio-container__sbHn_ ul { 
+  display: flex; 
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  margin-bottom: 4%;
+  /* border: solid 4px red;  */
+
+}
+
+.LandingPage_filterable-portfolio-container__sbHn_ ul li { 
+  list-style: none; 
+  background: #eee; 
+  padding: 12px 20px;
+  margin: 5px; 
+  letter-spacing: 1px; 
+  cursor: pointer; 
+}
+
+.LandingPage_filterable-portfolio-container__sbHn_ ul li:hover { 
+  background-color: #03a9f4;
+  color: #fff; 
+
+}
+
+.LandingPage_portfolio-items__b_33j { 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.LandingPage_portfolio-items__b_33j .LandingPage_itemBox__byhNa { 
+  position: relative; 
+  width: 200px; 
+  height: 200px; 
+  margin: 5px;
+  display: block; 
+}
+
+.LandingPage_portfolio-items__b_33j .LandingPage_itemBox__byhNa img { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.LandingPage_item-display-container__J0nsw { 
+  display: flex; 
+  position: relative;
+  flex-wrap: wrap; 
+  /* justify-content: center;  */
+  /* align-items: center;  */
+  /* border: solid 4px blue;  */
+}
+
+
+.LandingPage_hide__9vcXb {
+  display: none;
+}
+
+
+.LandingPage_recent-projects-button-container__F1Rwb {
+  display: flex; 
+  position: relative; 
+  justify-content: center;
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+
+.LandingPage_recent-projects-button__Lemmx button {
+  background-color: #CEBF8A;
+  color: white;  
+  border-radius: 8px; 
+  width: 250px;
+  height: 65px; 
+  font-size: 30px; 
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+/*-----------------------------------------*/
+/*--END--CSS FOR Recent Project's filterable portfolio*/
+
+
+
+
+
+/*--START--CSS FOR CUSTOMER REVIEWS SECTION*/
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+/*--END--CSS FOR CUSTOMER REVIEWS SECTION*/
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/swiper/swiper.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/

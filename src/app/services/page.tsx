@@ -1,4 +1,3 @@
-
 'use client'
 // this section is only on the Home page and on the Services page
 import Image from 'next/image'
