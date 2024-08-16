@@ -1,79 +1,65 @@
-
 'use client'
-// this section is only on the Home page and on the Services page
-import Image from 'next/image'
 import React, { useEffect, useState, useRef } from 'react';
-
-import PageHeader from '../components/PageHeader/PageHeader'
-//Styles 
+//CSS Styling: 
 import styles from './services.module.css';
 
+//Component imports
+import PageHeader from '../components/PageHeader/PageHeader'
 
-//Import this in and move PageHeader to global 
-// import PageHeader from '../components/PageHeader/PageHeader';
-//Global section import from Components
-// import StatsSection from '../components/StatsSection/StatsSection';
-// import TestomonialsCarouselSection from "../components/TestomonialsCarouselSection/TestomonialsCarouselSection";
-
-//Styles 
-// import './services.module.css'; 
 
 // `app/services/page.tsx` is the UI for the `/services` URL
 
+
+
 type Props = {}
 
+
+
+
+
+
+
 export default function services(props: Props) {
-  const figureRef = useRef(null);
-  const [currImage, setCurrImage] = useState(0);
-  //declared state variable for 3D carousel images descriptions 
-  // const [serviceImgDescriptionLeft, setServiceImgDescriptionLeft ] = useState(""); 
-  // const [serviceImgDescriptionRight, setServiceImgDescriptionRight ] = useState(""); 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+
 
 
   useEffect(() => {
-    const numImages = figureRef.current ? figureRef.current.children.length : 0;
-    const theta = 2 * Math.PI / numImages;
-    figureRef.current.style.transform = `rotateY(${currImage * -theta}rad)`;
+    const figures = document.querySelectorAll(`.${styles.threeDCarouselContainer} figure`);
+    const n = figures.length;
+    const theta = 360 / n;
 
-    // Clear previous active class
-    Array.from(figureRef.current.children).forEach(child => {
-      child.classList.remove('activeCarouselItem');
+    figures.forEach((figure, i) => {
+      const rotation = i * theta;
+      (figure as HTMLElement).style.transform = `rotateY(${rotation}deg) translateZ(var(--apothem))`;
     });
-
-    // Add active class to current item
-    if (figureRef.current.children[currImage]) {
-      figureRef.current.children[currImage].classList.add('activeCarouselItem');
-    }
-  }, [currImage]);
+  }, []);
 
 
 
-
-
+  //Functions for onClick event for 3D Carousel Prev & Next 
   const handlePrevClick = () => {
-    setCurrImage(currImage - 1);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 6) % 6);
+    rotateCarousel(currentIndex - 1);
   };
 
   const handleNextClick = () => {
-    setCurrImage(currImage + 1);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 6);
+    rotateCarousel(currentIndex + 1);
   };
 
 
-  useEffect(() => {
-    const handleScroll = () => {
 
-      const carouselOffsetTop = document.querySelector('.carouselSection').offsetTop;
-      if (window.scrollY > carouselOffsetTop - window.innerHeight / 2) {
+  const rotateCarousel = (index: number) => {
+    const carousel = document.querySelector(`.${styles.threeDCarouselContainer}`);
+    if (carousel) {
+      const theta = 360 / 6;
+      const angle = index * -theta;
+      (carousel as HTMLElement).style.transform = `translateZ(calc(-1 * var(--apothem))) rotateY(${angle}deg)`;
+    }
+  };
 
-      } else {
-        // Removes effect when the user scrolls back up
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
 
 
@@ -84,25 +70,61 @@ export default function services(props: Props) {
     <div className={styles['ServicePageBody']}>
 
       {/*----HORIZONTAL SCROLLING BAR---*/}
-      {/**/}
       <div className={styles['scrollingItemsContainer']}>
         <div className={styles['horizontalScrollingItems']}>
           <div className={styles['horizontal-scrolling-items']}>
-            <div className={styles['item']}>Drywall Installation</div>
-            <div className={styles['item']}>Drywall Finishing</div>
-            <div className={styles['item']}>Popcorn Removal</div>
-            <div className={styles['item']}>Drywall Repair</div>
-            <div className={styles['item']}>Texture Knockdown</div>
-            <div className={styles['item']}>Interior Painting</div>
-          </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Drywall Installation</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Drywall Finishing</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Popcorn Removal</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Drywall Repair</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Texture Knockdown</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
+            <div className={styles['item-container']}>
+              <div className={styles['item']}>Interior Painting</div>
+              <div className={styles['item-spacer']}>.</div>
+            </div>
 
-          <div className={styles['horizontal-scrolling-items']}>
-            <div className={styles['item']}>Drywall Installation</div>
-            <div className={styles['item']}>Drywall Finishing</div>
-            <div className={styles['item']}>Popcorn Removal</div>
-            <div className={styles['item']}>Drywall Repair</div>
-            <div className={styles['item']}>Texture Knockdown</div>
-            <div className={styles['item']}>Interior Painting</div>
+
+            <div className={styles['horizontal-scrolling-items']}>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Drywall Installation</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Drywall Finishing</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Popcorn Removal</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Drywall Repair</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Texture Knockdown</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+              <div className={styles['item-container']}>
+                <div className={styles['item']}>Interior Painting</div>
+                <div className={styles['item-spacer']}>.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -113,241 +135,274 @@ export default function services(props: Props) {
       </div>
 
 
-      {/*FIRST SECTION'S DECORATIVE LINES*/}
-      <div className={styles['sp-decorative-lines-container']}>
-        <div className={styles['sp-decorativelines']}>
-          <div className={styles['sp-decorativelinebase']}> </div>
-          <div className={styles['sp-decorativelineoverlayed']}> </div>
-        </div>
-      </div>
-
-      {/*FIRST SECTION'S TITLE*/}
-      {/* sp = service page*/}
-      <div className={styles['sp-first-section-title-container']}>
-        <div className={styles['sp-first-section-title']}>
-          <h2>Services</h2>
-        </div>
-      </div>
-
 
 
       {/* 3D CAROUSEL SECTION*/}
-      {/* 
-            serviceOfferingOneAnimation = box  is similar to box class - as it contains both img and descriptions  */}
-      {/* ServiceOfferingOne = text - contians all text, but each div/text needs to be formatted differently  */}
+      <div className={styles['threeDcarousel-section']}>
 
-      <div className={styles.threeDCarouselWrapper}>
-        <div className={styles['carouselSection']}>
-          <div className={styles['threeDCarouselContainer']} data-gap="80">
+
+        {/*FIRST SECTION'S DECORATIVE LINES*/}
+        <div className={styles['sp-decorative-lines-container']}>
+          <div className={styles['sp-decorativelines']}>
+            <div className={styles['sp-decorativelinebase']}> </div>
+            <div className={styles['sp-decorativelineoverlayed']}> </div>
+          </div>
+        </div>
+
+        {/*FIRST SECTION'S TITLE*/}
+        {/* sp = service page*/}
+        <div className={styles['sp-first-section-title-container']}>
+          <div className={styles['sp-first-section-title']}>
+            <h2>Services</h2>
+          </div>
+        </div>
+
+
+
+        <div className={styles.threeDCarouselWrapper}>
+          <div className={styles['threeDCarouselContainer']}>
 
             {/* Service Offering #1 */}
-            <div className={styles['serviceOfferingOneAnimation']}>
-              <div className={styles['serviceOfferingTitleOne']} id={styles['text']}>
-                <p> DRYWALL INSTALLATION AND REPAIR  </p>
+            <figure id={styles.figure} className={styles['serviceOfferingOneAnimation']} >
+
+              <img src='./servicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' className={styles['serviceOfferingOneImage']} id={styles['threeDcarousel-images']} />
+
+              <div className={styles['serviceOfferingTitleOne']} id={styles['title-text']}>
+                <p>DRYWALL INSTALLATION AND REPAIR</p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementOne']} id={styles['text']}>
+                    <p>We offer a complete range of drywall services including drywall hanging,
+                      drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                      Our skilled team is ready to handle every aspect of your drywall
+                      project with expertise and precision.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementOne']} id={styles['text']}>
-                <p> We offer complete range of drywall services including drywall hanging,
-                  drywall installation, drywall taping, drywall sanding, and drywall mudding.
-                  Our skilled team is ready to handle every aspect of your drywall
-                  project with expertise and precision.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListOne']} id={styles['list-text']}>
+                    <ul>
+                      <li>Residential Drywall</li>
+                      <li>Drywall Hanging</li>
+                      <li>Drywall Texturing</li>
+                      <li>Commercial Drywall</li>
+                      <li>Drywall Taping</li>
+                      <li>Drywall Installation</li>
+                      <li>Drywall Finishing</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListOne']} id={styles['text']}>
-                <ul>
-                  <li> Residential Drywall </li>
-                  <li> Drywall Hanging </li>
-                  <li> Drywall Texturing </li>
-                  <li> Commercial Drywall </li>
-                  <li> Drywall Taping </li>
-                  <li> Drywall Installation </li>
-                  <li> Drywall Finishing </li>
-                </ul>
-              </div>
-            </div>
+            </figure>
+
 
 
             {/* Service Offering #2 */}
-            <div className={styles['serviceOfferingTwoAnimation']}>
-              <div className={styles['serviceOfferingTitleTwo']}>
-                <p> UPGRADE YOUR WALLS  </p>
+            <figure id={styles.figure} className={styles['serviceOfferingTwoAnimation']} >
+
+              <img src='./servicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' id={styles['threeDcarousel-images']} className={styles['serviceOfferingTwoImage']} />
+
+              <div className={styles['serviceOfferingTitleTwo']} id={styles['title-text']}>
+                <p>UPGRADE YOUR WALLS</p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementTwo']} id={styles['text']}>
+                    <p>
+                      Transform your space and say farewell to outdated popcorn ceilings with our
+                      range of stylish ceiling upgrades. Experience an upgrade that elevates your
+                      space with your choice of modern ceiling textures. Whether you desire a sleek,
+                      smooth finish or a textured design, our options offer endless possibilities
+                      for enhancing the aesthetics of your home.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementTwo']}>
-                <p> Transform your space and say farewell to outdated popcorn ceilings with our
-                  range of stylish ceiling upgrades. Experience an upgrade that elevates your
-                  space with your choice of modern ceiling textures. Whether you desire a sleek,
-                  smooth finish or a textured design, our options offer endless possibilities
-                  for enhancing the aesthetics of your home.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListTwo']} id={styles['list-text']}>
+                    <ul>
+                      <li> CEILING TEXTURING </li>
+                      <li> WALL TEXTURING </li>
+                      <li> RESIDENTIAL TEXTURING </li>
+                      <li> COMMERCIAL TEXTURING </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListTwo']}>
-                <ul>
-                  <li> CEILING TEXTURING </li>
-                  <li> WALL TEXTURING </li>
-                  <li> RESIDENTIAL TEXTURING </li>
-                  <li> COMMERCIAL TEXTURING </li>
-                </ul>
-              </div>
-            </div>
+            </figure>
+
 
 
             {/* Service Offering #3 */}
-            <div className={styles['serviceOfferingThreeAnimation']}>
-              <div className={styles['serviceOfferingTitleThree']}>
-                <p> ELEVATE YOUR SPACES  </p>
+            <figure id={styles.figure} className={styles['serviceOfferingThreeAnimation']}>
+
+              <img src='./servicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' id={styles['threeDcarousel-images']} className={styles['serviceOfferingThreeImage']} />
+
+              <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
+                <p>ELEVATE YOUR SPACES </p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementThree']} id={styles['text']}>
+                    <p> Elevate your interior space with our professional interior painting services
+                      that prioritize clean and precise workmanship. Our team takes utmost care to
+                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                      From meticulous preparation to flawless execution, we go above and beyond to create a
+                      refreshed and vibrant atmosphere in your space.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementThree']}>
-                <p> Elevate your interior space with our professional interior painting services
-                  that prioritize clean and precise workmanship. Our team takes utmost care to
-                  protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                  From meticulous preparation to flawless execution, we go above and beyond to create a
-                  refreshed and vibrant atmosphere in your space.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListThree']} id={styles['list-text']}>
+                    <ul>
+                      <li> Interior Painting </li>
+                      <li> Residential Painting </li>
+                      <li> Office Painting </li>
+                      <li> Commercial Painting </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListThree']}>
-                <ul>
-                  <li> Interior Painting </li>
-                  <li> Residential Painting </li>
-                  <li> Office Painting </li>
-                  <li> Commercial Painting </li>
-                </ul>
-              </div>
-            </div>
+            </figure>
+
+
 
 
             {/* Service Offering #4 */}
-            <div className={styles['serviceOfferingFourAnimation']}>
-              <div className={styles['serviceOfferingTitleFour']}>
-                <p> ELEVATE YOUR SPACES  </p>
+            <figure id={styles.figure} className={styles['serviceOfferingFourAnimation']}>
+
+              <img src='./servicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFourImage']} />
+
+              <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
+                <p>ELEVATE YOUR SPACES </p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementFour']} id={styles['text']}>
+                    <p> Elevate your interior space with our professional interior painting services
+                      that prioritize clean and precise workmanship. Our team takes utmost care to
+                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                      From meticulous preparation to flawless execution, we go above and beyond to create a
+                      refreshed and vibrant atmosphere in your space.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementFour']}>
-                <p> Elevate your interior space with our professional interior painting services
-                  that prioritize clean and precise workmanship. Our team takes utmost care to
-                  protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                  From meticulous preparation to flawless execution, we go above and beyond to create a
-                  refreshed and vibrant atmosphere in your space.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListFour']} id={styles['list-text']}>
+                    <ul>
+                      <li> Interior Painting </li>
+                      <li> Residential Painting </li>
+                      <li> Office Painting </li>
+                      <li> Commercial Painting </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListFour']}>
-                <ul>
-                  <li> Interior Painting  </li>
-                  <li> Residential Painting   </li>
-                  <li> Office Painting  </li>
-                  <li> Commercial Painting </li>
-                </ul>
-              </div>
-            </div>
+            </figure>
+
 
 
             {/* Service Offering #5 */}
-            <div className={styles['serviceOfferingFiveAnimation']}>
+            <figure id={styles.figure} className={styles['serviceOfferingFiveAnimation']} >
 
-              <div className={styles['serviceOfferingTitleFive']}>
-                <p> ELEVATE YOUR SPACES  </p>
+              <img src='./servicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFiveImage']} />
+
+              <div className={styles['serviceOfferingTitleFive']} id={styles['title-text']}>
+                <p>ELEVATE YOUR SPACES</p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementFive']} id={styles['text']}>
+                    <p> Elevate your interior space with our professional interior painting services
+                      that prioritize clean and precise workmanship. Our team takes utmost care to
+                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                      From meticulous preparation to flawless execution, we go above and beyond to create a
+                      refreshed and vibrant atmosphere in your space.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementFive']}>
-                <p> Elevate your interior space with our professional interior painting services
-                  that prioritize clean and precise workmanship. Our team takes utmost care to
-                  protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                  From meticulous preparation to flawless execution, we go above and beyond to create a
-                  refreshed and vibrant atmosphere in your space.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListFive']} id={styles['list-text']}>
+                    <ul>
+                      <li> Interior Painting  </li>
+                      <li> Residential Painting   </li>
+                      <li> Office Painting  </li>
+                      <li> Commercial Painting </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListFive']}>
-                <ul>
-                  <li> Interior Painting  </li>
-                  <li> Residential Painting   </li>
-                  <li> Office Painting  </li>
-                  <li> Commercial Painting </li>
-                </ul>
-              </div>
-            </div>
+            </figure>
+
 
 
             {/* Service Offering #6 */}
-            <div className={styles['serviceOfferingSixAnimation']}>
-              <div className={styles['serviceOfferingTitleSix']}>
-                <p> ELEVATE YOUR SPACES  </p>
+            <figure id={styles.figure} className={styles['serviceOfferingSixAnimation']}>
+
+              <img src='./servicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" id={styles['threeDcarousel-images']} className={styles['serviceOfferingSixImage']} />
+
+              <div className={styles['serviceOfferingTitleSix']} id={styles['title-text']}>
+                <p>ELEVATE YOUR SPACES</p>
               </div>
 
-              <figure className={styles.figure} ref={figureRef}>
-                <img src='./servicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" />
-              </figure>
+              <div className={styles.row}>
+                <div className={`${styles['right-description-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingStatementSix']} id={styles['text']}>
+                    <p> Elevate your interior space with our professional interior painting services
+                      that prioritize clean and precise workmanship. Our team takes utmost care to
+                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
+                      From meticulous preparation to flawless execution, we go above and beyond to create a
+                      refreshed and vibrant atmosphere in your space.
+                    </p>
+                  </div>
+                </div>
 
-              <div className={styles['serviceOfferingStatementSix']}>
-                <p> Elevate your interior space with our professional interior painting services
-                  that prioritize clean and precise workmanship. Our team takes utmost care to
-                  protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                  From meticulous preparation to flawless execution, we go above and beyond to create a
-                  refreshed and vibrant atmosphere in your space.
-                </p>
+                <div className={`${styles['left-list-column']} ${styles['column']}`}>
+                  <div className={styles['serviceOfferingListSix']} id={styles['list-text']}>
+                    <ul>
+                      <li> Interior Painting  </li>
+                      <li> Residential Painting   </li>
+                      <li> Office Painting  </li>
+                      <li> Commercial Painting </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles['serviceOfferingListSix']}>
-                <ul>
-                  <li> Interior Painting  </li>
-                  <li> Residential Painting   </li>
-                  <li> Office Painting  </li>
-                  <li> Commercial Painting </li>
-                </ul>
-              </div>
+            </figure>
 
-            </div>
           </div>
-          <div className={styles['carouselNav']}>
-            <button
-              className={styles['carouselPrevButton']}
-              variant='outlined'
-              onClick={handlePrevClick}
-            >
-              Prev
-            </button>
 
-            <button
-              className={styles['carouselNextButton']}
-              variant='outlined'
-              onClick={handleNextClick}
-            >
-              Next
-            </button>
+          <div className={styles['carouselNav']}>
+            <button className={styles['carouselNextButton']} onClick={handleNextClick}>Next</button>
+            <button className={styles['carouselPrevButton']} onClick={handlePrevClick}>Prev</button>
           </div>
 
         </div>
       </div>
 
 
-      {/*STATS SECTION*/}
 
-      <div className={styles['stats-section-container']}>
+
+
+
+      {/*STATS SECTION*/}
+      < div className={styles['stats-section-container']} >
         <div className={styles['stats-section-img']}>
           <img src='' alt='' />
         </div>
@@ -385,14 +440,14 @@ export default function services(props: Props) {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
 
 
 
-  {/*CUSTOMER REVIEWS SECTION*/}
+      {/*CUSTOMER REVIEWS SECTION*/}
 
-  
+
 
 
 

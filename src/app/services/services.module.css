@@ -1,57 +1,83 @@
 .ServicePageBody {
     margin: 0; 
-    padding: 0; 
     box-sizing: border-box; 
 }
 
+/* margin-top issue was fixed in file of the imported component, adjusted css by commenting out margin-top: 100px; (.heroBanner)*/
+/* PageHeader IMPORT*/
+.services-banner-area  {
+    margin-top: 0%; 
+    background-color: #D9D9D9;
+}
 
-/* Horizontal scrolling Bar on top services page  */
+/*---------------- Horizontal scrolling Bar. Right Below Navabar on the services page ----------------*/
+.scrollingItemsContainer {
+  max-width: 100%;
+  width: 100%;
+  height: 68px;
+  overflow-x: hidden;
+  /* background-color:slategray; */
+  background-color: #CEBF8A; 
+  margin-top:100px;
 
-.item {
-    display: inline-block; 
-    margin-right: 20px;
+}
+
+.horizontalScrollingItems {
+  display: flex;
+  flex: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  width: 100%; 
+  animation-name: infiniteScroll;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.horizontal-scrolling-items {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.item-container {
+   display: flex; 
+   align-items: center;
+}
+
+.item { 
+  margin-right: 5px; 
+  display: flex;
+  align-items: center;
+  /* border: solid 1px blue; */
+}
+
+.item-spacer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  margin-right: 8px; 
+  font-size:60px;
+  font-weight: 500;
+  line-height: 1;
+  height: 1em; 
+  margin-top: -0.4em; 
+  /* border: solid 1px red; */
+
+
 }
 
 @keyframes infiniteScroll {
   from {transform: translateX(0)}
   to {transform: translateX(-50%)}
 }
-.scrollingItemsContainer {
-  width: 100%;
-  overflow-x: hidden;
-  background-color:slategray;
-  margin-top:100px;
-}
-
-.horizontalScrollingItems {
-  display: flex;
-  font-size: 40px;
-  width: 2600px;
-  animation-name: infiniteScroll;
-  animation-duration: 25s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.horizontal-scrolling-items {
-  white-space: nowrap;
-}
+/*-------------------- END: CSS FOR Horizontal scrolling Bar ----------------------*/
+/*-------------------------------------------*/
 
 
-
-
-.services-banner-area  {
-    margin-top:0px; 
-}
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
-
-
-
-
-/*--3D CAROUSEL'S COMPLETE SECTION INCLUDING decorative lines and titles css STARTS HERE.*/
-/*--START--CSS FOR decorative line above "Recent Projects" title*/
-/*-----------------------------------------*/
+/*------------ START--CSS FOR decorative line above "Services" title -------------*/
 .sp-decorative-lines-container {
   position: relative; 
   display: flex; 
@@ -84,13 +110,14 @@
   background: red;
   z-index: 1; /* > stack order -> top line*/
 }
+/*----------- END: CSS FOR decorative line above "Services" title ------------*/
 /*-----------------------------------------*/
-/*--END--CSS FOR decorative line above "Recent Projects" title*/
 
 
 
 
-/*--START--CSS for the 'Title' and horizontal lines on the first section of the services page */
+
+/*----------- START: CSS for the 'Title' and horizontal lines on the first section of the services page -----------*/
 /*-----------------------------------------*/
 /* sp = service page */
 
@@ -121,7 +148,7 @@
     content: '';
     position: absolute;
     top: 50%;
-    width: calc(100vw - 40px); 
+    max-width: calc(100vw - 62vw); 
     height: 3px;
     background-color: black;
   }
@@ -135,254 +162,268 @@
     right: 0;
     transform: translateX(100%);
   }
-  /*-----------------------------------------*/
-  /*--END--CSS for the 'Title' and horizontal lines on the first section of the services page  */
-
-
-
-
-
-/*--START--CSS FOR 3D CAROUSEL */
+/*----------- END: CSS for the 'Title' and horizontal lines on the first section of the services page -----------*/
 /*-----------------------------------------*/
 
 
-/* CSS Custom Properties- global use*/ 
-.threeDCarouselWrapper { 
-  --n: 6; /* number of images*/
-  --item-width:820px; 
-  --item-sepration:300px; /* space between images will decrease the effective item width*/
-  --viewer-distance: 1500px; 
-  --apothem: 482.842712474619px;
-  --theta: calc(360deg / var(--n)); /* 6 images. calculates angle rotation for each image.  */
+
+
+
+
+/*------------------------------------- START: CSS FOR 3D CAROUSEL -------------------------------------*/
+/*-------------------------------*/
+.threeDcarousel-section { 
+  position: relative; 
+  width: 100%; 
+  border: solid 2px blue; 
+  background-color: #EBEBEB; 
 }
 
-/* .carouselSection{
-  padding: 40px;  
-  margin-top: 20px; 
-  margin-bottom: 10px;
-  font-family: 'Roboto';
+.threeDCarouselWrapper { 
+  width: 100%; 
   display: flex;
   flex-direction: column;
-  height: auto 100vh;
-  justify-content: center;
-} */
-
-/*whole carousel turns */
-.threeDCarouselContainer{
-  position: relative;
-  width: 100%; 
-  height: 800px;
-  margin-top: 20%;
-  margin-bottom: 20%; 
-  perspective: var(--viewer-distance); 
-  overflow: hidden; 
-  display: flex; 
-  /* flex-direction: column; */
-  /* align-items: center;  */
-  /* flex: 0 0 auto; */
-  perspective: 1000px;
-  overflow: hidden;
-  transform-style: preserve-3d; /* container allows for 3D space */
-}
-
-
-
-/* original */
-/* figure {
-  margin: 0; 
-  width: var(--item-width); 
-  transform-style: preserve-3d;
-  transition: transform 0.5s; 
-  transform-origin: 50% 50% calc(-1 * var(--apothem));centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis
-} */
-
-
-/*all images except 1st one are stacked within `figure`. stacked on top of each other on top left corner of figure */ 
-/* .threeDCarouselContainer figure img:not(:first-of-type) {
-  left: 0;
-  top: 0;
-  transform-origin: 50% 50% calc(-1 * var(--apothem));
-}  */
-
-
-/* rotating each image*/
-/* .threeDCarouselContainer figure img:nth-child(2) { transform: rotateY(calc(1 * var(--theta))); }
-.threeDCarouselContainer figure img:nth-child(3) { transform: rotateY(calc(2 * var(--theta))); }
-.threeDCarouselContainer figure img:nth-child(4) { transform: rotateY(calc(3 * var(--theta))); }
-.threeDCarouselContainer figure img:nth-child(5) { transform: rotateY(calc(4 * var(--theta))); }
-.threeDCarouselContainer figure img:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); } */
-
-.threeDCarouselContainer .serviceOfferingOneAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-.threeDCarouselContainer .serviceOfferingTwoAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-.threeDCarouselContainer .serviceOfferingThreeAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-.threeDCarouselContainer .serviceOfferingFourAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-.threeDCarouselContainer .serviceOfferingFiveAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-.threeDCarouselContainer .serviceOfferingSixAnimation:nth-child(6) { transform: rotateY(calc(5 * var(--theta))); }
-
-
-/* Scale effect for the active carousel item */
-.activeCarouselItem {
-  transform: scale(1.1) translateZ(50px); /* Adjust scale and Z translation as needed */
-  z-index: 10; /* Ensures it's above other elements */
-  transition: transform 0.5s ease-out; 
-}
-
-
-
-/* Darken background of non-active items to focus on active */
-.threeDCarouselContainer .serviceOfferingOneAnimation:not(.activeCarouselItem),
-.threeDCarouselContainer .serviceOfferingTwoAnimation:not(.activeCarouselItem),
-.threeDCarouselContainer .serviceOfferingThreeAnimation:not(.activeCarouselItem),
-.threeDCarouselContainer .serviceOfferingFourAnimation:not(.activeCarouselItem),
-.threeDCarouselContainer .serviceOfferingFiveAnimation:not(.activeCarouselItem),
-.threeDCarouselContainer .serviceOfferingSixAnimation:not(.activeCarouselItem)  {
-  opacity: 0.7; /* Dim inactive items to highlight the active one */
-}
-
-
-
-
-/* Carousel Section */
-/* .carouselSection {
-  perspective: 1000px;
-  overflow: hidden;
-} */
-
-.threeDCarouselContainer .serviceOfferingOneAnimation:not(:first-of-type),
-.threeDCarouselContainer .serviceOfferingTwoAnimation:not(:first-of-type),
-.threeDCarouselContainer .serviceOfferingThreeAnimation:not(:first-of-type),
-.threeDCarouselContainer .serviceOfferingFourAnimation:not(:first-of-type),
-.threeDCarouselContainer .serviceOfferingFiveAnimation:not(:first-of-type),
-.threeDCarouselContainer .serviceOfferingSixAnimation:not(:first-of-type) {
-  left: 0;
-  top: 0;
-  transform-origin: 50% 50% calc(-1 * var(--apothem));
-} 
-
-/* 
-.threeDCarouselContainer:not(:first-of-type) {
-  left: 0;
-  top: 0;
-  transform-origin: 50% 50% calc(-1 * var(--apothem));
-} */
-
-.serviceOfferingOneAnimation, .serviceOfferingTwoAnimation, .serviceOfferingThreeAnimation,
-.serviceOfferingFourAnimation, .serviceOfferingFiveAnimation, .serviceOfferingSixAnimation {
-  display: flex; 
-  flex-direction: column; 
   align-items: center;
-  justify-content: flex-start;
-  width: 100%; 
-  margin: 0;
+  justify-content: center;
+  perspective: var(--viewer-distance); 
+  border: solid 2px pink; 
+}
+
+.threeDCarouselContainer {
+  width: 100%;
+  height: 650px;
+  transform-style: preserve-3d; 
+  transform-origin: center;
+  transform: translateZ(calc(-1 * var(--apothem) - 200px));
+  transition: transform 1s;  
+  border: solid 3px yellow;
+/*Custom CSS properties specific to this module (scoped to this module.css)*/
+  --n: 6; /* number of images */
+  --item-width: 550px; 
+  --item-height: 650px; 
+  --item-separation: 80px; /* space between images will decrease the effective item width */
+  --viewer-distance: 1500px; 
+  --apothem: calc(var(--item-width) / (2 * tan(PI / var(--n))));
+}
+
+.threeDCarouselContainer figure {
+  position: absolute;
+  width: var(--item-width);
+  height: var(--item-height);
+  top: 0;
+  left: 37.5%;
   transform-style: preserve-3d;
-  transition: transform 0.5s; 
-  transform-origin: 50% 50% calc(-1 * var(--apothem));/* centered verticaly and horizontally on the x and y axis 50%. Sits back([negative]some determined px amount) on the the Z-axis */
-  padding: 0 calc(var(--item-sepration) /2);
-  Opacity: 0.9; 
+  transform-origin: 50% 50%;
+  padding: 20px;
+  border: 4px solid black; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: rotateY(calc(var(--index) * 60deg)) translateX(calc(var(--item-separation) * var(--index))) translateZ(calc(var(--apothem) + 50px));
 }
 
 
-.figure img {
-  margin: 0; 
-  width: var(--item-width); 
-  height: 600px; 
-  box-sizing: border-box;
+.threeDCarouselContainer figure:not(:first-of-type) {
+  transform: rotateY(calc(360deg / var(--n) * var(--index))) translateZ(calc(var(--apothem)));
+}
+
+/* .threeDCarouselContainer figure:nth-child(1) {
+  transform: rotateY(0deg) translateZ(476px); 
+}
+
+.threeDCarouselContainer figure:nth-child(2) {
+  transform: rotateY(60deg) translateZ(476px); 
+}
+
+.threeDCarouselContainer figure:nth-child(3) {
+  transform: rotateY(120deg) translateZ(476px); 
+}
+
+.threeDCarouselContainer figure:nth-child(4) {
+  transform: rotateY(180deg) translateZ(476px); 
+}
+
+.threeDCarouselContainer figure:nth-child(5) {
+  transform: rotateY(240deg) translateZ(476px); 
+}
+
+.threeDCarouselContainer figure:nth-child(6) {
+  transform: rotateY(300deg) translateZ(476px); 
+} */
+
+.row {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  max-height: 280px;
+  border: solid 3px purple; 
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+}
+
+.right-description-column {
+  float: left;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 0px 10px; 
+}
+
+.left-list-column {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 0px 10px; 
 }
 
 
-/* Positioning text and list around the image. Positioned based on serviceOffering1-6animation div container */
-.serviceOfferingTitleOne, .serviceOfferingTitleTwo, .serviceOfferingTitleThree,
-.serviceOfferingTitleFour, .serviceOfferingTitleFive, .serviceOfferingTitleSix {
-  position: relative; 
+/* All Figures: Description CSS */
+#text {
+  position: absolute;
+  padding-right: 20px;
+  /* border: solid 1px red; */
   text-align: center;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;    
 }
 
-.serviceOfferingStatementOne, .serviceOfferingStatementTwo, .serviceOfferingStatementThree,
-.serviceOfferingStatementFour, .serviceOfferingStatementFive, .serviceOfferingStatementSix {
-  position: relative;
-  left: 70%;
-  bottom: 50%; 
-  width: 50%;
+/* Description CSS */
+.serviceOfferingStatementOne {
+  font-size: 14pt;
 }
 
-.serviceOfferingListOne, .serviceOfferingListTwo, .serviceOfferingListThree,
-.serviceOfferingListFour, .serviceOfferingListFive, .serviceOfferingListSix {
+.serviceOfferingStatementTwo {
+  font-size: 13pt; 
+}
+
+/* For All Figure's Elements: Title CSS */
+#title-text { 
   position: relative;
-  bottom: 60%;
-  right: 70%; 
+  padding-top: 10px; 
+  width: 100%;
+  height: 50px; 
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  background-color: bisque;
+  color: black;
+  /* border: solid 3px red; */
+}
+
+/* Title CSS */
+.serviceOfferingTitleOne {
+
+}
+
+
+
+/* For All Figure's Elements: Image CSS */
+#threeDcarousel-images {
+  position: relative; 
+  box-sizing: border-box;
+  width: 100%; 
+  height: 320px;
+  max-height: 320px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Image CSS */
+.serviceOfferingOneImage {
+}
+
+.serviceOfferingTwoImage {
+
+}
+
+
+
+/* For All Figure's Elements: List (inside .row) CSS */
+#list-text {
+  position: absolute;
+  color: black;
+  display: flex;
+  justify-content: center;
+
+}
+
+#list-text ul { 
+  list-style-type: none; 
+}
+
+.serviceOfferingListOne ul {
+  list-style-type: none; 
+}
+
+
+/* List (inside .row) CSS */
+.serviceOfferingListOne {
+
+}
+
+.serviceOfferingListOne ul {
+
 }
 
 
 /* Carousel Nav Buttons Next and Prev Button css to rotate carousel*/
 .carouselNav { 
+  position: relative; 
   display: flex; 
   justify-content: center;
   margin-top: 4%; 
   margin-bottom: 5%; 
   
-
 }
-
-.carouselPrevButton,
-.carouselNextButton {
-  flex: 0 0 auto;
-  margin: 0 5px;  
-  cursor: pointer;
-  
-  
-
-
-  color: #333; 
-  
-
-} 
 
 .carouselNav button {
-  margin-left: 10px;
+  flex: 0 0 auto;
+  margin: 0 5px;
 
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #555;
+  }
+}
+/*------------------------------------- END: CSS FOR 3D CAROUSEL -------------------------------------*/
+/*-----------------------------------------*/
+
+
+
+
+
+/*------------------------------------- START: STATS SECTION -------------------------------------*/
+/*-----------------------------------------*/
+.stats-section-container { 
+  position: relative;
+  width: 100%; 
 }
 
-
-/* Scroll Animation */
-.box {
-  visibility: hidden;
-}
-
-.active {
-  transform: translateY(0);
-  visibility: visible;
-}
-
-
-/*--END--CSS FOR 3D CAROUSEL */
-/*--3D CAROUSEL'S COMPLETE SECTION INCLUDING decorative lines and titles css ENDS HERE.*/
-/*-----------------------------------------*/
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
-
-
-
-
-
-
-/*--START--STATS SECTION*/
+/*------------------------------------- END: STATS SECTION -------------------------------------*/
 /*-----------------------------------------*/
 
+
+
+/*------------------------------------- START: CUSTOMER REVIEWS SECTION -------------------------------------*/
 /*-----------------------------------------*/
-/*--END--STATS SECTION*/
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
-/*---------------------------------------------------------------------*/
 
-
-
-
-/*--START--CUSTOMER REVIEWS SECTION*/
-/*-----------------------------------------*/
 /*--START--CSS FOR decorative line above "Recent Projects" title*/
 /*-----------------------------------------*/
-.sp-decorative-lines-container {
+/* .sp-decorative-lines-container {
   position: relative; 
   display: flex; 
   justify-content: center;
@@ -395,25 +436,26 @@
   justify-content: center;
   align-items: center; 
   margin-bottom: 0%;
-}
+} */
 
 /*thinner decorative line*/
-.sp-decorativelinebase {
+/* .sp-decorativelinebase {
   position: absolute; 
   width: 350px; 
   height: 2px; 
   background: #E82C2C;
   z-index: 0; 
-}
+} */
 
 /*thicker decorative line*/
-.sp-decorativelineoverlayed {
+/* .sp-decorativelineoverlayed {
   position: absolute; 
   width: 150px;
   height: 8px; 
   background: red;
-  z-index: 1; /* > stack order -> top line*/
-}
+  z-index: 1;  */
+  /* > stack order -> top line*/
+/* }   */
 /*-----------------------------------------*/
 /*--END--CSS FOR decorative line above "Recent Projects" title*/
 
@@ -424,7 +466,7 @@
 /*-----------------------------------------*/
 /* sp = service page */
 
-.sp-first-section-title-container {
+/* .sp-first-section-title-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,8 +506,9 @@
   .sp-first-section-title h2::after {
     right: 0;
     transform: translateX(100%);
-  }
+  } */
   /*-----------------------------------------*/
   /*--END--CSS for the 'Title' and horizontal lines on the first section of the services page  */
+
+ /*------------------------------------- END: CUSTOMER REVIEWS SECTION -------------------------------------*/
 /*-----------------------------------------*/
-/*--END--CUSTOMER REVIEWS SECTION*/
