@@ -403,42 +403,53 @@ export default function services(props: Props) {
 
       {/*STATS SECTION*/}
       < div className={styles['stats-section-container']} >
-        <div className={styles['stats-section-img']}>
-          <img src='' alt='' />
-        </div>
-        <div className={styles['descritption-container']}>
-          <div className={styles['title']}>
-            <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
-          </div>
-          <div className={styles['description-text']}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
-              Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-              Maecenas eget purus ac arcu egestas molestie.</p>
-          </div>
-          <div className={styles['data-container']}>
-            <div className={styles['number-of-customers']}>
-              <div className={styles['stats-customers']}>
-                {/* {numberOfCustomers} */}
-              </div>
-              <h3>Happy Customer</h3>
+        <div className={styles['main-columns']}>
+          <div className={styles['left-column']}>
+            <div className={styles['stats-section-img']}>
+              <img src='./images/services-page/services-page-stats-section-image/truck.jpg' alt='' />
             </div>
 
-            <div className={styles['projects-completed']}>
-              <div className={styles['stats-project-completion']}>
-                {/* {numberOfCompletedProjects} */}
-              </div>
-              <h3>Projects Completed</h3>
-            </div>
+          </div>
 
-            <div className={styles['average-rating']}>
-              <div className={styles['stats-average-rating']}>
-                {/* {averageRating} */}
+          <div className={styles['right-column']}>
+            <div className={styles['descritption-container']}>
+              <div className={styles['title']}>
+                <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
               </div>
-              <h3>Average Rating</h3>
+              <div className={styles['description-text']}>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                  Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                  Maecenas eget purus ac arcu egestas molestie.</p>
+              </div>
+              <div className={styles['data-container']}>
+                <div className={styles['number-of-customers']}>
+                  <div className={styles['stats-customers']}>
+                    {/* {numberOfCustomers} */}
+                  </div>
+                  <h3>Happy Customer</h3>
+                </div>
+
+                <div className={styles['projects-completed']}>
+                  <div className={styles['stats-project-completion']}>
+                    {/* {numberOfCompletedProjects} */}
+                  </div>
+                  <h3>Projects Completed</h3>
+                </div>
+
+                <div className={styles['average-rating']}>
+                  <div className={styles['stats-average-rating']}>
+                    {/* {averageRating} */}
+                  </div>
+                  <h3>Average Rating</h3>
+                </div>
+              </div>
             </div>
           </div>
+
+
+
         </div>
       </div >
 

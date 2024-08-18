@@ -258,11 +258,19 @@
   height: 280px;
   max-height: 280px;
   border: solid 3px purple; 
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   border-radius: 8px;
 }
+
+.left-list-column {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 0px 10px; 
+}
+
 
 .right-description-column {
   float: left;
@@ -273,13 +281,6 @@
   padding: 0px 10px 0px 10px; 
 }
 
-.left-list-column {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 10px 0px 10px; 
-}
 
 
 /* All Figures: Description CSS */
@@ -411,7 +412,57 @@
 .stats-section-container { 
   position: relative;
   width: 100%; 
+  height: 100vh; 
+  margin-top: 4%; 
+  border: solid 3px brown; 
+
 }
+
+.main-columns {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border: solid 3px rgb(57, 177, 95); 
+
+}
+
+
+.left-column {
+  position: relative; 
+  float: left;
+  width: 50%;
+  height: 100vh; 
+  display: flex; 
+  justify-content: center;
+  padding: 10px;
+  border: solid 4px orange; 
+}
+
+.right-column {
+  position: relative; 
+  width: 50%;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  border: solid 4px orange; 
+}
+
+
+/*LEFT COLUMN IMAGE CSS*/
+.stats-section-img {
+  border: solid 2px blue; 
+  width: 750px; 
+  height: 650px;  
+  margin-top: 4%;  
+}
+
+.stats-section-img img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+
 
 /*------------------------------------- END: STATS SECTION -------------------------------------*/
 /*-----------------------------------------*/
