@@ -512,94 +512,17 @@
 /*------------------------------------- START: CUSTOMER REVIEWS SECTION -------------------------------------*/
 /*-----------------------------------------*/
 
-/*--START--CSS FOR decorative line above "Recent Projects" title*/
-/*-----------------------------------------*/
-/* .sp-decorative-lines-container {
-  position: relative; 
-  display: flex; 
-  justify-content: center;
-  margin-top: 4%;
+.customer-reviews-section-container { 
+  position: relative;
+  background-color: #EBEBEB; 
+  padding-top: .5%; 
+  /* padding-bottom: 40px;  */
+
 }
 
-.sp-decorativelines {
-  position: relative; 
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  margin-bottom: 0%;
-} */
-
-/*thinner decorative line*/
-/* .sp-decorativelinebase {
-  position: absolute; 
-  width: 350px; 
-  height: 2px; 
-  background: #E82C2C;
-  z-index: 0; 
-} */
-
-/*thicker decorative line*/
-/* .sp-decorativelineoverlayed {
-  position: absolute; 
-  width: 150px;
-  height: 8px; 
-  background: red;
-  z-index: 1;  */
-  /* > stack order -> top line*/
-/* }   */
-/*-----------------------------------------*/
-/*--END--CSS FOR decorative line above "Recent Projects" title*/
 
 
 
-
-/*--START--CSS for the 'Title' and horizontal lines on the first section of the services page */
-/*-----------------------------------------*/
-/* sp = service page */
-
-/* .sp-first-section-title-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 1.5%;
-  }
-  
-  .sp-first-section-title {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-  
-  .sp-first-section-title h2 {
-    position: relative;
-    padding: 0 20px;
-    display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black; 
-  }
-  
-  .sp-first-section-title h2::before,
-  .sp-first-section-title h2::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: calc(100vw - 40px); 
-    height: 3px;
-    background-color: black;
-  }
-  
-  .sp-first-section-title h2::before {
-    left: 0;
-    transform: translateX(-100%);
-  }
-  
-  .sp-first-section-title h2::after {
-    right: 0;
-    transform: translateX(100%);
-  } */
-  /*-----------------------------------------*/
-  /*--END--CSS for the 'Title' and horizontal lines on the first section of the services page  */
 
  /*------------------------------------- END: CUSTOMER REVIEWS SECTION -------------------------------------*/
 /*-----------------------------------------*/

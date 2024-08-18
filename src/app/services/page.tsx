@@ -402,7 +402,7 @@ export default function services(props: Props) {
 
 
       {/*STATS SECTION*/}
-      < div className={styles['stats-section-container']} >
+      <div className={styles['stats-section-container']}>
         <div className={styles['main-columns']}>
           <div className={styles['left-column']}>
             <div className={styles['stats-section-img']}>
@@ -459,35 +459,53 @@ export default function services(props: Props) {
                 <p>Average Rating</p>
               </div>
             </div>
-
-
-
           </div>
-
-
-
         </div>
       </div >
 
 
 
-
       {/*CUSTOMER REVIEWS SECTION*/}
+      <div className={styles['customer-reviews-section-container']}>
+        
+        {/*DECORATIVE LINES*/}
+        <div className={styles['sp-decorative-lines-container']}>
+          <div className={styles['sp-decorativelines']}>
+            <div className={styles['sp-decorativelinebase']}> </div>
+            <div className={styles['sp-decorativelineoverlayed']}> </div>
+          </div>
+        </div>
+
+        {/*TITLE*/}
+        {/* sp = service page*/}
+        <div className={styles['sp-first-section-title-container']}>
+          <div className={styles['sp-first-section-title']}>
+            <h2>Customer Reviews </h2>
+          </div>
+        </div>
+
+        <div className={styles['customer-testiomonials-container']}>
+          <div className={styles['single-customer-testimonial']}>
+            <div className={styles['client-image']}>
+              <img src='' alt='' />
+            </div>
+
+            <div className={styles['description']}>
+              <h4>Chris Smith </h4>
+              <p className={styles['designation']}>customer</p>
+              <p> “Review, review, Review, review, Review, review, Review,
+                review, Review, review, Review, review, Review, review,
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
 
 
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-    </div >
   )
 };
