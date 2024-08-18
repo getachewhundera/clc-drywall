@@ -414,7 +414,6 @@
   width: 100%; 
   height: 100vh; 
   margin-top: 4%; 
-  border: solid 3px brown; 
 
 }
 
@@ -422,11 +421,9 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  border: solid 3px rgb(57, 177, 95); 
-
 }
 
-
+/*LEFT COLUMN CSS*/
 .left-column {
   position: relative; 
   float: left;
@@ -435,32 +432,75 @@
   display: flex; 
   justify-content: center;
   padding: 10px;
-  border: solid 4px orange; 
 }
 
+/*IMAGE CSS*/
+.stats-section-img {
+  width: 750px; 
+  height: 650px;  
+  margin-top: 4%;  
+ 
+}
+
+.stats-section-img img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  box-shadow: 0 0 4px 8px rgba(0,0,0,0.1); /* 1st 0 x-offset, 2nd 0 Y-offset, 4px <blur-radius>, 8px spread radius, color */
+}
+
+
+
+/*RIGHT COLUMN CSS*/
 .right-column {
   position: relative; 
   width: 50%;
   height: 100vh; 
   display: flex;
   flex-direction: column; 
-  border: solid 4px orange; 
+  padding-top: 8%; 
+  padding-right: 20px; 
+}
+
+/*TITLE CSS*/
+.title {
+  margin-bottom: 2%; 
+}
+
+/*DESCRIPTION CSS*/
+.informational-text { 
+  margin-left: 20px; 
+  margin-bottom: 4%; 
+
+}
+
+/*STATS CONTAINER CSS*/
+.stats-container-grid  {
+  display: flex;
+  border: solid 4px pink; 
+
+}
+
+.stats-container-grid .number { 
+  width: 33.33%;
+  text-align: center;
+
+}
+
+.stats-container-grid .number h5 { 
+  font-size: 27px;
+  color: #ec473a;
+}
+
+.stats-container-grid .number p { 
+  font-size: 16px;
+  color: #888;
+  text-transform: capitalize;
 }
 
 
-/*LEFT COLUMN IMAGE CSS*/
-.stats-section-img {
-  border: solid 2px blue; 
-  width: 750px; 
-  height: 650px;  
-  margin-top: 4%;  
-}
 
-.stats-section-img img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover;
-}
 
 
 

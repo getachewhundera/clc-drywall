@@ -412,40 +412,56 @@ export default function services(props: Props) {
           </div>
 
           <div className={styles['right-column']}>
-            <div className={styles['descritption-container']}>
-              <div className={styles['title']}>
-                <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
-              </div>
-              <div className={styles['description-text']}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
-                  Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                  Maecenas eget purus ac arcu egestas molestie.</p>
-              </div>
-              <div className={styles['data-container']}>
-                <div className={styles['number-of-customers']}>
-                  <div className={styles['stats-customers']}>
-                    {/* {numberOfCustomers} */}
-                  </div>
-                  <h3>Happy Customer</h3>
-                </div>
 
-                <div className={styles['projects-completed']}>
-                  <div className={styles['stats-project-completion']}>
-                    {/* {numberOfCompletedProjects} */}
-                  </div>
-                  <h3>Projects Completed</h3>
-                </div>
+            <div className={styles['title']}>
+              <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
+            </div>
 
-                <div className={styles['average-rating']}>
-                  <div className={styles['stats-average-rating']}>
-                    {/* {averageRating} */}
-                  </div>
-                  <h3>Average Rating</h3>
-                </div>
+            <div className={styles['informational-text']}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                Maecenas eget purus ac arcu egestas molestie.
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                Maecenas eget purus ac arcu egestas molestie.
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                Maecenas eget purus ac arcu egestas molestie.
+              </p>
+            </div>
+
+            <div className={styles['stats-container-grid']}>
+              <div className={`${styles['number']} ${styles['number-of-customers']}`}>
+                <h5>
+                  <span className={styles['counter']}>3</span>K+
+                </h5>
+                <p>happy customer</p>
+              </div>
+              <div className={`${styles['number']} ${styles['projects-completed']}`}>
+                <h5>
+                  <span className={styles['counter']}>2</span>K+
+                </h5>
+                <p>Project Done</p>
+              </div>
+              <div className={`${styles['number']} ${styles['average-rating']}`}>
+                <h5>
+                  <span className={styles['counter']}>9</span>/
+                  <span className={styles['counter']}>10</span>
+                </h5>
+                <p>Average Rating</p>
               </div>
             </div>
+
+
+
           </div>
 
 
