@@ -8,8 +8,20 @@ import PageHeader from '../components/PageHeader/PageHeader'
 
 
 // `app/services/page.tsx` is the UI for the `/services` URL
+//Library Imports 
+// import Swiper core and required modules
+import Swiper from 'swiper';
 
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+//swiper modules 
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+import 'boxicons/css/boxicons.min.css';
 
 type Props = {}
 
@@ -61,8 +73,33 @@ export default function services(props: Props) {
   };
 
 
+  useEffect(() => {
+    const swiper = new Swiper('.swiper', {
+      modules: [Navigation, Pagination, Autoplay],
+      // Optional parameters
+      slidesPerView: 2,
+      spaceBetween: 0,
+      centeredSlides: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      // pagination
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        // dynamicBullets: true,
+        // dynamicMainBullets: 8,
+      },
 
-
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    })
+  });
 
 
 
@@ -467,7 +504,7 @@ export default function services(props: Props) {
 
       {/*CUSTOMER REVIEWS SECTION*/}
       <div className={styles['customer-reviews-section-container']}>
-        
+
         {/*DECORATIVE LINES*/}
         <div className={styles['sp-decorative-lines-container']}>
           <div className={styles['sp-decorativelines']}>
@@ -484,28 +521,115 @@ export default function services(props: Props) {
           </div>
         </div>
 
-        <div className={styles['customer-testiomonials-container']}>
-          <div className={styles['single-customer-testimonial']}>
-            <div className={styles['client-image']}>
-              <img src='' alt='' />
+
+
+
+        <div className={`swiper ${styles['swiper']}`}>
+
+          <div className={`swiper-wrapper ${styles['swiper-wrapper']}`}>
+
+
+
+            <div className={`swiper-slide ${styles['swiper-slide']}`}>
+              <div className={styles['single-customer-testiomonial-container']}>
+                <div className={styles['single-customer-testimonial']}>
+                  <div className={styles['client-image']}>
+                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                  </div>
+
+                  <div className={styles['description']}>
+                    <h4>Chris Smith </h4>
+                    <p className={styles['designation']}>customer</p>
+                    <p> “Review, review, Review, review, Review, review, Review,
+                      review, Review, review, Review, review, Review, review,
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className={styles['description']}>
-              <h4>Chris Smith </h4>
-              <p className={styles['designation']}>customer</p>
-              <p> “Review, review, Review, review, Review, review, Review,
-                review, Review, review, Review, review, Review, review,
-              </p>
+
+            <div className={`swiper-slide ${styles['swiper-slide']}`}>
+              <div className={styles['single-customer-testiomonial-container']}>
+                <div className={styles['single-customer-testimonial']}>
+                  <div className={styles['client-image']}>
+                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                  </div>
+
+                  <div className={styles['description']}>
+                    <h4>Chris Smith </h4>
+                    <p className={styles['designation']}>customer</p>
+                    <p> “Review, review, Review, review, Review, review, Review,
+                      review, Review, review, Review, review, Review, review,
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
+            <div className={`swiper-slide ${styles['swiper-slide']}`}>
+              <div className={styles['single-customer-testiomonial-container']}>
+                <div className={styles['single-customer-testimonial']}>
+                  <div className={styles['client-image']}>
+                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                  </div>
+
+                  <div className={styles['description']}>
+                    <h4>Chris Smith </h4>
+                    <p className={styles['designation']}>customer</p>
+                    <p> “Review, review, Review, review, Review, review, Review,
+                      review, Review, review, Review, review, Review, review,
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div className={`swiper-slide ${styles['swiper-slide']}`}>
+              <div className={styles['single-customer-testiomonial-container']}>
+                <div className={styles['single-customer-testimonial']}>
+                  <div className={styles['client-image']}>
+                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                  </div>
+
+                  <div className={styles['description']}>
+                    <h4>Chris Smith </h4>
+                    <p className={styles['designation']}>customer</p>
+                    <p> “Review, review, Review, review, Review, review, Review,
+                      review, Review, review, Review, review, Review, review,
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
+
+
+                {/* Pagination */}
+                    <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
+            
+
+                {/*--Naviagtion Buttons--*/}
+                
+                
+                        <div className={`swiper-button-prev ${styles['swiper-button-prev']}`}></div>
+                        <div className={`swiper-button-next ${styles['swiper-button-next']}`}></div>
+
+                
+             
+
+
+
+
         </div>
 
-      </div>
 
-
-
-
-    </div>
+      </div >
+    </div >
 
   )
 };

@@ -517,7 +517,57 @@
   background-color: #EBEBEB; 
   padding-top: .5%; 
   /* padding-bottom: 40px;  */
+  width: 100%; 
+  height: 100vh; 
 
+}
+
+.customer-reviews-section-container .swiper {
+  width: 100%; 
+}
+
+.customer-reviews-section-container .swiper-wrapper {
+  width: 100%; 
+  padding: 2% 1% 4% 1%; 
+}
+
+.swiper-slide .single-customer-testiomonial-container { 
+  width: 700px; 
+  height: 300px; 
+  background-color: white;
+  padding: 25px 60px 25px 30px; 
+  border-radius: 5px;
+  box-shadow: -2px 5.7px 20px 0 rgba(9, 30, 107, 0.05);
+  background-image: url(/images/cotation.png);
+  background-size: auto;
+  background-position: 100% -128%;
+  background-repeat: no-repeat;
+  transition: all 300ms linear 0s;
+}
+
+.swiper-slide  .single-customer-testiomonial-container .client-image {
+  margin-right: 30px;  
+  width: 91px; 
+  height: 91px; 
+  max-height: 95px;
+  min-width: 95px;
+  border-radius: 100%;
+  border: 2px solid #ecf3f5;
+  overflow: hidden;
+}
+
+.swiper-slide  .single-customer-testiomonial-container h4 { 
+  transition: all 300ms linear 0s;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #202e31;
+}
+
+.client-image img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
 }
 
 
