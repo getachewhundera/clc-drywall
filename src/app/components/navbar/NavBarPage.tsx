@@ -3,13 +3,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
 import styles from './navbar.module.css';
-import 'hamburgers'; 
+import 'hamburgers';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { faLocationDot, faMobile } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+
+
+
 
 export default function NavBarPage() {
     const topNavRef = useRef<HTMLDivElement>(null); // Ref for top nav
-    const [showSearch, setShowSearch] = useState(false);
-    const [searchInput, setSearchInput] = useState('');
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [showSearch, setShowSearch] = useState(false);
+    // const [searchInput, setSearchInput] = useState('');
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,59 +35,68 @@ export default function NavBarPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleSearchToggle = () => {
-        setShowSearch(!showSearch);
-    };
+    // const handleSearchToggle = () => {
+    //     setShowSearch(!showSearch);
+    // };
 
-    const handleInputChange = (e) => {
-        setSearchInput(e.target.value);
-    };
+    // const handleInputChange = (e) => {
+    //     setSearchInput(e.target.value);
+    // };
 
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        console.log("Searching for:", searchInput);
-    };
+    // const handleSearchSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log("Searching for:", searchInput);
+    // };
 
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // const toggleMenu = () => {
+    //     setIsMenuOpen(!isMenuOpen);
+    // };
 
     return (
         <nav className={styles['complete-navbar']}>
             <div ref={topNavRef} className={styles['navbar-one']}>
                 <div className={styles.left}>
                     <div className={styles.call}>
-                        <i className={styles['fa fa-phone-alt']}></i>
-                        <span>+1 (507) 358-4948</span>
+                        {/* <i className={styles['fa fa-phone-alt']}></i> */}
+                        {/* <span>+1 (507) 358-4948</span> */}
+                        <span><FontAwesomeIcon icon={faMobile}  className={styles['nav-mobile-icon']} /></span><text>507-358-4948</text>
                     </div>
-
+                    {/* //TODO: Have location Link to Google Buisness Profile once created.  */}
                     <div className={styles.city}>
-                        <i className={styles['fa fa-location-pin']}></i>
-                        <span> Rochester, MN </span>
+                        {/* <i className={styles['fa fa-location-pin']}></i> */}
+                        <span> <FontAwesomeIcon icon={faLocationDot}  className={styles['nav-location-icon']} /></span>
+                        <text> Rochester, MN </text>
                     </div>
                 </div>
 
                 <div className={styles.right}>
                     <span id={styles['follow-us']}>Follow us:</span>
                     <div className={styles.facebook}>
-                        <i className={styles['fab fa-facebook']}></i>
-                        <span>facebook</span>
+                        <a rel='nofollow' href='https://www.facebook.com/loera1214/' target='_blank'>
+                            <FontAwesomeIcon className={styles['nav-facebook-icon']} icon={faFacebook} />
+                        </a>
                     </div>
-                    <div className={styles.twitter}>
-                        <i className={styles['fab fa-twitter']}></i>
-                        <span>twitter</span>
-                    </div>
+
+                    {/* //TODO: Link to instagram once created.  */}
                     <div className={styles.instagram}>
-                        <i className={styles['fab fa-instagram']}></i>
-                        <span>instagram</span>
+                        <a rel='nofollow' href='' target='_blank'>
+                            <FontAwesomeIcon className={styles['nav-instagram-icon']} icon={faInstagram} />
+                        </a>
+                    </div>
+                    {/* //TODO: Link to tiktok once created.  */}
+                    <div className={styles.tiktok}>
+                        <a rel='nofollow' href='' target='_blank'>
+                            <FontAwesomeIcon className={styles['nav-tiktok-icon']} icon={faTiktok} />
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div className={styles['navbar-two']}>
                 <div className={styles.logo}>
-                    <h1>CLC DRYWALL</h1>
+                        <a href='/'><h1>CLC DRYWALL</h1></a>
+                  
 
                     {/* <Link href="/" className={styles['navbar-brand logo_h']}>
                         <Image src="./images/CompnayLogo/logo.jpg" alt="" width={165} height={80} />
@@ -92,7 +109,7 @@ export default function NavBarPage() {
                     </li>
                     <li className={styles['nav-item']}>
                         <Link href="/AboutUs" className={styles['nav-link']}>About</Link>
-                    </li> 
+                    </li>
                     <li className={styles['nav-item']}>
                         <Link href="/services" className={styles['nav-link']}>Services</Link>
                     </li>
@@ -102,9 +119,9 @@ export default function NavBarPage() {
                     <li className={styles['nav-item']}>
                         <Link href="/contact" className={styles['nav-link']}>Contact</Link>
                     </li>
-                </ul>       
+                </ul>
 
-                <div className={`${styles.search_input} ${showSearch ? styles['show-search'] : ''}`}>
+                {/* <div className={`${styles.search_input} ${showSearch ? styles['show-search'] : ''}`}>
                     <form className={styles['d-flex justify-content-between search-inner']} onSubmit={handleSearchSubmit}>
                         <input
                             type="text"
@@ -120,11 +137,11 @@ export default function NavBarPage() {
                             onClick={handleSearchToggle}
                         ></span>
                     </form>
-                </div>
+                </div> */}
 
 
                 {/*HAMBURGER MENU*/}
-                <nav>
+                {/* <nav>
 
                     <button
                         className={`${styles['hamburger-menu']} ${isMenuOpen ? styles.active : ''}`}
@@ -146,7 +163,7 @@ export default function NavBarPage() {
                             <Link href="/projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
                         </div>
                     </div>
-                </nav>
+                </nav> */}
 
             </div>
         </nav>

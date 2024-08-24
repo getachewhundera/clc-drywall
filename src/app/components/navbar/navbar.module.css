@@ -8,8 +8,8 @@
 }
 
 .navbar-one {
-  background-color: #313030;
-  color: white;
+  /* background-color: #313030; */
+  background-color: black;
   height: 30px;
   cursor: pointer;
   min-width: 100%;
@@ -32,20 +32,26 @@
   margin-left: 10%;
 }
 
-.call, .city, #follow-us, .facebook, .twitter, .instagram {
+.call, .city, #follow-us, .facebook, .tiktok, .instagram {
   display: inline;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-weight: 300;
-  font-size: 16px;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 16px; 
+  font-weight: 400; 
+  text-transform: uppercase;
+  color: white; 
 }
 
 .call:hover,
-.city:hover,
-.facebook:hover,
-.twitter:hover,
-.instagram:hover {
-  color: red;
+.city:hover {
+    color: rgb(208, 201, 201); 
+}
+.call .nav-mobile-icon, 
+.city .nav-location-icon {
+  margin-right: 8px; 
+  margin-top: 4px;
+  color: #CEBF8A; 
+  width: 18px; 
+  height: 18px; 
 }
 
 .city {
@@ -60,13 +66,20 @@
   padding-right: 2%;
 }
 
-.facebook {
-  padding-right: 1%;
+
+.facebook .nav-facebook-icon, 
+.instagram .nav-instagram-icon, 
+.tiktok .nav-tiktok-icon { 
+  padding-right: 1.5%; 
+  width: 18px; 
+  height: 18px; 
+  color: #CEBF8A; 
+  
+  &:hover { 
+    color: rgb(208, 201, 201); 
+  }
 }
 
-.twitter {
-  padding-right: 1%;
-}
 
 .navbar-two {
   display: flex;
@@ -74,7 +87,8 @@
   justify-content: space-between;
   position: fixed;
   top: 30px;
-  background-color: #000000;
+  /* background-color: #000000; */
+  background-color: white;
   height: 100px;
   padding: 0 2%;
   width: 100%;
@@ -92,8 +106,15 @@
   
 }
 
+.navbar-two .logo a { 
+  text-decoration: none;
+}
+
 .navbar-two .logo h1 {
-  color: white; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  color: rgb(27, 27, 27);
+  font-size: 40px; 
+  text-transform: uppercase;
 }
 
 .navbar-two .menu_nav {
@@ -105,8 +126,12 @@
 
 .navbar-two .nav-item {
   margin: 0 25px;
-  font-size: 22px;
-  color: white;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 16px; 
+  font-weight: 400; 
+  text-align: center;
+  color: rgb(27, 27, 27);
+  text-transform: uppercase;
 }
 
 .navbar-two .nav-item:hover {
@@ -118,13 +143,14 @@
   color: inherit;
 }
 
-.search_input {
+/* .search_input {
   margin-left: auto;
 }
 
 .show-search {
   display: block;
-}
+} */
+
 /* navbar-two element appears after hidden class*/
 .hidden ~ .navbar-two {
   top: 0;
@@ -141,7 +167,7 @@
 
 
 /* ham menu */
-.hamburger-menu {
+/* .hamburger-menu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -217,4 +243,4 @@
   font-size: 30px;
   color: white;
   cursor: pointer;
-}
+} */

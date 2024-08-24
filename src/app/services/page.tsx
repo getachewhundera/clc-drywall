@@ -609,20 +609,15 @@ export default function services(props: Props) {
           </div>
 
 
-                {/* Pagination */}
-                    <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
-            
-
-                {/*--Naviagtion Buttons--*/}
-                
-                
-                        <div className={`swiper-button-prev ${styles['swiper-button-prev']}`}></div>
-                        <div className={`swiper-button-next ${styles['swiper-button-next']}`}></div>
-
-                
-             
+          {/* Pagination */}
+          <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
 
 
+          {/*--Naviagtion Buttons--*/}
+
+
+          <div className={`swiper-button-prev ${styles['swiper-button-prev']}`}></div>
+          <div className={`swiper-button-next ${styles['swiper-button-next']}`}></div>
 
 
         </div>
