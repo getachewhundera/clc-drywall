@@ -28,6 +28,7 @@ export default function AboutUs(props: Props) {
             <div className={styles['about-banner-area']}>
                 <PageHeader title='About' navTitle='about' />
             </div>
+            
             <div className={styles['about-page-content']}>
                 <div className={` ${styles['main-body-container']}`}>
                     <div className={styles['aboutus-description-container']}>
