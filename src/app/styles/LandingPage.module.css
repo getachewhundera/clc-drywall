@@ -370,7 +370,8 @@
 
 .landing_page_cs_animation_section {
   position: relative; 
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
@@ -401,6 +402,9 @@
     cursor: pointer;
     padding: 0; 
     margin: 0; 
+    &:hover {
+      background-color: #CEBF8A;
+    }
 }
 
 .prevnavigationArrow i,
@@ -553,7 +557,6 @@
 /*----------------------------------------------------------------------------------------------*/
 .fixed-cards-section-main-container{
   position: relative; 
-  background-color: #FFFFFF; 
   padding-top: 3%; 
   padding-bottom: 3%; 
 }
@@ -566,7 +569,12 @@
 }
 
 .fixed-cards-section-title h2 {
-  color: black; 
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .fixed-cards-container{
@@ -594,9 +602,9 @@
   align-items: center; 
   justify-content: center;
   border: 1.5px solid #9A8A78;
-  background-color: #262626;
-  color: black; 
-  font-family: 'Raleway', sans-serif; 
+  background-color: #CEBF8A;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  /* background-color: #262626; */
   flex: 1;
   width: 450px; 
   height: 350px; 
@@ -609,7 +617,11 @@
 .card-4 h2 {
   margin-top: 10px; 
   text-align: center; 
-  color: white; 
+  color: white;
+  font-family: "Fajella One", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .card-1 img, 
@@ -662,7 +674,8 @@
 /*----------------------------------------------------------------------------------------------*/
 .lp-recent-projects-section-main-container {
   position: relative; 
-  background-color: #F9F9F9;  
+  /* background-color: #F9F9F9; */
+  background-color: white;  
   /* border: solid yellow 4px; */
   padding-top: 3%; 
   padding-bottom: 3%; 
@@ -689,8 +702,9 @@
 .lp-projects-decorativelinebase {
   position: absolute; 
   width: 350px; 
-  height: 2px; 
-  background: #E82C2C;
+  height: 4px; 
+  background: #CEBF8A;
+  /* background: #E82C2C; */
   z-index: 0; 
 }
 
@@ -699,7 +713,8 @@
   position: absolute; 
   width: 150px;
   height: 8px; 
-  background: red;
+  background: #CEBF8A;
+  /* background: red; */
   z-index: 1; /* > stack order -> top line*/
 }
 /*-----------------------------------------*/
@@ -750,10 +765,20 @@
 
 .filterable-portfolio-container ul li { 
   list-style: none; 
-  background: #eee; 
   padding: 12px 20px;
   margin: 5px; 
-  letter-spacing: 1px; 
+  text-align: center;
+  background-color: #6D9DC5 ;
+  color: white;
+  width: 180px;
+  height: 58px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 24px; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  text-decoration: none;
   cursor: pointer; 
 }
 
@@ -812,13 +837,16 @@
 
 .recent-projects-button button {
   background-color: #CEBF8A;
-  color: white;  
-  border-radius: 8px; 
+  color: white;
   width: 250px;
   height: 65px; 
-  font-size: 30px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 28px; 
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif; 
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  border: none; 
 }
 /*-----------------------------------------*/
 /*--END--CSS FOR Recent Project's filterable portfolio*/

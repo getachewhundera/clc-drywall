@@ -115,6 +115,9 @@
   color: rgb(27, 27, 27);
   font-size: 40px; 
   text-transform: uppercase;
+  &:hover { 
+    color:#CEBF8A; 
+  }
 }
 
 .navbar-two .menu_nav {
