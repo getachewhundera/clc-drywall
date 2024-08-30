@@ -8,7 +8,7 @@ import styles from './about-us.module.css';
 import PageHeader from '../components/PageHeader/PageHeader'
 
 //CTA Component Import
-import CTAComponent from '../components/cta-container/cta-container';
+// import CTAComponent from '../components/cta-container/cta-container';
 
 import { useRouter } from 'next/navigation';
 
@@ -28,22 +28,44 @@ export default function AboutUs(props: Props) {
             <div className={styles['about-banner-area']}>
                 <PageHeader title='About' navTitle='about' />
             </div>
-            
+
             <div className={styles['about-page-content']}>
                 <div className={` ${styles['main-body-container']}`}>
                     <div className={styles['aboutus-description-container']}>
                         <div className={styles['aboutus-description']}>
                             <p>
-                                We count on 20 years of experience in the field, and our goal is to serve our clients with
-                                responsibility and high-quality work. Our client's satisfaction is our number one priority.
+                                With over 20 years of hands-on experience in the drywall industry, we are a small, owner-operated company
+                                dedicated to delivering exceptional quality and service. From drywall installation and finishing to intricate
+                                texturing and seamless repairs, we handle every project with precision and care. Our expertise extends to both
+                                residential and commercial projects, ensuring that each job, big or small, is completed to the highest standards.
+                                We understand that our clients' homes and businesses are their most valuable assets, so we approach every task with
+                                the responsibility and respect that our clients deserve.
                             </p>
-                            <br></br>
                             <br></br>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet erat pretium,
-                                feugiat magna sit amet, aliquet urna. Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-
+                                What sets us apart is our commitment to personalized service. As a smaller company, we have the flexibility
+                                to work closely with our clients, understanding their specific needs and tailoring our services accordingly.
+                                Our hardworking team, led by our dedicated owner, takes pride in maintaining open communication and delivering
+                                results that exceed expectations. Whether you need a single wall repaired or an entire home drywalled and painted,
+                                you can trust us to provide a smooth, professional finish that enhances the beauty and value of your property.
+                                Your satisfaction is our top priority, and we strive to build lasting relationships based on trust,
+                                quality, and reliability. For a free estimate and consultation, give us a call any time!
+                                No job is too big or small, and we take great pride in the work we do.
                             </p>
+                            <br></br>
+                            <ul>
+                                <li><span>Owner-operated with 20+ years of experience :</span> Offering expert drywall
+                                    services for both residential and commercial projects.
+                                </li>
+                                <br></br>
+                                <li><span>Personalized service you can count on :</span>
+                                 Tailored solutions that meet your specific needs, with a focus on quality and client satisfaction.
+                                </li>
+                                <br></br>
+                                <li><span>Free estimates and consultations :</span> No job is too big or small—contact us anytime, and experience our commitment to excellence.
+                                </li>
+                            </ul>
+
                         </div>
 
 
@@ -55,14 +77,14 @@ export default function AboutUs(props: Props) {
                     </div>
 
                     <div className={` ${styles['aboutus-image-container']}`}>
-                        <img src='./images/LandingPageAboutUsImages/logo.jpg' alt='' />
+                        <img src='./images/About-Page/logo.jpg' alt='' />
                     </div>
                 </div>
 
                 {/* CTA Component Import */}
-                <div className={styles['cta-message-container']}>
+                {/* <div className={styles['cta-message-container']}>
                     <CTAComponent />
-                </div>
+                </div> */}
             </div>
         </div>
 

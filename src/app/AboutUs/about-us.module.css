@@ -4,8 +4,8 @@
 }
 
 .main-body-container {
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 10%;
+    padding-bottom: 15%;
     min-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -23,8 +23,25 @@
     padding-right: 40px;
 }
 
-.aboutus-description-container p {
-    font-size: 18pt;
+.aboutus-description p {
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 20px; 
+    font-weight: 400; 
+    /* color: #5E5E5E;  */
+    color: black; 
+}
+
+.aboutus-description ul li { 
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 20px; 
+    font-weight: 400; 
+    /* color: #5E5E5E;  */
+    color: black; 
+}
+
+.aboutus-description ul li span { 
+    text-transform: uppercase; 
+    font-weight: bold;
 }
 
 /* 'GET IN TOUCH' Button */
@@ -35,25 +52,25 @@
 }
 
 .contact_aboutpage_button{ 
-    margin-left: 60%; 
+    margin-left: 37.5%; 
 }
 
 .contact-button-container button { 
-    background-color: #333;;
-    color: white;  
-    border-radius: 8px; 
+    /* background-color: #333; */
+    background-color: #CEBF8A;
+    color: white;
     width: 250px;
     height: 65px; 
-    font-size: 18pt; 
-    font-weight: 400;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.contact-button-container button { 
-    padding: 10px 20px; 
-    font-size: 16px;
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 28px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: normal; 
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+    border: none; 
     cursor: pointer; 
 }
+
 
 /* Image */
 .aboutus-image-container {
@@ -70,10 +87,10 @@
 }
 
 
-.cta-message-container {
+/* .cta-message-container {
     margin-top: 10%; 
     padding-bottom: 10%;
     display: flex; 
     flex-wrap: wrap;
     justify-content: center;
-}
+} */

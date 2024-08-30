@@ -56,9 +56,9 @@ export default function Page({ showHeading = true }: Props) {
 
     // Images to be used in the left pane
     const imagesLeft: string[] = [
-        '/images/LandingPageHeaderImages/main1.jpg',
-        '/images/LandingPageHeaderImages/nhimg1.jpeg',
-        '/images/LandingPageHeaderImages/nhimg1.2.jpeg'
+        '/images/landing-page/banner-images-LandingPage/main1.jpg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.jpeg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.2.jpeg'
     ];
     // const imagesLeft: ImageProps[] = [
     //     { src: '/images/LandingPageHeaderImages/main1.jpg', alt: "main image" },
@@ -68,9 +68,9 @@ export default function Page({ showHeading = true }: Props) {
 
     // Images for the right pane
     const imagesRight: string[] = [
-        '/images/LandingPageHeaderImages/main.jpg',
-        '/images/LandingPageHeaderImages/nhimg1.1.jpeg',
-        '/images/LandingPageHeaderImages/nhimg1.21.jpeg'
+        '/images/landing-page/banner-images-LandingPage/main.jpg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.1.jpeg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.21.jpeg'
     ];
 
 
@@ -238,7 +238,7 @@ export default function Page({ showHeading = true }: Props) {
                         <div className={`swiper-wrapper ${styles['card-container']}`}>
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/LandingPage/drywall-Installation.jpg" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/drywall-Installation.jpg" alt="Image of Drywall Board Installation" />
                                 </div>
 
                                 <div className={styles.card_data}>
@@ -252,7 +252,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/LandingPage/tapingandmudding.jpg" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/tapingandmudding.jpg" alt="Image of Drywall Board Installation" />
                                 </div>
 
                                 <div className={styles.card_data}>
@@ -266,7 +266,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/LandingPage/knockdown-texture.png" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/knockdown-texture.png" alt="Image of Drywall Board Installation" />
 
                                 </div>
 
@@ -281,7 +281,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/repairproject1.1bc.jpg" alt="Image of a wall with damage to the drywall" />
                                 </div>
 
                                 <div className={styles.card_data}>
@@ -295,7 +295,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/" alt="Image of a popcorn ceiling being removed" />
                                 </div>
 
                                 <div className={styles.card_data}>
@@ -310,7 +310,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/interiorpainting.ss.png" alt="Image of a Finished and painted wall that represents a service offering for interior and exterior painting services" />
                                 </div>
 
                                 <div className={styles.card_data}>
@@ -363,19 +363,19 @@ export default function Page({ showHeading = true }: Props) {
                 <div className={styles['fixed-cards-container']}>
                     <div className={styles['cards-container']}>
                         <div className={styles['card-1']}>
-                            <img src='./LandingPageServicesIcons/veicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/veicon.png' alt='' />
                             <h2> Vast Experience </h2>
                         </div>
                         <div className={styles['card-2']}>
-                            <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/pwicon.png' alt='' />
                             <h2> Professional Team </h2>
                         </div>
                         <div className={styles['card-3']}>
-                            <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/nshandshake.png' alt='' />
                             <h2> Reliable Service </h2>
                         </div>
                         <div className={styles['card-4']}>
-                            <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/dqwicon.png' alt='' />
                             <h2> Quality Work </h2>
                         </div>
                     </div>
