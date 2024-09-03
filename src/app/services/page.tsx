@@ -44,7 +44,8 @@ export default function services(props: Props) {
 
     figures.forEach((figure, i) => {
       const rotation = i * theta;
-      (figure as HTMLElement).style.transform = `rotateY(${rotation}deg) translateZ(var(--apothem))`;
+      const spacing = 100;
+      (figure as HTMLElement).style.transform = `rotateY(${rotation}deg) translatex(${spacing}px) translateZ(var(--apothem))`;
     });
   }, []);
 
@@ -179,20 +180,20 @@ export default function services(props: Props) {
 
 
         {/*FIRST SECTION'S DECORATIVE LINES*/}
-        <div className={styles['sp-decorative-lines-container']}>
+        {/* <div className={styles['sp-decorative-lines-container']}>
           <div className={styles['sp-decorativelines']}>
             <div className={styles['sp-decorativelinebase']}> </div>
             <div className={styles['sp-decorativelineoverlayed']}> </div>
           </div>
-        </div>
+        </div> */}
 
         {/*FIRST SECTION'S TITLE*/}
         {/* sp = service page*/}
-        <div className={styles['sp-first-section-title-container']}>
+        {/* <div className={styles['sp-first-section-title-container']}>
           <div className={styles['sp-first-section-title']}>
             <h2>Services</h2>
           </div>
-        </div>
+        </div> */}
 
 
 
@@ -201,9 +202,9 @@ export default function services(props: Props) {
 
             {/* Service Offering #1 */}
             <figure id={styles.figure} className={styles['serviceOfferingOneAnimation']} >
-
-              <img src='./servicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' className={styles['serviceOfferingOneImage']} id={styles['threeDcarousel-images']} />
-
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' className={styles['serviceOfferingOneImage']} id={styles['threeDcarousel-images']} />
+              </div>
               <div className={styles['serviceOfferingTitleOne']} id={styles['title-text']}>
                 <p>DRYWALL INSTALLATION AND REPAIR</p>
               </div>
@@ -240,9 +241,9 @@ export default function services(props: Props) {
 
             {/* Service Offering #2 */}
             <figure id={styles.figure} className={styles['serviceOfferingTwoAnimation']} >
-
-              <img src='./servicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' id={styles['threeDcarousel-images']} className={styles['serviceOfferingTwoImage']} />
-
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' id={styles['threeDcarousel-images']} className={styles['serviceOfferingTwoImage']} />
+              </div>
               <div className={styles['serviceOfferingTitleTwo']} id={styles['title-text']}>
                 <p>UPGRADE YOUR WALLS</p>
               </div>
@@ -278,9 +279,9 @@ export default function services(props: Props) {
 
             {/* Service Offering #3 */}
             <figure id={styles.figure} className={styles['serviceOfferingThreeAnimation']}>
-
-              <img src='./servicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' id={styles['threeDcarousel-images']} className={styles['serviceOfferingThreeImage']} />
-
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' id={styles['threeDcarousel-images']} className={styles['serviceOfferingThreeImage']} />
+              </div>
               <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
                 <p>ELEVATE YOUR SPACES </p>
               </div>
@@ -316,9 +317,9 @@ export default function services(props: Props) {
 
             {/* Service Offering #4 */}
             <figure id={styles.figure} className={styles['serviceOfferingFourAnimation']}>
-
-              <img src='./servicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFourImage']} />
-
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFourImage']} />
+              </div>
               <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
                 <p>ELEVATE YOUR SPACES </p>
               </div>
@@ -353,9 +354,9 @@ export default function services(props: Props) {
 
             {/* Service Offering #5 */}
             <figure id={styles.figure} className={styles['serviceOfferingFiveAnimation']} >
-
-              <img src='./servicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFiveImage']} />
-
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFiveImage']} />
+              </div>
               <div className={styles['serviceOfferingTitleFive']} id={styles['title-text']}>
                 <p>ELEVATE YOUR SPACES</p>
               </div>
@@ -391,7 +392,10 @@ export default function services(props: Props) {
             {/* Service Offering #6 */}
             <figure id={styles.figure} className={styles['serviceOfferingSixAnimation']}>
 
-              <img src='./servicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" id={styles['threeDcarousel-images']} className={styles['serviceOfferingSixImage']} />
+              <div className={styles['figure-image']}>
+                <img src='./servicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" id={styles['threeDcarousel-images']} className={styles['serviceOfferingSixImage']} />
+              </div>
+
 
               <div className={styles['serviceOfferingTitleSix']} id={styles['title-text']}>
                 <p>ELEVATE YOUR SPACES</p>
