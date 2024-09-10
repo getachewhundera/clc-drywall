@@ -95,14 +95,16 @@
   }
 
 .banner_content span {
-    font-size: 26px;
-    color: #fff;
-    font-weight: 700;
-    font-family: "Heebo", sans-serif;
+    color: black; 
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 48px; 
+    font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 24px;
     display: inline-block;
     position: relative;
+    -webkit-text-stroke-color: #333;
+    -webkit-text-stroke-width: .5px;
   }
 .banner_content span:after {
     content: "";
@@ -116,11 +118,13 @@
   } 
 
  .banner_content h3 {
-    font-size: 60px;
-    font-family: "Heebo", sans-serif;
-    font-weight: 600;
-  }
-
+   color: #333;
+   font-size: 60px;
+   font-family: "Heebo", sans-serif;
+   font-weight: 600;
+   -webkit-text-stroke-color: white;
+   -webkit-text-stroke-width: 1px;
+ }
 
   
 .headerContactUsButton {
@@ -128,18 +132,24 @@
     margin-top: 5%; 
     left: 50%;
     transform: translateX(-50%);
-    /* transform: translate(-50%, -50%); */
-    /* z-index: 10; */
-    /* width: 225px; 
-    height: 150px;  */
   }
+
+  .headerContactUsButton button { 
+    width: 190px; 
+    height: 60px; 
+    border-radius: 10px; 
+    border: solid white 2px; 
+    font-size: 16pt;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+  }
+
+
+
   
 #mainPageContactUsButton {
-    padding: 10px 20px;
     background-color: #333; 
     color: #fff;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   
@@ -301,7 +311,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 1.5%;
+  margin-top: 8%;
 }
 
 .lp_cs_section_title {
@@ -312,13 +322,17 @@
 
 .lp_cs_section_title h2 {
   position: relative;
-  padding: 0 20px;
-  display: inline-block;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: black; 
+  font-size: 40px; 
+  /* font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  */
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
-.lp_cs_section_title h2::before,
+/* .lp_cs_section_title h2::before,
 .lp_cs_section_title h2::after {
   content: '';
   position: absolute;
@@ -326,9 +340,9 @@
   width: calc(100vw - 40px); 
   height: 3px;
   background-color: black;
-}
+} */
 
-.lp_cs_section_title h2::before {
+/* .lp_cs_section_title h2::before {
   left: 0;
   transform: translateX(-100%);
 }
@@ -336,93 +350,162 @@
 .lp_cs_section_title h2::after {
   right: 0;
   transform: translateX(100%);
-}
+} */
 /*-----------------------------------------*/
 /*--END--CSS for the 'Title' and horizontal lines of the card slider animation section */
 
+.services-statement {
+  margin-top: 2%; 
+  padding-left: 25%; 
+  padding-right: 25%; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: center;
+  color: #5E5E5E; 
+}
 
 
 /*--START--CSS for the animation of the CARD SLIDER*/
 
 .landing_page_cs_animation_section {
   position: relative; 
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
 
-.lp-cs-container{
+.card-slider-row {
   display: flex; 
   position: relative; 
-  margin-bottom: 4%; 
-  margin-top: 4%;
-  width: 100%;
+  width: 100%; 
   height: auto; 
+}
+
+.lp-cs-container {
+  display: flex;
+  position: relative; 
+  max-width: 1300px;
+  width: calc(100%-160px); 
+  margin: 4% 0;
+  height: auto;
+}
+
+.prevnavigationArrow,
+.nextnavigationArrow {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+    padding: 0; 
+    margin: 0; 
+    &:hover {
+      background-color: #CEBF8A;
+    }
+}
+
+.prevnavigationArrow i,
+.nextnavigationArrow i {
+  color: black;
+  font-size: 80px;
 }
 
 .card-container {
     display: flex;
-    position: absolute; 
-    column-gap: 10px; 
+    position: relative;
+    width: 100%; 
+    height: 100%; 
 }
 
 .card-article { 
-  position: absolute;
-  width: 400px; 
+  position: relative;
+  width: 400px;
+  height: 550px; 
   border-radius: 20px; 
   border: 1px solid #9A8A78; 
   overflow: hidden; 
   flex: 0 0 auto; 
-  background-color:#262626; 
+  /* background-color:#262626;  */
+  background-color: white;
+  box-shadow: 0 0 4px 8px rgba(198, 46, 46, 0.1);
 }
 
-.card_image { 
+.card_image {
   display: block;
-  height: 250px; 
-  width: 250px; 
-  margin: 0 auto; 
-  padding-top: 28px; 
-   z-index: 5; 
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  z-index: 5;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .card_image img { 
-  max-width: 100%;
-  max-height: 100%; 
-  height: 250px; 
-  width: 250px; 
-  border-radius: 10px; 
+  height: 100%; 
+  width: 100%; 
 }
 
 .card_data { 
   position: relative;
   margin-top: 5%; 
-  background-color: #262626; 
-  Padding: 24px 32px; 
+  height: auto; 
+  /* background-color: #262626;  */
+  background-color: white;
+  Padding: 12px 12px; 
   border-radius: 0px; 
   text-align: center; 
   z-index: 10;
 }
 
-.card_name { 
-  font-size: 20px;  
-  color:  white; 
+.card_name {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
   margin-bottom: 12px; 
 }
 
 .card_description { 
-  font-weight: 500; 
-  margin-bottom: 28px;
-  color: white; 
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: center;
+  color: #5E5E5E; 
+  letter-spacing: normal;
+  margin-bottom: 24px;
 
 }
 
 .card_button { 
-  display: inline-block; 
-  background-color: #CEBF8A; 
-  padding: 12px 24px; 
-  border-radius: 4px; 
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25%; 
+  background-color: #CEBF8A;
   color: white;
-  font-weight: 600;
+  width: 180px;
+  height: 58px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 24px; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  text-decoration: none;
 }
 
 
@@ -434,27 +517,10 @@
 }
 
 .swiper-pagination {
-  position: absolute;
-}
-
-
-.navigationArrows-container {
   display: flex; 
-  justify-content: center;
   position: relative;
-  margin-top: 2%; 
-  margin-bottom: 2%; 
 }
 
-.navigationArrows{
-  position: absolute; 
-  display: flex;
- 
-}
-
-.swiper-button-prev i, .swiper-button-next i {
-color: black;  
-}
 
 
 .cs-services-button-container{
@@ -467,13 +533,19 @@ color: black;
 
 .cs_services_button button { 
   background-color: #CEBF8A;
-  color: white;  
-  border-radius: 8px; 
+  /* background-color: #E2E2E2; */
+  color: white;
+  /* color: rgb(27, 27, 27); */
+  /* color: #1b1b1b;    */
   width: 250px;
   height: 65px; 
-  font-size: 30px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 28px; 
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif; 
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  border: none; 
 }
 /*---------------------------------------------------------------------*/
 /*---------------------------------------------------------------------*/
@@ -484,7 +556,6 @@ color: black;
 /*----------------------------------------------------------------------------------------------*/
 .fixed-cards-section-main-container{
   position: relative; 
-  background-color: #FFFFFF; 
   padding-top: 3%; 
   padding-bottom: 3%; 
 }
@@ -497,7 +568,12 @@ color: black;
 }
 
 .fixed-cards-section-title h2 {
-  color: black; 
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .fixed-cards-container{
@@ -525,9 +601,9 @@ color: black;
   align-items: center; 
   justify-content: center;
   border: 1.5px solid #9A8A78;
-  background-color: #262626;
-  color: black; 
-  font-family: 'Raleway', sans-serif; 
+  background-color: #CEBF8A;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  /* background-color: #262626; */
   flex: 1;
   width: 450px; 
   height: 350px; 
@@ -540,7 +616,11 @@ color: black;
 .card-4 h2 {
   margin-top: 10px; 
   text-align: center; 
-  color: white; 
+  color: white;
+  font-family: "Fajella One", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .card-1 img, 
@@ -593,7 +673,8 @@ color: black;
 /*----------------------------------------------------------------------------------------------*/
 .lp-recent-projects-section-main-container {
   position: relative; 
-  background-color: #F9F9F9;  
+  /* background-color: #F9F9F9; */
+  background-color: white;  
   /* border: solid yellow 4px; */
   padding-top: 3%; 
   padding-bottom: 3%; 
@@ -620,8 +701,9 @@ color: black;
 .lp-projects-decorativelinebase {
   position: absolute; 
   width: 350px; 
-  height: 2px; 
-  background: #E82C2C;
+  height: 4px; 
+  background: #CEBF8A;
+  /* background: #E82C2C; */
   z-index: 0; 
 }
 
@@ -630,7 +712,8 @@ color: black;
   position: absolute; 
   width: 150px;
   height: 8px; 
-  background: red;
+  background: #CEBF8A;
+  /* background: red; */
   z-index: 1; /* > stack order -> top line*/
 }
 /*-----------------------------------------*/
@@ -681,10 +764,20 @@ color: black;
 
 .filterable-portfolio-container ul li { 
   list-style: none; 
-  background: #eee; 
   padding: 12px 20px;
   margin: 5px; 
-  letter-spacing: 1px; 
+  text-align: center;
+  background-color: #6D9DC5 ;
+  color: white;
+  width: 180px;
+  height: 58px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 24px; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  text-decoration: none;
   cursor: pointer; 
 }
 
@@ -743,13 +836,16 @@ color: black;
 
 .recent-projects-button button {
   background-color: #CEBF8A;
-  color: white;  
-  border-radius: 8px; 
+  color: white;
   width: 250px;
   height: 65px; 
-  font-size: 30px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 28px; 
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif; 
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  border: none; 
 }
 /*-----------------------------------------*/
 /*--END--CSS FOR Recent Project's filterable portfolio*/

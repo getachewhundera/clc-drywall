@@ -1,0 +1,129 @@
+.projects-banner-area { 
+    position: relative; 
+    margin-top: 100px; 
+}
+
+
+/*--------RECENT PROJECTS SECTION-----------*/
+/*----------------------------------------------------------------------------------------------*/
+.portfolio-main-container {
+    position: relative; 
+    background-color: #F9F9F9;  
+    /* border: solid yellow 4px; */
+    padding-top: 5%; 
+    padding-bottom: 15%; 
+    /* height: 2000px;  */
+  }
+  
+  
+  /*--START--CSS FOR Recent Project's filterable portfolio */
+  /*-----------------------------------------*/
+  .portfolio-wrapper { 
+    display: flex;
+    position: relative; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    /* border: solid 4px green;  */
+    padding: 20px; 
+  
+  }
+  
+  .portfolio-wrapper ul { 
+    display: flex; 
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    margin-bottom: 4%;
+    /* border: solid 4px red;  */
+  
+  }
+  
+  .portfolio-wrapper ul li { 
+    list-style: none; 
+    background: #eee; 
+    padding: 12px 20px;
+    margin: 5px; 
+    letter-spacing: 1px; 
+    cursor: pointer; 
+  }
+  
+  .portfolio-wrapper ul li:hover { 
+    background-color: #03a9f4;
+    color: #fff; 
+  
+  }
+  
+  .portfolio-items { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+  }
+  
+  .portfolio-items .itemBox { 
+    position: relative; 
+    width: 200px; 
+    height: 200px; 
+    margin: 5px;
+    display: block; 
+  }
+  
+  .portfolio-items .itemBox img { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+  }
+  
+  .item-display-container { 
+    display: flex; 
+    position: relative;
+    flex-wrap: wrap; 
+    /* justify-content: center;  */
+    /* align-items: center;  */
+    /* border: solid 4px blue;  */
+  }
+  
+  
+  .hide {
+    display: none;
+  }
+  
+  
+  .recent-projects-button-container {
+    display: flex; 
+    position: relative; 
+    justify-content: center;
+    margin-top: 2%; 
+    margin-bottom: 2%; 
+  }
+  
+  .recent-projects-button button {
+    background-color: #CEBF8A;
+    color: white;  
+    border-radius: 8px; 
+    width: 250px;
+    height: 65px; 
+    font-size: 30px; 
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+  /*-----------------------------------------*/
+  /*--END--CSS FOR Recent Project's filterable portfolio*/
+  
+
+
+
+
+  .projects-page-ctacomponent { 
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding-bottom: 15%; 
+    background-color: #F9F9F9;  
+  }

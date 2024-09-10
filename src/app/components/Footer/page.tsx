@@ -136,7 +136,7 @@ const Footer = (props: Props) => {
                     </li>
                   </ul>
                 </div>
-                {/* //TODO: ADD links to social media accounts. Add contact links for phone and email. */}
+                {/* //TODO: ADD links to social media accounts. Add contact links for phone and email. rel=nofollow. Add in href="linktosite" target='_blank'*/}
 
 {/*  */}
                 <div className={styles['secondary-column3']}>
