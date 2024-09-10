@@ -1,634 +1,605 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react';
-//CSS Styling: 
+import React, { useEffect, useState} from 'react'; 
+
+//CSS Styling:
 import styles from './services.module.css';
 
 //Component imports
 import PageHeader from '../components/PageHeader/PageHeader'
 
-
-// `app/services/page.tsx` is the UI for the `/services` URL
-//Library Imports 
-// import Swiper core and required modules
-import Swiper from 'swiper';
-
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-//swiper modules 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
 import 'boxicons/css/boxicons.min.css';
+
+
 
 type Props = {}
 
 
 
-
-
-
-
 export default function services(props: Props) {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
 
+    // React state to manage the current position
+    const [currentPosition, setCurrentPosition] = useState(4); // Starts with the 4th item (#item4) as center "card"
+  
+  
+    // Function to handle rotating the carousel
+    function rotateCarousel(direction: number) {
+        const totalItems = 7; // Total number of items
+        let newPosition = (currentPosition + direction) % totalItems;
+  
+        if (newPosition <= 0) {
+            newPosition += totalItems;
+        }
 
-
-  useEffect(() => {
-    const figures = document.querySelectorAll(`.${styles.threeDCarouselContainer} figure`);
-    const n = figures.length;
-    const theta = 360 / n;
-
-    figures.forEach((figure, i) => {
-      const rotation = i * theta;
-      const spacing = 100;
-      (figure as HTMLElement).style.transform = `rotateY(${rotation}deg) translatex(${spacing}px) translateZ(var(--apothem))`;
-    });
-  }, []);
-
-
-
-  //Functions for onClick event for 3D Carousel Prev & Next 
-  const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + 6) % 6);
-    rotateCarousel(currentIndex - 1);
-  };
-
-  const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % 6);
-    rotateCarousel(currentIndex + 1);
-  };
-
-
-
-  const rotateCarousel = (index: number) => {
-    const carousel = document.querySelector(`.${styles.threeDCarouselContainer}`);
-    if (carousel) {
-      const theta = 360 / 6;
-      const angle = index * -theta;
-      (carousel as HTMLElement).style.transform = `translateZ(calc(-1 * var(--apothem))) rotateY(${angle}deg)`;
+        setCurrentPosition(newPosition); 
+  
+  
+        // updates the CSS variable to reflect the new position
+        document.documentElement.style.setProperty('--position', newPosition.toString());
     }
-  };
 
-
+//sets intial position of the items on component mount
   useEffect(() => {
-    const swiper = new Swiper('.swiper', {
-      modules: [Navigation, Pagination, Autoplay],
-      // Optional parameters
-      slidesPerView: 2,
-      spaceBetween: 0,
-      centeredSlides: false,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      // pagination
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-        // dynamicBullets: true,
-        // dynamicMainBullets: 8,
-      },
+    //setting the initial css variable for the position; 
+    document.documentElement.style.setProperty('--position', currentPosition.toString());
+  }, [currentPosition]);
+  
 
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    })
-  });
+    return (
+        <div className={styles['ServicePageBody']}>
 
+            {/*----HORIZONTAL SCROLLING BAR---*/}
+            <div className={styles['scrollingItemsContainer']}>
+                <div className={styles['horizontalScrollingItems']}>
+                    <div className={styles['horizontal-scrolling-items']}>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Drywall Installation</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Drywall Finishing</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Popcorn Removal</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Drywall Repair</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Texture Knockdown</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
+                        <div className={styles['item-container']}>
+                            <div className={styles['item']}>Interior Painting</div>
+                            <div className={styles['item-spacer']}>.</div>
+                        </div>
 
-
-  return (
-    <div className={styles['ServicePageBody']}>
-
-      {/*----HORIZONTAL SCROLLING BAR---*/}
-      <div className={styles['scrollingItemsContainer']}>
-        <div className={styles['horizontalScrollingItems']}>
-          <div className={styles['horizontal-scrolling-items']}>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Drywall Installation</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Drywall Finishing</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Popcorn Removal</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Drywall Repair</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Texture Knockdown</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-            <div className={styles['item-container']}>
-              <div className={styles['item']}>Interior Painting</div>
-              <div className={styles['item-spacer']}>.</div>
-            </div>
-
-
-            <div className={styles['horizontal-scrolling-items']}>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Drywall Installation</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Drywall Finishing</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Popcorn Removal</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Drywall Repair</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Texture Knockdown</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-              <div className={styles['item-container']}>
-                <div className={styles['item']}>Interior Painting</div>
-                <div className={styles['item-spacer']}>.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* PageHeader IMPORT*/}
-      <div className={styles['services-banner-area']}>
-        <PageHeader title='Services' navTitle='services' />
-      </div>
-
-
-
-
-      {/* 3D CAROUSEL SECTION*/}
-      <div className={styles['threeDcarousel-section']}>
-
-
-        {/*FIRST SECTION'S DECORATIVE LINES*/}
-        {/* <div className={styles['sp-decorative-lines-container']}>
-          <div className={styles['sp-decorativelines']}>
-            <div className={styles['sp-decorativelinebase']}> </div>
-            <div className={styles['sp-decorativelineoverlayed']}> </div>
-          </div>
-        </div> */}
-
-        {/*FIRST SECTION'S TITLE*/}
-        {/* sp = service page*/}
-        {/* <div className={styles['sp-first-section-title-container']}>
-          <div className={styles['sp-first-section-title']}>
-            <h2>Services</h2>
-          </div>
-        </div> */}
-
-
-
-        <div className={styles.threeDCarouselWrapper}>
-          <div className={styles['threeDCarouselContainer']}>
-
-            {/* Service Offering #1 */}
-            <figure id={styles.figure} className={styles['serviceOfferingOneAnimation']} >
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/drywallinstallation_1.jpg' alt='Drywall Installation' className={styles['serviceOfferingOneImage']} id={styles['threeDcarousel-images']} />
-              </div>
-              <div className={styles['serviceOfferingTitleOne']} id={styles['title-text']}>
-                <p>DRYWALL INSTALLATION AND REPAIR</p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementOne']} id={styles['text']}>
-                    <p>We offer a complete range of drywall services including drywall hanging,
-                      drywall installation, drywall taping, drywall sanding, and drywall mudding.
-                      Our skilled team is ready to handle every aspect of your drywall
-                      project with expertise and precision.
-                    </p>
-                  </div>
+                        <div className={styles['horizontal-scrolling-items']}>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Drywall Installation</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Drywall Finishing</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Popcorn Removal</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Drywall Repair</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Texture Knockdown</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                            <div className={styles['item-container']}>
+                                <div className={styles['item']}>Interior Painting</div>
+                                <div className={styles['item-spacer']}>.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListOne']} id={styles['list-text']}>
-                    <ul>
-                      <li>Residential Drywall</li>
-                      <li>Drywall Hanging</li>
-                      <li>Drywall Texturing</li>
-                      <li>Commercial Drywall</li>
-                      <li>Drywall Taping</li>
-                      <li>Drywall Installation</li>
-                      <li>Drywall Finishing</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-
-
-            {/* Service Offering #2 */}
-            <figure id={styles.figure} className={styles['serviceOfferingTwoAnimation']} >
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/drywallmudding_2.jpg' alt='Drywall Finishing' id={styles['threeDcarousel-images']} className={styles['serviceOfferingTwoImage']} />
-              </div>
-              <div className={styles['serviceOfferingTitleTwo']} id={styles['title-text']}>
-                <p>UPGRADE YOUR WALLS</p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementTwo']} id={styles['text']}>
-                    <p>
-                      Transform your space and say farewell to outdated popcorn ceilings with our
-                      range of stylish ceiling upgrades. Experience an upgrade that elevates your
-                      space with your choice of modern ceiling textures. Whether you desire a sleek,
-                      smooth finish or a textured design, our options offer endless possibilities
-                      for enhancing the aesthetics of your home.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListTwo']} id={styles['list-text']}>
-                    <ul>
-                      <li> CEILING TEXTURING </li>
-                      <li> WALL TEXTURING </li>
-                      <li> RESIDENTIAL TEXTURING </li>
-                      <li> COMMERCIAL TEXTURING </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-
-
-            {/* Service Offering #3 */}
-            <figure id={styles.figure} className={styles['serviceOfferingThreeAnimation']}>
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/ceiling_popcorn_removal_3.png' alt='Popcorn Removal' id={styles['threeDcarousel-images']} className={styles['serviceOfferingThreeImage']} />
-              </div>
-              <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
-                <p>ELEVATE YOUR SPACES </p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementThree']} id={styles['text']}>
-                    <p> Elevate your interior space with our professional interior painting services
-                      that prioritize clean and precise workmanship. Our team takes utmost care to
-                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                      From meticulous preparation to flawless execution, we go above and beyond to create a
-                      refreshed and vibrant atmosphere in your space.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListThree']} id={styles['list-text']}>
-                    <ul>
-                      <li> Interior Painting </li>
-                      <li> Residential Painting </li>
-                      <li> Office Painting </li>
-                      <li> Commercial Painting </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-
-
-
-            {/* Service Offering #4 */}
-            <figure id={styles.figure} className={styles['serviceOfferingFourAnimation']}>
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/repairproject1.1ac_4.jpg' alt='Drywall Repair' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFourImage']} />
-              </div>
-              <div className={styles['serviceOfferingTitleThree']} id={styles['title-text']}>
-                <p>ELEVATE YOUR SPACES </p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementFour']} id={styles['text']}>
-                    <p> Elevate your interior space with our professional interior painting services
-                      that prioritize clean and precise workmanship. Our team takes utmost care to
-                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                      From meticulous preparation to flawless execution, we go above and beyond to create a
-                      refreshed and vibrant atmosphere in your space.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListFour']} id={styles['list-text']}>
-                    <ul>
-                      <li> Interior Painting </li>
-                      <li> Residential Painting </li>
-                      <li> Office Painting </li>
-                      <li> Commercial Painting </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-
-
-            {/* Service Offering #5 */}
-            <figure id={styles.figure} className={styles['serviceOfferingFiveAnimation']} >
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/knockdown-texture_5.jpg' alt='Texture Knockdown' id={styles['threeDcarousel-images']} className={styles['serviceOfferingFiveImage']} />
-              </div>
-              <div className={styles['serviceOfferingTitleFive']} id={styles['title-text']}>
-                <p>ELEVATE YOUR SPACES</p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementFive']} id={styles['text']}>
-                    <p> Elevate your interior space with our professional interior painting services
-                      that prioritize clean and precise workmanship. Our team takes utmost care to
-                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                      From meticulous preparation to flawless execution, we go above and beyond to create a
-                      refreshed and vibrant atmosphere in your space.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListFive']} id={styles['list-text']}>
-                    <ul>
-                      <li> Interior Painting  </li>
-                      <li> Residential Painting   </li>
-                      <li> Office Painting  </li>
-                      <li> Commercial Painting </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-
-
-            {/* Service Offering #6 */}
-            <figure id={styles.figure} className={styles['serviceOfferingSixAnimation']}>
-
-              <div className={styles['figure-image']}>
-                <img src='./servicesPageImages/interiorpainting_6.jpg' alt="Interior Painting" id={styles['threeDcarousel-images']} className={styles['serviceOfferingSixImage']} />
-              </div>
-
-
-              <div className={styles['serviceOfferingTitleSix']} id={styles['title-text']}>
-                <p>ELEVATE YOUR SPACES</p>
-              </div>
-
-              <div className={styles.row}>
-                <div className={`${styles['right-description-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingStatementSix']} id={styles['text']}>
-                    <p> Elevate your interior space with our professional interior painting services
-                      that prioritize clean and precise workmanship. Our team takes utmost care to
-                      protect your furnishings and surroundings, ensuring a hassle-free painting experience.
-                      From meticulous preparation to flawless execution, we go above and beyond to create a
-                      refreshed and vibrant atmosphere in your space.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles['left-list-column']} ${styles['column']}`}>
-                  <div className={styles['serviceOfferingListSix']} id={styles['list-text']}>
-                    <ul>
-                      <li> Interior Painting  </li>
-                      <li> Residential Painting   </li>
-                      <li> Office Painting  </li>
-                      <li> Commercial Painting </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </figure>
-
-          </div>
-
-          <div className={styles['carouselNav']}>
-            <button className={styles['carouselNextButton']} onClick={handleNextClick}>Next</button>
-            <button className={styles['carouselPrevButton']} onClick={handlePrevClick}>Prev</button>
-          </div>
-
-        </div>
-      </div>
-
-
-
-
-
-
-      {/*STATS SECTION*/}
-      <div className={styles['stats-section-container']}>
-        <div className={styles['main-columns']}>
-          <div className={styles['left-column']}>
-            <div className={styles['stats-section-img']}>
-              <img src='./images/services-page/services-page-stats-section-image/truck.jpg' alt='' />
-            </div>
-
-          </div>
-
-          <div className={styles['right-column']}>
-
-            <div className={styles['title']}>
-              <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
-            </div>
-
-            <div className={styles['informational-text']}>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
-                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                Maecenas eget purus ac arcu egestas molestie.
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
-                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                Maecenas eget purus ac arcu egestas molestie.
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
-                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                Maecenas eget purus ac arcu egestas molestie.
-              </p>
-            </div>
-
-            <div className={styles['stats-container-grid']}>
-              <div className={`${styles['number']} ${styles['number-of-customers']}`}>
-                <h5>
-                  <span className={styles['counter']}>3</span>K+
-                </h5>
-                <p>happy customer</p>
-              </div>
-              <div className={`${styles['number']} ${styles['projects-completed']}`}>
-                <h5>
-                  <span className={styles['counter']}>2</span>K+
-                </h5>
-                <p>Project Done</p>
-              </div>
-              <div className={`${styles['number']} ${styles['average-rating']}`}>
-                <h5>
-                  <span className={styles['counter']}>9</span>/
-                  <span className={styles['counter']}>10</span>
-                </h5>
-                <p>Average Rating</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div >
-
-
-
-      {/*CUSTOMER REVIEWS SECTION*/}
-      <div className={styles['customer-reviews-section-container']}>
-
-        {/*DECORATIVE LINES*/}
-        <div className={styles['sp-decorative-lines-container']}>
-          <div className={styles['sp-decorativelines']}>
-            <div className={styles['sp-decorativelinebase']}> </div>
-            <div className={styles['sp-decorativelineoverlayed']}> </div>
-          </div>
-        </div>
-
-        {/*TITLE*/}
-        {/* sp = service page*/}
-        <div className={styles['sp-first-section-title-container']}>
-          <div className={styles['sp-first-section-title']}>
-            <h2>Customer Reviews </h2>
-          </div>
-        </div>
-
-
-
-
-        <div className={`swiper ${styles['swiper']}`}>
-
-          <div className={`swiper-wrapper ${styles['swiper-wrapper']}`}>
-
-
-
-            <div className={`swiper-slide ${styles['swiper-slide']}`}>
-              <div className={styles['single-customer-testiomonial-container']}>
-                <div className={styles['single-customer-testimonial']}>
-                  <div className={styles['client-image']}>
-                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
-                  </div>
-
-                  <div className={styles['description']}>
-                    <h4>Chris Smith </h4>
-                    <p className={styles['designation']}>customer</p>
-                    <p> “Review, review, Review, review, Review, review, Review,
-                      review, Review, review, Review, review, Review, review,
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
 
-            <div className={`swiper-slide ${styles['swiper-slide']}`}>
-              <div className={styles['single-customer-testiomonial-container']}>
-                <div className={styles['single-customer-testimonial']}>
-                  <div className={styles['client-image']}>
-                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
-                  </div>
 
-                  <div className={styles['description']}>
-                    <h4>Chris Smith </h4>
-                    <p className={styles['designation']}>customer</p>
-                    <p> “Review, review, Review, review, Review, review, Review,
-                      review, Review, review, Review, review, Review, review,
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* PageHeader IMPORT*/}
+            <div className={styles['services-banner-area']}>
+                <PageHeader title='Services' navTitle='services' />
             </div>
 
 
-            <div className={`swiper-slide ${styles['swiper-slide']}`}>
-              <div className={styles['single-customer-testiomonial-container']}>
-                <div className={styles['single-customer-testimonial']}>
-                  <div className={styles['client-image']}>
-                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
-                  </div>
 
-                  <div className={styles['description']}>
-                    <h4>Chris Smith </h4>
-                    <p className={styles['designation']}>customer</p>
-                    <p> “Review, review, Review, review, Review, review, Review,
-                      review, Review, review, Review, review, Review, review,
-                    </p>
-                  </div>
+            {/* 3D CAROUSEL SECTION*/}
+            <div className={styles['threeDCarouselSection']}>
+
+                <div className={styles['threeDCarouselContainer']}>
+                    <div className={styles['threeDCarouselWrapper']}>
+
+                        {/* Service Offering #1 */}
+                        <div className={styles['item']} id={styles['item1']}>
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/drywall-repair.jpeg' alt='Drywall Repair' id={styles['item-one-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-one']}> DRYWALL REPAIR </h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-one']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-one']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #2 */}
+                        <div className={styles['item']} id={styles['item2']}>
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/knockdown-texture.jpg' alt='Texture Knockdown' id={styles['item-two-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-two']}> Texture Knockdown</h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-two']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-two']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #3 */}
+                        <div className={styles['item']} id={styles['item3']}>
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/popcorn-removal.jpeg' alt='Popcorn Removal' id={styles['item-three-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-three']}> Popcorn Removal</h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-three']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-three']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #4 */}
+                        <div className={styles['item']} id={styles['item4']}>
+
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/drywall-installation.jpeg' alt='Drywall Installation' id={styles['item-four-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-four']}> DRYWALL INSTALLATION </h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-four']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-four']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #5 */}
+                        <div className={styles['item']} id={styles['item5']}>
+
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/finished-drywall.jpeg' alt='Drywall Finishing' id={styles['item-five-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-five']}> Drywall Finishing </h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-five']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-five']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #6 */}
+                        <div className={styles['item']} id={styles['item6']}>
+
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/painting.jpeg' alt="Interior Painting" id={styles['item-six-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-six']}> Interior Painting </h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-six']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-six']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Service Offering #7 */}
+                        <div className={styles['item']} id={styles['item7']}>
+
+                            <div className={styles['img-container']}>
+                                <img src='./images/services-page/3dcarousel-images/painting.jpeg' alt="Exterior Painting" id={styles['item-seven-image']} />
+                            </div>
+
+                            <h3 id={styles['title']} className={styles['title-seven']}> Exterior Painting </h3>
+
+                            <div className={styles['row']}>
+                                <div className={`${styles['left-description-column']}`} id={styles['left-column-seven']}>
+                                    <p>We offer a complete range of drywall services including drywall hanging,
+                                        drywall installation, drywall taping, drywall sanding, and drywall mudding.
+                                        Our skilled team is ready to handle every aspect of your drywall
+                                        project with expertise and precision.
+                                    </p>
+                                </div>
+
+                                <div className={`${styles['right-list-column']}`} id={styles['right-column-seven']}>
+                                    <ul>
+                                        <li>Residential Drywall</li>
+                                        <li>Drywall Hanging</li>
+                                        <li>Drywall Texturing</li>
+                                        <li>Commercial Drywall</li>
+                                        <li>Drywall Taping</li>
+                                        <li>Drywall Installation</li>
+                                        <li>Drywall Finishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+      
+                    <div className={styles['carouselNav']}>
+                        <button onClick={() => rotateCarousel(-1)}>Previous</button>
+                        <button onClick={() => rotateCarousel(1)}>Next</button>
+                    </div>
                 </div>
-              </div>
+
+
+
             </div>
 
 
-            <div className={`swiper-slide ${styles['swiper-slide']}`}>
-              <div className={styles['single-customer-testiomonial-container']}>
-                <div className={styles['single-customer-testimonial']}>
-                  <div className={styles['client-image']}>
-                    <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
-                  </div>
 
-                  <div className={styles['description']}>
-                    <h4>Chris Smith </h4>
-                    <p className={styles['designation']}>customer</p>
-                    <p> “Review, review, Review, review, Review, review, Review,
-                      review, Review, review, Review, review, Review, review,
-                    </p>
-                  </div>
+
+
+
+
+
+
+
+
+
+            {/*STATS SECTION*/}
+            <div className={styles['stats-section-container']}>
+                <div className={styles['main-columns']}>
+                    <div className={styles['left-column']}>
+                        <div className={styles['stats-section-img']}>
+                            <img src='./images/services-page/services-page-stats-section-image/truck.jpg' alt='' />
+                        </div>
+
+
+                    </div>
+
+
+                    <div className={styles['right-column']}>
+
+
+                        <div className={styles['title']}>
+                            <h2>PROVIDING PERSONALIZED AND HIGH QUALITY SERVICE</h2>
+                        </div>
+
+
+                        <div className={styles['informational-text']}>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                Maecenas eget purus ac arcu egestas molestie.
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                Maecenas eget purus ac arcu egestas molestie.
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Integer sit amet erat pretium, feugiat magna sit amet, aliquet urna.
+                                Cras quis metus ut dolor facilisis dapibus porttitor eget risus.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                Maecenas eget purus ac arcu egestas molestie.
+                            </p>
+                        </div>
+
+
+                        <div className={styles['stats-container-grid']}>
+                            <div className={`${styles['number']} ${styles['number-of-customers']}`}>
+                                <h5>
+                                    <span className={styles['counter']}>3</span>K+
+                                </h5>
+                                <p>happy customer</p>
+                            </div>
+                            <div className={`${styles['number']} ${styles['projects-completed']}`}>
+                                <h5>
+                                    <span className={styles['counter']}>2</span>K+
+                                </h5>
+                                <p>Project Done</p>
+                            </div>
+                            <div className={`${styles['number']} ${styles['average-rating']}`}>
+                                <h5>
+                                    <span className={styles['counter']}>9</span>/
+                                    <span className={styles['counter']}>10</span>
+                                </h5>
+                                <p>Average Rating</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
+            </div >
 
 
-          </div>
 
 
-          {/* Pagination */}
-          <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
 
 
-          {/*--Naviagtion Buttons--*/}
+            {/*CUSTOMER REVIEWS SECTION*/}
+            <div className={styles['customer-reviews-section-container']}>
 
 
-          <div className={`swiper-button-prev ${styles['swiper-button-prev']}`}></div>
-          <div className={`swiper-button-next ${styles['swiper-button-next']}`}></div>
+                {/*DECORATIVE LINES*/}
+                <div className={styles['sp-decorative-lines-container']}>
+                    <div className={styles['sp-decorativelines']}>
+                        <div className={styles['sp-decorativelinebase']}> </div>
+                        <div className={styles['sp-decorativelineoverlayed']}> </div>
+                    </div>
+                </div>
 
 
-        </div>
+                {/*TITLE*/}
+                {/* sp = service page*/}
+                <div className={styles['sp-first-section-title-container']}>
+                    <div className={styles['sp-first-section-title']}>
+                        <h2>Customer Reviews </h2>
+                    </div>
+                </div>
 
 
-      </div >
-    </div >
 
-  )
+
+
+
+
+
+                <div className={`swiper ${styles['swiper']}`}>
+
+
+                    <div className={`swiper-wrapper ${styles['swiper-wrapper']}`}>
+
+
+
+
+
+
+                        <div className={`swiper-slide ${styles['swiper-slide']}`}>
+                            <div className={styles['single-customer-testiomonial-container']}>
+                                <div className={styles['single-customer-testimonial']}>
+                                    <div className={styles['client-image']}>
+                                        <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                                    </div>
+
+
+                                    <div className={styles['description']}>
+                                        <h4>Chris Smith </h4>
+                                        <p className={styles['designation']}>customer</p>
+                                        <p> “Review, review, Review, review, Review, review, Review,
+                                            review, Review, review, Review, review, Review, review,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div className={`swiper-slide ${styles['swiper-slide']}`}>
+                            <div className={styles['single-customer-testiomonial-container']}>
+                                <div className={styles['single-customer-testimonial']}>
+                                    <div className={styles['client-image']}>
+                                        <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                                    </div>
+
+
+                                    <div className={styles['description']}>
+                                        <h4>Chris Smith </h4>
+                                        <p className={styles['designation']}>customer</p>
+                                        <p> “Review, review, Review, review, Review, review, Review,
+                                            review, Review, review, Review, review, Review, review,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div className={`swiper-slide ${styles['swiper-slide']}`}>
+                            <div className={styles['single-customer-testiomonial-container']}>
+                                <div className={styles['single-customer-testimonial']}>
+                                    <div className={styles['client-image']}>
+                                        <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                                    </div>
+
+
+                                    <div className={styles['description']}>
+                                        <h4>Chris Smith </h4>
+                                        <p className={styles['designation']}>customer</p>
+                                        <p> “Review, review, Review, review, Review, review, Review,
+                                            review, Review, review, Review, review, Review, review,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div className={`swiper-slide ${styles['swiper-slide']}`}>
+                            <div className={styles['single-customer-testiomonial-container']}>
+                                <div className={styles['single-customer-testimonial']}>
+                                    <div className={styles['client-image']}>
+                                        <img src='./images/services-page/customer-testimonials-images/client-image.png' alt='' />
+                                    </div>
+
+
+                                    <div className={styles['description']}>
+                                        <h4>Chris Smith </h4>
+                                        <p className={styles['designation']}>customer</p>
+                                        <p> “Review, review, Review, review, Review, review, Review,
+                                            review, Review, review, Review, review, Review, review,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+                    {/* Pagination */}
+                    <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
+
+
+
+
+                    {/*--Naviagtion Buttons--*/}
+
+
+
+
+                    <div className={`swiper-button-prev ${styles['swiper-button-prev']}`}></div>
+                    <div className={`swiper-button-next ${styles['swiper-button-next']}`}></div>
+
+
+
+
+                </div>
+
+
+
+
+            </div >
+        </div >
+
+
+    )
 };

@@ -145,8 +145,14 @@ export default function Page({ showHeading = true }: Props) {
 
     //object for filterable portfolio
     const portfolioItems = [
-        { id: 1, category: 'residential', src: './images/2.jpg.webp' },
-        { id: 2, category: 'commercial', src: './images/3.jpg.webp' },
+        { id: 1, category: 'residential',
+            src: 
+            [
+                './images/landing-page/filterable-portfolio-images/residential/before-and-after-full-project/project1/basement-1-mudded.installed-sep19.2023.jpg',
+                './images/landing-page/filterable-portfolio-images/residential/before-and-after-full-project/project1/basement-2-complete-sep19.2023.residential.drywall.finished.product.jpg'
+            ] 
+        },
+        { id: 2, category: 'commercial', src: '' },
         { id: 3, category: 'repair', src: './images/4.jpg.webp' },
     ];
 
@@ -295,7 +301,7 @@ export default function Page({ showHeading = true }: Props) {
 
                             <article className={`swiper-slide ${styles['card-article']}`}>
                                 <div className={styles.card_image}>
-                                    <img src="./images/landing-page/Card_Slider_LandingPage/" alt="Image of a popcorn ceiling being removed" />
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/popcorn-removal.jpeg" alt="Image of a popcorn ceiling being removed" />
                                 </div>
 
                                 <div className={styles.card_data}>
