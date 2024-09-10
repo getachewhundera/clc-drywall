@@ -1,12 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/AboutUs/page": "app/AboutUs/page.js",
   "/page": "app/page.js",
-  "/components/Footer/page": "app/components/Footer/page.js",
-  "/contact/page": "app/contact/page.js",
+  "/AboutUs/page": "app/AboutUs/page.js",
   "/services/page": "app/services/page.js",
-  "/projects/page": "app/projects/page.js",
-  "/feedback/page": "app/feedback/page.js",
-  "/privacypolicy/page": "app/privacypolicy/page.js",
-  "/termsandcondition/page": "app/termsandcondition/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/projects/page": "app/projects/page.js"
 }
