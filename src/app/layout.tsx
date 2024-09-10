@@ -6,6 +6,7 @@ import './styles/globals.css';
 // Import your navbar and footer components
 import NavBarPage from './components/navbar/NavBarPage';
 import Footer from './components/Footer/page';
+import CopyrightFooter from './components/Footer/copyright-footer/copyrightFooter';
 
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -22,12 +23,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <NavBarPage />
         {children}
         <Footer />
+        <CopyrightFooter /> 
       </body>
     </html>
   );
 }
 
 export default RootLayout;
-
-// export default function RootLayout({ children, }: { children: React.ReactNode }) {
-//   return (

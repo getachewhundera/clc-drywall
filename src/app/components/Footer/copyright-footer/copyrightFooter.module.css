@@ -1,0 +1,23 @@
+.copyright-footer-area {
+    width: 100%;
+    min-width: 100%; 
+    height: 80px; 
+    background-color: #111314;
+    /* border: 4px solid red;  */
+    padding: 20px 20px;   
+    position: relative;
+}
+
+.secondary-footer-area {
+    display: flex; 
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-footer p {
+    color: white; 
+    font-family: inter; 
+    font-size: large;
+
+}

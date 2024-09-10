@@ -95,14 +95,16 @@
   }
 
 .banner_content span {
-    font-size: 26px;
-    color: #fff;
-    font-weight: 700;
-    font-family: "Heebo", sans-serif;
+    color: black; 
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 48px; 
+    font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 24px;
     display: inline-block;
     position: relative;
+    -webkit-text-stroke-color: #333;
+    -webkit-text-stroke-width: .5px;
   }
 .banner_content span:after {
     content: "";
@@ -116,11 +118,13 @@
   } 
 
  .banner_content h3 {
-    font-size: 60px;
-    font-family: "Heebo", sans-serif;
-    font-weight: 600;
-  }
-
+   color: #333;
+   font-size: 60px;
+   font-family: "Heebo", sans-serif;
+   font-weight: 600;
+   -webkit-text-stroke-color: white;
+   -webkit-text-stroke-width: 1px;
+ }
 
   
 .headerContactUsButton {
@@ -128,18 +132,24 @@
     margin-top: 5%; 
     left: 50%;
     transform: translateX(-50%);
-    /* transform: translate(-50%, -50%); */
-    /* z-index: 10; */
-    /* width: 225px; 
-    height: 150px;  */
   }
+
+  .headerContactUsButton button { 
+    width: 190px; 
+    height: 60px; 
+    border-radius: 10px; 
+    border: solid white 2px; 
+    font-size: 16pt;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+  }
+
+
+
   
 #mainPageContactUsButton {
-    padding: 10px 20px;
     background-color: #333; 
     color: #fff;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   
@@ -251,18 +261,6 @@
 /*--------Card Slider CSS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
 
-.landing_page_cs_animation_section {
-  position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: 1500px; 
-
-
-}
-
-
 
 /*--START--CSS FOR decorative line above "WHAT WE PROVIDE" title*/
 /*-----------------------------------------*/
@@ -313,7 +311,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 1.5%;
+  margin-top: 8%;
 }
 
 .lp_cs_section_title {
@@ -324,13 +322,17 @@
 
 .lp_cs_section_title h2 {
   position: relative;
-  padding: 0 20px;
-  display: inline-block;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: black; 
+  font-size: 40px; 
+  /* font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  */
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
-.lp_cs_section_title h2::before,
+/* .lp_cs_section_title h2::before,
 .lp_cs_section_title h2::after {
   content: '';
   position: absolute;
@@ -338,9 +340,9 @@
   width: calc(100vw - 40px); 
   height: 3px;
   background-color: black;
-}
+} */
 
-.lp_cs_section_title h2::before {
+/* .lp_cs_section_title h2::before {
   left: 0;
   transform: translateX(-100%);
 }
@@ -348,106 +350,162 @@
 .lp_cs_section_title h2::after {
   right: 0;
   transform: translateX(100%);
-}
+} */
 /*-----------------------------------------*/
 /*--END--CSS for the 'Title' and horizontal lines of the card slider animation section */
 
+.services-statement {
+  margin-top: 2%; 
+  padding-left: 25%; 
+  padding-right: 25%; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: center;
+  color: #5E5E5E; 
+}
 
 
 /*--START--CSS for the animation of the CARD SLIDER*/
-.lp-cards-main-container {
+
+.landing_page_cs_animation_section {
+  position: relative; 
+  /* background-color: #F9F9F9; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-slider-row {
   display: flex; 
   position: relative; 
-  margin-bottom: 4%; 
-  margin-top: 4%;
+  width: 100%; 
+  height: auto; 
 }
 
-.lp-cs-container{ 
-  display: flex; 
-  position: absolute; 
-  box-sizing: border-box;
-  padding: 0; 
-  margin: 0; 
-  
-  /* border: solid black 1px; */
-  max-width: 100%; 
-}
-
-
-
-.card-container { 
-  /* margin-inline: 28px;  */
-  border-radius: 20px; 
-  /* overflow: hidden;  */
-  /* border: solid black 1px; */
+.lp-cs-container {
   display: flex;
-  position: absolute; 
-  column-gap: 10px; 
+  position: relative; 
+  max-width: 1300px;
+  width: calc(100%-160px); 
+  margin: 4% 0;
+  height: auto;
 }
 
+.prevnavigationArrow,
+.nextnavigationArrow {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+    padding: 0; 
+    margin: 0; 
+    &:hover {
+      background-color: #CEBF8A;
+    }
+}
+
+.prevnavigationArrow i,
+.nextnavigationArrow i {
+  color: black;
+  font-size: 80px;
+}
+
+.card-container {
+    display: flex;
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+}
 
 .card-article { 
-  width: 400px; 
+  position: relative;
+  width: 400px;
+  height: 550px; 
   border-radius: 20px; 
+  border: 1px solid #9A8A78; 
   overflow: hidden; 
   flex: 0 0 auto; 
-  /* border: yellow 1px solid;  */
-  background-color: gray;
+  /* background-color:#262626;  */
+  background-color: white;
+  box-shadow: 0 0 4px 8px rgba(198, 46, 46, 0.1);
 }
 
-.card_image { 
-  position: relative; 
-  /* background-color: hsl(38, 100%, 78%);  */
-  /* padding-block: 5px 5px;  */
-  padding-top: 28px; 
-  margin-bottom: -12px; 
-
+.card_image {
+  display: block;
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  z-index: 5;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
+.card_image img { 
+  height: 100%; 
+  width: 100%; 
+}
 
 .card_data { 
-  background-color: darkblue; 
-  Padding: 24px 32px; 
-  border-radius: 16px; 
+  position: relative;
+  margin-top: 5%; 
+  height: auto; 
+  /* background-color: #262626;  */
+  background-color: white;
+  Padding: 12px 12px; 
+  border-radius: 0px; 
   text-align: center; 
-  position: relative; 
   z-index: 10;
 }
 
-.card_image { 
-width: 180px; 
-margin: 0 auto; 
-position: relative; 
-z-index: 5; 
-}
-
-.card_name { 
-  font-size: 20px;  
-  color:  hsl(195, 75%, 52%); 
+.card_name {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
   margin-bottom: 12px; 
 }
 
 .card_description { 
-  font-weight: 500; 
-  margin-bottom: 28px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: center;
+  color: #5E5E5E; 
+  letter-spacing: normal;
+  margin-bottom: 24px;
 
 }
 
 .card_button { 
-  display: inline-block; 
-  background-color: hsl(38, 92%, 58%); 
-  padding: 12px 24px; 
-  border-radius: 4px; 
-  color: hsl(212, 40%, 12%);
-  font-weight: 600;
-}
-
-.card_image img { 
-  display: block; 
-  max-width: 100%;
-  height: auto; 
-  height: 250px; 
-  width: 250px; 
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25%; 
+  background-color: #CEBF8A;
+  color: white;
+  width: 180px;
+  height: 58px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 24px; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  text-decoration: none;
 }
 
 
@@ -456,57 +514,38 @@ z-index: 5;
   position: relative;
   justify-content: center;
   margin-top: 2%; 
-
 }
-
-
 
 .swiper-pagination {
-  position: absolute;
-}
-
-
-.navigationArrows-container {
   display: flex; 
-  justify-content: center;
   position: relative;
-
 }
 
-.navigationArrows{
-  position: absolute; 
-  display: flex;
-  margin-top: 2%; 
-  margin-bottom: 2%; 
-}
-
-
-.swiper-button-prev i, .swiper-button-next i {
-color: red; 
-}
 
 
 .cs-services-button-container{
   display: flex; 
-  position: relative;
-  margin-top: 8%; 
+  position: relative; 
+  margin-top: 3%; 
+  margin-bottom: 3%; 
   justify-content: center;
 }
 
-
-.cs_services_button { 
-  position: absolute;
-  margin-bottom: 2%; 
-}
-
 .cs_services_button button { 
-  color: red; 
-  border-radius: 8px; 
+  background-color: #CEBF8A;
+  /* background-color: #E2E2E2; */
+  color: white;
+  /* color: rgb(27, 27, 27); */
+  /* color: #1b1b1b;    */
   width: 250px;
   height: 65px; 
-  font-size: 30px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 28px; 
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif; 
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  border: none; 
 }
 /*---------------------------------------------------------------------*/
 /*---------------------------------------------------------------------*/
@@ -515,15 +554,10 @@ color: red;
 
 /*--------FIXED CARDS SECTION-----------*/
 /*----------------------------------------------------------------------------------------------*/
-
-
 .fixed-cards-section-main-container{
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: auto; 
+  padding-top: 3%; 
+  padding-bottom: 3%; 
 }
 
 .fixed-cards-section-title-container {
@@ -534,7 +568,12 @@ color: red;
 }
 
 .fixed-cards-section-title h2 {
-  color: black; 
+  font-family: "Fajella One", Arial, sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .fixed-cards-container{
@@ -545,8 +584,8 @@ color: red;
 
 .cards-container {
   display: flex;
+  position: relative; 
   flex-wrap: wrap; 
-  /* justify-content: space-between;  */
   margin-left: 70px; 
   margin-right: 70px; 
   margin-top: 50px; 
@@ -561,11 +600,10 @@ color: red;
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  min-height: 100px; 
   border: 1.5px solid #9A8A78;
-  background-color: #262626;
-  color: black; 
-  font-family: 'Raleway', sans-serif; 
+  background-color: #CEBF8A;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  /* background-color: #262626; */
   flex: 1;
   width: 450px; 
   height: 350px; 
@@ -578,7 +616,11 @@ color: red;
 .card-4 h2 {
   margin-top: 10px; 
   text-align: center; 
-  color: white; 
+  color: white;
+  font-family: "Fajella One", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .card-1 img, 
@@ -631,11 +673,12 @@ color: red;
 /*----------------------------------------------------------------------------------------------*/
 .lp-recent-projects-section-main-container {
   position: relative; 
-  /* border: solid orange 10px;  */
-  background-color: #555;
-  margin-bottom: 15%; 
-  border: solid yellow 4px;
-  height: 2000px; 
+  /* background-color: #F9F9F9; */
+  background-color: white;  
+  /* border: solid yellow 4px; */
+  padding-top: 3%; 
+  padding-bottom: 3%; 
+  /* height: 2000px;  */
 }
 
 /*--START--CSS FOR decorative line above "Recent Projects" title*/
@@ -644,23 +687,23 @@ color: red;
   position: relative; 
   display: flex; 
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .lp-projects-decorativelines {
-  position: relative; 
+  position: absolute; 
   display: flex;
   justify-content: center;
   align-items: center; 
-  margin-bottom: 0%;
 }
 
 /*thinner decorative line*/
 .lp-projects-decorativelinebase {
   position: absolute; 
   width: 350px; 
-  height: 2px; 
-  background: #E82C2C;
+  height: 4px; 
+  background: #CEBF8A;
+  /* background: #E82C2C; */
   z-index: 0; 
 }
 
@@ -669,7 +712,8 @@ color: red;
   position: absolute; 
   width: 150px;
   height: 8px; 
-  background: red;
+  background: #CEBF8A;
+  /* background: red; */
   z-index: 1; /* > stack order -> top line*/
 }
 /*-----------------------------------------*/
@@ -683,6 +727,7 @@ color: red;
   position: relative;
   justify-content: center;
   margin-top: 1.5%;
+  margin-bottom: 2%; 
 }
 
 .recent-projects-section-title h2 {
@@ -697,52 +742,110 @@ color: red;
 /*-----------------------------------------*/
 .filterable-portfolio-container { 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; 
   flex-direction: column;
-  margin: 40px auto;
-
+  justify-content: center; 
+  align-items: center; 
+  /* border: solid 4px green;  */
+  padding: 20px; 
 
 }
 
-.portfolio-navigation ul { 
-  display: flex;
+.filterable-portfolio-container ul { 
+  display: flex; 
+  position: relative; 
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; 
   margin-bottom: 4%;
+  /* border: solid 4px red;  */
 
 }
 
-.portfolio-navigation ul li { 
+.filterable-portfolio-container ul li { 
   list-style: none; 
-  background: #eee; 
   padding: 12px 20px;
   margin: 5px; 
-  letter-spacing: 1px; 
+  text-align: center;
+  background-color: #6D9DC5 ;
+  color: white;
+  width: 180px;
+  height: 58px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 24px; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  text-decoration: none;
   cursor: pointer; 
 }
 
-.portfolio-navigation ul li.active { 
+.filterable-portfolio-container ul li:hover { 
   background-color: #03a9f4;
   color: #fff; 
 
 }
 
-.category-display-container { 
+.portfolio-items { 
   display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap; 
 }
 
-.category-display-container .portfolio-item {
-  width: 200px;
-  height: 200px;
+.portfolio-items .itemBox { 
+  position: relative; 
+  width: 200px; 
+  height: 200px; 
+  margin: 5px;
+  display: block; 
 }
+
+.portfolio-items .itemBox img { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.item-display-container { 
+  display: flex; 
+  position: relative;
+  flex-wrap: wrap; 
+  /* justify-content: center;  */
+  /* align-items: center;  */
+  /* border: solid 4px blue;  */
+}
+
 
 .hide {
   display: none;
+}
+
+
+.recent-projects-button-container {
+  display: flex; 
+  position: relative; 
+  justify-content: center;
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+
+.recent-projects-button button {
+  background-color: #CEBF8A;
+  color: white;
+  width: 250px;
+  height: 65px; 
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 28px; 
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: normal; 
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 0px;
+  border: none; 
 }
 /*-----------------------------------------*/
 /*--END--CSS FOR Recent Project's filterable portfolio*/
