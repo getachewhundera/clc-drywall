@@ -5,8 +5,8 @@ import styles from './styles/LandingPage.module.css';
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-
-
+import "@fontsource/fjalla-one";
+import "@fontsource/source-sans-pro";
 
 // import Swiper core and required modules
 import Swiper from 'swiper';
@@ -18,18 +18,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import 'boxicons/css/boxicons.min.css';
-import { data } from 'autoprefixer';
+
 
 
 type Props = {
     showHeading?: boolean;
 }
 
-// Define your interface for handling images
-interface ImageProps {
-    src: string | StaticImageData;
-    alt: string;
-}
+
+// interface ImageProps {
+//     src: string | StaticImageData;
+//     alt: string;
+// }
 
 
 export default function Page({ showHeading = true }: Props) {
@@ -39,8 +39,6 @@ export default function Page({ showHeading = true }: Props) {
     //`useState` hook initialized to 'all' as default for the filterable portfolio
     const [selectedCategory, setSelectedCategory] = useState('all');
 
-    // const categoryRef = useRef<NodeListOf<Element> | null>(null);
-    // const itemsContainerRef = useRef<NodeListOf<Element> | null>(null);
 
 
     // const imagesLeft: ImageProps[] = [
@@ -58,9 +56,9 @@ export default function Page({ showHeading = true }: Props) {
 
     // Images to be used in the left pane
     const imagesLeft: string[] = [
-        '/images/LandingPageHeaderImages/main1.jpg',
-        '/images/LandingPageHeaderImages/nhimg1.jpeg',
-        '/images/LandingPageHeaderImages/nhimg1.2.jpeg'
+        '/images/landing-page/banner-images-LandingPage/main1.jpg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.jpeg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.2.jpeg'
     ];
     // const imagesLeft: ImageProps[] = [
     //     { src: '/images/LandingPageHeaderImages/main1.jpg', alt: "main image" },
@@ -70,15 +68,10 @@ export default function Page({ showHeading = true }: Props) {
 
     // Images for the right pane
     const imagesRight: string[] = [
-        '/images/LandingPageHeaderImages/main.jpg',
-        '/images/LandingPageHeaderImages/nhimg1.1.jpeg',
-        '/images/LandingPageHeaderImages/nhimg1.21.jpeg'
+        '/images/landing-page/banner-images-LandingPage/main.jpg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.1.jpeg',
+        '/images/landing-page/banner-images-LandingPage/nhimg1.21.jpeg'
     ];
-
-    // Check if running in the browser environment
-    // if (typeof window !== 'undefined') {
-    //     console.log(window.location.href);
-    // }
 
 
 
@@ -88,41 +81,41 @@ export default function Page({ showHeading = true }: Props) {
             modules: [Navigation, Pagination],
             //   Default parameters
             slidesPerView: 3,
-            spaceBetween: 32,
+            spaceBetween: 30,
             slidesPerGroup: 1,
             loop: false,
             // Optional parameters
             direction: 'horizontal',
             grabCursor: true,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: `.${styles.nextnavigationArrow}`, 
+                prevEl: `.${styles.prevnavigationArrow}`, 
             },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
                 clickable: true,
                 dynamicBullets: true,
-                dynamicMainBullets: 6,
+                dynamicMainBullets: 2,
             },
             // Responsive breakpoints
             breakpoints: {
                 // when window width is >= 320px
                 320: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
+                    slidesPerView: 1,
+                    spaceBetween: 10,
                 },
                 // when window width is >= 640px
                 640: {
-                    slidesPerView: 4,
-                    spaceBetween: 40
-                }
-            }
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
         });
         swiperRef.current = swiperInstance;
     }, []);
@@ -135,21 +128,6 @@ export default function Page({ showHeading = true }: Props) {
     const handleCategoryClick = (category: string) => {
         setSelectedCategory(category);
     };
-
-
-    //object for filterable portfolio
-    const portfolioItems = [
-        { id: 1, category: 'residential', src: './images/2.jpg.webp' },
-        { id: 2, category: 'commercial', src: './images/3.jpg.webp' },
-        { id: 3, category: 'repair', src: './images/4.jpg.webp' },
-    ];
-
-//filtering logic. creates "new array"
-    const filteredItems = portfolioItems.filter(
-        item => selectedCategory === 'all' || item.category === selectedCategory
-    );
-
-
 
 
     //funtions for the handle click events for Card Slider Navigation arrows
@@ -165,11 +143,32 @@ export default function Page({ showHeading = true }: Props) {
         }
     };
 
+    //object for filterable portfolio
+    const portfolioItems = [
+        { id: 1, category: 'residential',
+            src: 
+            [
+                './images/landing-page/filterable-portfolio-images/residential/before-and-after-full-project/project1/basement-1-mudded.installed-sep19.2023.jpg',
+                './images/landing-page/filterable-portfolio-images/residential/before-and-after-full-project/project1/basement-2-complete-sep19.2023.residential.drywall.finished.product.jpg'
+            ] 
+        },
+        { id: 2, category: 'commercial', src: '' },
+        { id: 3, category: 'repair', src: './images/4.jpg.webp' },
+    ];
+
+    //filtering logic. creates "new array"
+    const filteredItems = portfolioItems.filter(
+        item => selectedCategory === 'all' || item.category === selectedCategory
+    );
+
+
+
+
 
 
 
     return (
-        <div className={styles['LandingPageBody']}>
+        <div className={`${styles.LandingPageBody}`} >
             {/* START of Hero Section on Landing Page */}
             <div className={styles.home_banner_area}>
                 <div className={styles['banner_container']}>
@@ -186,7 +185,7 @@ export default function Page({ showHeading = true }: Props) {
                                 <div key={index} className={styles.image + " " + styles[`img-${index}`]} style={{ backgroundImage: `url(${img})` }}></div>
                             ))}
                         </div>
-
+                        {/* 
                         <div className={styles.container}>
                             <div className={styles['banner_content']}>
                                 <span>CLC DRYWALL LLC</span>
@@ -197,14 +196,12 @@ export default function Page({ showHeading = true }: Props) {
                                     Craftsmanship.
                                 </h3>
                                 <div className={styles.headerContactUsButton}>
-                                    {/* call to action button, sits in the middle
-                             of main webpage, easily identifiable*/}
                                     <button type="button" id={styles.mainPageContactUsButton} onClick={() => router.push('/contactus')}>
                                         Get A Quote
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>
@@ -214,128 +211,137 @@ export default function Page({ showHeading = true }: Props) {
 
 
 
-            {/* START of CARD SLIDER ANIMATION SERVICES SECTION */}
+            {/*------ START: CARD SLIDER ANIMATION SERVICES SECTION ------*/}
             {/* lp_cs = landing page card slider */}
             <div className={styles['landing_page_cs_animation_section']}>
-                <div className={styles['decorative-lines-container']}>
+                {/* <div className={styles['decorative-lines-container']}>
                     <div className={styles.decorativelines}>
                         <div className={styles.decorativelinebase}> </div>
                         <div className={styles.decorativelineoverlayed}> </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className={styles['lp-cs-section-title-container']}>
                     <div className={styles['lp_cs_section_title']}>
-                        <h2>WHAT WE PROVIDE</h2>
+                        <h2>Services</h2>
                     </div>
                 </div>
 
-                <div className={`swiper mySwiper ${styles['lp-cs-container']}`} ref={swiperRef} >
-                    <div className={`swiper-wrapper ${styles['card-container']}`}>
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                <div className={styles['services-statement']}>
+                    <p>"Our comprehensive range of services covers every aspect of drywall and painting,
+                        from installation and finishing to repairs and texturing. Whether you're working on a
+                        residential or commercial project, our skilled team delivers exceptional results tailored to your needs.
+                        Explore our featured services below, and discover even more options to transform your space."
+                    </p>
+                </div>
+                <div className={styles['card-slider-row']}>
+                    <div className={styles.prevnavigationArrow} onClick={handlePrevClick}>
+                        <i className='bx bx-chevron-left'></i>
+                    </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                    <div className={`swiper mySwiper ${styles['lp-cs-container']}`} ref={swiperRef} >
+                        <div className={`swiper-wrapper ${styles['card-container']}`}>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/drywall-Installation.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Installation </h3>
+                                    <p className={styles.card_description}>
+                                        Precision drywall installation for flawless, ready-to-finish walls and ceilings.
+                                    </p>
+                                    <Link href="/services" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/tapingandmudding.jpg" alt="Image of Drywall Board Installation" />
+                                </div>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}>Drywall Finishing</h3>
+                                    <p className={styles.card_description}>
+                                        Seamless taping and finishing for smooth, paint-ready surfaces.
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/knockdown-texture.png" alt="Image of Drywall Board Installation" />
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                </div>
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Texturing​ </h3>
+                                    <p className={styles.card_description}>
+                                        Expert texturing to add depth and character to your walls and ceilings.
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/repairproject1.1bc.jpg" alt="Image of a wall with damage to the drywall" />
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Drywall Repair/Patchwork </h3>
+                                    <p className={styles.card_description}>
+                                        Quick, seamless repairs for flawless wall restoration.
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/popcorn-removal.jpeg" alt="Image of a popcorn ceiling being removed" />
+                                </div>
+
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Popcorn Ceiling Removal </h3>
+                                    <p className={styles.card_description}>
+                                        Safe and efficient removal for modern, smooth ceilings.
+                                    </p>
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
 
 
-                        <article className={`swiper-slide ${styles['card-article']}`}>
-                            <div className={styles.card_image}>
-                                <img src="./images/Card_Slider_LandingPage/drywallinstall.jpg" alt="Image of Drywall Board Installation" />
-                            </div>
+                            <article className={`swiper-slide ${styles['card-article']}`}>
+                                <div className={styles.card_image}>
+                                    <img src="./images/landing-page/Card_Slider_LandingPage/interiorpainting.ss.png" alt="Image of a Finished and painted wall that represents a service offering for interior and exterior painting services" />
+                                </div>
 
-                            <div className={styles.card_data}>
-                                <h3 className={styles.card_name}> Drywall Installation </h3>
-                                <p className={styles.card_description}>
-                                    sdfddsfdsfsdfdfsdfsdf
-                                </p>
-                                <Link href="/" className={styles.card_button}>View More</Link>
-                            </div>
-                        </article>
+                                <div className={styles.card_data}>
+                                    <h3 className={styles.card_name}> Interior/Exterior Painting </h3>
+                                    <p className={styles.card_description}>
+                                        Transforming spaces with precision painting, inside and out.
+                                    </p>
+                                  
+                                    <Link href="/" className={styles.card_button}>View More</Link>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+
+                    <div className={styles.nextnavigationArrow} onClick={handleNextClick}>
+                        <i className='bx bx-chevron-right'></i>
                     </div>
                 </div>
+
 
                 {/* Pagination */}
                 <div className={styles['pagination-bullets-container']}>
                     <div className={`swiper-pagination ${styles['swiper-pagination']}`}></div>
                 </div>
-
-                {/*--Naviagtion Buttons--*/}
-                <div className={styles['navigationArrows-container']}>
-                    <div className={styles.navigationArrows}>
-                        <div onClick={handlePrevClick} className={styles['swiper-button-prev']}>
-                            <i className='bx bx-chevron-left bx-lg'></i>
-                        </div>
-                        <div onClick={handleNextClick} className={styles['swiper-button-next']}>
-                            <i className='bx bx-chevron-right bx-lg'></i>
-                        </div>
-                    </div>
-                </div>
-
 
 
                 {/*cs = card slider */}
@@ -345,9 +351,11 @@ export default function Page({ showHeading = true }: Props) {
                     </div>
                 </div>
 
-
             </div>
-            {/* END of CARD SLIDER ANIMATION SERVICES SECTION */}
+
+                 {/*------ END: CARD SLIDER ANIMATION SERVICES SECTION ----*/}
+
+
 
 
 
@@ -361,19 +369,19 @@ export default function Page({ showHeading = true }: Props) {
                 <div className={styles['fixed-cards-container']}>
                     <div className={styles['cards-container']}>
                         <div className={styles['card-1']}>
-                            <img src='./LandingPageServicesIcons/veicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/veicon.png' alt='' />
                             <h2> Vast Experience </h2>
                         </div>
                         <div className={styles['card-2']}>
-                            <img src='./LandingPageServicesIcons/pwicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/pwicon.png' alt='' />
                             <h2> Professional Team </h2>
                         </div>
                         <div className={styles['card-3']}>
-                            <img src='./LandingPageServicesIcons/nshandshake.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/nshandshake.png' alt='' />
                             <h2> Reliable Service </h2>
                         </div>
                         <div className={styles['card-4']}>
-                            <img src='./LandingPageServicesIcons/dqwicon.png' alt='' />
+                            <img src='./images/landing-page/Fixed_Cards_LandingPage_Icons/dqwicon.png' alt='' />
                             <h2> Quality Work </h2>
                         </div>
                     </div>
@@ -410,7 +418,7 @@ export default function Page({ showHeading = true }: Props) {
                         <li className={`${selectedCategory === 'repair' ? 'active' : ''} ${styles['category']}`} data-filter="repair" onClick={() => handleCategoryClick('repair')}>Repair</li>
                     </ul>
 
-{/* mapping over "new array" (filteredItems) after items have been filtered through*/}
+                    {/* mapping over "new array" (filteredItems) after items have been filtered through*/}
                     <div className={styles['item-display-container']}>
                         {filteredItems.map(item => (
                             <div key={item.id} className={styles['itemBox']}>
@@ -431,7 +439,6 @@ export default function Page({ showHeading = true }: Props) {
 
             </div>
             {/* END of RECENT PROJECTS DISPLAY SECTION */}
-
         </div>
     );
 };
